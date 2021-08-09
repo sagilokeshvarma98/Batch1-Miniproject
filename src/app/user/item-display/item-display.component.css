@@ -1,0 +1,23 @@
+.image img{
+    width: 70%;
+}
+ngb-rating{
+    
+    margin-bottom: 20px;
+    font-size: xx-large;
+    color: orangered;
+}
+.decription{
+    padding: 10%;
+}
+.decription .cartButton{
+    margin: 20px 0px 20px 0px;
+    width: 100px;
+}
+.itemPrice span{
+    color: orange;
+}
+
+.description ul li{
+    font-size: medium;
+}

@@ -1,0 +1,108 @@
+#cart-content{
+    overflow: hidden;
+    text-align: center;
+}
+
+#cart-content table{
+    margin-left:5% ;
+    margin-top:50px;
+}
+#cart-content th{
+    height: 70px;
+    background-color: rgb(29, 149, 230);
+    color: white;
+    text-align:center;
+}
+
+#cart-content td{
+    height: 90px;
+    background-color: rgb(253, 253, 253);
+    color: rgb(10, 177, 93);
+    border-bottom: 1px solid rgb(14, 226, 145);
+    text-align:center;
+    padding: 10px;
+}
+
+#cart-content h3{
+    color: rgb(14, 136, 55);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+#cart-content #amounter{
+    color: rgb(14, 235, 143);
+    padding: 30px;
+    font-size: 24px;
+    width: 80%;
+    text-align: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 30px;
+}
+
+#cart-content #pay-button {
+    text-align:right;
+    width: 80%;
+}
+
+#cart-content button{
+  background-color: rgb(35, 190, 236);
+  color: white;
+  border: none;
+}
+input{
+    width: 60px;
+
+    
+}
+
+
+.card {
+    height: 60vh;
+    margin: 25px;
+    padding: 25px;
+}
+
+.center img {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    height: 162px;
+    width: 250px;
+    margin: 20px 0px;
+}
+
+h4,
+h6 {
+    font-weight: 400;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.card-table {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: none;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+}
+
+.center .btn {
+    font-size: 14px !important;
+    margin-top: 20px !important;
+    font-weight: 400;
+    padding: 12px 72px;
+    border-radius: 3px !important;
+}

@@ -1,0 +1,21 @@
+<div *ngFor="let x of itemComment">
+    <div class="container px-2 p-2">
+        <div class="media border px-3">
+            <div class="row">
+                <div class="col-md-2 px-5">
+                    <img src="assets/human.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                </div>
+                <div class="col-md-4 mt-3">
+                    <p class="text-danger h4">{{x.name}} </p>
+                </div>
+                <div class="col-md-6 mt-5 ">
+                   <h5>Rating : {{x.rating}} /5</h5>
+                </div>
+            </div>
+            <div class="media-body px-5 mt-2">
+                <p class="h5">{{x.msg}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<app-comments-post></app-comments-post>

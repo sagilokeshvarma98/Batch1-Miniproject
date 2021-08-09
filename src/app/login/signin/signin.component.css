@@ -1,0 +1,40 @@
+
+.loginForm{
+    margin: 8% 30% 5% 30%;
+    padding: 30px 30px 30px 30px;
+    width: 450px;
+    border: 1px solid rgb(172, 70, 133);
+    border-radius: 5%;
+}
+
+.loginFormError{
+    margin: 15% 30% 0% 30%;
+    padding: 30px 30px 30px 30px;
+    width: 400px;
+    border: 1px solid red;
+    border-radius: 5%;
+}
+
+.wrongCredentials{
+    margin-bottom: 20px;
+}
+
+input{
+    margin-top: 20px;
+}
+
+input.ng-invalid{
+    border-left:2px solid red;
+}
+
+input.ng-valid{
+    border-left:2px solid green;
+}
+
+#loginBtn{
+    margin: 5px;
+}
+
+.loginDiv{
+    margin: 10px 0px 20px 0px;
+}

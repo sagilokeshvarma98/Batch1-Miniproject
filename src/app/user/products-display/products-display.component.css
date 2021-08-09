@@ -1,0 +1,59 @@
+.card{
+  width: 250px;
+  height: 360px;
+  float: left;
+  margin: 0px 50px 30px 50px;
+}
+
+.productTitle{
+height: 50px;
+overflow: hidden;
+}
+
+.card img{
+  height: 150px;
+  width: 140px;
+}
+
+.card-footer{
+  padding: 5px;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  color: #d3d3d3;
+}
+.full {
+  color: red;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: red;
+}
+
+#filter{
+  margin-top: 30px;
+  width: 150px;
+}
+
+ngb-rating{
+  margin-bottom: 10px;
+}
+
+#CartNotify{
+  margin:12% 0% 0% 70%;
+  height: 30px;
+  width: 10%;
+  position: fixed;
+  top: 0%;
+  background-color: rgb(92, 159, 185);
+  opacity: 0.9;
+}
+
+#CartNotify h4{
+color: white;
+margin-top: 5px;
+}

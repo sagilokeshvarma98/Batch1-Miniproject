@@ -1,0 +1,124 @@
+
+
+
+
+<ng-container *ngIf="cart.length !=0">
+    <div class="container">
+        <div id="cart-content">
+            <h3>your cart items</h3>
+            <div id="pro-table">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th [style.width]="'300px'">Name</th>
+                            <th [style.width]="'100px'">Quantity</th>
+                            <th [style.width]="'100px'">Price</th>
+                            <th [style.width]="'100px'">Amount</th>
+                            <th [style.width]="'100px'"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                             <tr *ngFor="let x of cart">
+                                 <td>{{x.category}}</td>
+                                 <td>
+                                 
+                                <select (change)="change($event,x.id)"  [(ngModel)]="x.quantity" >
+                                    <option value="12" >{{x.quantity}}</option>
+                                    <option value="0" >0(delete)</option>
+                                    <option value="1"  >1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4"  >4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                
+                                </select></td>
+                                
+                                 <td>{{x.price | currency: "USD"}}</td>
+                                 <td>{{x.quantity*x.price | currency : "USD"}}</td>
+                            
+                            <td>
+                                <!-- <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> -->
+                            </td>
+                    
+                            
+                           
+                            
+                            
+                       
+                    </tbody>
+                    
+                </table>
+
+<div>
+
+    <h4>Total bill amount to be paid:  {{total |currency  }}</h4>
+    
+                          
+                            <!-- <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td> --> <br>
+                            <button class="btn btn-success">Checkout</button> &nbsp;
+                            <button routerLink="/products" class="btn btn-primary">Shop More</button>
+</div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="cart.length ==0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+            <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+            <h4>Your cart is empty!</h4>
+            <h6>Add item to it now</h6>
+            <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+        </div>
+    </div>
+</ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div id="cart-content">
+    <h3>Products You have Purchased</h3>
+    <div id="pro-table">
+       <table>
+           <thead>
+       
+           </tbody>
+       </table>
+    </div>
+
+   <div id="amounter"> Total bill amount to be paid:  {{total  | number : '1.2-2' | currency:"USD"}} </div>
+   <div id="pay-button"><button className="btn" (click)="placeOrder()">
+   Place the order</button></div>
+   <br> <br> <br> <br> <br> <br> <br>
+</div> -->

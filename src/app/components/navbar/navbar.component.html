@@ -1,0 +1,138 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgb(186, 207, 250); height: 70px;" >
+  <a class="navbar-brand" href="#">easy shoping</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+
+
+
+    <ul class="navbar-nav">
+      <li class="nav-item active" class="nav-iconimg">
+        <img src="assets\svg\geo-alt-fill.svg" alt=""> hello
+        <h4>select your adress</h4>
+      </li>
+      <li class="nav-item ">
+        <div  >
+  
+          <input  class="search-icon" type="text">
+          <button>search</button> </div>
+      </li>
+      <li class="nav-item ">
+        <div  class="nav-icon">
+          <div>
+           
+            <!-- <p class="nav-iconimg"> hello{{currentUser.sub}}</p> -->
+            <div class="dropdown">
+              <span  type="button"  data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="nav-iconimg" id="dropdownMenuButton1"  src="assets\svg\person-circle.svg" alt=""> 
+              </span>
+              <span  *ngIf="!istoken">plesae login</span>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" *ngIf="istoken" (click)="islogout()" >siginout</a></li>
+                <li><a class="dropdown-item" *ngIf="!istoken" routerLink='login'>signIn</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item ">
+        <div  class="nav-iconimg" >
+          <img [routerLink]="['/cart']" src="assets\svg\cart-plus.svg" alt="">
+        </div>
+  
+      </li>
+
+      
+
+      
+    </ul>
+    
+
+<div>
+
+  
+    <div>
+      
+  </div>
+
+</div>
+
+
+
+
+  
+    </div>
+
+    
+</nav>
+
+
+
+<mat-sidenav-container>
+
+
+
+  <mat-sidenav #sidenav>
+
+
+
+    <app-side-navbar (closeSideNav)="sidenav.close()"></app-side-navbar>
+
+  </mat-sidenav>
+
+
+
+  <mat-sidenav-content>
+
+    <app-subnav (SideNavToggle)="sidenav.toggle()"></app-subnav>
+    <main>
+      <router-outlet></router-outlet>
+  <app-footer></app-footer>
+    </main>
+
+
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
+
+<!-- <mat-toolbar color="primary">
+
+   
+   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    
+  </button>
+  <span>easyshoping</span>
+  <span class="example-spacer"></span> 
+
+
+
+
+  <button  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon   [routerLink]="['/cart']" >add_shopping_cart</mat-icon>
+ </button>
+ <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <mat-icon>account_circle</mat-icon>
+</button>
+
+
+
+
+</mat-toolbar> -->
+
+
+
+
+
+
+
+

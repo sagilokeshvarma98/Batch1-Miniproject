@@ -1,0 +1,242 @@
+*{
+
+    margin:0px ;
+
+    padding: 0px;
+
+    box-sizing: border-box;
+
+}
+
+footer{
+
+    height: 340px;
+
+    background-color:#0F1111;
+
+    margin-top:60px ;
+
+    position: relative;
+
+    padding: 50px 80px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+
+
+}
+
+footer .container{
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    flex-direction: row;
+
+}
+
+footer .container .sec{
+
+    margin-right: 40px;
+
+
+
+}
+
+footer .container .sec.aboutus{
+
+    width: 200px;
+
+}
+
+footer .container  .sec.aboutus h4{
+
+    position: relative;
+
+    color:#fff;
+
+    font-weight: 1;
+
+    margin-bottom: 15px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    
+
+}
+
+footer .container  .sec.aboutus h4{
+
+    position: relative;
+
+    color:#fff;
+
+    font-weight: 1;
+
+    margin-bottom: 15px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    
+
+}
+
+footer .container .sec.aboutus p{
+
+    color:#fff;
+
+    margin-top:8px ;
+
+}
+
+footer .scce{
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    flex-direction: row;
+
+}
+
+footer .scce .sci {
+
+    margin-right:100px ;
+
+}
+
+footer .scce .sci{
+
+    width: 200px;
+
+}
+footer .scce  .sci h4{
+
+    position: relative;
+
+    color:#fff;
+
+    font-weight:1;
+
+    margin-bottom: 15px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    margin-top:8px ;
+
+    
+
+}
+
+footer .scce  .sci h4{
+
+    position: relative;
+
+    color:#fff;
+
+    font-weight: 1;
+
+    margin-bottom: 15px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    
+
+}
+
+footer .scce .sci p{
+
+    color:#fff;
+
+    margin-top:8px ;
+
+
+
+}
+
+footer .seec{
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    flex-direction: row;
+
+}
+
+footer .seec .sm{
+
+    margin-right: 50px;
+
+
+
+}
+footer .seec .sm{
+
+    width: 300px;
+
+}
+
+footer .scce .sm{
+
+    margin-right:250px ;
+
+}
+
+
+
+ footer .seec .sm h4{
+
+     font-size: 1;
+
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+     margin-bottom: 15px;
+
+     margin-top: 10px;
+
+     position: relative;
+
+     color: #ffff;
+
+
+
+     }
+
+     footer .seec  .sm h4{
+
+        position: relative;
+
+        color:#fff;
+
+        font-weight: 1;
+
+        margin-bottom: 15px;
+
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        
+
+    }
+
+     footer .seec .sm p{
+
+        color:#fff;
+
+        margin-top:8px ;
+
+    
+
+    }
+    

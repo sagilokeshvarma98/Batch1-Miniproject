@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class={{inputClass}}>
+        <p *ngIf="wrongCreden" class="wrongCredentials text text-center">
+            <b class="text text-danger">*Entered username or password is incorrect</b>
+        </p>
+        <h3 style="margin-bottom:10px;">Sign-In</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+            <div class="form-group" >
+                <input type="text" formControlName='username' id="username" class="form-control " placeholder="Enter Email/mobile phone number">
+                <div *ngIf='controls.username.touched && controls.username.invalid'>
+                    <div *ngIf='controls.username.errors?.required'>
+                        <b class="text text-danger">*Enter username or mobile number</b>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" formControlName='password' class="form-control" placeholder="Enter your password">
+                <div *ngIf='controls.password.touched && controls.password.invalid'>
+                    <div *ngIf='controls.password.errors?.required'>
+                        <b class="text text-danger">*Enter password</b>
+                        </div>
+                </div>
+            </div>
+            <div class="text-left loginDiv">
+                    <button style="margin-right: 50%;" *ngIf="!loginForm.valid" class="btn btn-success" id='loginBtn' type="submit" disabled>Login</button>
+                    <button style="margin-right: 50%;" *ngIf="loginForm.valid" class="btn btn-success" id='loginBtn' type="submit">Login</button>
+                    <a routerLink="/forgotPass">forgot password?</a>
+            </div>
+        </form>
+        <button class="form-control btn btn-secondary" (click)="routeToRegister()">Create your new account</button>
+    </div>
+</div>

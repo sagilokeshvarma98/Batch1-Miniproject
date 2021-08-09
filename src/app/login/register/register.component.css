@@ -1,0 +1,66 @@
+.row{
+    margin-top: 15px;
+box-shadow: 0px 10px 2px 0px rgb(241, 235, 235);
+}
+.card{
+margin-top: 15px;
+outline: none;
+margin-bottom: 15px;
+
+}
+/* .card:hover{
+border: 2px solid rgb(14, 12, 12);
+outline: none;
+
+} */
+.card-header{
+/* background-color: rgba(24, 23, 23, 0.74); */
+
+border: none;
+}
+h2{
+font-weight: 500;
+font-size: 35px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+label{
+font-weight: 600;
+}
+input:focus{
+border: 1px solid;
+} 
+.term-condition{
+font-size: 15px;
+margin-left: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+
+}
+input[type=number] {
+-moz-appearance: textfield;
+}
+.btn-warning{
+margin-top: 15px;
+margin-bottom: 15px;
+width: 100%;
+text-align: center;
+}
+a{
+text-decoration: none;
+font-weight: 200;
+}
+a:hover{
+text-decoration: underline rgb(224, 98, 98);
+color: blueviolet
+}
+.text-danger{
+font-weight: 600; 
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+color: rgb(192, 156, 162);
+font-size: 15px;
+
+}
+

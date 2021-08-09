@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Create Account</h2>
+                </div>
+                <div class="card-body">
+                    <form class="form"   [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" name="Name" formControlName="fullName" placeholder="Full Name" >
+                          <span class="text-danger"  *ngIf="(registerFormControl.fullName.touched || submitted) && registerFormControl.fullName.errors?.required">Name is Required*</span>
+                          <span class="text-danger" *ngIf=" registerFormControl.fullName.errors?.minlength">Minimum 3 Letters Required*</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Username</label>
+                            <input type="text" class="form-control" name="username" formControlName="username" placeholder="username" >
+                          <span class="text-danger"  *ngIf="(registerFormControl.username.touched || submitted) && registerFormControl.username.errors?.required">Name is Required*</span>
+                          <span class="text-danger" *ngIf=" registerFormControl.username.errors?.minlength">Minimum 3 Letters Required*</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" formControlName="email" placeholder="something@gmail.com" (blur)="validteEmail()" >
+                        <span class="text-danger"  *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">Email is Required*</span>
+                        <span class="text-danger"
+                        *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.pattern">
+                        Enter a valid email address
+                    </span>
+                       <span class="text-danger" *ngIf="hideEmailValidate">This Email is Already Regiter please enter another Email*</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            <input type="number"  class="form-control " name="Mobile" formControlName="mobile" placeholder="Mobile number">
+                           <span class="text-danger" *ngIf="(registerFormControl.mobile.touched || submitted) && registerFormControl.mobile.errors?.required">Mobile number is Required*</span>
+                           <span class="text-danger" *ngIf="registerFormControl.mobile.errors?.pattern">Mobile Number must have 10 digit*</span>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control pass-key" formControlName="password" appPasswordShow placeholder="password">
+                            <br>
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+                                Password is required*
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.pattern">
+                                Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                                letter and 1 number*
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <input type="password" class="form-control" formControlName="confirmPassword" placeholder="re-type password">
+                            <span class="text-danger"
+                                *ngIf="(registerFormControl.confirmPassword.touched || submitted)&& registerFormControl.confirmPassword.errors?.required">
+                                Confirm Password is required*
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="registerFormControl.confirmPassword.touched && registerFormControl.confirmPassword.errors?.passwordMismatch">
+                                Passwords doesnot match*
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="term" formControlName="term" >
+                            <span class="term-condition">I accept to terms and conditions</span><br>
+                            <span class="text-danger" *ngIf="(registerFormControl.term.touched || submitted) && registerFormControl.term.errors?.required">This Fiels is Required*</span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-warning" [disabled]="registerForm.invalid" >Register</button>
+                        </div>
+                        <div class="form-group">
+                                <span class="login-link">Already have an account? <a routerLink="/login">Sign in </a></span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

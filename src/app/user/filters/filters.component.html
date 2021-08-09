@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-4">
+            <h3 class="firstFilter" (click)="clearFilters()"><span><</span> Clear all filters </h3>
+            <p class="filterName">Avg Customer Review</p>
+            <p (click)='clearRates()'  *ngIf='allRates' class="clearFilter"><span><</span> Clear</p>
+        <div class="filtersDiv" *ngFor="let rate of rates">
+            <div  (click)='getRating(rate)' class="ngb-rating">
+                <ngb-rating  name='rating' value='rate' [rate]='rate' [readonly]='true' [max]='5'>& Up</ngb-rating> <span>& Up</span>
+            </div>
+        </div>
+        <p class="filterName">Price</p>
+        <p (click)='clearPrices()' *ngIf='allPrices' class="clearFilter"><span><</span> Any price</p>
+        <div class="priceFilterDiv">
+            <span (click)='getPrice($event)' value='under $10'>Under $10</span>
+            <span (click)='getPrice($event)'>$10 - $50</span>
+            <span (click)='getPrice($event)'>$50 - $100</span>
+            <span (click)='getPrice($event)'>$100 - $500</span>
+            <span (click)='getPrice($event)'>Above $500</span>
+        </div>
+        <div class="filterName">
+            <input type="checkbox" name="outofstock" id="outofstock" value='checked' (change)="outOfStock($event)">Exclude Out of stock
+        </div>
+        </div>
+        <div class="col-lg-10 col-sm-10 col-md-10 col-xs-8">
+            <app-products-display [ratingTerm]="rate" [priceTerm]='price'></app-products-display>
+        </div>
+    </div>
+        
+</div>

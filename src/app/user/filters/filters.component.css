@@ -1,0 +1,53 @@
+.ngb-rating{
+    font-size: large;
+}
+
+.firstFilter{
+    font-weight: 200;
+    margin-top: 40px;
+    cursor: context-menu;
+    text-decoration: underline;
+}
+
+.firstFilter:hover{
+    color: rgb(247, 187, 77);
+}
+
+.filterName{
+    margin-top: 20px;
+}
+
+.priceFilterDiv span{
+    display: block;
+    text-align: left;
+    cursor: context-menu;
+}
+
+.priceFilterDiv span:hover{
+    color: rgb(247, 187, 77);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h3{
+    font-weight: 400;
+}
+
+.ngb-rating span{
+    cursor: context-menu;
+}
+
+.ngb-rating:hover{
+    color: rgb(247, 187, 77);
+}
+
+.clearFilter span{
+    font-size: 20px;
+}
+
+.clearFilter{
+    cursor: context-menu;
+}
+
+.clearFilter:hover{
+    color:rgb(247, 187, 77) ;
+}

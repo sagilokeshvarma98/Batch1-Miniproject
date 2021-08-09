@@ -1,0 +1,20 @@
+img{
+    width: 150px;
+    height: 150px;
+}
+
+tr{
+   
+    color: blue;
+}
+th{
+    color: red;
+    padding: 30px;
+}
+td{
+    margin-left: 20px;
+}
+.order-class{
+    text-align: center;
+    padding: 50px;
+}

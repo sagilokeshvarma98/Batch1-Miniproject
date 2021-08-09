@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="commentPost" method="" (ngSubmit)="saveReview()">
+                <p class="text-danger mt-3 h3">Your Comment</p>
+                <div class="form-group">
+                    <label class="text-muted h5" for="name">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                    <span>
+                        <div class="text-danger" *ngIf='commentPost.controls.name.hasError("required")'>Should be filled
+                        </div>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <ngb-rating  class="h4" [max]=5 [(rate)]="currentRate" formControlName="rating"></ngb-rating>
+                </div>
+                <div class="form-group">
+                    <label class="text-muted h5" for="name">Comment</label>
+                    <input type="text" class="form-control " formControlName="msg">
+                    <span>
+                        <div class="text-danger" *ngIf='commentPost.controls.msg.hasError("required")'>Should be filled
+                        </div>
+                    </span>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-dark" [disabled]="!commentPost.valid">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
