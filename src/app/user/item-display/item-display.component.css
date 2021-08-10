@@ -10,9 +10,9 @@ ngb-rating{
 .decription{
     padding: 10%;
 }
+
 .decription .cartButton{
     margin: 20px 0px 20px 0px;
-    width: 100px;
 }
 .itemPrice span{
     color: orange;
@@ -20,4 +20,8 @@ ngb-rating{
 
 .description ul li{
     font-size: medium;
+}
+
+.itemDes{
+    margin-top: 2%;
 }
