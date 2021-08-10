@@ -1,0 +1,17 @@
+.search input{
+    width: 250px;
+    margin: 0px 0px 30px 0px;
+}
+.search span img{
+    position: fixed;
+    margin: 10px 0px 0px 10px;
+    width: 20px;
+}
+/* 
+.table{
+    width: fit-content;
+} */
+
+.table thead tr th{
+    margin-right: 50%;
+}

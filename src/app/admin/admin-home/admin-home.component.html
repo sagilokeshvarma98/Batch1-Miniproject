@@ -1,1 +1,38 @@
-<p>admin-home works!</p>
+<div class="container">
+    <div class="row admin-nav">
+        <div class="col-9">
+            <h3>
+                <b>Admin</b>
+            </h3>
+        </div>
+        <div class="col-3">
+            <a href="/admin"><img src="../../../assets/user-solid.svg" class="user-profile-svg"
+                    alt="profile">Profile</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3 managementLinks">
+            <div>
+                <ul>
+                    <li>
+                        <a href="">Inventory</a>
+                    </li>
+                    <li>
+                        <a href="">Coupons</a>
+                    </li>
+                    <li>
+                        <a href="">User</a>
+                    </li>
+                    <li>
+                        <a href="">Transaction</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-9 col-lg-9 col-md-9 col-xs-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

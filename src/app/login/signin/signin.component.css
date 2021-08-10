@@ -1,6 +1,7 @@
-
+.loginBox{
+    padding: 10% 25% 0% 25%;
+}
 .loginForm{
-    margin: 8% 30% 5% 30%;
     padding: 30px 30px 30px 30px;
     width: 450px;
     border: 1px solid rgb(172, 70, 133);

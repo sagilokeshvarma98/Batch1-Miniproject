@@ -1,1 +1,25 @@
-<p>inventory works!</p>
+<div class="container">
+    <div class="search">
+        <input type="text" [(ngModel)]='searchTerm' class="form-control" placeholder="Enter your search term">
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>SKU ID</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>MRP</th>
+                <th>Total value</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let product of products | search:searchTerm">
+            <tr>
+                <th>{{product.id}}</th>
+                <th>{{product.category}}</th>
+                <th>{{product.quantity}}</th>
+                <th>{{product.price | currency}}</th>
+                <th>{{product.price | value:product.quantity | currency}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
