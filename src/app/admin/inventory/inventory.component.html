@@ -1,6 +1,12 @@
 <div class="container">
     <div class="search">
         <input type="text" [(ngModel)]='searchTerm' class="form-control" placeholder="Enter your search term">
+        <div class="add-product-div">
+            <a href="admin/addProduct">
+                <img class="add-product-svg" src="../../../assets/plus-solid.svg" alt="add_product">
+                <span id="tooltip">Add a product</span>
+            </a>
+        </div>
     </div>
     <table class="table table-bordered">
         <thead>
@@ -17,7 +23,7 @@
                 <th>{{product.id}}</th>
                 <th>{{product.category}}</th>
                 <th>{{product.quantity}}</th>
-                <th>{{product.price | currency}}</th>
+                <th>{{product.price | currency}}</th>ng
                 <th>{{product.price | value:product.quantity | currency}}</th>
             </tr>
         </tbody>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
