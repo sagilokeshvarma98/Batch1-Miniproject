@@ -5,7 +5,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ValuePipe } from './pipes/value.pipe';
 import { SearchPipe } from './pipes/search.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
@@ -19,7 +19,8 @@ import { AddProductComponent } from './add-product/add-product.component';
   imports: [
     CommonModule,
     ADMINRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ADMINModule { }
