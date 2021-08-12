@@ -33,7 +33,7 @@ export class ProductsDisplayComponent implements OnInit {
   Title:string = ""
   ngOnInit(): void {
     this.PS.productsData().subscribe(res=>{
-     this.Products = this.PS.products = res
+     this.Products = res
      console.log(this.Products.length);
      
     })

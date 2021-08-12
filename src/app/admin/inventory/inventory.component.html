@@ -1,8 +1,86 @@
+<!-- <button >AddCoupons</button> -->
+<div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="coupon" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form class="form" [formGroup]="productForm" (ngSubmit)='submit()'>
+                    <div class="floated">
+                        <div class="form-group">
+                            <label for="id">Enter ID</label>
+                            <input type="text" name="id" formControlName='id' class="form-control">
+                            <div *ngIf='productFormControl.id.touched && productFormControl.id.invalid'>
+                                <div *ngIf='productFormControl.id.errors?.required'>
+                                    <b class="text text-danger">*Enter 16 digit ID</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Enter Name of Product</label>
+                            <input type="text" name="title" formControlName='title' class="form-control">
+                            <div *ngIf='productFormControl.title.touched && productFormControl.title.invalid'>
+                                <div *ngIf='productFormControl.title.errors?.required'>
+                                    <b class="text text-danger">*Required</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Enter Price</label>
+                            <input type="text" name="price" formControlName='price' class="form-control">
+                            <div *ngIf='productFormControl.price.touched && productFormControl.price.invalid'>
+                                <div *ngIf='productFormControl.price.errors?.required'>
+                                    <b class="text text-danger">*Required</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Enter Category</label>
+                            <input type="text" name="category" formControlName='category' class="form-control">
+                            <div *ngIf='productFormControl.category.touched && productFormControl.category.invalid'>
+                                <div *ngIf='productFormControl.category.errors?.required'>
+                                    <b class="text text-danger">*Required</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity available</label>
+                            <input type="text" name="quantity" formControlName='quantity' class="form-control">
+                            <div *ngIf='productFormControl.quantity.touched && productFormControl.quantity.invalid'>
+                                <div *ngIf='productFormControl.quantity.errors?.required'>
+                                    <b class="text text-danger">*Required</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" class="form-control"
+                                formControlName='description' cols="10" rows="2"></textarea>
+                            <div
+                                *ngIf='productFormControl.description.touched && productFormControl.description.invalid'>
+                                <div *ngIf='productFormControl.description.errors?.required'>
+                                    <b class="text text-danger">*Required</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id">Select an product image</label>
+                            <input type="file" name="image" (change)="getImage($event)" formControlName='image'
+                                class="form-control">
+                        </div>
+                        <button type="submit" [disabled]='!productForm.valid' class="btn btn-warning" data-bs-dismiss="modal">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="container">
     <div class="search">
         <input type="text" [(ngModel)]='searchTerm' class="form-control" placeholder="Enter your search term">
         <div class="add-product-div">
-            <a href="admin/addProduct">
+            <a data-bs-toggle="modal" data-bs-target="#coupon" mat-raised-buttoncolor="accent">
                 <img class="add-product-svg" src="../../../assets/plus-solid.svg" alt="add_product">
                 <span id="tooltip">Add a product</span>
             </a>

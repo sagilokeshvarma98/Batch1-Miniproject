@@ -6,15 +6,13 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ValuePipe } from './pipes/value.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddProductComponent } from './add-product/add-product.component';
 
 @NgModule({
   declarations: [
     AdminHomeComponent,
     InventoryComponent,
     ValuePipe,
-    SearchPipe,
-    AddProductComponent
+    SearchPipe
   ],
   imports: [
     CommonModule,

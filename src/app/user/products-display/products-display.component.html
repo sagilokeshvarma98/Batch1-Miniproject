@@ -5,13 +5,13 @@
         <option value="high to low">price : high to low</option>
         <option value="low to high">price : low to high</option>
         <option value="rating">rating</option>
-    </select>
+    </select>`
 </div>
 <div class="container-fluid" style="margin-top: 5%;">
     <div *ngFor="let x of Products | filter : ratingTerm | sort : sortTerm | priceFilter : priceTerm">
         <div class="card">
             <div class="card-body" (click)="getItem(x)">
-                <img class="productImage" src={{x.image}} alt="image">
+                <img class="productImage" src={{x.imgUrl}} alt="image">
                 <p class="productTitle">{{x.title}}</p>
                 <p>{{x.price | currency}}</p>      
                 <ng-template #t let-fill="fill">
