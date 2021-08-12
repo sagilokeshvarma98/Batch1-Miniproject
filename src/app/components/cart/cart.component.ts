@@ -10,7 +10,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
   total = 0;
-  grandtotal:any;
+  grandtotal: any;
   cart: any;
   confirm: any
 
@@ -61,8 +61,8 @@ export class CartComponent implements OnInit {
 
       console.log(this.cart)
       for (let x of this.cart) {
-       
-      this.total += x.quantity * x.price;
+
+        this.total += x.quantity * x.price;
         console.log(this.total)
       }
     }
