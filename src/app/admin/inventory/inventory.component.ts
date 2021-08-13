@@ -60,5 +60,6 @@ export class InventoryComponent implements OnInit {
       this.imageArray.push(event.target.result)
     }
    }
+  }
 
 }
