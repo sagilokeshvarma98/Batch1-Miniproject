@@ -44,8 +44,8 @@ export class InventoryComponent implements OnInit {
   
   submit(){
     this.productForm.value.image = this.imageArray[0]
-    this.PS.addProduct(this.productForm.value).subscribe(res=>{
-      console.log(res);
+    this.PS.addProduct(this.productForm.value).subscribe((res:any)=>{
+      console.log(res,res.length);
       this.getProductData()
     })
   }
