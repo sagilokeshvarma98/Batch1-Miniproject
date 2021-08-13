@@ -1,10 +1,68 @@
-
-
-        <div class="home-div" >
+ <!-- <div class="home-div" >
             <h1>jwelery items </h1>
             <div class="mens-thumbnail" *ngFor="let x of jwelery"  ><img src="{{x.image}}"  [routerLink]="['/products']" alt=""></div>
            
             
             <br><br>
             
+            </div> -->
+            <!-- kitchenitems -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="h2-text">Kitchen items</h2>
+        </div>
+    </div>
+    <div class="row" [routerLink]="['/products']">
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Kitchen/kitchen.webp" alt="">
             </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Kitchen/kitchen2.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Kitchen/kitchen3.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Kitchen/kitchen3.webp" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Home furnishings -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="h2-text">Home furnishings</h2>
+        </div>
+    </div>
+    <div class="row" [routerLink]="['/products']">
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Furniture/homefurniture.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Furniture/homefurniture1.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Furniture/homefurniture2.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Furniture/homefurniture3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>

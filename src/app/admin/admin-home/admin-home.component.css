@@ -1,0 +1,45 @@
+.admin-nav a{
+    float: right;
+    color: rgb(148, 78, 212);
+    text-decoration: none;
+    font-size: large;
+}
+
+.admin-nav{
+    padding:50px 0px 50px 0px;
+}
+
+.admin-nav a:hover{
+    color: rgba(0, 0, 0, 0.171);
+}
+.managementLinks ul li a:hover{
+    color: white;
+}
+
+.user-profile-svg{
+    margin-right: 10px;
+    width: 15px;
+}
+
+.managementLinks{
+    width: max-content;
+    background-color: rgba(0, 0, 0, 0.842);
+    padding:30px 20px 10px 0px;
+}
+
+.managementLinks ul li:nth-child(1n+2){
+    margin-top: 80px;
+}
+
+.managementLinks ul li a{
+    color: blueviolet;
+}
+
+.managementLinks ul li{
+    padding-left: 10px;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;;
+    font-size: 17px;
+    list-style: none;
+    cursor: context-menu;
+}

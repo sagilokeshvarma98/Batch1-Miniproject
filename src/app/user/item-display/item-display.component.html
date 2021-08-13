@@ -10,7 +10,7 @@
                 <ngb-rating [rate]="itemData.rating" [readonly]='true' [max]="5"></ngb-rating>
                 <h4 class="itemPrice">Price : <span>{{itemData.price | currency}}</span></h4>
                 <h2>{{itemData.category}}</h2>
-                Quantity : <select name="quantity" (change)='selectQuantity($event)'  id="quantity">
+                Quantity : <select name="quantity" (change)='selectQuantity($event)' id="quantity">
                     <option selected value="0">0</option>
                     <option *ngFor='let quantity of itemQuantity' value={{quantity}}>{{quantity}}</option>
                 </select>
@@ -18,16 +18,16 @@
                     <app-cart-button [itemData]='itemData'></app-cart-button>
                 </div>
                 <h4>Description :</h4>
-                    <ul *ngFor='let data of description'>
-                        <li>{{data}}</li>
-                    </ul>
+                <ul *ngFor='let data of description'>
+                    <li>{{data}}</li>
+                </ul>
             </div>
         </div>
     </div>
     <div id="comments">
-<!-- Product Commnets -->
-<app-comments></app-comments>
-<!-- Product Commnets  end-->
+        <!-- Product Commnets -->
+        <app-comments></app-comments>
+        <!-- Product Commnets  end-->
+
     </div>
 </div>
-

@@ -1,14 +1,103 @@
-
-    
-
-    <div class="home-div" >
+<!-- <div class="home-div" >
         <h1>elctronics</h1> 
         <div class="mens-thumbnail" *ngFor="let x of electronics" ><img src="{{x.image}}" [routerLink]="['/products']" alt=""></div>
-    
         <br><br>
-        
-        
-        
-        
-        </div><br><br>
-        
+        <h1>electronics</h1>
+        </div><br><br> -->
+<!-- Mobiles -->
+<app-carousel></app-carousel>
+<!-- Mobiles -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="h2-text">Mobiles Phones</h2>
+            
+        </div>
+    </div>
+    <div class="row  row-img" [routerLink]="['/products']">
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Phones/Mobile.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Phones/Mobile1.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Phones/Mobile2.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+              <img src="assets/Phones/Mobile3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Laptops -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="h2-text">Laptops</h2>
+        </div>
+    </div>
+    <div class="row row-img" [routerLink]="['/products']">
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Laptops/img.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Laptops/img2.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Laptops/img3.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Laptops/img4.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- Home appliance -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="h2-text">Home appliance</h2>
+        </div>
+    </div>
+    <div class="row row-img" [routerLink]="['/products']">
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Homeappliance/Homeappliance.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Homeappliance/Homeappliance1.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Homeappliance/Homeappliance2.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="card">
+                <img src="assets/Homeappliance/Homeappliance4.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    
+
+</div>

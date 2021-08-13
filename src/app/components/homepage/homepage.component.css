@@ -1,13 +1,12 @@
 .container-fluid{
-    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
       .card{
           height: 400px;
           width: 100%;
            margin: 5px;
-          border: none;
-          
-         
+          border: none;  
+          background: none;  
       }
       .card img{
           width: 100%;
@@ -16,6 +15,7 @@
       }
       .card-text{
           text-align: center;
+          background: none;
       }
       .card-title{
           font-size: 40px;
@@ -39,3 +39,10 @@
       font-family:Verdana, Geneva, Tahoma, sans-serif
           
       }
+      .container-fluid{
+        background: linear-gradient(140deg, #bffafa 60%, #4ef3f3 60%);
+    }
+    .row{
+        margin-top: 20px;
+    }
+    

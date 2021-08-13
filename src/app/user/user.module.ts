@@ -18,6 +18,7 @@ import { CommentsPostComponent } from './components/comments-post/comments-post.
 import { SortPipe } from './pipes/sort.pipe';
 import { PriceFilterPipe } from './pipes/price-filter.pipe';
 import { FiltersComponent } from './filters/filters.component';
+import { AdressdiplayComponent } from './components/adressdiplay/adressdiplay.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FiltersComponent } from './filters/filters.component';
     SortPipe,
     PriceFilterPipe,
     FiltersComponent,
+    AdressdiplayComponent,
 
   ],
   imports: [

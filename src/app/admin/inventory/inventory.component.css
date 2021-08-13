@@ -1,0 +1,23 @@
+
+.search input{
+    width: 250px;
+    margin-bottom:20px;
+}
+.add-product-svg{
+    width: 20px;
+}
+
+.table thead tr th{
+    margin-right: 50%;
+}
+
+.search .add-product-div a:hover{
+    color: chartreuse;
+}
+
+.add-product-div{
+    width: fit-content;
+    font-size: large;
+    color: brown;
+    margin-bottom: 30px;
+}
