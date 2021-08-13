@@ -8,14 +8,12 @@ import { SearchPipe } from './pipes/search.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CouponComponent } from './coupon/coupon.component';
 
-
 @NgModule({
   declarations: [
     AdminHomeComponent,
     InventoryComponent,
     ValuePipe,
     SearchPipe,
-    InventoryComponent,
     CouponComponent
   ],
   imports: [
