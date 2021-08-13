@@ -34,11 +34,18 @@ export class ProductsDisplayComponent implements OnInit {
   ngOnInit(): void {
     this.PS.productsData().subscribe(res=>{
      this.Products = res
+     console.log(res);
      res.map((x:any)=>{
+       let length = x.length
+      let totalRates = 0
+      let count = 0
        x.productReviews.map((x:any)=>{
-        //  let totalRates = +x.rating
-         let count 
-         console.log(x.rating);
+         totalRates = totalRates + x.rating
+          count++ 
+          console.log(count,length);
+          
+          if(length == count)
+         console.log(count,totalRates/count);
        })
      })
     })
