@@ -6,6 +6,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ValuePipe } from './pipes/value.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CouponComponent } from './coupon/coupon.component';
 
 @NgModule({
   declarations: [
@@ -13,8 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InventoryComponent,
     ValuePipe,
     SearchPipe,
-    InventoryComponent
-    //Just a small edit to check git. 
+    CouponComponent
   ],
   imports: [
     CommonModule,
