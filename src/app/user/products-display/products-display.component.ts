@@ -48,6 +48,7 @@ export class ProductsDisplayComponent implements OnInit {
          console.log(count,totalRates/count);
        })
      })
+     console.log(this.Products);
     })
   }
 

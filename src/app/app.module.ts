@@ -29,7 +29,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './components/cart/cart.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
-import { CommentsComponent } from './user/components/comments/comments.component';
 
 
 
