@@ -6,6 +6,9 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ValuePipe } from './pipes/value.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserdemograpicsComponent } from './userdemograpics/userdemograpics.component';
+import { UsermanagmentComponent } from './usermanagment/usermanagment.component';
+import { RecoveryComponent } from './recovery/recovery.component';
 import { CouponComponent } from './coupon/coupon.component';
 
 @NgModule({
@@ -14,6 +17,9 @@ import { CouponComponent } from './coupon/coupon.component';
     InventoryComponent,
     ValuePipe,
     SearchPipe,
+    UserdemograpicsComponent,
+    UsermanagmentComponent,
+    RecoveryComponent,
     CouponComponent
   ],
   imports: [
