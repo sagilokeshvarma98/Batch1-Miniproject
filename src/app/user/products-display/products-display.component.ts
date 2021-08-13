@@ -34,7 +34,13 @@ export class ProductsDisplayComponent implements OnInit {
   ngOnInit(): void {
     this.PS.productsData().subscribe(res=>{
      this.Products = res
-     console.log(this.Products);
+     res.map((x:any)=>{
+       x.productReviews.map((x:any)=>{
+        //  let totalRates = +x.rating
+         let count 
+         console.log(x.rating);
+       })
+     })
     })
   }
 
