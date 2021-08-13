@@ -15,6 +15,7 @@ const routes: Routes = [{
       path:"",
       component:InventoryComponent
     },
+    {
       path:'coupon',
       component:CouponComponent
     },
@@ -31,8 +32,7 @@ const routes: Routes = [{
            component:RecoveryComponent
           }
       ]
-    },
-    {
+    }
   ]
 }];
 

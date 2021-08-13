@@ -9,13 +9,8 @@ export class UsermanagementService {
 
   constructor(private http:HttpClient) { }
 
-
-
-
-
 public userdemographics():Observable<any>{
   return this.http.get("http://localhost:2300/users")
 }
-
 
 }
