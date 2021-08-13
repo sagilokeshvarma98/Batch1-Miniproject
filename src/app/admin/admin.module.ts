@@ -7,12 +7,14 @@ import { ValuePipe } from './pipes/value.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AdminHomeComponent,
     InventoryComponent,
     ValuePipe,
-    SearchPipe
+    SearchPipe,
+    InventoryComponent
   ],
   imports: [
     CommonModule,
