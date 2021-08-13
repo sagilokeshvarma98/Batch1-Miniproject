@@ -34,8 +34,7 @@ export class ProductsDisplayComponent implements OnInit {
   ngOnInit(): void {
     this.PS.productsData().subscribe(res=>{
      this.Products = res
-     console.log(this.Products.length);
-     
+     console.log(this.Products);
     })
   }
 
