@@ -40,7 +40,8 @@
           
       }
       .container-fluid{
-        background: linear-gradient(140deg, #bffafa 60%, #4ef3f3 60%);
+        /* background: linear-gradient(140deg, #bffafa 60%, #4ef3f3 60%); */
+        background: linear-gradient(to top, #63c9cc, rgb(206, 238, 243));
     }
     .row{
         margin-top: 20px;
