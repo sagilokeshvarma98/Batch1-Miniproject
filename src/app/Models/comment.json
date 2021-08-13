@@ -12,6 +12,28 @@
       "rating": "4",
       "msg": "I cudnt sleep on it . Very poor product. Don't buy it ."
     }
-   
+  ],
+  "coupons": [
+    {
+      "coupon": "dwdd50",
+      "eligibul": "5000",
+      "start": "2021-08-14",
+      "end": "2021-08-28",
+      "id": 1
+    },
+    {
+      "coupon": "dwdd62",
+      "eligibul": "3000",
+      "start": "2021-08-15",
+      "end": "2021-08-10",
+      "id": 2
+    },
+    {
+      "coupon": "ffnf50",
+      "eligibul": "62000",
+      "start": "2021-08-14",
+      "end": "2021-08-12",
+      "id": 3
+    }
   ]
 }

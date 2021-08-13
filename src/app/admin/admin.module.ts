@@ -10,6 +10,8 @@ import { UserdemograpicsComponent } from './userdemograpics/userdemograpics.comp
 import { UsermanagmentComponent } from './usermanagment/usermanagment.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { CouponComponent } from './coupon/coupon.component';
+import { ToastrModule } from 'ngx-toastr';
+import { AngmaterialModule } from '../angmaterial/angmaterial.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CouponComponent } from './coupon/coupon.component';
     CommonModule,
     ADMINRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngmaterialModule,
+    ToastrModule.forRoot(),
   ]
 })
 export class ADMINModule { }
