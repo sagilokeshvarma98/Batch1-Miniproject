@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserdemograpicsComponent } from './userdemograpics/userdemograpics.component';
 import { UsermanagmentComponent } from './usermanagment/usermanagment.component';
 import { RecoveryComponent } from './recovery/recovery.component';
-
+import { CouponComponent } from './coupon/coupon.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,7 @@ import { RecoveryComponent } from './recovery/recovery.component';
     UserdemograpicsComponent,
     UsermanagmentComponent,
     RecoveryComponent,
-
-    
+    CouponComponent
   ],
   imports: [
     CommonModule,

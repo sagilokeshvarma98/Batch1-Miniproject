@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { CouponComponent } from './coupon/coupon.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { UserdemograpicsComponent } from './userdemograpics/userdemograpics.component';
@@ -14,21 +15,24 @@ const routes: Routes = [{
       path:"",
       component:InventoryComponent
     },
-    { path:"usermanagement",
-    component:UsermanagmentComponent
-  
-      ,children:[
+      path:'coupon',
+      component:CouponComponent
+    },
+    { 
+      path:"usermanagement",
+      component:UsermanagmentComponent,
+      children:[
         {
           path:"udg",
           component:UserdemograpicsComponent
-              },
-              {
-                path:"recovery",
-                component:RecoveryComponent
-                    }
+         },
+         {
+           path:"recovery",
+           component:RecoveryComponent
+          }
       ]
     },
-  
+    {
   ]
 }];
 
