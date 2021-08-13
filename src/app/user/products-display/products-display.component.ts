@@ -35,6 +35,7 @@ export class ProductsDisplayComponent implements OnInit {
     this.PS.productsData().subscribe(res=>{
      this.Products = res
      console.log(this.Products.length);
+     console.log(res);
      
     })
   }
