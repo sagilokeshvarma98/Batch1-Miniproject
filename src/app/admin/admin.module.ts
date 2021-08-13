@@ -12,7 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AdminHomeComponent,
     InventoryComponent,
     ValuePipe,
-    SearchPipe
+    SearchPipe,
+    InventoryComponent
+    //Just a small edit to check git. 
   ],
   imports: [
     CommonModule,

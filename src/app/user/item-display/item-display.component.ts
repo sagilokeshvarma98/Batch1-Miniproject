@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { param } from 'jquery';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -8,11 +10,14 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class ItemDisplayComponent implements OnInit {
 
-  constructor(private PS:ProductsService) { }
+  constructor(private PS:ProductsService , public routes:ActivatedRoute) { }
   itemData:any = {}
   itemQuantity:number[] = []
   description:string[] = []
   ngOnInit(): void {
+    this.routes.queryParams.subscribe(
+      params=>console.log(params)      
+    )
    this.itemData = JSON.parse(`${localStorage.getItem("itemData")}`)
    for(let i=1;i<=this.itemData.quantity;i++){
      this.itemQuantity.push(i)
