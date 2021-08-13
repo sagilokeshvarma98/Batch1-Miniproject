@@ -9,57 +9,57 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class InventoryComponent implements OnInit {
 
-  productForm: FormGroup
+  productForm:FormGroup
 
-  constructor(private PS: ProductsService, private fb: FormBuilder) {
+  constructor(private PS:ProductsService , private fb:FormBuilder) {
     this.productForm = this.fb.group(
       {
-        id: ['', [Validators.required]],
-        title: ['', [Validators.required]],
-        price: ['', [Validators.required]],
-        category: ['', [Validators.required]],
-        quantity: ['', [Validators.required]],
-        description: ['', [Validators.required]],
+        id : ['',[Validators.required]],
+        title: ['',[Validators.required]],
+        price: ['',[Validators.required]],
+        category: ['',[Validators.required]],
+        quantity: ['',[Validators.required]],
+        description: ['',[Validators.required]],
         image: ['']
       }
     )
-  }
+   }
 
-  get productFormControl() {
+   get productFormControl() {
     return this.productForm.controls;
   }
 
-  products: any
+  products:any
 
-  searchTerm: any = ''
+  searchTerm:any = ''
 
-  getProductData() {
-    this.PS.productsData().subscribe(res => this.products = res)
+  getProductData(){ 
+    this.PS.productsData().subscribe(res=>this.products=res)
   }
 
   ngOnInit(): void {
     this.getProductData()
   }
 
-
-  submit() {
+  
+  submit(){
     this.productForm.value.image = this.imageArray[0]
-    this.PS.addProduct(this.productForm.value).subscribe(res => {
-      console.log(res);
+    this.PS.addProduct(this.productForm.value).subscribe((res:any)=>{
+      console.log(res,res.length);
       this.getProductData()
     })
   }
 
-  imageArray: string[] = []
+  imageArray:string[]=[]
 
-  getImage(e: any) {
-    if (e.target.files) {
-      var reader = new FileReader();
-      reader.readAsDataURL(e.target.files[0])
-      reader.onload = (event: any) => {
-        this.imageArray.push(event.target.result)
-      }
+  getImage(e:any){
+   if(e.target.files){
+     var reader = new FileReader();
+     reader.readAsDataURL(e.target.files[0])
+    reader.onload = (event:any)=>{
+      this.imageArray.push(event.target.result)
     }
-
+   }
   }
+
 }
