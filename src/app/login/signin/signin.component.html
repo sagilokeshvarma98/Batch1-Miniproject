@@ -1,9 +1,5 @@
-<div class="container">
-   <div class="col-sm-3">
-
-   </div>
-   <div class="col-sm-6">
-    <div class={{inputClass}}>
+<div class="container-fluid">
+    <div class={{inputClass}} id="loginCards">
         <p *ngIf="wrongCreden" class="wrongCredentials text text-center">
             <b class="text text-danger">*Entered username or password is incorrect</b>
         </p>
@@ -35,10 +31,7 @@
                 <a routerLink="/forgotPass">forgot password?</a>
             </div>
         </form>
-        <button class="form-control btn btn-secondary" (click)="routeToRegister()">Create your new account</button>
+        <button class="form-control btn btn-secondary" (click)="routeToRegister()">Create your new
+            account</button>
     </div>
-    <div class="col-sm-3">
-
-    </div>
-   </div>
 </div>
