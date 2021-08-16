@@ -1,0 +1,27 @@
+<h2 class="text text-success">Successful Transactions</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr class="text-center">
+            <th>Product ID</th>
+            <th>Name</th>
+            <th colspan="2">Progress</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let ele of Transactions">
+        <tr>
+            <th>{{ele.id}}</th>
+            <th>{{ele.Poduct_name}}</th>
+            <th>{{ele.progress}}</th>
+            <th>
+                <select name="progress" #progress class="form-control">
+                    <option selected value="none">select</option>
+                    <option value="Packed">Poduct packed</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Out for delivery">Out for delivery</option>
+                    <option value="Delivered">Delivered</option>
+                </select>
+                <button  class="btn btn-warning ml-3" (click)="changeProgress(progress.value,ele)">Update</button>
+            </th>
+        </tr>
+    </tbody>
+</table>

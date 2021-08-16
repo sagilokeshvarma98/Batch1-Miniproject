@@ -1,14 +1,13 @@
 <div class="container itemDes">
     <div class="row">
         <div class="col-sm-5 col-lg-5 col-xs-5 col-md-5 image">
-            <img src={{itemData.image}} alt={{itemData.title}}>
+            <img src={{itemData.imageUrls[0].imgUrl}} alt={{itemData.title}}>
         </div>
         <div class="col-sm-7 col-lg-7 col-xs-7 col-md-7 container">
             <div class="decription">
                 <h2>{{itemData.title}}</h2>
-                <h2>Angular 12 Star Rating Example</h2>
-                <ngb-rating [rate]="itemData.rating" [readonly]='true' [max]="5"></ngb-rating>
-                <h4 class="itemPrice">Price : <span>{{itemData.price | currency}}</span></h4>
+                <ngb-rating [rate]="itemData.mainRating" [readonly]='true' [max]="5"></ngb-rating>
+                <h4 class="itemPrice">Price : <span class="normalPrice">{{itemData.price | currency:"INR"}}</span></h4>
                 <h2>{{itemData.category}}</h2>
                 Quantity : <select name="quantity" (change)='selectQuantity($event)' id="quantity">
                     <option selected value="0">0</option>
@@ -22,6 +21,7 @@
                     <li>{{data}}</li>
                 </ul>
             </div>
+            
         </div>
     </div>
     <div id="comments">
