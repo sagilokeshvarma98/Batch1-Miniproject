@@ -21,18 +21,17 @@ const routes: Routes = [{
     },
     { 
       path:"usermanagement",
-      component:UsermanagmentComponent,
+      component:UserdemograpicsComponent,
       children:[
         {
-          path:"udg",
-          component:UserdemograpicsComponent
-         },
-         {
-           path:"recovery",
+          path:"recovery",
            component:RecoveryComponent
-          }
+         }
+        
       ]
+
     }
+     
   ]
 }];
 
