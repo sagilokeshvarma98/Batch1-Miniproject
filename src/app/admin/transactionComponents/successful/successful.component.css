@@ -1,0 +1,4 @@
+tbody tr th select{
+    float: left;
+    width: max-content;
+}

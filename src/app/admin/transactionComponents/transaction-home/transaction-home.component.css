@@ -1,0 +1,17 @@
+.transaction-links a{
+    text-decoration: none;
+    color: brown;
+}
+
+.transaction-links a:hover{
+    text-decoration: underline;
+    color: blueviolet
+}
+
+.transaction-links a:nth-child(1n+2){
+    margin-left: 20%;
+}
+
+.container .transaction-links{
+    margin-bottom: 50px;
+}

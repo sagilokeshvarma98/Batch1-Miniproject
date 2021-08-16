@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CommentsPostComponent } from './comments-post.component';
 
@@ -8,6 +10,7 @@ describe('CommentsPostComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[ReactiveFormsModule,FormsModule,HttpClientModule],
       declarations: [ CommentsPostComponent ]
     })
     .compileComponents();

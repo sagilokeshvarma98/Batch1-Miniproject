@@ -1,9 +1,14 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { CouponComponent } from './coupon/coupon.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { RecoveryComponent } from './recovery/recovery.component';
+import { AlltransactionsComponent } from './transactionComponents/alltransactions/alltransactions.component';
+import { FailedComponent } from './transactionComponents/failed/failed.component';
+import { PendingCancellationComponent } from './transactionComponents/pending-cancellation/pending-cancellation.component';
+import { SuccessfulComponent } from './transactionComponents/successful/successful.component';
+import { TransactionHomeComponent } from './transactionComponents/transaction-home/transaction-home.component';
 import { UserdemograpicsComponent } from './userdemograpics/userdemograpics.component';
 import { UsermanagmentComponent } from './usermanagment/usermanagment.component';
 
@@ -21,11 +26,34 @@ const routes: Routes = [{
     },
     { 
       path:"usermanagement",
-      component:UserdemograpicsComponent,
-     
-
+      component:UserdemograpicsComponent
+    },
+    {
+      path:"transactions",
+      component:TransactionHomeComponent,
+      children:[
+        {
+          path:"",
+          component:AlltransactionsComponent
+        },
+        {
+          path:"all",
+          component:AlltransactionsComponent
+        },
+        {
+          path:"failed",
+          component:FailedComponent
+        },
+        {
+          path:"pending",
+          component:PendingCancellationComponent
+        },
+        {
+          path:"success",
+          component:SuccessfulComponent
+        }
+      ]
     }
-     
   ]
 }];
 
