@@ -9,6 +9,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class NavbarComponent implements OnInit {
 
   istoken:any = false
+  // userName:any=JSON.parse(`${localStorage.getItem("currentUser")}`);
 
   @Output() SideNavToggle = new EventEmitter(); 
  
@@ -33,6 +34,9 @@ export class NavbarComponent implements OnInit {
       this.istoken = true
     }
   }
+
+
+
 
   
 }

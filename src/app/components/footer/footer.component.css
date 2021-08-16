@@ -1,4 +1,4 @@
- *{
+  *{
 
     margin:0px ;
 
@@ -238,23 +238,6 @@ footer .scce .sm{
 
     
 
-    }
+    } 
 
-    /* .page-footer{
-        background-color: rgba(20, 19, 19, 0.808);
-        width:auto;
-        cursor:default;
-      }
-      .col-md-12 .soc-icon,mat-icon {
-        border-radius: 40px;
-        font-size: 3rem;
-        margin:10px;
-        
-      }
-      .col-md-12 .soc-icon .icon1{
-        color: rgb(6, 6, 255);
-      }
-      .col-md-12 .soc-icon .icon2{
-        color: rgba(224, 32, 32, 0.753);
-      }
-      */
+    

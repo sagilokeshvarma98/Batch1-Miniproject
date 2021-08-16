@@ -11,31 +11,29 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class UserProfileComponent implements OnInit {
 
- splittedtoekn:any
- unsplittedtoekn:any
+  splittedtoekn: any
+  unsplittedtoekn: any
   currentUser: any;
 
-  constructor(private token:LoginService) { }
+  constructor(private token: LoginService) { }
 
-logout(){
-  this.token.logout();
-}
-
-gettoken(){
-  if(this.token.getToken()){
-  this.unsplittedtoekn = localStorage.getItem("token") || '{}' ;
-  this. splittedtoekn=this.unsplittedtoekn.split(".");
-
-
-  this.currentUser=JSON.parse( atob(this.splittedtoekn[1]));
-  console.log(this.currentUser)
-  return this.currentUser;
+  logout() {
+    this.token.logout();
   }
-}
+
+  gettoken() {
+    if (this.token.getToken()) {
+      this.unsplittedtoekn = localStorage.getItem("token") || '{}';
+      this.splittedtoekn = this.unsplittedtoekn.split(".");
+
+
+      this.currentUser = JSON.parse(atob(this.splittedtoekn[1]));
+      localStorage.setItem("currentUser",this.currentUser);
+      return this.currentUser;
+    }
+  }
   ngOnInit(): void {
     this.gettoken()
-      
-    
   }
 
 }

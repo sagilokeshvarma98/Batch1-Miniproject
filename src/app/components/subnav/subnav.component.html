@@ -1,27 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#subnavbar" aria-controls="subnavbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="subnavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item  px-5">
-        <a class="nav-link text-light" [routerLink]="['']">Home</a>
-      </li>
-      <li class="nav-item px-5">
-        <a class="nav-link text-light" [routerLink]="['/electronics']">Electronics</a>
-      </li>
-      <li class="nav-item px-5">
-        <a class="nav-link text-light "  [routerLink]="['/mens']">Mens</a>
-        
-      </li>
-      <li class="nav-item px-5">
-        <a class="nav-link  text-light"  [routerLink]="['/kitchen']">Kitchen</a>
-      </li>
-      <li class="nav-item px-5">
-        <a class="nav-link text-light"  [routerLink]="['/offers']">Offers</a>
-      </li>
-    </ul>
+<div class="container-fluid text-center text-md-left bg-dark">
+  <div class="row">
+    <div class="col-md-2 mb-md-0">
+      <a class="nav-link text-light" [routerLink]="['']">Home</a>
+    </div>
+    <div class="col-md-2 mb-md-0 mb-3">
+      <a class="nav-link text-light" [routerLink]="['/electronics']">Electronics</a>
+    </div>
+    <div class="col-md-2 mb-md-0 mb-3">
+      <a class="nav-link text-light "  [routerLink]="['/mens']">Mens</a>
+    </div>
+    <div class="col-md-2 mb-md-0 mb-3">
+      <a class="nav-link  text-light"  [routerLink]="['/kitchen']">Kitchen</a>
+    </div>
+    <div class="col-md-2 mb-md-0 mb-3">
+      <a class="nav-link text-light"  [routerLink]="['/offers']">Offers</a>
+    </div>
   </div>
-</nav>
+</div>
 

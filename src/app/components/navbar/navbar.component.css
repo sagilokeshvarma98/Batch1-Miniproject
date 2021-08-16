@@ -1,15 +1,21 @@
 .navbar{
-    background-color: rgb(139, 169, 224);
+    background:rgba(194, 42, 224, 0.89);
 }
-.account{
-    margin-right: 50px;
+.dropdown{
+    margin-right:80px ;
 }
 .text{
 position: relative;
-top: 20px;
-left: -45px;
+left: -70px;
 bottom: 10px;
 }
-.cart-icon{
-    margin-right: 70px;
+.cart-icon {
+    margin-right: 80px;
+    color: white;
+}
+.cart-icon .icon{
+    position:static;
+    font-size: 2rem;
+    top:10px;
+    cursor: pointer;
 }
