@@ -1,6 +1,5 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
-
 
 @Component({
   selector: 'app-navbar',
@@ -10,22 +9,30 @@ import { LoginService } from 'src/app/services/login.service';
 export class NavbarComponent implements OnInit {
 
   istoken:any = false
+
+  @Output() SideNavToggle = new EventEmitter(); 
  
   constructor(private token:LoginService) { }
- 
-islogout(){
-  this.token.logout()
-}
-gettoken(){
-  if (this.token.getToken()) {
-    this.istoken = true
+
+  openSidenav(){
+    this.SideNavToggle.emit();
   }
-}
-  
-  ngOnInit(): void {
-  
-  this.gettoken()
    
+  ngOnInit(): void {
+
+    this.gettoken()
+
   }
+
+  islogout(){
+    this.token.logout()
+  }
+
+  gettoken(){
+    if (this.token.getToken()) {
+      this.istoken = true
+    }
+  }
+
   
 }

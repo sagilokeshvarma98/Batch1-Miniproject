@@ -1,31 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#subnavbar" aria-controls="subnavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<mat-toolbar class="bg-dark text-white" style="background-color: black; height: 40px;">
-  <div>
-    <button mat-icon-button (click)="openSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
+  <div class="collapse navbar-collapse" id="subnavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item  px-5">
+        <a class="nav-link text-light" [routerLink]="['']">Home</a>
+      </li>
+      <li class="nav-item px-5">
+        <a class="nav-link text-light" [routerLink]="['/electronics']">Electronics</a>
+      </li>
+      <li class="nav-item px-5">
+        <a class="nav-link text-light "  [routerLink]="['/mens']">Mens</a>
+        
+      </li>
+      <li class="nav-item px-5">
+        <a class="nav-link  text-light"  [routerLink]="['/kitchen']">Kitchen</a>
+      </li>
+      <li class="nav-item px-5">
+        <a class="nav-link text-light"  [routerLink]="['/offers']">Offers</a>
+      </li>
+    </ul>
   </div>
-  <div class="logo" >profile</div>
-  <div>
-    <nav mat-tab-nav-bar fxFlex fxLayout="row" fxLayoutAlign="center center" >
-      <a class="text-white " mat-tab-link [routerLink]="['']">
-        Home
-      </a>
-      <a   class="text-white " [routerLink]="['/electronics']"  mat-tab-link routerLink="/accomodation" routerLinkActive #accomodation="routerLinkActive" [active]="accomodation.isActive">
-      elctronics
-      </a>
-      <a class="text-white "  [routerLink]="['/mens']" mat-tab-link routerLink="/food-beverage" routerLinkActive #food_beverage="routerLinkActive" [active]="food_beverage.isActive">
-        mens fasions
-      </a>
-      <a class="text-white " [routerLink]="['']" mat-tab-link routerLink="/lifestyle" routerLinkActive #lifestyle="routerLinkActive" [active]="lifestyle.isActive">
-        Lifestyle
-      </a>
-      <a  class="text-white " [routerLink]="['/kitchen']" mat-tab-link routerLink="/celebrations" routerLinkActive #celebrations="routerLinkActive" [active]="celebrations.isActive">
-        kitchen
-      </a>
-      <a class="text-white " mat-tab-link routerLink="/offers" routerLinkActive #offers="routerLinkActive" [active]="offers.isActive">
-        Offers
-      </a>
-    </nav>
-  </div>
-</mat-toolbar>
+</nav>
+
