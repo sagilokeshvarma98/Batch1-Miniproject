@@ -10,7 +10,16 @@ import { UserdemograpicsComponent } from './userdemograpics/userdemograpics.comp
 import { UsermanagmentComponent } from './usermanagment/usermanagment.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { CouponComponent } from './coupon/coupon.component';
+<<<<<<< HEAD
 import { ToastrModule } from 'ngx-toastr';
+=======
+import { SuccessfulComponent } from './transactionComponents/successful/successful.component';
+import { PendingCancellationComponent } from './transactionComponents/pending-cancellation/pending-cancellation.component';
+import { FailedComponent } from './transactionComponents/failed/failed.component';
+import { AlltransactionsComponent } from './transactionComponents/alltransactions/alltransactions.component';
+import { TransactionHomeComponent } from './transactionComponents/transaction-home/transaction-home.component';
+import { RouterModule } from '@angular/router';
+>>>>>>> 6ce48bb5fbfd2a3b86b35e460878037fd1b5a58c
 import { AngmaterialModule } from '../angmaterial/angmaterial.module';
 
 @NgModule({
@@ -22,15 +31,25 @@ import { AngmaterialModule } from '../angmaterial/angmaterial.module';
     UserdemograpicsComponent,
     UsermanagmentComponent,
     RecoveryComponent,
-    CouponComponent
+    CouponComponent,
+    SuccessfulComponent,
+    PendingCancellationComponent,
+    FailedComponent,
+    AlltransactionsComponent,
+    TransactionHomeComponent
   ],
   imports: [
     CommonModule,
     ADMINRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
     AngmaterialModule,
     ToastrModule.forRoot(),
+=======
+    RouterModule,
+    AngmaterialModule
+>>>>>>> 6ce48bb5fbfd2a3b86b35e460878037fd1b5a58c
   ]
 })
 export class ADMINModule { }

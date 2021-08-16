@@ -1,0 +1,18 @@
+<h2 class="text text-danger">Failed Transactions</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr class="text-center">
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Progress</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let ele of Transactions">
+        <tr class={{ele.class}}>
+            <th>{{ele.id}}</th>
+            <th>{{ele.Poduct_name}}</th>
+            <th>{{ele.progress}}</th>
+            <th>{{ele.transaction}}</th>
+        </tr>
+    </tbody>
+</table>

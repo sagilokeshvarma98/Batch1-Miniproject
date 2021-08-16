@@ -15,7 +15,7 @@ export class LoginInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
    let token = this.ls.getToken()
-   console.log(token);
+  //  console.log(token);
    if(token){
      request = request.clone({
       //  setHeaders : {

@@ -7,10 +7,12 @@
 
 .admin-nav{
     padding:50px 0px 50px 0px;
+    
 }
 
 .admin-nav a:hover{
     color: rgba(0, 0, 0, 0.171);
+    
 }
 .managementLinks ul li a:hover{
     color: white;
@@ -23,7 +25,8 @@
 
 .managementLinks{
     width: max-content;
-    background-color: rgba(0, 0, 0, 0.842);
+    background: linear-gradient(to top, #dcf1f1, rgb(33, 214, 241));
+    /* background-color: rgba(114, 172, 248, 0.904); */
     padding:30px 20px 10px 0px;
 }
 
@@ -32,13 +35,13 @@
 }
 
 .managementLinks ul li a{
-    color: blueviolet;
+    color: rgb(240, 240, 240);
 }
 
 .managementLinks ul li{
     padding-left: 10px;
-    border-bottom: 2px solid white;
-    border-left: 2px solid white;;
+    /* border-bottom: 2px solid rgb(32, 6, 6);
+    border-left: 2px solid rgb(56, 11, 11);; */
     font-size: 17px;
     list-style: none;
     cursor: context-menu;

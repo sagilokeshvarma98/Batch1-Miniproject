@@ -32,6 +32,26 @@ export class UserProfileComponent implements OnInit {
       return this.currentUser;
     }
   }
+<<<<<<< HEAD
+=======
+}
+
+
+deactivate(data:any){
+  
+  this.token.deleteaccount(data).subscribe((posres)=>{
+
+    console.log("deleted")
+  })
+  this.token.deactivate(this.currentUser).subscribe((posres)=>{
+
+    console.log("deactivated")
+    this.logout();
+  })
+}
+
+
+>>>>>>> 6ce48bb5fbfd2a3b86b35e460878037fd1b5a58c
   ngOnInit(): void {
     this.gettoken()
   }

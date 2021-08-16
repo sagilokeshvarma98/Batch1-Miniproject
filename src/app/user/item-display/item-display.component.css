@@ -1,6 +1,7 @@
+
 .image img{
     margin-top: 10%;
-    width: 70%;
+    width: 40%;
 }
 ngb-rating{
     margin-bottom: 20px;
@@ -9,6 +10,11 @@ ngb-rating{
 }
 .decription{
     padding: 10%;
+}
+
+.normalPrice{
+    font-size: larger;
+    text-decoration: line-through;
 }
 
 .decription .cartButton{
