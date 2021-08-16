@@ -2,3 +2,13 @@
 .container-fluid{
   background:rgb(51,144,158);
 }
+.col-md-2:hover{
+  background-color: rgb(63, 73, 78);
+  border-radius: 20px;
+  
+}
+.col-md-2 a{
+  font-weight: bold;
+  font-family: serif;
+  box-shadow: 1px;
+}
