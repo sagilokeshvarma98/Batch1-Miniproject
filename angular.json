@@ -32,22 +32,13 @@
             "styles": [
               "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
-<<<<<<< HEAD
               "node_modules/ngx-toastr/toastr.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
-            ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            
-=======
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/jquery/dist/jquery.min.js"
->>>>>>> 6ce48bb5fbfd2a3b86b35e460878037fd1b5a58c
             ]
           },
           "configurations": {
@@ -115,22 +106,13 @@
             "styles": [
               "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
-<<<<<<< HEAD
               "node_modules/ngx-toastr/toastr.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
-            ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            
-            ]
-=======
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
               
             ],
-            "scripts": [ "node_modules/bootstrap/dist/js/bootstrap.min.js",
+            "scripts": [ 
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/jquery/dist/jquery.min.js"]
->>>>>>> 6ce48bb5fbfd2a3b86b35e460878037fd1b5a58c
           }
         }
       }
