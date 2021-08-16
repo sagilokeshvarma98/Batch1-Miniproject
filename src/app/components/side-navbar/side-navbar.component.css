@@ -1,8 +1,12 @@
 
 .sidenav-list span {
     padding-left: 8px;
-    width: 300px;
-  }
+    width: 200px;
+    text-align: center;
+}
+mat-icon{
+  margin-left: 50px;
+}
   
 
 

@@ -1,0 +1,89 @@
+<!-- Add-Coupon Start -->
+<div class="container">
+    <button class="btn m-2 " data-bs-toggle="modal" data-bs-target="#coupon" mat-raised-button color="accent">Add
+        Coupons</button>
+    <div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="coupon" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" [formGroup]="couponPost" (ngSubmit)="onSaveCoupon()">
+                        <div class="mb-3">
+                            <label class="form-label">Coupon</label> <span class="text-danger">*</span>
+                            <input type="text" name="coupon" class="form-control" placeholder="ABCD50"
+                                formControlName="coupon">
+                            <div>
+                                <span class="text-danger"
+                                    *ngIf="(couponFormControl.coupon.touched || submitted) && couponFormControl.coupon.errors?.required">Coupon
+                                    Name</span>
+                                <span class="text-danger" *ngIf=" couponFormControl.coupon.errors?.minlength">Minimum 6
+                                    Letters Required*</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Eligibility</label><span class="text-danger">*</span>
+                            <input type="text" class="form-control" placeholder="Rs 00000 /-"
+                                formControlName="eligibul">
+                            <span class="text-danger"
+                                *ngIf="(couponFormControl.eligibul.touched || submitted) && couponFormControl.coupon.errors?.required">Eligibility
+                                is Required</span>
+                        </div>
+                        <div class="mb-3">
+                            <table cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <label for="start">Start</label><span class="text-danger">*</span>
+                                        <input type="date" class="form-control" placeholder="start date"
+                                            formControlName="start">
+                                        <span class="text-danger"
+                                            *ngIf="(couponFormControl.start.touched || submitted) && couponFormControl.start.errors?.required">Starting
+                                            Date Required</span>
+                                    </td>
+                                    <td>
+                                        <label for="end">End</label><span class="text-danger">*</span>
+                                        <input type="date" class="form-control" placeholder="start date"
+                                            formControlName="end">
+                                        <span class="text-danger"
+                                            *ngIf="(couponFormControl.end.touched || submitted) && couponFormControl.end.errors?.required">End
+                                            Date is Required</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" mat-raised-button
+                                class="btn  btn-outline-warning text-dark btn-center" [disabled]="!couponPost.valid"
+                                data-bs-dismiss="modal">Post Coupon</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Add-Coupon End -->
+
+    <!-- Coupon  -->
+
+
+    <div class="row px-3">
+    </div>
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let x of couponCode">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-light h4">You get this : <span class="text-dark">{{x.coupon | uppercase
+                            }}</span></h5>
+                    <p class="card-text text-light h5 m-2">From this Price : {{x.eligibul}}</p>
+                    <span class="h6">{{x.start}} <small class="text-danger h4">To</small> {{x.end}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Coupon End -->

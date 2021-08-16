@@ -17,11 +17,11 @@ export class SideNavbarComponent implements OnInit {
   constructor(public obj:LoginService) { }
  
   onToggleClose() {
-    this.closeSideNav.emit();}
 
+    this.closeSideNav.emit();
+  }
+  
   ngOnInit() {
-
- 
 
   }
 

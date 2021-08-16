@@ -6,7 +6,12 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ValuePipe } from './pipes/value.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { UserdemograpicsComponent } from './userdemograpics/userdemograpics.component';
+import { UsermanagmentComponent } from './usermanagment/usermanagment.component';
+import { RecoveryComponent } from './recovery/recovery.component';
+import { CouponComponent } from './coupon/coupon.component';
+import { ToastrModule } from 'ngx-toastr';
+import { AngmaterialModule } from '../angmaterial/angmaterial.module';
 
 @NgModule({
   declarations: [
@@ -14,13 +19,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InventoryComponent,
     ValuePipe,
     SearchPipe,
-    InventoryComponent
+    UserdemograpicsComponent,
+    UsermanagmentComponent,
+    RecoveryComponent,
+    CouponComponent
   ],
   imports: [
     CommonModule,
     ADMINRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngmaterialModule,
+    ToastrModule.forRoot(),
   ]
 })
 export class ADMINModule { }

@@ -1,31 +1,21 @@
 
-<mat-toolbar class="bg-dark text-white" style="background-color: black; height: 40px;">
-  <div>
-    <button mat-icon-button (click)="openSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
+<div class="container-fluid text-center text-md-left bg-dark">
+  <div class="row">
+    <div class="col-md-2 mb-md-0">
+      <a class="nav-link text-light" [routerLink]="['']">Home</a>
+    </div>
+    <div class="col-md-2 mb-md-0 mb-3">
+      <a class="nav-link text-light" [routerLink]="['/electronics']">Electronics</a>
+    </div>
+    <div class="col-md-2 mb-md-0 mb-3">
+      <a class="nav-link text-light "  [routerLink]="['/mens']">Mens</a>
+    </div>
+    <div class="col-md-2 mb-md-0 mb-3">
+      <a class="nav-link  text-light"  [routerLink]="['/kitchen']">Kitchen</a>
+    </div>
+    <div class="col-md-2 mb-md-0 mb-3">
+      <a class="nav-link text-light"  [routerLink]="['/offers']">Offers</a>
+    </div>
   </div>
-  <div class="logo" >profile</div>
-  <div>
-    <nav mat-tab-nav-bar fxFlex fxLayout="row" fxLayoutAlign="center center" >
-      <a class="text-white " mat-tab-link [routerLink]="['']">
-        Home
-      </a>
-      <a   class="text-white " [routerLink]="['/electronics']"  mat-tab-link routerLink="/accomodation" routerLinkActive #accomodation="routerLinkActive" [active]="accomodation.isActive">
-      elctronics
-      </a>
-      <a class="text-white "  [routerLink]="['/mens']" mat-tab-link routerLink="/food-beverage" routerLinkActive #food_beverage="routerLinkActive" [active]="food_beverage.isActive">
-        mens fasions
-      </a>
-      <a class="text-white " [routerLink]="['']" mat-tab-link routerLink="/lifestyle" routerLinkActive #lifestyle="routerLinkActive" [active]="lifestyle.isActive">
-        Lifestyle
-      </a>
-      <a  class="text-white " [routerLink]="['/kitchen']" mat-tab-link routerLink="/celebrations" routerLinkActive #celebrations="routerLinkActive" [active]="celebrations.isActive">
-        kitchen
-      </a>
-      <a class="text-white " mat-tab-link routerLink="/offers" routerLinkActive #offers="routerLinkActive" [active]="offers.isActive">
-        Offers
-      </a>
-    </nav>
-  </div>
-</mat-toolbar>
+</div>
+
