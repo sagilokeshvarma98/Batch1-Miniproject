@@ -28,6 +28,8 @@ gettoken(){
 
 
   this.currentUser=JSON.parse( atob(this.splittedtoekn[1]));
+  localStorage.setItem("currentuser",this.currentUser)
+
   console.log(this.currentUser)
   return this.currentUser;
   }

@@ -22,13 +22,7 @@ const routes: Routes = [{
     { 
       path:"usermanagement",
       component:UserdemograpicsComponent,
-      children:[
-        {
-          path:"recovery",
-           component:RecoveryComponent
-         }
-        
-      ]
+     
 
     }
      

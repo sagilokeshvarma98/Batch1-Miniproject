@@ -9,6 +9,7 @@ import { MensSubpageComponent } from './components/mens-subpage/mens-subpage.com
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProtectRoutesGuard } from './Guards/protect-routes.guard';
+import { CheckoutComponent } from './user/checkout/checkout.component';
 import { AddressComponent } from './user/components/address/address.component';
 import { AdressdiplayComponent } from './user/components/adressdiplay/adressdiplay.component';
 import { OrdersComponent } from './user/components/orders/orders.component';
@@ -50,7 +51,12 @@ const routes: Routes = [
     {path:"useradress", 
   component:AdressdiplayComponent
   },
-    
+    {
+path:"checkout",
+component:CheckoutComponent
+
+
+    },
     {
       path: 'profile',
       component:UserProfileComponent
