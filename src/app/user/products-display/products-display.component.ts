@@ -35,6 +35,7 @@ export class ProductsDisplayComponent implements OnInit {
     this.PS.productsData().subscribe(res => {
       this.Products = res
       res.map((x: any, index: any) => {
+        x.afterDiscount = x.price-x.discount
         let length = res[index].productReviews.length
         let totalRates = 0
         let count = 0

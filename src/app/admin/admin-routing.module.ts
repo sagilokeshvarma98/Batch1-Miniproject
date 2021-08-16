@@ -26,17 +26,7 @@ const routes: Routes = [{
     },
     { 
       path:"usermanagement",
-      component:UsermanagmentComponent,
-      children:[
-        {
-          path:"udg",
-          component:UserdemograpicsComponent
-         },
-         {
-           path:"recovery",
-           component:RecoveryComponent
-          }
-      ]
+      component:UserdemograpicsComponent
     },
     {
       path:"transactions",

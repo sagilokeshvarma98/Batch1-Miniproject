@@ -16,6 +16,7 @@ import { FailedComponent } from './transactionComponents/failed/failed.component
 import { AlltransactionsComponent } from './transactionComponents/alltransactions/alltransactions.component';
 import { TransactionHomeComponent } from './transactionComponents/transaction-home/transaction-home.component';
 import { RouterModule } from '@angular/router';
+import { AngmaterialModule } from '../angmaterial/angmaterial.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { RouterModule } from '@angular/router';
     ADMINRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    AngmaterialModule
   ]
 })
 export class ADMINModule { }

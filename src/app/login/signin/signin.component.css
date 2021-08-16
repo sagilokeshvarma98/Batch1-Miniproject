@@ -1,9 +1,12 @@
-/* .loginBox{
-    padding: 10% 25% 0% 25%;
-} */
+.container-fluid{
+    padding: 10%
+}
+#loginCards{
+    min-width: 450px;
+    max-width: 500px;
+}
 .loginForm{
     padding: 30px 30px 30px 30px;
-    width: 450px;
     border: 1px solid rgb(172, 70, 133);
     border-radius: 5%;
 }
