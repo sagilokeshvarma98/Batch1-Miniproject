@@ -28,4 +28,10 @@ describe('RegisterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it("[email-Check]-should check user email address is invalid",()=>{
+    let email=component.registerForm.controls['email'];
+    expect(email.valid).toBeFalsy();
+    expect(email.pristine).toBeTruthy();
+    
+  })
 });
