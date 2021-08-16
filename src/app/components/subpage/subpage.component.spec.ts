@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SubpageComponent } from './subpage.component';
@@ -8,6 +9,7 @@ describe('SubpageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[HttpClientModule],
       declarations: [ SubpageComponent ]
     })
     .compileComponents();
