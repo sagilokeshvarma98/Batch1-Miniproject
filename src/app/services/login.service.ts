@@ -41,4 +41,15 @@ export class LoginService {
     // return this.currentUser;
   }
 
+
+  public deactivate(data:any):Observable<any>{
+    return this.hp.post("http://localhost:2030/users",data)
+  }
+  deleteaccount(data:any):Observable<any>{
+    console.log(data);
+  
+    return this.hp.delete("http://localhost:2030/users/"+data)
+  }
+
+
 }

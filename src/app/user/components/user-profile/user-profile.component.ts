@@ -32,6 +32,22 @@ gettoken(){
   return this.currentUser;
   }
 }
+
+
+deactivate(data:any){
+  
+  this.token.deleteaccount(data).subscribe((posres)=>{
+
+    console.log("deleted")
+  })
+  this.token.deactivate(this.currentUser).subscribe((posres)=>{
+
+    console.log("deactivated")
+    this.logout();
+  })
+}
+
+
   ngOnInit(): void {
     this.gettoken()
       
