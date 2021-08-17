@@ -9,26 +9,18 @@ import { LoginService } from 'src/app/services/login.service';
 export class NavbarComponent implements OnInit {
 
   istoken:any = false
-  // userName:any=JSON.parse(`${localStorage.getItem("currentUser")}`);
+  currentUser: any;
 
-  @Output() SideNavToggle = new EventEmitter(); 
  
   constructor(private token:LoginService) { }
-
-  openSidenav(){
-    this.SideNavToggle.emit();
-  }
    
   ngOnInit(): void {
 
     this.gettoken()
-
   }
-
   islogout(){
     this.token.logout()
   }
-
   gettoken(){
     if (this.token.getToken()) {
       this.istoken = true

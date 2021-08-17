@@ -47,10 +47,7 @@ import { SideNavbarComponent } from './components/side-navbar/side-navbar.compon
     SubnavComponent,
     CartComponent,
     FooterComponent,SideNavbarComponent,
-  
-    
-
-   
+ 
   ],
   imports: [
     BrowserModule,
@@ -68,7 +65,7 @@ import { SideNavbarComponent } from './components/side-navbar/side-navbar.compon
     OverlayModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:LoginInterceptor,multi:true},

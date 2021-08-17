@@ -1,5 +1,5 @@
 .navbar{
-    background:rgba(194, 42, 224, 0.89);
+    background: linear-gradient(#8deb8d 10%, #79adad, rgb(223, 120, 209));
 }
 .dropdown{
     margin-right:80px ;
