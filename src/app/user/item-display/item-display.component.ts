@@ -12,7 +12,7 @@ export class ItemDisplayComponent implements OnInit {
 
   constructor(private PS:ProductsService , public routes:ActivatedRoute) { }
   itemData:any = {}
-  itemQuantity:any
+  itemQuantity:number[] = []
   description:string[] = []
   ngOnInit(): void {
     this.routes.queryParams.subscribe(

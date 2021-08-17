@@ -13,7 +13,7 @@
             <div class="card-body" (click)="getItem(x)">
                 <img class="productImage" src={{x.imageUrls[0].imgUrl}} alt="image">
                 <p class="productTitle">{{x.metaTitle}}</p>
-                <p class="normalPrice">{{x.price | currency:"INR"}}</p>      
+                <h3>{{x.afterDiscount | currency:"INR"}} <span class="normalPrice">{{x.price | currency:"INR"}}</span> </h3>
                 <ng-template #t let-fill="fill">
                     <span class="star" [class.full]="fill === 100">
                     <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;

@@ -14,14 +14,17 @@ ngb-rating{
 
 .normalPrice{
     font-size: larger;
+    color: orange;
+}
+
+.normalPrice span{
+    font-size: small;
     text-decoration: line-through;
+    padding-left: 10px;
 }
 
 .decription .cartButton{
     margin: 20px 0px 20px 0px;
-}
-.itemPrice span{
-    color: orange;
 }
 
 .description ul li{
