@@ -30,10 +30,6 @@ import { CartComponent } from './components/cart/cart.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,8 +42,9 @@ import { SideNavbarComponent } from './components/side-navbar/side-navbar.compon
     CarouselComponent,
     SubnavComponent,
     CartComponent,
-    FooterComponent,SideNavbarComponent,
- 
+    FooterComponent,
+    SideNavbarComponent
+
   ],
   imports: [
     BrowserModule,
@@ -68,8 +65,8 @@ import { SideNavbarComponent } from './components/side-navbar/side-navbar.compon
     NgbModule,
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS,useClass:LoginInterceptor,multi:true},
-    {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true}
+    { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 
