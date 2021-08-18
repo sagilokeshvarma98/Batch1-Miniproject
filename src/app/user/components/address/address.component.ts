@@ -38,12 +38,17 @@ export class AddressComponent implements OnInit {
    this.adressservice.postadress(userData)
    .subscribe((res:any)=>{
      console.log(res);
-     this.route.navigate(['useradress'])
+     this.route.navigate(['/useradress'])
    })
   }
   get adressFormControl() {
     return this.useradress.controls;
   }
+
+
+
+
+  
   ngOnInit(): void {
   }
 

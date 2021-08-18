@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { ElementSchemaRegistry } from '@angular/compiler';
 import { CartService } from 'src/app/services/cart.service';
@@ -13,6 +13,10 @@ export class CartComponent implements OnInit {
   grandtotal: any;
   cart: any;
   confirm: any
+  cartlength:any
+  cartitems:any;
+ result:any;
+  
 
   constructor(private os: CartService) { }
 
@@ -26,7 +30,8 @@ export class CartComponent implements OnInit {
         this.os.deleteitem(id).subscribe((posres) => {
           console.log(posres)
           this.getcartitem();
-
+          // window.location.reload();
+          this.os.changeData();
 
         })
 
@@ -47,24 +52,22 @@ export class CartComponent implements OnInit {
 
 
 
-  placeOrder() {
-    console.log("It is called")
-    if (this.cart.length > 0)
-      this.os.makeOrder();
-    else
-      alert("cart is empty")
-  }
 
   getcartitem() {
     this.os.getitem().subscribe((posres) => {
       this.cart = posres
+    //  this.cartitems= this.cart[0].cartItems
+      console.log("cart")
+      console.log(this.cartitems)
+     
+    //  this.cartlength =this.cart.length
 
-      console.log(this.cart)
-      for (let x of this.cart) {
+      // console.log(this.cart)
+      // for (let x of this.cart) {
 
-        this.total += x.quantity * x.price;
-        console.log(this.total)
-      }
+      //   this.total += x.quantity * x.price;
+      //   console.log(this.total)
+      // }
     }
     )
 
@@ -74,7 +77,20 @@ export class CartComponent implements OnInit {
   ngOnInit() {
 
     this.getcartitem();
+    this.os.getname(1).subscribe((posres)=>{
+      console.log(posres)
 
-  }
+    })
+
+
+    this.os.cast.subscribe((posRes)=>{
+      this.result = posRes;
+
+  })
+
+  
+
+}
+
 
 }

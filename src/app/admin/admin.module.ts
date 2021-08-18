@@ -18,6 +18,7 @@ import { TransactionHomeComponent } from './transactionComponents/transaction-ho
 import { RouterModule } from '@angular/router';
 import { AngmaterialModule } from '../angmaterial/angmaterial.module';
 import { DatePipe } from './pipes/date.pipe';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { DatePipe } from './pipes/date.pipe';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    AngmaterialModule
+    AngmaterialModule,
+    ToastrModule.forRoot(),
   ]
 })
 export class ADMINModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit , EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-subnav',
@@ -6,11 +6,15 @@ import { Component, OnInit , EventEmitter, Output} from '@angular/core';
   styleUrls: ['./subnav.component.css']
 })
 export class SubnavComponent implements OnInit {
-  @Output() SideNavToggle = new EventEmitter();  
+
+  @Output() SideNavToggle = new EventEmitter();
+
   constructor() { }
+
   openSidenav() {
     this.SideNavToggle.emit();
- }
+  }
+
   ngOnInit(): void {
   }
 
