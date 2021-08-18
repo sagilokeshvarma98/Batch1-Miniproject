@@ -11,38 +11,35 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class UserProfileComponent implements OnInit {
 
- splittedtoekn:any
- unsplittedtoekn:any
+  splittedtoekn: any
+  unsplittedtoekn: any
   currentUser: any;
 
-  constructor(private token:LoginService) { }
+  constructor(private token: LoginService) { }
 
-logout(){
-  this.token.logout();
-}
-
-gettoken(){
-  if(this.token.getToken()){
-  this.unsplittedtoekn = localStorage.getItem("token") || '{}' ;
-  this. splittedtoekn=this.unsplittedtoekn.split(".");
-
-
-  this.currentUser=JSON.parse( atob(this.splittedtoekn[1]));
-  localStorage.setItem("currentuser",this.currentUser)
-
-  console.log(this.currentUser)
-  return this.currentUser;
+  logout() {
+    this.token.logout();
   }
-}
+
+  gettoken() {
+    if (this.token.getToken()) {
+      this.unsplittedtoekn = localStorage.getItem("token") || '{}';
+      this.splittedtoekn = this.unsplittedtoekn.split(".");
 
 
-deactivate(data:any){
+      this.currentUser = JSON.parse(atob(this.splittedtoekn[1]));
+      localStorage.setItem("currentUser", this.currentUser);
+      return this.currentUser;
+    }
+  }
   
-  this.token.deleteaccount(data).subscribe((posres)=>{
+deactivate(data: any){
+
+  this.token.deleteaccount(data).subscribe((posres) => {
 
     console.log("deleted")
   })
-  this.token.deactivate(this.currentUser).subscribe((posres)=>{
+  this.token.deactivate(this.currentUser).subscribe((posres) => {
 
     console.log("deactivated")
     this.logout();
@@ -50,10 +47,10 @@ deactivate(data:any){
 }
 
 
-  ngOnInit(): void {
-    this.gettoken()
-      
-    
-  }
+ngOnInit(): void {
+  this.gettoken()
+}
 
 }
+
+

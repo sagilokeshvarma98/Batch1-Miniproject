@@ -17,6 +17,7 @@ import { AlltransactionsComponent } from './transactionComponents/alltransaction
 import { TransactionHomeComponent } from './transactionComponents/transaction-home/transaction-home.component';
 import { RouterModule } from '@angular/router';
 import { AngmaterialModule } from '../angmaterial/angmaterial.module';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AngmaterialModule } from '../angmaterial/angmaterial.module';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    AngmaterialModule
+    AngmaterialModule,
+    ToastrModule.forRoot(),
   ]
 })
 export class ADMINModule { }
