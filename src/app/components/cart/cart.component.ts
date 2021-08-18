@@ -56,13 +56,13 @@ export class CartComponent implements OnInit {
   getcartitem() {
     this.os.getitem().subscribe((posres) => {
       this.cart = posres
-    //  this.cartitems= this.cart[0].cartItems
+     this.cartitems= this.cart[0].cartItems
       console.log("cart")
       console.log(this.cartitems)
      
-    //  this.cartlength =this.cart.length
+     this.cartlength =this.cart.length
 
-      // console.log(this.cart)
+      console.log(this.cart)
       // for (let x of this.cart) {
 
       //   this.total += x.quantity * x.price;
