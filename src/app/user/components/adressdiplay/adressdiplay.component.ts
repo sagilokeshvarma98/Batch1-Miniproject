@@ -28,6 +28,14 @@ export class AdressdiplayComponent implements OnInit {
   }
   }
   
+
+
+
+
+
+
+
+
   getadress(){
     this.service.getadress().subscribe((res)=>{
       this.useradress=res;
@@ -35,6 +43,11 @@ export class AdressdiplayComponent implements OnInit {
     })
   }
   
+
+
+
+
+
   
     ngOnInit(): void {
   this.getadress();

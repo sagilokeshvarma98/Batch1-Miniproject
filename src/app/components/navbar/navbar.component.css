@@ -1,5 +1,6 @@
 .navbar{
-    background:rgba(194, 42, 224, 0.89);
+    /* background:rgba(194, 42, 224, 0.89); */
+    background: linear-gradient(to top, #d082e4, rgb(97, 232, 250));
 }
 .dropdown{
     margin-right:80px ;
@@ -18,4 +19,7 @@ bottom: 10px;
     font-size: 2rem;
     top:10px;
     cursor: pointer;
+}
+.dropdown{
+    margin-top: 30px;
 }
