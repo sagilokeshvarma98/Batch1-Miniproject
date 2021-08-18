@@ -56,7 +56,7 @@ const routes: Routes = [
       component:UserProfileComponent
     },
     {path:"products",component:FiltersComponent},
-{path:"itemData",component:ItemDisplayComponent},
+{path:"products/:id",component:ItemDisplayComponent},
     {
       path: 'order',
       component: OrdersComponent,
@@ -71,7 +71,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

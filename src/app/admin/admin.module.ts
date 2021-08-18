@@ -17,6 +17,7 @@ import { AlltransactionsComponent } from './transactionComponents/alltransaction
 import { TransactionHomeComponent } from './transactionComponents/transaction-home/transaction-home.component';
 import { RouterModule } from '@angular/router';
 import { AngmaterialModule } from '../angmaterial/angmaterial.module';
+import { DatePipe } from './pipes/date.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AngmaterialModule } from '../angmaterial/angmaterial.module';
     PendingCancellationComponent,
     FailedComponent,
     AlltransactionsComponent,
-    TransactionHomeComponent
+    TransactionHomeComponent,
+    DatePipe
   ],
   imports: [
     CommonModule,

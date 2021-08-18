@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { type } from 'jquery';
 import { TransactionsService } from 'src/app/services/transactions.service';
 import * as Xl from "xlsx"
 
@@ -11,9 +12,15 @@ export class AlltransactionsComponent implements OnInit {
 
   constructor(private TS: TransactionsService) { }
   Transactions: any[] = []
+
+  fromDate:any = ""
+
+  toDate:any = ""
+
   getTransactions() {
     this.TS.getTransactionDetails().subscribe(res => {
       this.Transactions = res.map((x: any, index: any) => {
+        x.date = new Date(parseInt(x.time)).toDateString()
         if (x.transaction === "failed") {
           x.class = "text text-center table-danger"
           return x
@@ -23,21 +30,23 @@ export class AlltransactionsComponent implements OnInit {
           return x
         }
       })
-    })
+    }
+    )
   }
   ngOnInit(): void {
     this.getTransactions()
   }
 
   getFromDate(value: any) {
-    let ref = new Date(value.target.value)
-    let dateValue = new Date(ref.getFullYear(), ref.getMonth(), ref.getDate(), 0o0, 0o0, 0o0).getTime()
-    console.log(dateValue, new Date(1627669800000).toDateString());
-    this.Transactions.map((x: any) => {
-      if (x.time < dateValue) {
-        console.log(x.time, new Date(x.time).toDateString());
-      }
-    })
+    let date = new Date(value.target.value)
+    let dateValue = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0o0, 0o0, 0o0).getTime()
+    this.fromDate = dateValue
+  }
+
+  getToDate(value: any) {
+    let date = new Date(value.target.value)
+    let dateValue = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0o0, 0o0, 0o0).getTime()
+    this.toDate = dateValue
   }
 
   exportexcel() {

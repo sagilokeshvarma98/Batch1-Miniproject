@@ -32,6 +32,12 @@ export class ProductsDisplayComponent implements OnInit {
   NotifyAddedToCart: Boolean = false
   Title: string = ""
   ngOnInit(): void {
+
+      this.PS.getCartItem().subscribe(res=>{
+        console.log(res);
+        
+      })
+
     this.PS.productsData().subscribe(res => {
       this.Products = res
       res.map((x: any, index: any) => {
@@ -45,7 +51,6 @@ export class ProductsDisplayComponent implements OnInit {
           if (length == count)
           x.mainRating = totalRates/length
         })
-        console.log(x)
       }   
       )
     })
@@ -64,6 +69,6 @@ export class ProductsDisplayComponent implements OnInit {
 
   getItem(x: any) {
     localStorage.setItem('itemData', JSON.stringify(x))
-    this.route.navigate([`/itemData`])
+    // this.route.navigate([`/itemData`])
   }
 }

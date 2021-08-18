@@ -11,7 +11,7 @@ httpOptions:any;
   constructor(private http:HttpClient) { }
 getitem():Observable<any>{
 
-   return this.http.get("http://localhost:5100/products")
+   return this.http.get("http://oshopping.ddns.net/api/cart/getcarts")
 }
 
 
