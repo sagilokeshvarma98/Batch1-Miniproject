@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AdressService } from 'src/app/services/adress.service';
+import { Router } from '@angular/router';
+import { AddressService } from 'src/app/services/address.service';
+
 
 @Component({
   selector: 'app-adressdiplay',
@@ -8,38 +10,29 @@ import { AdressService } from 'src/app/services/adress.service';
 })
 export class AdressdiplayComponent implements OnInit {
 
-  useradress:any
-  confirm:any
-    constructor(public service:AdressService) { }
-  
-  deleteadress(val:any,id:any){
-    
+  userAddress: any
+  confirm: any
+
+  constructor(public address: AddressService,private router:Router) { }
+
+  getAddress() {
+    this.address.getAddress().subscribe(
+      (data)=>{this.userAddress=data}
+    )
+  }
+
+  ngOnInit(): void {
+    this.getAddress();
+  }
+
+ deleteAddress(val: any, id: any) {
     this.confirm = confirm("do you want  delet you adress ")
     if (this.confirm == true) {
-  
-      this.service.deleteadress(id).subscribe((posres) => {
-        console.log(posres)
-        
-        this.getadress();
-  
-  
+      this.address.deleteAddress(id).subscribe((posres) => {
+        this.getAddress();
       })
-  
-  }
-  }
-  
-  getadress(){
-    this.service.getadress().subscribe((res)=>{
-      this.useradress=res;
-      
-    })
-  }
-  
-  
-    ngOnInit(): void {
-  this.getadress();
-  
-  
     }
+  }
+
 
 }

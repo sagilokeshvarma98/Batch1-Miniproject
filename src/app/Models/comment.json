@@ -42,5 +42,16 @@
       "end": "2021-08-20",
       "id": 4
     }
+  ],
+  "address": [
+    {
+      "fullName": "Nagaraju Thota",
+      "flat": "2-66/b",
+      "mobile": 9705081432,
+      "area": "97050",
+      "town": "Guntur",
+      "Landmark": "ghgty",
+      "id": 1
+    }
   ]
 }

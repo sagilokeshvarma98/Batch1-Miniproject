@@ -1,13 +1,24 @@
-
- <ngb-carousel >
-  <ng-template  ngbSlide *ngFor="let slide of carousel ; let i = index ">
-    <div class="picsum-img mt-0" interval="6000">
-      <img [src]="slide.img" width="100%" height="250px" overlayColor="#ffffff" >
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets\corosal\baner1.jpg" class="d-block w-100"  height="250px" alt="...">
     </div>
-  </ng-template>
-</ngb-carousel>
-
-<!-- <mat-carousel timings="200ms ease-in" [autoplay]="true" interval="6000" color="white">
-  <mat-carousel-slide *ngFor="let slide of carousel; let i = index" [image]="slide.img" overlayColor="#ffffff"
-    [hideOverlay]="false"></mat-carousel-slide>
-</mat-carousel> -->
+    <div class="carousel-item">
+      <img src="assets\corosal\baner2.jpg" class="d-block w-100" height="250px" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets\corosal\baner3.jpg" class="d-block w-100" height="250px" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="assets\corosal\baner4.jpg" class="d-block w-100" height="250px" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

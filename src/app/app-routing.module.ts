@@ -44,7 +44,11 @@ const routes: Routes = [
       component: CartComponent
     },
     {
-        path: 'adress',
+      path: 'adress',
+      component: AddressComponent
+  },
+    {
+        path: 'adress/:id',
         component: AddressComponent
     },
     {path:"useradress", 

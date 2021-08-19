@@ -9,11 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class CarouselComponent implements OnInit {
 
   carousel = [
-    { 'img': 'assets/carousel/baner1.jpg' },
-    { 'img': 'assets/carousel/baner2.jpg' },
-    { 'img': 'assets/carousel/baner3.jpg' },
-    { 'img': 'assets/carousel/baner4.jpg' }
+    { 'img': 'assets\corosal\baner1.jpg' },
+    { 'img': 'assets\corosal\baner2.jpg' },
+    { 'img': 'assets\corosal\baner3.jpg' },
+    { 'img': 'assets\corosal\baner4.jpg' }
   ]
+  
   constructor() { }
 
   ngOnInit() { }
