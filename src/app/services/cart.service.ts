@@ -17,7 +17,6 @@ getitem():Observable<any>{
 
 deleteitem(data:any):Observable<any>{
   console.log(data);
-
   return this.http.delete(`http://localhost:3000/cart/${data}`)
 }
 makeOrder(){
