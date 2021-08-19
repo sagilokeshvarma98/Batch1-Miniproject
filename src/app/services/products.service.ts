@@ -12,8 +12,8 @@ export class ProductsService {
   products:any
 
   productsData():Observable<any>{
-    return this.hc.get("http://localhost:5100/products")
-    //  this.hc.get("http://oshopping.ddns.net/api/products/")
+    // return this.hc.get("http://localhost:5100/products")
+     return this.hc.get("http://oshopping.ddns.net/api/products/all")
   }
 
   addProduct(data:any){
@@ -25,7 +25,7 @@ export class ProductsService {
   }
 
   getProductbyId(id:number){
-    return this.hc.get("http://localhost:5100/products/"+id)
+    return this.hc.get("http://oshopping.ddns.net/api/products/"+id)
   }
 
 }

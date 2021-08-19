@@ -20,6 +20,7 @@ import { PriceFilterPipe } from './pipes/price-filter.pipe';
 import { FiltersComponent } from './filters/filters.component';
 import { AdressdiplayComponent } from './components/adressdiplay/adressdiplay.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -38,8 +39,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     PriceFilterPipe,
     FiltersComponent,
     AdressdiplayComponent,
-    CheckoutComponent,
-
+    CheckoutComponent
   ],
   imports: [
     CommonModule,
@@ -48,7 +48,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     AngmaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule
   ],providers:[],
   exports:[OrdersComponent, UserProfileComponent,TrackingComponent]
 })
