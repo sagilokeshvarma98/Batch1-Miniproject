@@ -30,7 +30,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
 import { CartIconComponent } from './components/cart-icon/cart-icon.component';
-
+import {NgxPaginationModule} from "ngx-pagination";
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 
@@ -47,11 +48,7 @@ import { CartIconComponent } from './components/cart-icon/cart-icon.component';
     CarouselComponent,
     SubnavComponent,
     CartComponent,
-    FooterComponent,SideNavbarComponent, CartIconComponent,
-  
-    
-
-   
+    FooterComponent,SideNavbarComponent, CartIconComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +66,9 @@ import { CartIconComponent } from './components/cart-icon/cart-icon.component';
     OverlayModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule,
+    MatExpansionModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:LoginInterceptor,multi:true},
