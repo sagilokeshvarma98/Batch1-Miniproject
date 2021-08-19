@@ -28,12 +28,29 @@ export class UserProfileComponent implements OnInit {
 
 
       this.currentUser = JSON.parse(atob(this.splittedtoekn[1]));
-      localStorage.setItem("currentUser",this.currentUser);
+      localStorage.setItem("currentUser", this.currentUser);
       return this.currentUser;
     }
   }
-  ngOnInit(): void {
-    this.gettoken()
-  }
+  
+deactivate(data: any){
+
+  this.token.deleteaccount(data).subscribe((posres) => {
+
+    console.log("deleted")
+  })
+  this.token.deactivate(this.currentUser).subscribe((posres) => {
+
+    console.log("deactivated")
+    this.logout();
+  })
+}
+
+
+ngOnInit(): void {
+  this.gettoken()
+}
 
 }
+
+

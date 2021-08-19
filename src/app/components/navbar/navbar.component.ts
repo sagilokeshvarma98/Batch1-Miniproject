@@ -1,5 +1,7 @@
-import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output ,ViewChild, AfterViewInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { LoginService } from 'src/app/services/login.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -9,19 +11,40 @@ import { LoginService } from 'src/app/services/login.service';
 export class NavbarComponent implements OnInit {
 
   istoken:any = false
-  // userName:any=JSON.parse(`${localStorage.getItem("currentUser")}`);
+  count:any
+  
+  //  userName:any=JSON.parse(`${localStorage.getItem("currentUser")}`);
 
   @Output() SideNavToggle = new EventEmitter(); 
- 
-  constructor(private token:LoginService) { }
+   result:any;
+  constructor(private token:LoginService ,private cart:CartService) { }
 
   openSidenav(){
     this.SideNavToggle.emit();
   }
-   
+
+
+
+
+
+
+
   ngOnInit(): void {
 
+
+    this.cart.cast.subscribe((posRes)=>{
+      this.result = posRes;
+      });
+     
+
+
+
     this.gettoken()
+this.cart.getitem().subscribe(posres=>{
+  this.count=posres;
+  console.log(this.count.length)
+})
+  
 
   }
 
@@ -32,10 +55,11 @@ export class NavbarComponent implements OnInit {
   gettoken(){
     if (this.token.getToken()) {
       this.istoken = true
+      
     }
   }
 
-
+ 
 
 
   

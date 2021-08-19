@@ -10,15 +10,6 @@ import { CustomvalidatorsService } from 'src/app/services/custom-validators.serv
 })
 export class RegisterComponent implements OnInit {
 
-data={
-  admin:1,
-  vendor:0,
-  intro:"STR",
-  profile:"VVP"
-}
-
-
-
   registerForm:FormGroup;
   submitted:boolean= false;
   Getresponse:any
@@ -43,8 +34,7 @@ data={
    onSubmit(){
     this.submitted = true;
     let userData = {
-      ...this.registerForm.value,
-      ...this.data
+      ...this.registerForm.value
     }
    this.customvalid.postdata(userData)
    .subscribe((res:any)=>{

@@ -13,7 +13,7 @@
     width: 800px;
   padding: 40px;
   text-align: center;
-  margin-top: 20px;
+  
     
 }
 .user-data{
@@ -25,6 +25,7 @@
 }
 article{
     padding: 20px;
+    width: 100%;
 }
 section{
     margin: 20% 0% 0% 40%;
@@ -49,3 +50,12 @@ hr{
       color: red;
   }
   
+  /* .card-profile,.card-body,.container{
+    background: linear-gradient(to top, #dcf1f1, rgb(33, 214, 241));
+    
+  }
+  .card-profile{
+    background: linear-gradient(to top, #dcf1f1, rgb(51, 144, 158));
+    
+  }
+   */

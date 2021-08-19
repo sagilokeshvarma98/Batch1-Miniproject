@@ -27,8 +27,8 @@ img{
     background: linear-gradient(115deg, #9ffff2 60%, #4bf3ff 60%);
 }
 .container{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    /* margin-bottom: 20px; */
 }
 .h2-text{
     font-family: "PT Serif", serif;
@@ -48,9 +48,14 @@ img{
     height: 100%;
 }
 .mens-img{
-    margin-top: 12%;
-    margin-bottom: 12%;
+    /* margin-top: 12%; */
+    margin-bottom: 10%;
+   
 }
 .kids-div{
-    margin-top: 12%;
+    margin-top: 10%;
+    
+}
+.mens-img .card{
+    margin-top: 12%; 
 }

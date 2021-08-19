@@ -99,10 +99,10 @@
         <tbody *ngFor="let product of products | search:searchTerm">
             <tr>
                 <th>{{product.id}}</th>
-                <th>{{product.category}}</th>
+                <th>{{product.metaTitle}}</th>
                 <th>{{product.quantity}}</th>
-                <th>{{product.price | currency}}</th>
-                <th>{{product.price | value:product.quantity | currency}}</th>
+                <th>{{product.price | currency:"INR"}}</th>
+                <th>{{product.price | value:product.quantity | currency:"INR"}}</th>
             </tr>
         </tbody>
     </table>

@@ -1,5 +1,5 @@
-<div class="container loginBox">
-    <div class={{inputClass}}>
+<div class="container-fluid">
+    <div class={{inputClass}} id="loginCards">
         <p *ngIf="wrongCreden" class="wrongCredentials text text-center">
             <b class="text text-danger">*Entered username or password is incorrect</b>
         </p>
@@ -10,7 +10,7 @@
                     placeholder="Enter Email/mobile phone number">
                 <div *ngIf='controls.username.touched && controls.username.invalid'>
                     <div *ngIf='controls.username.errors?.required'>
-                        <b class="text text-danger">*Enter username or mobile number</b>
+                        <b class="text text-danger">*Enter userid</b>
                     </div>
                 </div>
             </div>
@@ -31,6 +31,7 @@
                 <a routerLink="/forgotPass">forgot password?</a>
             </div>
         </form>
-        <button class="form-control btn btn-secondary" (click)="routeToRegister()">Create your new account</button>
+        <button class="form-control btn btn-secondary" (click)="routeToRegister()">Create your new
+            account</button>
     </div>
 </div>

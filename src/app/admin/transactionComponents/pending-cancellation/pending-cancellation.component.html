@@ -1,0 +1,20 @@
+<h2 class="text text-warning">Pending Transactions</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr class="text-center">
+            <th>Product ID</th>
+            <th>Name</th>
+            <th colspan="2">Progress</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let ele of Transactions">
+        <tr>
+            <th>{{ele.id}}</th>
+            <th>{{ele.Poduct_name}}</th>
+            <th>{{ele.progress}}</th>
+            <th>
+                <button class="btn btn-danger ml-3" (click)="approveRequest(ele)">Approve</button>
+            </th>
+        </tr>
+    </tbody>
+</table>

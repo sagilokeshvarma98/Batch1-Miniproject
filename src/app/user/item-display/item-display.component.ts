@@ -14,18 +14,35 @@ export class ItemDisplayComponent implements OnInit {
   itemData:any = {}
   itemQuantity:number[] = []
   description:string[] = []
+  id:number = 0
   ngOnInit(): void {
-    this.routes.queryParams.subscribe(
-      params=>console.log(params)      
-    )
-   this.itemData = JSON.parse(`${localStorage.getItem("itemData")}`)
-   for(let i=1;i<=this.itemData.quantity;i++){
-     this.itemQuantity.push(i)
-   }
-   this.description = this.itemData.description.split('. ')
+    this.routes.params.subscribe(params => {
+      this.id = parseInt(params['id'])
+      this.PS.getProductbyId(this.id).subscribe(res=>{
+        console.log(res);
+        this.itemData = res
+        this.description = this.itemData.description.split('. ')
+        for(let i=1;i<=this.itemData.quantity;i++){
+          this.itemQuantity.push(i)
+        }
+        if(this.itemData.quantity>0){
+          this.itemData.quantityText = "In Stock"
+          this.itemData.quantityClass = "text text-success"
+        }
+        else{
+          this.itemData.quantityText = "Out of Stock"
+          this.itemData.quantityClass = "text text-danger"
+        }
+      })
+    });
+  //  this.description = this.itemData.content.split('. ')   this is main
+
+  // this.description = this.itemData.description.split('. ')
+
+    
+
   }
   selectQuantity(event:any){
     console.log(event.target.value);
-    
   }
 }

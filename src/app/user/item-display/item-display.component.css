@@ -1,6 +1,6 @@
 .image img{
     margin-top: 10%;
-    width: 70%;
+    width: 40%;
 }
 ngb-rating{
     margin-bottom: 20px;
@@ -11,11 +11,19 @@ ngb-rating{
     padding: 10%;
 }
 
+.normalPrice{
+    font-size: larger;
+    color: orange;
+}
+
+.normalPrice span{
+    font-size: small;
+    text-decoration: line-through;
+    padding-left: 10px;
+}
+
 .decription .cartButton{
     margin: 20px 0px 20px 0px;
-}
-.itemPrice span{
-    color: orange;
 }
 
 .description ul li{

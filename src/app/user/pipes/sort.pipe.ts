@@ -11,7 +11,7 @@ export class SortPipe implements PipeTransform {
     else if(sortTerm === "high to low")
     return products.sort((x,y)=> y.price - x.price )
     else if(sortTerm === "rating")
-    return products.sort((x,y)=> y.rating - x.rating )
+    return products.sort((x,y)=> y.mainRating - x.mainRating )
     else if(sortTerm === "name")
     return products.sort((a, b) => a.title.localeCompare(b.title))
     else

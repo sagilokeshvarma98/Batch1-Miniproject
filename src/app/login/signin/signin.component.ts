@@ -44,8 +44,10 @@ export class SigninComponent implements OnInit {
     let password = this.loginForm.value.password
     if(username !="" || password!=""){
       this.ls.login(this.loginForm.value).subscribe(res=>{
-        console.log(res);
         localStorage.setItem('token',res.token)
+        let splittedtoekn = res.token.split(".");
+        let currentUser=JSON.parse(atob(splittedtoekn[1]));
+        localStorage.setItem("currentUser",JSON.stringify(currentUser))
         this.route.navigate([`/`])
        },
        error=>{

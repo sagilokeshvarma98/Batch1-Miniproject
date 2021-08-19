@@ -1,5 +1,5 @@
 <div class="container" *ngIf="currentUser; else loggedOut">
-    <header class="jumbotron">
+    <header >
 
 
       <div style="text-align: center;" class="main-content">
@@ -8,7 +8,7 @@
           <div class="row">
        <div class="col-md-8">
         <div class="card card-profile">
-            <div class="card-avatar">
+            <div class="jumbotron">
                 <a href="">
                   <img class="profile-icon" src="assets\svg\person-circle.svg" alt="">
                 </a>
@@ -26,9 +26,10 @@
              
               
           <h4>    <mat-icon>input</mat-icon>
-            <span [routerLink]="['/adress']" >adresss</span></h4>
+            <span [routerLink]="['/useradress']" >adresss</span></h4>
             
-            <h4 href=""  class="btn btn-info btn-round" (click)="logout()">logout</h4>
+            <h4 href=""  class="btn btn-info btn-round" (click)="logout()">logout</h4><br>
+            <h4 href=""  class="btn btn-info btn-round" (click)="deactivate(currentUser.sub)">deactivate</h4>
             
               
             
@@ -60,9 +61,9 @@
         <label for="">mobile number</label>
         <input type="text"  class="user-data"value="99874561230"disabled>
 
-      </div>
       
-      <article>
+      
+     <article>
       
       
        <h3>
@@ -74,9 +75,9 @@
       <p>It happens as soon as you confirm the verification code sent to your email (or mobile) and save the changes.</p>
       <h5>What happens to my existing  account when I update my email address (or mobile number)?</h5>
       <p>Updating your email address (or mobile number) doesn't invalidate your account. Your account remains fully functional. You'll continue seeing your Order history, saved information and personal details.</p>
+    </article>
       
-      </article>
-      
+    </div>
     </div>
     
   </div>

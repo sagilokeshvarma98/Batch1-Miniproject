@@ -10,8 +10,15 @@ import { UserdemograpicsComponent } from './userdemograpics/userdemograpics.comp
 import { UsermanagmentComponent } from './usermanagment/usermanagment.component';
 import { RecoveryComponent } from './recovery/recovery.component';
 import { CouponComponent } from './coupon/coupon.component';
-import { ToastrModule } from 'ngx-toastr';
+import { SuccessfulComponent } from './transactionComponents/successful/successful.component';
+import { PendingCancellationComponent } from './transactionComponents/pending-cancellation/pending-cancellation.component';
+import { FailedComponent } from './transactionComponents/failed/failed.component';
+import { AlltransactionsComponent } from './transactionComponents/alltransactions/alltransactions.component';
+import { TransactionHomeComponent } from './transactionComponents/transaction-home/transaction-home.component';
+import { RouterModule } from '@angular/router';
 import { AngmaterialModule } from '../angmaterial/angmaterial.module';
+import { DatePipe } from './pipes/date.pipe';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -22,13 +29,20 @@ import { AngmaterialModule } from '../angmaterial/angmaterial.module';
     UserdemograpicsComponent,
     UsermanagmentComponent,
     RecoveryComponent,
-    CouponComponent
+    CouponComponent,
+    SuccessfulComponent,
+    PendingCancellationComponent,
+    FailedComponent,
+    AlltransactionsComponent,
+    TransactionHomeComponent,
+    DatePipe
   ],
   imports: [
     CommonModule,
     ADMINRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule,
     AngmaterialModule,
     ToastrModule.forRoot(),
   ]
