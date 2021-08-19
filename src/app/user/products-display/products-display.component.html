@@ -10,6 +10,21 @@
 <div class="container-fluid" style="margin-top: 5%;">
     <div *ngFor="let x of Products | filter : ratingTerm | sort : sortTerm | priceFilter : priceTerm">
         <div class="card">
+            <a routerLink="{{x.id}}" target="_blank">
+                <div class="card-body"  (click)="getItem(x)">
+                    <img class="productImage" src={{x.image}} alt="image">
+                    <p class="productTitle">{{x.title}}</p>
+                    <h3>{{x.price | currency:"INR"}} </h3>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                        </span>
+                    </ng-template>
+                    <ngb-rating [(rate)]="x.mainRating" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+                </div>
+            </a>
+        </div>
+        <!-- <div class="card">
             <div class="card-body" (click)="getItem(x)">
                 <img class="productImage" src={{x.imageUrls[0].imgUrl}} alt="image">
                 <p class="productTitle">{{x.metaTitle}}</p>
@@ -24,7 +39,7 @@
             <div class="card-footer">
                 <app-cart-button [itemData]="x" (displayNotification)="displayNotification($event)" ></app-cart-button>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <div id="CartNotify" class="text text-center" *ngIf="NotifyAddedToCart">

@@ -29,6 +29,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './components/cart/cart.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
+import { CartIconComponent } from './components/cart-icon/cart-icon.component';
 
 
 
@@ -46,7 +47,7 @@ import { SideNavbarComponent } from './components/side-navbar/side-navbar.compon
     CarouselComponent,
     SubnavComponent,
     CartComponent,
-    FooterComponent,SideNavbarComponent,
+    FooterComponent,SideNavbarComponent, CartIconComponent,
   
     
 

@@ -1,0 +1,8 @@
+.DateDiv{
+    float: right;
+    margin-bottom: 20px;
+}
+
+.DateDiv a mat-icon{
+    margin-left: 10px;
+}
