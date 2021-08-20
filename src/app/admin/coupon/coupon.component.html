@@ -1,7 +1,8 @@
 <!-- Add-Coupon Start -->
 <div class="container">
     <button class="btn m-2 " data-bs-toggle="modal" data-bs-target="#coupon" mat-raised-button color="accent">Add
-        Coupons</button>
+        Coupons
+    </button>
     <div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="coupon" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -19,7 +20,7 @@
                                 <span class="text-danger"
                                     *ngIf="(couponFormControl.coupon.touched || submitted) && couponFormControl.coupon.errors?.required">Coupon
                                     Name</span>
-                                <span class="text-danger" *ngIf=" couponFormControl.coupon.errors?.minlength">Minimum 6
+                                <span class="text-danger" *ngIf=" couponFormControl.coupon.errors?.minlength">Minimum 8
                                     Letters Required*</span>
                             </div>
                         </div>
@@ -65,15 +66,13 @@
             </div>
         </div>
     </div>
-
     <div class="row px-3">
     </div>
     <div class="row">
         <div class="col-lg-3" *ngFor="let x of couponCode">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title text-light h4">You get this : <span class="text-dark">{{x.coupon | uppercase
-                            }}</span></h5>
+                    <h5 class="card-title text-light h4">You get this : <span class="text-dark">{{x.coupon}}</span></h5>
                     <p class="card-text text-light h5 m-2">From this Price : {{x.eligibul}}</p>
                     <span class="h6">{{x.start}} <small class="text-danger h4">To</small> {{x.end}}</span>
                 </div>

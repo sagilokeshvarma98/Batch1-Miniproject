@@ -18,7 +18,7 @@ export class CouponComponent implements OnInit {
   constructor(private cup: CouponService, private fb: FormBuilder, private toastr: ToastrService) {
 
     this.couponPost = this.fb.group({
-      coupon: ['', [Validators.required,Validators.minLength(6)]],
+      coupon: ['', [Validators.required,Validators.pattern("^[A-Z0-9]{8}"),Validators.minLength(8)]],
       eligibul: ['', [Validators.required]],
       start: ['', [Validators.required]],
       end: ['', [Validators.required]]

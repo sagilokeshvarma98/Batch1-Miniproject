@@ -15,9 +15,6 @@ export class OrdersService {
  public posttocancel(data:any):Observable<any>{
   return this.http.post("http://localhost:3400/cancel",data)
 }
-public cancelorder(data:any):Observable<any>{
-  return this.http.delete("http://localhost:3600/orders/"+data)
-}
 
 
 

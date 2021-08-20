@@ -11,28 +11,44 @@ import { ProductsService } from 'src/app/services/products.service';
 export class ItemDisplayComponent implements OnInit {
 
   constructor(private PS:ProductsService , public routes:ActivatedRoute) { }
-  itemData:any = {}
+  itemData:any
   itemQuantity:number[] = []
   description:string[] = []
   id:number = 0
+  load:boolean = false
   ngOnInit(): void {
     this.routes.params.subscribe(params => {
       this.id = parseInt(params['id'])
-      this.PS.getProductbyId(this.id).subscribe(res=>{
+      this.PS.getProductbyId(this.id).subscribe((res:any)=>{
         console.log(res);
-        this.itemData = res
-        this.description = this.itemData.description.split('. ')
-        for(let i=1;i<=this.itemData.quantity;i++){
-          this.itemQuantity.push(i)
+        if(res){
+          this.itemData = res
+          this.load = true
+          let ratingsSum:number = 0
+          let count:number = 0
+          let length = res.productReviews.length
+          res.productReviews.map((x:any)=>{
+            ratingsSum = ratingsSum+x.rating
+            count++
+            if(count == length)
+              this.itemData.mainRating = ratingsSum/count
+          })
+          
+          this.itemData.afterDiscount = res.price - res.discount
+          this.description = this.itemData.summary.split('. ')
+          for(let i=1;i<=this.itemData.quantity;i++){
+            this.itemQuantity.push(i)
+          }
+          if(this.itemData.quantity>0){
+            this.itemData.quantityText = "In Stock"
+            this.itemData.quantityClass = "text text-success"
+          }
+          else{
+            this.itemData.quantityText = "Out of Stock"
+            this.itemData.quantityClass = "text text-danger"
+          }
         }
-        if(this.itemData.quantity>0){
-          this.itemData.quantityText = "In Stock"
-          this.itemData.quantityClass = "text text-success"
-        }
-        else{
-          this.itemData.quantityText = "Out of Stock"
-          this.itemData.quantityClass = "text text-danger"
-        }
+        
       })
     });
   //  this.description = this.itemData.content.split('. ')   this is main

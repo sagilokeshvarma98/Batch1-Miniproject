@@ -16,24 +16,51 @@
   "coupons": [
     {
       "coupon": "dwdd50",
-      "eligibul": "5000",
+      "eligibul": "500",
       "start": "2021-08-14",
       "end": "2021-08-28",
       "id": 1
     },
     {
       "coupon": "dwdd62",
-      "eligibul": "3000",
+      "eligibul": "300",
       "start": "2021-08-15",
       "end": "2021-08-10",
       "id": 2
     },
     {
       "coupon": "ffnf50",
-      "eligibul": "62000",
+      "eligibul": "2000",
       "start": "2021-08-14",
       "end": "2021-08-12",
       "id": 3
+    },
+    {
+      "coupon": "ffnf50",
+      "eligibul": "500.00",
+      "start": "2021-08-19",
+      "end": "2021-08-20",
+      "id": 4
+    }
+  ],
+  "address": [
+    {
+      "id": 1,
+      "fullName": "Nagaraju ",
+      "flat": "2-66/b",
+      "mobile": 9705081432,
+      "area": "97050",
+      "town": "Guntur",
+      "Landmark": "frnrvnhthtubry"
+    },
+    {
+      "fullName": "Nagaraju Thota",
+      "flat": "2-66/B",
+      "mobile": 9705081432,
+      "area": "",
+      "town": "Guntur",
+      "Landmark": "Guntur",
+      "id": 2
     }
   ]
 }

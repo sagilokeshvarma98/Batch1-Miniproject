@@ -27,12 +27,13 @@
     "file-saver": "^2.0.5",
     "jquery": "^3.6.0",
     "mdb-ui-kit": "^3.9.0",
+    "ngx-pagination": "^5.1.1",
     "ngx-toastr": "^14.1.0",
     "popper.js": "^1.14.3",
     "pubsub-js": "^1.9.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
-    "xlsx": "^0.17.0",
+    "xlsx": "^0.17.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

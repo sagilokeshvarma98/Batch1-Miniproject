@@ -11,6 +11,8 @@ export class InventoryComponent implements OnInit {
 
   productForm:FormGroup
 
+
+
   constructor(private PS:ProductsService , private fb:FormBuilder) {
     this.productForm = this.fb.group(
       {
@@ -40,6 +42,11 @@ export class InventoryComponent implements OnInit {
   ngOnInit(): void {
     this.getProductData()
   }
+
+
+
+
+
 
   
   submit(){

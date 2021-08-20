@@ -1,30 +1,70 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-2 col-sm-2 col-md-2 col-xs-4">
-            <h3 class="firstFilter" (click)="clearFilters()"><span><</span> Clear all filters </h3>
-            <p class="filterName">Avg Customer Review</p>
-            <p (click)='clearRates()'  *ngIf='allRates' class="clearFilter"><span><</span> Clear</p>
-        <div class="filtersDiv" *ngFor="let rate of rates">
-            <div  (click)='getRating(rate)' class="ngb-rating">
-                <ngb-rating  name='rating' value='rate' [rate]='rate' [readonly]='true' [max]='5'>& Up</ngb-rating> <span>& Up</span>
-            </div>
+        <div class="col-lg-2 col-sm-4 col-md-3 col-xs-4">
+            <h3 class="firstFilter" (click)="clearFilters()">
+                <img src="../../../assets/eraser-solid.svg" alt=""> <span>Clear all filters</span>
+
+            </h3>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="rating_title">
+                        <img src="../../../assets/star-half-regular.svg" alt=""> <span>Ratings</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p (click)='clearRates()' class="clearFilter" *ngIf='allRates'>
+                    <span>
+                        < </span> Clear
+                </p>
+                <div class="filtersDiv" *ngFor="let rate of rates">
+                    <div (click)='getRating(rate)' class="ngb-rating">
+                        <ngb-rating name='rating' value='rate' [rate]='rate' [readonly]='true' [max]='5'>& Up
+                        </ngb-rating> <span>& Up</span>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="price_title">
+                        <img src="../../../assets/dollar-sign-solid.svg" alt=""> <span>Price</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p (click)='clearPrices()' *ngIf='allPrices' class="clearFilter"><span>
+                        < </span> Any price</p>
+                <div class="priceFilterDiv">
+                    <span (click)='getPrice($event)' value='under 10'>Under 100</span>
+                    <span (click)='getPrice($event)'>100 - 500</span>
+                    <span (click)='getPrice($event)'>500 - 1000</span>
+                    <span (click)='getPrice($event)'>1000 - 5000</span>
+                    <span (click)='getPrice($event)'>Above 5000</span>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="outOfStock_title">
+                        <img src="../../../assets/store-slash-solid.svg" alt=""> <span>Out-of-stock</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="filterName">
+                    <input type="checkbox" name="outofstock" id="outofstock" value='checked'
+                        (change)="outOfStock($event)"><span class="outofstock">Exclude Out of stock</span>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="outOfStock_title">
+                        <img src="../../../assets/tape-solid.svg" alt=""> <span>SIze</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <input type="checkbox" name="small" id="small" style="margin-top: 20px;"><span class="outofstock">S</span>
+                <input type="checkbox" name="medium" id="medium" style="margin-top: 20px;"><span class="outofstock">M</span>
+                <input type="checkbox" name="large" id="large" style="margin-top: 20px;"><span class="outofstock">L</span>
+                <input type="checkbox" name="x-large" id="x-large" style="margin-top: 20px;"><span class="outofstock">XL</span>
+                <input type="checkbox" name="2x-large" id="2x-large" style="margin-top: 20px;"><span class="outofstock">2XL</span>
+            </mat-expansion-panel>
         </div>
-        <p class="filterName">Price</p>
-        <p (click)='clearPrices()' *ngIf='allPrices' class="clearFilter"><span><</span> Any price</p>
-        <div class="priceFilterDiv">
-            <span (click)='getPrice($event)' value='under 10'>Under 100</span>
-            <span (click)='getPrice($event)'>100 - 500</span>
-            <span (click)='getPrice($event)'>500 - 1000</span>
-            <span (click)='getPrice($event)'>1000 - 5000</span>
-            <span (click)='getPrice($event)'>Above 5000</span>
-        </div>
-        <div class="filterName">
-            <input type="checkbox" name="outofstock" id="outofstock" value='checked' (change)="outOfStock($event)">Exclude Out of stock
-        </div>
-        </div>
-        <div class="col-lg-10 col-sm-10 col-md-10 col-xs-8">
+        <div class="col-lg-10 col-sm-8 col-md-9 col-xs-8">
             <app-products-display [ratingTerm]="rate" [priceTerm]='price'></app-products-display>
         </div>
     </div>
-        
+
 </div>

@@ -1,7 +1,8 @@
 import { Component, OnInit, Output,EventEmitter  } from '@angular/core';
 import { ControlContainer } from '@angular/forms';
+import { UsermanagementService } from 'src/app/services/usermanagement.service';
 
-import { UsermanagementService } from '../services/usermanagement.service';
+
 
 @Component({
   selector: 'app-recovery',

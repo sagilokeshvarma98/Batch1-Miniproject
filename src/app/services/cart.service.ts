@@ -13,13 +13,13 @@ export class CartService {
 httpOptions:any;
   constructor(private http:HttpClient) { }
 getitem():Observable<any>{
-
-//    return this.http.get("http://oshopping.ddns.net/api/cart/getcarts")
-   return this.http.get("http://localhost:3000/cart").pipe(
+  return this.http.get("http://localhost:3000/cart").pipe(
+  //  return this.http.get("http://oshopping.ddns.net/api/carts/all").pipe(
       map((x:any )=> {
-        console.log("thia");
         console.log(x);
         this.len=x.length
+        console.log("this is length");
+        console.log(this.len);
         return x
       
     })
@@ -39,8 +39,9 @@ private data = new BehaviorSubject<any>("");
 
 deleteitem(data:any):Observable<any>{
   console.log(data);
-
   return this.http.delete(`http://localhost:3000/cart/${data}`)
+  // return this.http.delete(`http://oshopping.ddns.net/api/cartitems/${data}`)
+
 }
 makeOrder(){
   alert("order placed")
@@ -55,6 +56,10 @@ getname(obj:any):Observable<any>{
   
 }
 
+selcetquantity(data:any,id:any):Observable<any>{
+  console.log(data)
+  return  this.http.patch("http://localhost:3000/cart/"+id,data)
+}
 
 
 public additem(data:any):Observable<any>{
