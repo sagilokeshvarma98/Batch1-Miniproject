@@ -17,6 +17,7 @@ import { TrackingComponent } from './user/components/tracking/tracking.component
 import { UserProfileComponent } from './user/components/user-profile/user-profile.component';
 import { FiltersComponent } from './user/filters/filters.component';
 import { ItemDisplayComponent } from './user/item-display/item-display.component';
+import { PaymentGateComponent } from './user/payment-gate/payment-gate.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,12 @@ component:CheckoutComponent
 
 
     },
+    {
+      path:"payment",
+      component:PaymentGateComponent
+      
+      
+          },
     {
       path: 'profile',
       component:UserProfileComponent
