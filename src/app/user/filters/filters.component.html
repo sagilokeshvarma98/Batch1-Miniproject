@@ -1,6 +1,13 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 col-sm-2 col-md-2 col-xs-4">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Ratings
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
             <h3 class="firstFilter" (click)="clearFilters()"><span><</span> Clear all filters </h3>
             <p class="filterName">Avg Customer Review</p>
             <p (click)='clearRates()'  *ngIf='allRates' class="clearFilter"><span><</span> Clear</p>
@@ -12,14 +19,17 @@
         <p class="filterName">Price</p>
         <p (click)='clearPrices()' *ngIf='allPrices' class="clearFilter"><span><</span> Any price</p>
         <div class="priceFilterDiv">
-            <span (click)='getPrice($event)' value='under $10'>Under $10</span>
-            <span (click)='getPrice($event)'>$10 - $50</span>
-            <span (click)='getPrice($event)'>$50 - $100</span>
-            <span (click)='getPrice($event)'>$100 - $500</span>
-            <span (click)='getPrice($event)'>Above $500</span>
+            <span (click)='getPrice($event)' value='under 10'>Under 100</span>
+            <span (click)='getPrice($event)'>100 - 500</span>
+            <span (click)='getPrice($event)'>500 - 1000</span>
+            <span (click)='getPrice($event)'>1000 - 5000</span>
+            <span (click)='getPrice($event)'>Above 5000</span>
         </div>
         <div class="filterName">
             <input type="checkbox" name="outofstock" id="outofstock" value='checked' (change)="outOfStock($event)">Exclude Out of stock
+        </div>
+        <div class="sizeFilter">
+            
         </div>
         </div>
         <div class="col-lg-10 col-sm-10 col-md-10 col-xs-8">

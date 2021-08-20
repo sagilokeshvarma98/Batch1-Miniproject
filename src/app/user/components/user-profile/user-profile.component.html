@@ -14,6 +14,7 @@
                 <h6 class="card-category text-gray"></h6>
                 <h4 class="card-title">hello {{ currentUser.sub}}</h4>
                 <hr>
+<<<<<<< HEAD
 
                 <br>
 
@@ -36,6 +37,25 @@
 
 
               </div>
+=======
+               
+                 <br>
+             
+             <h4>       <mat-icon>loyalty</mat-icon>
+              <span [routerLink]="['/order']">my orders</span></h4>
+             
+              
+          <h4>    <mat-icon>input</mat-icon>
+            <span [routerLink]="['/useradress']" >adresss</span></h4>
+            
+            <h4 href=""  class="btn btn-info btn-round" (click)="logout()">logout</h4><br>
+            <h4 href=""  class="btn btn-info btn-round" (click)="deactivate(currentUser.sub)">deactivate</h4>
+            
+              
+            
+               
+               
+>>>>>>> 2bb725705f6eaa8b7c3b4a367826bb59ffa7165d
             </div>
 
 

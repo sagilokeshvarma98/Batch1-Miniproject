@@ -1,18 +1,27 @@
 .card{
-  width: 250px;
-  height: 400px;
-  float: left;
+  height: 350px;
   margin: 0px 50px 30px 50px;
 }
 
+#productAnchorTag{
+  text-decoration: none;
+}
+
+.card-body h3 .normalPrice{
+  font-size: small;
+  text-decoration: line-through;
+  padding-left: 5px;
+}
+
 .productTitle{
-height: 50px;
+height: 40px;
 overflow: hidden;
 }
 
 .card img{
+  padding : 5% 0% 5% 10%;
   height: 200px;
-  width: 200px;
+  /* width: 200px; */
 }
 
 .card-footer{
@@ -40,20 +49,6 @@ overflow: hidden;
 }
 
 ngb-rating{
+  font-size: large;
   margin-bottom: 10px;
-}
-
-#CartNotify{
-  margin:12% 0% 0% 70%;
-  height: 30px;
-  width: 10%;
-  position: fixed;
-  top: 0%;
-  background-color: rgb(92, 159, 185);
-  opacity: 0.9;
-}
-
-#CartNotify h4{
-color: white;
-margin-top: 5px;
 }

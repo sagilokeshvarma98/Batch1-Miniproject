@@ -46,7 +46,7 @@ export class SigninComponent implements OnInit {
       this.ls.login(this.loginForm.value).subscribe(res=>{
         localStorage.setItem('token',res.token)
         let splittedtoekn = res.token.split(".");
-        let currentUser=JSON.parse( atob(splittedtoekn[1]));
+        let currentUser=JSON.parse(atob(splittedtoekn[1]));
         localStorage.setItem("currentUser",JSON.stringify(currentUser))
         this.route.navigate([`/`])
        },

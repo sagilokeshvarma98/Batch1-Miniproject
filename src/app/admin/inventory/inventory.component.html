@@ -73,9 +73,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div class="container">
     <div class="search">
         <input type="text" [(ngModel)]='searchTerm' class="form-control" placeholder="Enter your search term">
@@ -96,15 +93,15 @@
                 <th>Total value</th>
             </tr>
         </thead>
-        <tbody *ngFor="let product of products | search:searchTerm">
+        <tbody *ngFor="let product of products | search:searchTerm | test">
             <tr>
                 <th>{{product.id}}</th>
-                <th>{{product.category}}</th>
+                <!-- <th>{{product.metaTitle}}</th> -->
+                <th>{{product.title}}</th> 
                 <th>{{product.quantity}}</th>
-                <th>{{product.price | currency}}</th>
-                <th>{{product.price | value:product.quantity | currency}}</th>
+                <th>{{product.price | currency:"INR"}}</th>
+                <th>{{product.price | value:product.quantity | currency:"INR"}}</th>
             </tr>
         </tbody>
     </table>
 </div>
-<p>inventory works!</p>

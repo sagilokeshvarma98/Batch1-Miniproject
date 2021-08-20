@@ -17,7 +17,9 @@ import { AlltransactionsComponent } from './transactionComponents/alltransaction
 import { TransactionHomeComponent } from './transactionComponents/transaction-home/transaction-home.component';
 import { RouterModule } from '@angular/router';
 import { AngmaterialModule } from '../angmaterial/angmaterial.module';
+import { DatePipe } from './pipes/date.pipe';
 import { ToastrModule } from 'ngx-toastr';
+import { SharedModuleModule } from '../shared-module/shared-module.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { ToastrModule } from 'ngx-toastr';
     PendingCancellationComponent,
     FailedComponent,
     AlltransactionsComponent,
-    TransactionHomeComponent
+    TransactionHomeComponent,
+    DatePipe
   ],
   imports: [
     CommonModule,
@@ -43,6 +46,7 @@ import { ToastrModule } from 'ngx-toastr';
     RouterModule,
     AngmaterialModule,
     ToastrModule.forRoot(),
+    SharedModuleModule
   ]
 })
 export class ADMINModule { }

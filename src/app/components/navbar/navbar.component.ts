@@ -1,5 +1,7 @@
-import { Component, EventEmitter, OnInit, Output  } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output ,ViewChild, AfterViewInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { LoginService } from 'src/app/services/login.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -10,12 +12,17 @@ export class NavbarComponent implements OnInit {
 
   istoken:any = false
   currentUser: any;
+  cart: any;
+  result: any;
 
  
   constructor(private token:LoginService) { }
    
   ngOnInit(): void {
-
+    
+    this.cart.cast.subscribe((posRes: any)=>{
+      this.result = posRes;
+      });
     this.gettoken()
   }
   islogout(){
@@ -24,10 +31,11 @@ export class NavbarComponent implements OnInit {
   gettoken(){
     if (this.token.getToken()) {
       this.istoken = true
+      
     }
   }
 
-
+ 
 
 
   
