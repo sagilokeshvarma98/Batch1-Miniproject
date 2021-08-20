@@ -19,6 +19,8 @@ import { CommentsPostComponent } from './components/comments-post/comments-post.
 import { FiltersComponent } from './filters/filters.component';
 import { AdressdiplayComponent } from './components/adressdiplay/adressdiplay.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { PaymentGateComponent } from './payment-gate/payment-gate.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 
@@ -39,7 +41,9 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
     //PriceFilterPipe,
     FiltersComponent,
     AdressdiplayComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    PaymentComponent,
+    PaymentGateComponent,
   ],
   imports: [
     CommonModule,

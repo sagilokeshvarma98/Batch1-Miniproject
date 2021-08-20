@@ -16,12 +16,20 @@ export class CartComponent implements OnInit {
   cartlength:any
   cartitems:any;
  result:any;
+
   
 
   constructor(private os: CartService) { }
 
   change(val: any, id: any) {
+let qty={
+  "quantity":val.target.value
+};
+this.os.selcetquantity(qty ,id).subscribe((res)=>{
+  this.getcartitem();
+  console.log(res)
 
+})
     if (val.target.value == 0) {
 
       this.confirm = confirm("do you want confirm delet item")
@@ -29,9 +37,13 @@ export class CartComponent implements OnInit {
 
         this.os.deleteitem(id).subscribe((posres) => {
           console.log(posres)
+
+
+
           this.getcartitem();
           // window.location.reload();
           this.os.changeData();
+          console.log("delete success")
 
         })
 
@@ -57,18 +69,27 @@ export class CartComponent implements OnInit {
     this.os.getitem().subscribe((posres) => {
       this.cart = posres
     //  this.cartitems= this.cart[0].cartItems
-      console.log("cart")
-      console.log(this.cartitems)
+    
+     console.log(this.os.changeData())
+    //   console.log("cart")
+    //   console.log(this.cartitems)
      
-    //  this.cartlength =this.cart.length
+    //  this.cartlength =this.cartitems.length
+    //  console.log("product")
+    //   console.log(this.cartitems[0].product.imageUrls[0])
+    //   console.log("imageurl")
+    //   console.log(this.cartitems[0].product.imageUrls[0].imgUrl)
 
-      // console.log(this.cart)
-      // for (let x of this.cart) {
+      this.total += this.total;
 
-      //   this.total += x.quantity * x.price;
-      //   console.log(this.total)
-      // }
-    }
+      for (let x of this.cart) {
+      //  for (let x of this.cartitems) {
+
+       this.total += x.quantity*x.price;
+       console.log("total")
+         console.log(this.total)
+      }
+     }
     )
 
   }
@@ -79,13 +100,15 @@ export class CartComponent implements OnInit {
     this.getcartitem();
     this.os.getname(1).subscribe((posres)=>{
       console.log(posres)
+      
+    
 
     })
 
 
     this.os.cast.subscribe((posRes)=>{
       this.result = posRes;
-
+ 
   })
 
   

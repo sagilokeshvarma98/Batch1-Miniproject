@@ -17,7 +17,7 @@ export class ProductsService {
   }
 
   addProduct(data:any){
-    return this.hc.post("http://localhost:5100/products",data)
+    return this.hc.post("http://oshopping.ddns.net/api/products/add",data)
   }
 
   getCartItem():Observable<any>{
