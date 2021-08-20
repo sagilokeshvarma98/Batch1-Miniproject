@@ -45,13 +45,22 @@
   ],
   "address": [
     {
-      "fullName": "Nagaraju Thota",
+      "id": 1,
+      "fullName": "Nagaraju ",
       "flat": "2-66/b",
       "mobile": 9705081432,
       "area": "97050",
       "town": "Guntur",
-      "Landmark": "ghgty",
-      "id": 1
+      "Landmark": "frnrvnhthtubry"
+    },
+    {
+      "fullName": "Nagaraju Thota",
+      "flat": "2-66/B",
+      "mobile": 9705081432,
+      "area": "",
+      "town": "Guntur",
+      "Landmark": "Guntur",
+      "id": 2
     }
   ]
 }

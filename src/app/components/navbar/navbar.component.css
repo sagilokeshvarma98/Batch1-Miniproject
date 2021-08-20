@@ -2,14 +2,11 @@
     background: #00aa8a;
 }
 .form-control{
-    height: 30px;
+    height: 32px;
     border: none;
-    border-radius: 5px;
 }
 .btn-light{
-    height: 30px;
-    border: none;
-    border-radius: 5px;
+    height: 32px;
     color: black;
 }
 .search-icon{
