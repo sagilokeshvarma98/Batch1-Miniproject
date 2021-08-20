@@ -35,12 +35,17 @@ export class ProductsDisplayComponent implements OnInit {
   ngOnInit(): void {
     this.PS.productsData().subscribe(res => {
       this.Products = res
+      console.log(res);
       this.length = res.length //For json file
       res.map((x: any, index: any) => {
         x.afterDiscount = x.price-x.discount
         let length = res[index].productReviews.length
         let totalRates = 0
         let count = 0
+        if(length == 0){
+          x.mainRating = 0
+        }
+        else
         x.productReviews.map((y: any) => {
           totalRates = totalRates + y.rating
           count++
