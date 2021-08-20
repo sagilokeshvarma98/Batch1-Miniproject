@@ -12,6 +12,7 @@ import { SubnavComponent } from './components/subnav/subnav.component';
 
 import { AddressComponent } from './user/components/address/address.component';
 import { AdressdiplayComponent } from './user/components/adressdiplay/adressdiplay.component';
+import { CommentsPostComponent } from './user/components/comments-post/comments-post.component';
 import { OrdersComponent } from './user/components/orders/orders.component';
 import { TrackingComponent } from './user/components/tracking/tracking.component';
 import { UserProfileComponent } from './user/components/user-profile/user-profile.component';
@@ -46,7 +47,11 @@ const routes: Routes = [
       component: CartComponent,canActivate:[ProtectRoutesGuard]
     },
     {
-        path: 'adress',
+      path: 'adress',
+      component: AddressComponent
+  },
+    {
+        path: 'adress/:id',
         component: AddressComponent
     },
     {path:"useradress", 
@@ -70,6 +75,10 @@ component:CheckoutComponent
       children:[
         {
           path:"tracking",component:TrackingComponent
+        },
+        {
+          path:"postcomment",
+          component:CommentsPostComponent
         }
       ]
     }   

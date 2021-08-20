@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommentService } from 'src/app/services/comment.service';
 
@@ -12,13 +12,13 @@ import { CommentService } from 'src/app/services/comment.service';
 export class CommentsPostComponent implements OnInit {
   
 
+  // @Input() comment:any;
+
   commentPost:FormGroup;
   currentRate:number=0;
   
   constructor(private fb:FormBuilder,private comment:CommentService) { 
     this.commentPost = this.fb.group({
-      name:['',[Validators.required]],
-      rating:['',[Validators.required]],
       msg:['',[Validators.required,Validators.minLength(10)]],
     });
    }
@@ -40,7 +40,6 @@ export class CommentsPostComponent implements OnInit {
       }
       
     );
-    window.location.reload;
   }
 
 }

@@ -35,8 +35,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { SharedModuleModule } from './shared-module/shared-module.module';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +47,9 @@ import { SharedModuleModule } from './shared-module/shared-module.module';
     CarouselComponent,
     SubnavComponent,
     CartComponent,
-    FooterComponent,SideNavbarComponent, CartIconComponent
+    FooterComponent,
+    SideNavbarComponent
+
   ],
   imports: [
     BrowserModule,
@@ -73,8 +73,8 @@ import { SharedModuleModule } from './shared-module/shared-module.module';
     SharedModuleModule
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS,useClass:LoginInterceptor,multi:true},
-    {provide:HTTP_INTERCEPTORS,useClass:ErrorInterceptor,multi:true}
+    { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 

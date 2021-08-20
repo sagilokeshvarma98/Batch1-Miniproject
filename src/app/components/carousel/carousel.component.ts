@@ -10,13 +10,15 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CarouselComponent implements OnInit {
 
-  constructor(config: NgbCarouselConfig) {
-    // customize default values of carousels used by this component tree
-    config.interval = 2000;
-    config.keyboard = true;
-    config.pauseOnHover = true;
-  }
+  carousel = [
+    { 'img': 'assets\corosal\baner1.jpg' },
+    { 'img': 'assets\corosal\baner2.jpg' },
+    { 'img': 'assets\corosal\baner3.jpg' },
+    { 'img': 'assets\corosal\baner4.jpg' }
+  ]
   
-ngOnInit(){}
+  constructor() { }
+
+  ngOnInit() { }
 
 }
