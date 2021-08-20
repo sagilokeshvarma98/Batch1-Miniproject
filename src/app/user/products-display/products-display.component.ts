@@ -28,19 +28,14 @@ export class ProductsDisplayComponent implements OnInit {
   }
 
   Products: any[] = []
-
+  length : any 
+  pageNumber:number = 1 
   NotifyAddedToCart: Boolean = false
   Title: string = ""
   ngOnInit(): void {
-
-      this.PS.getCartItem().subscribe(res=>{
-        console.log(res);
-        
-      })
-
     this.PS.productsData().subscribe(res => {
       this.Products = res
-      console.log(res)
+      this.length = res.length //For json file
       res.map((x: any, index: any) => {
         x.afterDiscount = x.price-x.discount
         let length = res[index].productReviews.length
@@ -56,7 +51,6 @@ export class ProductsDisplayComponent implements OnInit {
       )
     })
   }
-
   displayNotification(event: any) {
     this.NotifyAddedToCart = event
     setTimeout(() => {
