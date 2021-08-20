@@ -20,6 +20,8 @@ import { PriceFilterPipe } from './pipes/price-filter.pipe';
 import { FiltersComponent } from './filters/filters.component';
 import { AdressdiplayComponent } from './components/adressdiplay/adressdiplay.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { PaymentGateComponent } from './payment-gate/payment-gate.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     FiltersComponent,
     AdressdiplayComponent,
     CheckoutComponent,
+    PaymentComponent,
+    PaymentGateComponent,
 
   ],
   imports: [
