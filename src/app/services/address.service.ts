@@ -8,7 +8,7 @@ const url = "http://localhost:5100/address";
 @Injectable({
   providedIn: 'root'
 })
-export class AddressService {
+export class AdressService {
 
    
 
@@ -20,23 +20,23 @@ export class AddressService {
 
   constructor(private http: HttpClient) { }
 
-  postAddress(data: any): Observable<any> {
-    return this.http.post(url, data,this.httpOptions)
-  }
+//   postAddress(data: any): Observable<any> {
+//     return this.http.post(url, data,this.httpOptions)
+//   }
   
-  putAddress(data: any): Observable<any> {
-    return this.http.put(url+'/'+data.id, data,this.httpOptions)
-  }
-  getAddress(): Observable<any> {
-    return this.http.get(url)
-  }
+//   putAddress(data: any): Observable<any> {
+//     return this.http.put(url+'/'+data.id, data,this.httpOptions)
+//   }
+//   getAddress(): Observable<any> {
+//     return this.http.get(url)
+//   }
 
-  deleteAddress(id: any): Observable<any> {
-    return this.http.delete(`${url}/${id}`)
-  }
+//   deleteAddress(id: any): Observable<any> {
+//     return this.http.delete(`${url}/${id}`)
+//   }
 
-  edit(id:any):Observable<any>{
-return this.http.get(`${url}/${id}`)
-  }
+//   edit(id:any):Observable<any>{
+// return this.http.get(`${url}/${id}`)
+//   }
 
 }

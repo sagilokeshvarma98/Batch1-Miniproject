@@ -45,7 +45,8 @@ const routes: Routes = [
     },
     {
       path: 'cart',
-      component: CartComponent,canActivate:[ProtectRoutesGuard]
+      component: CartComponent
+      // ,canActivate:[ProtectRoutesGuard]
     },
     {
       path: 'adress',

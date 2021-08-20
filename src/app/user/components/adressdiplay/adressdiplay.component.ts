@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AddressService } from 'src/app/services/address.service';
+import { AddressService } from 'src/app/services/adress.service';
+
 
 @Component({
   selector: 'app-adressdiplay',
@@ -10,17 +11,18 @@ import { AddressService } from 'src/app/services/address.service';
 export class AdressdiplayComponent implements OnInit {
 
 
- // d:any
+d:any
   
 
   userAddress: any
   confirm: any
 
-  constructor(public address: AddressService,private router:Router) { }
+  constructor(public address:AddressService,private router:Router) { }
 
   getAddress() {
-    this.address.getAddress().subscribe(
-      (data)=>{this.userAddress=data}
+    this.address.getadress().subscribe(
+    // this.address.getAddress().subscribe(
+(data)=>{this.userAddress=data}
     )
   }
   
@@ -30,7 +32,7 @@ export class AdressdiplayComponent implements OnInit {
     let defult={
       "default":id
   }
-    this.service.selctdefult(defult).subscribe((posres)=>{
+    this.address.selctdefult(defult).subscribe((posres)=>{
       console.log("this")
       console.log(posres)
       
@@ -39,7 +41,7 @@ export class AdressdiplayComponent implements OnInit {
   }
 public getdefult(){
 
-  this.service.getdefult().subscribe((posres)=>{
+  this.address.getdefult().subscribe((posres)=>{
     this.d=posres;
     console.log("resss")
     console.log(this.d)
@@ -55,7 +57,8 @@ public getdefult(){
  deleteAddress(val: any, id: any) {
     this.confirm = confirm("do you want  delet you adress ")
     if (this.confirm == true) {
-      this.address.deleteAddress(id).subscribe((posres) => {
+      this.address.deleteadress(id).subscribe((posres) => {
+        console.log(posres)
         this.getAddress();
       })
     }

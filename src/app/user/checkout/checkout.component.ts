@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { AdressService } from 'src/app/services/adress.service';
+import { AddressService } from 'src/app/services/adress.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
 import { CouponService } from 'src/app/services/coupon.service';
 
@@ -12,7 +12,7 @@ import { CouponService } from 'src/app/services/coupon.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,private cs:CheckoutService,private adress:AdressService,private couponservice:CouponService){}
+  constructor(private fb:FormBuilder,private cs:CheckoutService,private adress:AddressService,private couponservice:CouponService){}
 
 check:any
 grandtotal=0;
