@@ -1,4 +1,7 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastrModule } from 'ngx-toastr';
 
 import { CouponComponent } from './coupon.component';
 
@@ -8,6 +11,7 @@ describe('CouponComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[HttpClientModule,FormsModule,ReactiveFormsModule,ToastrModule.forRoot()],
       declarations: [ CouponComponent ]
     })
     .compileComponents();

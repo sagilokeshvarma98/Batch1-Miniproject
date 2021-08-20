@@ -1,5 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { UserdemograpicsComponent } from './userdemograpics.component';
 
@@ -9,7 +11,7 @@ describe('UserdemograpicsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports:[HttpClientModule,FormsModule,ReactiveFormsModule,RouterTestingModule],
       declarations: [ UserdemograpicsComponent ]
     })
     .compileComponents();

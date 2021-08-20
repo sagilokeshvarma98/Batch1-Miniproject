@@ -39,8 +39,9 @@ private data = new BehaviorSubject<any>("");
 
 deleteitem(data:any):Observable<any>{
   console.log(data);
+  return this.http.delete(`http://localhost:3000/cart/${data}`)
 
-  return this.http.delete(`http://oshopping.ddns.net/api/cartitems/1`)
+  //return this.http.delete(`http://oshopping.ddns.net/api/cartitems/1`)
 }
 makeOrder(){
   alert("order placed")
