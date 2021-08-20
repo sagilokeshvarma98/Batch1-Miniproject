@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { UserModule } from './user/user.module';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SubpageComponent } from './components/subpage/subpage.component';
 import { RouterModule } from '@angular/router';
 import { MensSubpageComponent } from './components/mens-subpage/mens-subpage.component';
@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { SubnavComponent } from './components/subnav/subnav.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login/login-routing.module';
 import { LoginInterceptor } from './Interceptors/login.interceptor';
 import { ErrorInterceptor } from './Interceptors/error.interceptor';
@@ -32,6 +32,7 @@ import { SideNavbarComponent } from './components/side-navbar/side-navbar.compon
 import { CartIconComponent } from './components/cart-icon/cart-icon.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { MatExpansionModule } from '@angular/material/expansion';
+import { SharedModuleModule } from './shared-module/shared-module.module';
 
 
 
@@ -58,17 +59,18 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ADMINRoutingModule,
     LoginRoutingModule,
     UserModule,
-    HttpClientModule,
+    //HttpClientModule,
     RouterModule,
     AngmaterialModule,
     UserRoutingModule,
     BrowserAnimationsModule,
     OverlayModule,
-    FormsModule,
-    ReactiveFormsModule,
+    //FormsModule,
+    //ReactiveFormsModule,
     NgbModule,
     NgxPaginationModule,
-    MatExpansionModule
+    MatExpansionModule,
+    SharedModuleModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:LoginInterceptor,multi:true},

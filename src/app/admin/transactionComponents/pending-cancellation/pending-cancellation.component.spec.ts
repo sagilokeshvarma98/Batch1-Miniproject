@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PendingCancellationComponent } from './pending-cancellation.component';
@@ -8,6 +9,7 @@ describe('PendingCancellationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[HttpClientModule],
       declarations: [ PendingCancellationComponent ]
     })
     .compileComponents();
