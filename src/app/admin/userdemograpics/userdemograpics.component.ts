@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { CustomvalidatorsService } from 'src/app/services/custom-validators.service';
-import { UsermanagementService } from '../services/usermanagement.service';
+import { UsermanagementService } from 'src/app/services/usermanagement.service';
 
 @Component({
   selector: 'app-userdemograpics',

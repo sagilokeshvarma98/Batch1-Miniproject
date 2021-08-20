@@ -14,7 +14,7 @@ export class SuccessfulComponent implements OnInit {
   this.TS.getTransactionDetails().subscribe(res=>{
     this.Transactions =  []
      res.map((x:any,index:any)=>{
-        if(x.transaction==="success"){
+        if(x.transaction==="success" && x.progress!=="Delivered"){
           this.Transactions.push(x)
         }
       })      

@@ -1,31 +1,62 @@
 .ngb-rating{
+    color: #686868;
     font-size: large;
 }
 
+.firstFilter img{
+    width: 20px;
+}
+
 .firstFilter{
+    margin-top: 70px;
+}
+
+.firstFilter span{
+    margin: 10px 0px 0px 5px;
+    color: #686868;
     font-weight: 200;
     margin-top: 40px;
     cursor: context-menu;
-    text-decoration: underline;
 }
 
 .firstFilter:hover{
-    color: rgb(247, 187, 77);
+    color: #333;
+    text-decoration: underline;
 }
 
-.filterName{
-    margin-top: 20px;
+.rating_title img{
+    width: 40px;
+}
+
+.rating_title span{
+    padding-top: 10px;
+}
+
+.price_title img{
+    width: 20px;
+}
+
+.price_title span{
+    padding: 10px 0px 0px 20px;
+}
+
+.outOfStock_title img{
+    width: 30px;
+}
+
+.outOfStock_title span{
+    padding: 10px ;
 }
 
 .priceFilterDiv span{
+    color: #686868;
     display: block;
     text-align: left;
     cursor: context-menu;
 }
 
 .priceFilterDiv span:hover{
-    color: rgb(247, 187, 77);
-    font-family: 'Courier New', Courier, monospace;
+    color: #333;
 }
 
 h3{
@@ -37,7 +68,7 @@ h3{
 }
 
 .ngb-rating:hover{
-    color: rgb(247, 187, 77);
+    color: #333;
 }
 
 .clearFilter span{
@@ -48,6 +79,16 @@ h3{
     cursor: context-menu;
 }
 
-.clearFilter:hover{
-    color:rgb(247, 187, 77) ;
+.outofstock{
+    color: #686868;
+}
+
+.outofstock:hover{
+    cursor: context-menu;
+    color: #333;
+
+}
+
+mat-expansion-panel-header:hover{
+    background: #00aa8a !important;
 }

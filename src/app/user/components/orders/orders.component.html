@@ -5,8 +5,6 @@
       <th>price</th>
       <th>image</th>
     </tr>
-  
-    
     <tr class="item">
       <td>{{x.category}}</td> &nbsp;
       <td>{{x.price}}</td>
@@ -16,11 +14,9 @@
       <td *ngIf="state"   (click)=" reorder()" class="btn btn-danger btn-round">reorder</td>
      
     </tr>
-  
-    
-  </table>  <a       [routerLink]="['tracking']" class="btn btn-danger btn-round">track my order</a> 
-
+  </table>  
+  <a [routerLink]="['tracking']" class="btn btn-danger btn-round">track my order</a> 
   <br><br><br>
-
+  <a class="btn btn-danger btn-round" [routerLink]="['postcomment']" disabled="">Review</a>
 <router-outlet></router-outlet>
 </div>

@@ -16,7 +16,6 @@ getitem():Observable<any>{
   return this.http.get("http://localhost:3000/cart").pipe(
   //  return this.http.get("http://oshopping.ddns.net/api/carts/all").pipe(
       map((x:any )=> {
-        console.log("thia");
         console.log(x);
         this.len=x.length
         console.log("this is length");
@@ -42,6 +41,7 @@ deleteitem(data:any):Observable<any>{
   console.log(data);
   return this.http.delete(`http://localhost:3000/cart/${data}`)
   // return this.http.delete(`http://oshopping.ddns.net/api/cartitems/${data}`)
+
 }
 makeOrder(){
   alert("order placed")

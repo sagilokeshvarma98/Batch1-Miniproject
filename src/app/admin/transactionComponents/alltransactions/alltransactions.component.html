@@ -1,15 +1,23 @@
-<h2 class="text text-success">All Transactions</h2>
-<table class="table table-bordered">
+<div class="DateDiv">
+    From : <input type="date" name="fromDate" id="fromDate" (change)="getFromDate($event)">
+    To: <input type="date" name="toDate" id="toDate" (change)="getToDate($event)">
+    <a style="cursor: pointer" (click)="exportexcel()">
+        download xl file
+    </a>
+</div>
+<table class="table table-bordered" id="excel-table">
     <thead>
         <tr class="text-center">
             <th>Product ID</th>
+            <th>Date</th>
             <th>Name</th>
             <th>Progress</th>
         </tr>
     </thead>
-    <tbody *ngFor="let ele of Transactions">
+    <tbody *ngFor="let ele of Transactions | date:[fromDate,toDate]">
         <tr class={{ele.class}}>
             <th>{{ele.id}}</th>
+            <th>{{ele.date}}</th>
             <th>{{ele.Poduct_name}}</th>
             <th>{{ele.progress}}</th>
             <th>{{ele.transaction}}</th>

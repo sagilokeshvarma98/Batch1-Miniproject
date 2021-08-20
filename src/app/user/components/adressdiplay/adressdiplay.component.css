@@ -1,4 +1,4 @@
-.adress-disply{
+.card{
     width: 300px;
     height: 300px;
     border: 2px dotted black;
@@ -6,8 +6,24 @@
     float: left;
     padding: 40px;
     margin: 50px;
+    cursor:context-menu;
     
 }
 p{
     color: rgb(143, 12, 29);
+}
+
+.add-address{
+    width: 300px;
+    height: 300px;
+    border: 2px dotted black;
+    padding: 20px;
+    margin: 50px;
+    cursor:context-menu;
+    
+}
+.display-1{
+   position: relative;
+   top: 80px;
+   left: 90px;
 }

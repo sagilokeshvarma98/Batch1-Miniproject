@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="transaction-links">
+    <!-- <div class="transaction-links">
         <a routerLink="all">All</a>
         <a routerLink="pending">Pending/Cancelled</a>
         <a routerLink="success">Successful</a>
@@ -7,5 +7,45 @@
     </div>
     <div>
         <router-outlet></router-outlet>
-    </div>
+    </div> -->
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2 class="text text-secondary">
+                    All Transactions
+                </h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-alltransactions></app-alltransactions>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2 class="text text-secondary">
+                    Pending Transactions
+                </h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-pending-cancellation></app-pending-cancellation>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2 class="text text-secondary">
+                    Successful Transactions
+                </h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-successful></app-successful>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2 class="text text-secondary">
+                    Failed Transactions
+                </h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-failed></app-failed>
+    </mat-expansion-panel>
 </div>
