@@ -12,32 +12,16 @@
     </div>
 </div> -->
 
-  
-  <!-- As a heading -->
-  <nav class="navbar navbar-light bg-success">
-    <span class="navbar-brand mb-0 h1" style="font-weight: 600;">Admin</span>
-    <div >
-        <a routerLink="admin">
-            <img src="../../../assets/user-solid.svg" class="user-profile-svg"
-                alt="profile" [matMenuTriggerFor]="menu" >
-            </a>
-            <!-- <button mat-button [matMenuTriggerFor]="menu">
-                    LogOut
-                 </button>  -->
-                 <mat-menu #menu="matMenu" class="dropdown" >
-                   <br><br>
-                   <button mat-menu-item  class="mat-menu-button" (click)="Logut()">LogOut</button>
-                  
-                 </mat-menu>
-    </div>
-  </nav>
+
+<!-- As a heading -->
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-lg-3 col-md-3 col-xs-3 managementLinks">
             <div>
                 <ul>
                     <li>
-                        
+
                         <a routerLink="/admin" class="btn btn-danger btn-sm btn-block">Inventory</a>
                     </li>
                     <li>
