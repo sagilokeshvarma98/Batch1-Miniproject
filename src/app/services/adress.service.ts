@@ -23,7 +23,6 @@ export class AddressService {
     return this.http.get("http://localhost:3030/adress")
   }
 
-    
 deleteadress(data:any):Observable<any>{
   console.log(data);
   console.log("delete")
