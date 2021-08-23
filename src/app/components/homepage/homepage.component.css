@@ -40,8 +40,9 @@
           
       }
       .container-fluid{
-        background-color:rgb(223, 217, 217);
-        /* background: linear-gradient(to top, #dcf1f1, rgb(36, 126, 139)); */
+        /* background: linear-gradient(140deg, #FFFFFF 60%, #A7BC5B 60%); */
+        /* background: linear-gradient(to top,  #ADEFD1FF,#FFFFFF); */
+        background-color: whitesmoke;
     }
     .row{
         margin-top: 20px;

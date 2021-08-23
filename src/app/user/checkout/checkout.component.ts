@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { AddressService } from 'src/app/services/adress.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
+import { CouponService } from 'src/app/services/coupon.service';
 
 @Component({
   selector: 'app-checkout',
@@ -9,57 +12,84 @@ import { CheckoutService } from 'src/app/services/checkout.service';
 })
 export class CheckoutComponent implements OnInit {
 
+  constructor(private fb:FormBuilder,private cs:CheckoutService,private adress:AddressService,private couponservice:CouponService){}
+
+check:any
+grandtotal=0;
+checkitems:any
+coupon:any
+default:any
+defaultid:any
+paytotal=0;
+applied:boolean= false;
+discount=0;
+isLinear = false;
+
+
+
+getcoupon(){
+  this.couponservice.getCoupons().subscribe((coupounres)=>{
+
+    this.coupon=coupounres;
+  })
+}
+
+
+
+onSubmit(){}
+
+getadress(){
+
+  this.adress.getdefult().subscribe((posres)=>{
+    this.defaultid=posres.default
+    console.log("defaultid")
+    console.log(this.defaultid)
   
-// token:any
-//   checkoutForm:FormGroup
 
 
-//   constructor(private fb:FormBuilder,private cs:CheckoutService) {
+  this.adress.getdefaultadress(this.defaultid).subscribe((res)=>{
+    this.default=res
 
-//     this.checkoutForm=this.fb.group(
-//       {
-//         cardNumber:['',[Validators.required,Validators.minLength(16),Validators.minLength(16)]],
-//         expMonth:['',[Validators.required]],
-//         expYear:['',[Validators.required,Validators.minLength(4),Validators.minLength(4)]],
-//         cvc:['',[Validators.required,Validators.minLength(3),Validators.minLength(3)]],
-        
+    console.log(this.default)
+  })
 
-//       }
-//     )
-//    }
+})
+
+}
+
+
+
+getchecked(){
+  this.cs.check().subscribe((posres)=>{
+    this.check=posres;
+    // this.checkitems=this.check[0].cartItems
+
+    this.grandtotal += this.grandtotal;
+    for (let x of this.check) {
+    // for (let x of this.checkitems) {
   
-// getstripetoken(){
-// this.token=  (<any>window).Stripe.card.getToken(this.checkoutForm.value);
-// console.log("this is token ");
-// console.log(this.token);
-//   this.cs.stripetoken(this.token).subscribe((res)=>{
-// this.token=res.id
-// console.log("this is token ");
-// console.log(res);
-// console.log("this is token id");
-// console.log(res.id);
-  
-//   })
-// }
+      this.grandtotal += x.quantity*x.price;
+        console.log(this.grandtotal)
+     }
+  })
+}
 
-   
-//   onSubmit(){
-    
-//     let carddata = {
-//       ...this.checkoutForm.value,
-      
-//     }
 
-// this.getstripetoken();
+change(val:any){
+  this.paytotal= this.grandtotal-val.target.value;
+  this.discount=this.grandtotal-this.paytotal
+  this.applied=true;
 
 
 
-//   }
+}
 
-//   get checkoutFormcontrol() {
-//     return this.checkoutForm.controls;
-//   }
+
   ngOnInit(): void {
+this.getchecked()
+this.getadress();
+this.getcoupon();
+
   }
 
 }

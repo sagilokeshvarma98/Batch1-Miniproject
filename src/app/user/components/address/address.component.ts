@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router,ActivatedRoute } from '@angular/router';
 import {Inject} from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { AddressService } from 'src/app/services/address.service';
+
+import { AddressService } from 'src/app/services/adress.service';
 
 @Component({
   selector: 'app-address',
@@ -43,7 +44,7 @@ export class AddressComponent implements OnInit {
         this.toastr.success("Coupons are updated successfully.", "Success")
       })
     }else{
-      this.adressservice.postAddress(userData)
+      this.adressservice .postadress(userData)
       .subscribe((res:any)=>{
        this.useradress.reset();
         this.route.navigate(['useradress']);

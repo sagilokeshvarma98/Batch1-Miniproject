@@ -41,6 +41,10 @@ export class ProductsDisplayComponent implements OnInit {
         let length = res[index].productReviews.length
         let totalRates = 0
         let count = 0
+        if(length == 0){
+          x.mainRating = 0
+        }
+        else
         x.productReviews.map((y: any) => {
           totalRates = totalRates + y.rating
           count++

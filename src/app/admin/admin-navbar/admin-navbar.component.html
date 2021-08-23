@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light bg-success">
+    <span class="navbar-brand mb-0 h1">Admin</span>
+    <div>
+        <a>
+            <img src="../../../assets/user-solid.svg" class="user-profile-svg" alt="profile" [matMenuTriggerFor]="menu">
+        </a>
+        <!-- <button mat-button [matMenuTriggerFor]="menu">
+                    LogOut
+                 </button>  -->
+        <mat-menu #menu="matMenu" class="dropdown">
+            <a mat-menu-item id="profileLink" routerLink="adminProfile">Profile</a>
+            <button mat-menu-item id="profileLink" class="mat-menu-button" (click)="Logut()">LogOut</button>
+        </mat-menu>
+    </div>
+</nav>
+
+<xng-breadcrumb [separator]="iconTemplate"></xng-breadcrumb>
+    <ng-template #iconTemplate>
+        <mat-icon>chevron_right</mat-icon>
+    </ng-template>
+
+
+<router-outlet></router-outlet>

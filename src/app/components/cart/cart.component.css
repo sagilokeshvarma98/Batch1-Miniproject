@@ -106,3 +106,7 @@ h6 {
     padding: 12px 72px;
     border-radius: 3px !important;
 }
+img{
+    width: 100px;
+    height: 100px;
+}

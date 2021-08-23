@@ -1,6 +1,8 @@
 .card{
-  height: 350px;
-  margin: 0px 50px 30px 50px;
+  min-height: 360px;
+  min-width: 210px;
+  max-width: none;
+  margin-bottom: 30px;
 }
 
 #productAnchorTag{
@@ -18,10 +20,14 @@ height: 40px;
 overflow: hidden;
 }
 
-.card img{
-  padding : 5% 0% 5% 10%;
+.card .card-body .productImage{
   height: 200px;
-  /* width: 200px; */
+}
+
+.card #productAnchorTag .card-body .productImage img{
+  position: inherit;
+  width: 50%;
+  height: 150px;
 }
 
 .card-footer{
@@ -51,4 +57,8 @@ overflow: hidden;
 ngb-rating{
   font-size: large;
   margin-bottom: 10px;
+}
+
+.pagination{
+  margin: 30px 25% 30px 30%;
 }

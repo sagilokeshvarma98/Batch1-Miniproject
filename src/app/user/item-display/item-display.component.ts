@@ -35,7 +35,7 @@ export class ItemDisplayComponent implements OnInit {
           })
           
           this.itemData.afterDiscount = res.price - res.discount
-          this.description = this.itemData.content.split('. ')
+          this.description = this.itemData.summary.split('. ')
           for(let i=1;i<=this.itemData.quantity;i++){
             this.itemQuantity.push(i)
           }

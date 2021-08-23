@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators'
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -13,11 +12,19 @@ export class LoginService {
 
   login(data:any):Observable<any>{
     console.log(data);
-    return this.hp.post("http://oshopping.ddns.net/api/authenticate",data)
+    return this.hp.post("http://oshopping.ddns.net/api/user/login",data)
+    // .pipe(
+    //   map(user => {
+    //     return user
+    //     if(user){
+    //    localStorage.setItem("token",data)
+    //     }
+    // })
+    // )
   }
 
   logout(){
-    localStorage.removeItem("token")
+    localStorage.clear()
     this.route.navigate(['/login'])
   }
 

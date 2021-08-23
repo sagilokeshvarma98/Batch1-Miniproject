@@ -1,7 +1,8 @@
 <div id="filter">
     <select id="inputState" class="form-control" (change)="viewFilterType($event)">
-        <option selected >Sort</option>
-        <option value="name">Name</option>
+        <option selected>Sort</option>
+        <option value="a-z">A-Z</option>
+        <option value="z-a">Z-A</option>
         <option value="high to low">price : high to low</option>
         <option value="low to high">price : low to high</option>
         <option value="rating">rating</option>
@@ -9,13 +10,15 @@
 </div>
 <div class="container-fluid" style="margin-top: 5%;">
     <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-8 col-xs-12" *ngFor="let x of Products | filter : ratingTerm | sort : sortTerm | priceFilter : priceTerm
-    | paginate: { itemsPerPage: 6, currentPage: pageNumber , totalItems: length}">
+        <div class="col-md-6 col-sm-8 col-xs-12 col-lg-4" *ngFor="let x of Products | filter : ratingTerm | sort : sortTerm | priceFilter : priceTerm
+    | paginate: { itemsPerPage: 6, currentPage: pageNumber}">
 
         <div class="card">
             <a id="productAnchorTag" routerLink="{{x.id}}" target="_blank">
             <div class="card-body" (click)="getItem(x)">
-                <img class="productImage" src={{x.imageUrls[0].imgUrl}} alt="image">
+                <div class="productImage">
+                <img *ngIf="x.imageUrls.length > 0" src={{x.imageUrls[0].imgUrl}} alt="image">
+                </div>
                 <p class="productTitle">{{x.metaTitle}}</p>
                 <h3>{{x.afterDiscount | currency:"INR"}} <span class="normalPrice">{{x.price | currency:"INR"}}</span> </h3>
                 <ng-template #t let-fill="fill">
@@ -29,6 +32,8 @@
         </div>
     </div>
     </div>
-    
-<pagination-controls class="pagenation-controls" (pageChange)="pageNumber = $event"></pagination-controls>
+    <div class="pagination">
+        <pagination-controls class="pagenation-controls" (pageChange)="pageNumber = $event">
+        </pagination-controls>
+    </div>
 </div>

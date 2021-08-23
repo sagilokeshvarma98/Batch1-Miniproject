@@ -16,32 +16,33 @@ export class OrdersComponent implements OnInit {
   id:any;
 myorders:any;
 confirm:any
+status="shipped"
+state:boolean=false;
 
-cancelorder(obj:any,id: any){
-  this.confirm = confirm("do you want confirm delet item")
+cancelorder(id: any){
+  this.confirm = confirm("do you want confirm cancel item")
   if (this.confirm == true) {
 
     
-this.myorder.posttocancel(obj).subscribe((posres)=>{
-  console.log(id);
-  console.log(posres);
- 
-})
 
-this.myorder.cancelorder(id).subscribe((posres)=>{
+  this.status="canceld"
+
+  if( this.status="canceld"){
+    this.state=true
+  }
+ 
   this.getorder();
   console.log(id);
-  console.log(posres);
-})
+  
   }
 else {
   alert("ok")
 }
-
-
-
 }
-
+reorder(){
+  this.state=false;
+  this.status="reorderd"
+}
 
 getorder(){
   this.myorder.getmyorders() .subscribe(

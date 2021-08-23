@@ -1,6 +1,7 @@
 .image img{
     margin-top: 10%;
-    width: 40%;
+    width: 270px;
+    height: 416px;
 }
 ngb-rating{
     margin-bottom: 20px;

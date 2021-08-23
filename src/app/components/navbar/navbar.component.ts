@@ -16,12 +16,13 @@ export class NavbarComponent implements OnInit {
   result: any;
 
  
-  constructor(private token:LoginService) { }
+  constructor(private token:LoginService ,private cartservice:CartService) { }
    
   ngOnInit(): void {
     
-    this.cart.cast.subscribe((posRes: any)=>{
+    this.cartservice.cast.subscribe((posRes: any)=>{
       this.result = posRes;
+      
       });
     this.gettoken()
   }

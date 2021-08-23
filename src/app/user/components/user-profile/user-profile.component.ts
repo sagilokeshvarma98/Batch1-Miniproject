@@ -22,34 +22,24 @@ export class UserProfileComponent implements OnInit {
   }
 
   gettoken() {
-    if (this.token.getToken()) {
-      this.unsplittedtoekn = localStorage.getItem("token") || '{}';
-      this.splittedtoekn = this.unsplittedtoekn.split(".");
-
-
-      this.currentUser = JSON.parse(atob(this.splittedtoekn[1]));
-      localStorage.setItem("currentUser", this.currentUser);
-      return this.currentUser;
-    }
+    this.currentUser = localStorage.getItem("currentUser");
+    return this.currentUser;
   }
-  
-deactivate(data: any){
 
-  this.token.deleteaccount(data).subscribe((posres) => {
-
-    console.log("deleted")
-  })
-  this.token.deactivate(this.currentUser).subscribe((posres) => {
-
-    console.log("deactivated")
-    this.logout();
-  })
-}
+  deactivate(data: any) {
+    this.token.deleteaccount(data).subscribe((posres) => {
+      console.log("deleted")
+    })
+    this.token.deactivate(this.currentUser).subscribe((posres) => {
+      console.log("deactivated")
+      this.logout();
+    })
+  }
 
 
-ngOnInit(): void {
-  this.gettoken()
-}
+  ngOnInit(): void {
+    this.gettoken()
+  }
 
 }
 
