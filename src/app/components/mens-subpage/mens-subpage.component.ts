@@ -14,11 +14,11 @@ mens:any;
   ngOnInit(): void {
     
 
-    this.homepageservice.productsData().subscribe((posres)=>{
+    // this.homepageservice.productsData().subscribe((posres)=>{
   
-      this.mens=posres;
+    //   this.mens=posres;
       
-      })
+    //   })
   }
 
 }

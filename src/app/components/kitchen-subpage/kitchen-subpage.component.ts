@@ -14,11 +14,11 @@ jwelery:any;
   ngOnInit(): void {
     
 
-    this.homepageservice.productsData().subscribe((posres)=>{
+    // this.homepageservice.productsData().subscribe((posres)=>{
   
-      this.jwelery=posres;
+    //   this.jwelery=posres;
       
-      })
+    //   })
   }
 
 }

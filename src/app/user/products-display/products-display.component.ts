@@ -32,6 +32,7 @@ export class ProductsDisplayComponent implements OnInit {
   pageNumber:number = 1 
   NotifyAddedToCart: Boolean = false
   Title: string = ""
+
   ngOnInit(): void {
     this.PS.productsData().subscribe(res => {
       this.Products = res
@@ -66,8 +67,7 @@ export class ProductsDisplayComponent implements OnInit {
     this.sortTerm = event.target.value
   }
 
-  getItem(x: any) {
-    localStorage.setItem('itemData', JSON.stringify(x))
-    // this.route.navigate([`/itemData`])
-  }
+  // getItem(x: any) {
+  //   localStorage.setItem('itemData', JSON.stringify(x))
+  // }
 }
