@@ -14,14 +14,6 @@ export class LoginService {
   login(data:any):Observable<any>{
     console.log(data);
     return this.hp.post("http://oshopping.ddns.net/api/authenticate",data)
-    // .pipe(
-    //   map(user => {
-    //     return user
-    //     if(user){
-    //    localStorage.setItem("token",data)
-    //     }
-    // })
-    // )
   }
 
   logout(){
@@ -32,23 +24,17 @@ export class LoginService {
 
   getToken(){
     return localStorage.getItem("token") || ''
-    // this.unsplittedtoekn = localStorage.getItem("token") || '{}' ;
-    // this. splittedtoekn=this.unsplittedtoekn.split(".");
- 
- 
-    // this.currentUser=JSON.parse( atob(this.splittedtoekn[1]));
-    // console.log(this.currentUser)
-    // return this.currentUser;
+   
   }
 
 
   public deactivate(data:any):Observable<any>{
-    return this.hp.post("http://localhost:2030/users",data)
+    return this.hp.post("http://localhost:3000/users",data)
   }
   deleteaccount(data:any):Observable<any>{
     console.log(data);
   
-    return this.hp.delete("http://localhost:2030/users/"+data)
+    return this.hp.delete("http://localhost:3000/users/"+data)
   }
 
 

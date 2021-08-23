@@ -1,6 +1,4 @@
-
 import { Injectable } from '@angular/core';
-//import {PubSub }from 'pubsub-js';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import {map} from 'rxjs/operators'
@@ -15,7 +13,6 @@ httpOptions:any;
 getitem():Observable<any>{
 
    return this.http.get("http://oshopping.ddns.net/api/cart/getcarts")
-  //  return this.http.get("http://localhost:3000/cart")
    .pipe(
       map((x:any )=> {
         console.log(x);
