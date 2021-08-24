@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { BreadcrumbModule , BreadcrumbService } from "xng-breadcrumb";
 import { SharedModuleRoutingModule } from './shared-module-routing.module';
 import { TestPipe } from './pipes/test.pipe';
 import { FilterPipe} from './pipes/filter.pipe'
@@ -11,6 +11,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ValuePipe } from './pipes/value.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AngmaterialModule } from '../angmaterial/angmaterial.module';
 
 
 
@@ -30,7 +31,11 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModuleRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BreadcrumbModule
+  ],
+  providers:[
+    BreadcrumbService
   ],
   exports:[
     TestPipe,
@@ -42,7 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     ValuePipe,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BreadcrumbModule
   ]
 })
 export class SharedModuleModule { }

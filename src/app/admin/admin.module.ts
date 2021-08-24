@@ -20,6 +20,8 @@ import { AngmaterialModule } from '../angmaterial/angmaterial.module';
 //import { DatePipe } from './pipes/date.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
     FailedComponent,
     AlltransactionsComponent,
     TransactionHomeComponent,
+    AdminProfileComponent,
+    AdminNavbarComponent,
     //DatePipe
   ],
   imports: [

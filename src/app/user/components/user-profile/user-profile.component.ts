@@ -23,15 +23,8 @@ export class UserProfileComponent implements OnInit {
   }
 
   gettoken() {
-    if (this.token.getToken()) {
-      this.unsplittedtoekn = localStorage.getItem("token") || '{}';
-      this.splittedtoekn = this.unsplittedtoekn.split(".");
-
-
-      this.currentUser = JSON.parse(atob(this.splittedtoekn[1]));
-      localStorage.setItem("currentUser", this.currentUser);
-      return this.currentUser;
-    }
+    this.currentUser = localStorage.getItem("currentUser");
+    return this.currentUser;
   }
   
 deactivate(){
