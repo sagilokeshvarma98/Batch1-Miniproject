@@ -13,9 +13,9 @@ export class SubpageComponent implements OnInit {
 product:any;
   ngOnInit(): void {
 
-    this.productsthumbanail.productsData().subscribe((posres)=>{
-      this.product=posres;
-    })
+    // this.productsthumbanail.productsData().subscribe((posres)=>{
+    //   this.product=posres;
+    // })
 
 
 

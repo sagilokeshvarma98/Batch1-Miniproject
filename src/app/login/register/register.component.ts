@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 import { CustomvalidatorsService } from 'src/app/services/custom-validators.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   Getresponse:any
    Email_pattern= new RegExp("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$");
   strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-  constructor(private fb:FormBuilder, private customvalid:CustomvalidatorsService , public route:Router) {
+  constructor(private fb:FormBuilder, private customvalid:CustomvalidatorsService , public route:Router ,private cs:CartService) {
     this.registerForm=this.fb.group(
       {
         fullName:['',[Validators.required,Validators.minLength(3)]],
@@ -37,7 +38,13 @@ export class RegisterComponent implements OnInit {
       ...this.registerForm.value
     }
    this.customvalid.postdata(userData)
+   
    .subscribe((res:any)=>{
+    this.cs.intializecart().subscribe((res)=>{
+      console.log("cart initialized")
+      console.log(res)
+    
+        })
      console.log(res);
      this.route.navigate(['successfulRegister'])
    })
@@ -62,6 +69,8 @@ export class RegisterComponent implements OnInit {
     // }
     //)
     console.log(this.registerForm.value.Email);
+
+    
    }
   
   ngOnInit(): void {

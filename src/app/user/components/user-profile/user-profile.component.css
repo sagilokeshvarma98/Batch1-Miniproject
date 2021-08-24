@@ -1,4 +1,4 @@
-.profile-icon{
+/*.profile-icon{
     width: 200px;
     height: 200px;
    
@@ -9,7 +9,7 @@
     height: 700px;
     margin-top: 20px;
 }
-.card-body{
+ .card-body{
     width: 800px;
   padding: 40px;
   text-align: center;
@@ -26,7 +26,7 @@
 article{
     padding: 20px;
     width: 100%;
-}
+} 
 section{
     margin: 20% 0% 0% 40%;
 }
@@ -58,4 +58,205 @@ hr{
     background: linear-gradient(to top, #dcf1f1, rgb(51, 144, 158));
     
   }
-   */
+   
+   
+     
+ .container{
+    background-color:none ;
+    width: 1200px;
+    margin-top:40px ;
+    max-width: 100%;
+    margin: 50px auto;
+    height:1000px ;
+  }
+  
+  .container h2{
+      color:#051747;
+      margin-top:10px ;
+      margin-left:160px ;
+      font-family: 'Abril Fatface', cursive;
+      font-size:20px ;
+      font-weight: bold;
+  }
+  form{
+      margin-top:60px ;
+  }
+  
+  .container  label{
+     color: #333;
+    font-size: 16px;
+    font-family: 'Lobster', cursive;
+    width: 500px; 
+}
+.form-group input:focus{
+    outline: none;
+    
+}
+.form-group input{
+    border-radius: 4px;
+    box-shadow:none ;
+
+    border-bottom: 2px solid black;
+    
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-top-style: hidden;
+    
+
+    border-color: #686868;
+    width: 250px;
+    
+
+}
+.form-group ::placeholder{
+    color: #26292f;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width:200px ;
+    font-size:15px ;
+}
+.btn{
+    margin-left:180px ;
+    background-color:#00aa8a;;
+    color:white ;
+    width:200px ;
+    margin-top:30px ;
+}
+ 
+*/
+body {
+    background-color: #f9f9fa
+}
+
+.padding {
+    padding: 3rem !important
+}
+
+.user-card-full {
+    overflow: hidden
+}
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: none;
+    margin-bottom: 30px
+}
+
+.m-r-0 {
+    margin-right: 0px
+}
+
+.m-l-0 {
+    margin-left: 0px
+}
+
+.user-card-full .user-profile {
+    border-radius: 5px 0 0 5px
+}
+
+.bg-c-lite-green {
+    background: -webkit-gradient(linear, left top, right top, from(#00aa8a), to(#050220));
+    background: linear-gradient(to right, #02031a, #00aa8a)
+}
+
+.user-profile {
+    padding: 20px 0
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.m-b-25 {
+    margin-bottom: 25px
+}
+
+.img-radius {
+    border-radius: 5px
+}
+
+h6 {
+    font-size: 14px
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 14px
+    }
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.text-muted {
+    color: #919aa3 !important
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.f-w-600 {
+    font-weight: 600
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.user-card-full .social-link li {
+    display: inline-block
+}
+
+.user-card-full .social-link li a {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+span{
+    padding-left: 8px;
+    
+}

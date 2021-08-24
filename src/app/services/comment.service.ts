@@ -7,7 +7,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CommentService {
-  url="http://localhost:5100/comment";
+
+  url="http://localhost:3000/comment";
 
   httpOptions:any;
 

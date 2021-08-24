@@ -11,6 +11,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ValuePipe } from './pipes/value.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AngmaterialModule } from '../angmaterial/angmaterial.module';
 
 
 

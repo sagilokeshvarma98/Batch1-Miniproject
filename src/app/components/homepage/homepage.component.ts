@@ -24,21 +24,21 @@ public toggleShow() {
   }
   ngOnInit(): void {
 
-this.homepageservice.productsData().subscribe((posres)=>{
+// this.homepageservice.productsData().subscribe((posres)=>{
 
-this.mens=posres;
+// this.mens=posres;
 
-})
-this.homepageservice.productsData().subscribe((posres)=>{
+// })
+// this.homepageservice.productsData().subscribe((posres)=>{
 
-  this.elctronics=posres;
+//   this.elctronics=posres;
   
-  })
-  this.homepageservice.productsData().subscribe((posres)=>{
+//   })
+//   this.homepageservice.productsData().subscribe((posres)=>{
 
-    this.jwelery=posres;
+//     this.jwelery=posres;
     
-    })
+//     })
 
 
    

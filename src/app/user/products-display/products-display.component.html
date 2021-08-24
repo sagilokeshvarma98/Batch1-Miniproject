@@ -14,10 +14,9 @@
     | paginate: { itemsPerPage: 6, currentPage: pageNumber}">
 
 
-
         <!-- <div class="card">
             <a routerLink="{{x.id}}" target="_blank">
-                <div class="card-body"  (click)="getItem(x)">
+                <div class="card-body">
                     <img class="productImage" src={{x.image}} alt="image">
                     <p class="productTitle">{{x.title}}</p>
                     <h3>{{x.price | currency:"INR"}} </h3>
@@ -31,10 +30,10 @@
             </a>
         </div> -->
 
-
         <div class="card">
             <a id="productAnchorTag" routerLink="{{x.id}}" target="_blank">
-            <div class="card-body" (click)="getItem(x)">
+            <!-- <div class="card-body" (click)="getItem(x)"> -->
+            <div class="card-body">
                 <div class="productImage">
                 <img *ngIf="x.imageUrls.length > 0" src={{x.imageUrls[0].imgUrl}} alt="image">
                 </div>
@@ -49,6 +48,8 @@
             </div>
         </a>
         </div>
+
+
     </div>
     </div>
     <div class="pagination">

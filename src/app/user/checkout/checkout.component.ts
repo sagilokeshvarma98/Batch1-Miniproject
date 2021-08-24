@@ -65,7 +65,7 @@ getchecked(){
     // this.checkitems=this.check[0].cartItems
 
     this.grandtotal += this.grandtotal;
-    for (let x of this.check) {
+    for (let x of this.check.cartItems) {
     // for (let x of this.checkitems) {
   
       this.grandtotal += x.quantity*x.price;
