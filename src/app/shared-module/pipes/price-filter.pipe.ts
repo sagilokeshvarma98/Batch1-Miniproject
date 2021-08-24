@@ -8,7 +8,6 @@ export class PriceFilterPipe implements PipeTransform {
   transform(products: any[], filterTerm:any): any {
 
     console.log(filterTerm);
-    
 
     if(filterTerm === 'Under 100'){
       return products.filter(x=>{

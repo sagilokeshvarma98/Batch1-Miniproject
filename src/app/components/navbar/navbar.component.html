@@ -15,7 +15,7 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <div class="dropdown">
-          <small class="btn text-light" data-bs-toggle="dropdown" aria-expanded="false"  *ngIf="istoken">my account</small>
+          <small  class="btn text-light mt-0" data-bs-toggle="dropdown" aria-expanded="false"  *ngIf="istoken">my account</small>
           
           <!-- <span>{{userName}}</span> -->
           <span class="text ml-2" *ngIf="!istoken">plesae login</span>
@@ -44,9 +44,9 @@
         </div>
       </li>
       <li class="nav-item">
-        <div  class="cart-icon my-2" >
-          <mat-icon matBadge="{{result}}" matBadgeColor="warn"    [routerLink]="['cart']" >shopping_cart</mat-icon>
-       
+        <div  class="cart-icon my-2 mt-4" >
+          <mat-icon matBadge="{{result}}" matBadgeColor="warn" [routerLink]="['cart']" >shopping_cart </mat-icon>
+          <small class="cart-text">Cart</small>
       </div>
       </li>
     </ul>

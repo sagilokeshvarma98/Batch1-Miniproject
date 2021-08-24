@@ -18,7 +18,6 @@ export class SigninComponent implements OnInit {
     password : new FormControl('',[Validators.required])
   })
 
-  price:any = '500'
 
   wrongCreden:Boolean = false
 
