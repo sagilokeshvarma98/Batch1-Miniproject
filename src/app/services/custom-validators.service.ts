@@ -39,7 +39,7 @@ export class CustomvalidatorsService {
      return this.http.get("http://localhost:5100/products")
    }
    postdata(data:any){
-    return this.http.post("http://oshopping.ddns.net/api/register",data)   
+    return this.http.post("http://oshopping.ddns.net/api/user/register",data)   
     
   
   }

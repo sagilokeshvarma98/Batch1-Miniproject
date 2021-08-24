@@ -20,10 +20,26 @@
           <!-- <span>{{userName}}</span> -->
           <span class="text ml-2" *ngIf="!istoken">plesae login</span>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+         <span class="dropdown-item"> <img class="profile-icon" src="assets\svg\person-circle.svg" alt=""> &nbsp; ram</span> 
+          
+            <hr>
             <a class="dropdown-item" *ngIf="istoken" (click)="islogout()">siginout</a>
             <a class="dropdown-item" *ngIf="!istoken" routerLink='login'>signIn</a>
             <a class="dropdown-item" *ngIf="istoken" [routerLink]="['/profile']">Profile</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">Something else here</a>  
+
+<!-- 
+           
+             <a class="dropdown-item" *ngIf="istoken" (click)="islogout()">siginout</a>
+            <a class="dropdown-item" *ngIf="!istoken" routerLink='login'>signIn</a>
+            <a class="dropdown-item" *ngIf="istoken" [routerLink]="['/profile']">Profile</a>
+            <a class="dropdown-item" href="#">Something else here</a>  -->
+
+           
+           
+
+            
           </div>
         </div>
       </li>

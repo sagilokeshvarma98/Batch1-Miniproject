@@ -12,9 +12,9 @@ export class CheckoutService {
   constructor(private http:HttpClient) { }
 
 public check():Observable<any>{
-  // return this.http.get("http://oshopping.ddns.net/api/carts/all")
+    return this.http.get("http://oshopping.ddns.net/api/carts/user")
   
-  return this.http.get("http://localhost:3000/cart")
+  // return this.http.get("http://localhost:3000/cart")
 
 
 
@@ -23,7 +23,7 @@ public check():Observable<any>{
 
 stripetoken(data:any):Observable<any>{
 
-return this.http.post("http://localhost:2030/users",data )
+return this.http.post(" https://api.stripe.com/v1/tokens",data )
 
 }
 
