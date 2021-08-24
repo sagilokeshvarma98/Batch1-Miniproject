@@ -15,14 +15,14 @@ export class FilterPipe implements PipeTransform {
       })
     }
     else if(filterTerm>0){
-      // let filteredData = products.filter(x=>{
-      //   if(x.mainRating >= filterTerm)
-      //   return x
-      // }).sort((x,y)=> x.mainRating - y.mainRating)
       let filteredData = products.filter(x=>{
-        if(x.rating >= filterTerm)
+        if(x.mainRating >= filterTerm)
         return x
-      }).sort((x,y)=> x.rating - y.rating)
+      }).sort((x,y)=> x.mainRating - y.mainRating)
+      // let filteredData = products.filter(x=>{
+      //   if(x.rating >= filterTerm)
+      //   return x
+      // }).sort((x,y)=> x.rating - y.rating)
       return filteredData
     }
     else
