@@ -4,6 +4,10 @@
     margin-top: 7%;
 }
 
+.largeImage1 .largeImage{
+    max-height: 500px;
+}
+
 .smallImage{
     width: 30px;
     height: 40px;
