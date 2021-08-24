@@ -35,7 +35,6 @@ export class ProductsDisplayComponent implements OnInit {
   ngOnInit(): void {
     this.PS.productsData().subscribe(res => {
       this.Products = res
-      console.log(res);
       this.length = res.length //For json file
       res.map((x: any, index: any) => {
         x.afterDiscount = x.price-x.discount

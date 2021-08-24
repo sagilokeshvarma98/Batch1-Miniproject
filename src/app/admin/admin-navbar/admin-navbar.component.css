@@ -1,0 +1,19 @@
+
+
+nav{
+    height: 45px;
+}
+
+#profileLink:hover{
+    text-decoration: none;
+    color: #686868;
+}
+
+.navbar a img{
+    width: 20px;
+}
+
+.navbar span{
+    color: white;
+    cursor: context-menu;
+}

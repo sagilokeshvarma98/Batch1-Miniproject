@@ -1,0 +1,105 @@
+*{
+    cursor: context-menu;
+}
+
+.container-fluid{
+    background-color: rgba(128, 128, 128, 0.158);
+}
+
+.imageCircle{
+    float: left;
+    margin: 22px 16px 0px 8px;
+}
+
+.adminProfile{
+    padding-top: 2%;
+    padding-bottom: 8.5%;
+}
+
+.card-admin-name h2{
+    color: #4b4949;
+}
+
+.card-admin-name h3{
+    padding-top: 10px;
+}
+
+.card-admin-name h3 span a{
+    font-weight: 400;
+    font-size: medium;
+    color: #333;
+    text-decoration: none;
+    margin-left: 22px;
+}
+
+.card-admin-name h3 span a:hover{
+    color: #686868;
+    text-decoration: underline 2px solid blueviolet;
+}
+
+.card-admin-name p{
+    color: #868383;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card .imageCircle{
+    height: 80px;
+    width: 80px;
+    border: 1px solid #686868;
+    border-radius: 50%;
+}
+
+.card .imageCircle img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+} 
+
+
+#manageText{
+    font-size: 20px;
+    cursor: context-menu;
+    color: #21413b;
+}
+
+.adminCards{
+    margin-top: 2%;
+}
+
+.adminDetails .card-body h5 #attribute{
+    float: left;
+    font-size: large;
+    font-family: monospace;
+    color: gray;
+    width: 20%;
+    min-width: 100px;
+}
+
+.adminDetails .card-body h3{
+    margin-bottom: 1%;
+}
+
+#adminContactHead{
+    color: #686868;
+}
+
+.adminDetails .card-body h5 #value{
+    font-weight: 450;
+    font-size: 14px;
+    color: gray;
+    padding-left: 20px;
+}
+
+
+
+
+
+.adminBasicInfo{
+    margin-top: 2%;
+}
+
+.adminBasicInfo .card{
+    width: 170px;
+    height: 100px;
+    margin: 20px 20px 0px 20px;
+} 

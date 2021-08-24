@@ -1,4 +1,4 @@
-.admin-nav a{
+/* .admin-nav a{
     float: right;
     color: rgb(148, 78, 212);
     text-decoration: none;
@@ -12,8 +12,17 @@
 
 .admin-nav a:hover{
     color: rgba(0, 0, 0, 0.171);
-    
+     */
+/* } */
+
+.container-fluid .row{ 
+    margin-top: 5%;
 }
+
+.managementLinks{
+    height: 500px;
+}
+
 .managementLinks ul li a:hover{
     color: white;
 }
@@ -25,8 +34,8 @@
     
 }
 nav{
-    margin-bottom: 10px;
-    height: 70px;
+    margin-top: 20px;
+    height: 45px;
 }
 
 .managementLinks{
@@ -52,9 +61,24 @@ nav{
     list-style: none;
     cursor: context-menu;
 }
-.mat-menu-button{
+
+.navbar a img{
+    width: 20px;
+}
+
+.navbar span{
+    color: white;
+    cursor: context-menu;
+}
+
+
+/* .mat-menu-button{
     font-weight: 400;
+<<<<<<< HEAD
     font-size: 20px;
+=======
+    font-size: 10px;
+>>>>>>> b96153bf04b80af64129c601ea4393da3014837f
     color: #0f1111;
     font-family: "Amazon Ember", Arial, sans-serif;
 
@@ -62,7 +86,10 @@ nav{
 .mat-menu-button:hover{
     background-color: #000;
     color: #fff;
-}
+} */
+
+
+
 /* .dropdown-menu{
     position: absolute;
     background-color: #f9f9f9;

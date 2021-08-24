@@ -18,7 +18,6 @@ export class SigninComponent implements OnInit {
     password : new FormControl('',[Validators.required])
   })
 
-  price:any = '500'
 
   wrongCreden:Boolean = false
 
@@ -44,11 +43,16 @@ export class SigninComponent implements OnInit {
     let password = this.loginForm.value.password
     if(username !="" || password!=""){
       this.ls.login(this.loginForm.value).subscribe(res=>{
-        localStorage.setItem('token',res.token)
-        let splittedtoekn = res.token.split(".");
-        let currentUser=JSON.parse(atob(splittedtoekn[1]));
-        localStorage.setItem("currentUser",JSON.stringify(currentUser))
+       if(res.token){
+        let user = JSON.parse(atob(res.token?.split(".")[1]))
+        localStorage.setItem("currentUser",user.sub)
+        localStorage.setItem("token",res.token)
+        console.log(user.sub,user.admin);
+        if(user.admin==0)
         this.route.navigate([`/`])
+        else
+        this.route.navigate(['/admin'])    
+       }
        },
        error=>{
          console.log(error);

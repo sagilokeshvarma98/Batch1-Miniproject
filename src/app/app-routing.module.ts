@@ -21,77 +21,160 @@ import { ItemDisplayComponent } from './user/item-display/item-display.component
 import { PaymentGateComponent } from './user/payment-gate/payment-gate.component';
 
 const routes: Routes = [
-  {
-    path:'',
-    component:NavbarComponent,
-     children:[
-       {
-         path:"",
-         component:HomepageComponent
-       },
+  {path:"",
+  component:NavbarComponent ,
+   
+},
+{path:"home",component:NavbarComponent,
+data: {
+        breadcrumb:
+           { alias: 'Parent' }
+      },
+children:[
+  {path:'',component:HomepageComponent,
+    }
+]
+  }
+//   {
+//     path:'',
+//     component:NavbarComponent,
+//     data: {
+//       breadcrumb:
+//         { alias: 'Parent' }
+//     },
+//      children:[
+//       {
+//         path:"",
+//         component:HomepageComponent
+//       },
+//        {
+//          path:"home",
+//          component:HomepageComponent,
+//          data: {
+//           breadcrumb:
+//             { alias: 'ChildOne' }
+//         }
+//        },
       
-    {
-      path: 'mens',
-      component: MensSubpageComponent
-    },
-    {
-      path: 'electronics',
-      component: ElectronicsSubpageComponent,
-      
-    },
-    {
-      path: 'kitchen',
-      component: KitchenSubpageComponent
-    },
-    {
-      path: 'cart',
-      component: CartComponent
-      // ,canActivate:[ProtectRoutesGuard]
-    },
-    {
-      path: 'adress',
-      component: AddressComponent
-  },
-    {
-        path: 'adress/:id',
-        component: AddressComponent
-    },
-    {path:"useradress", 
-  component:AdressdiplayComponent
-  },
-    {
-path:"checkout",
-component:CheckoutComponent
+//     {
+//       path: 'mens',
+//       component: MensSubpageComponent,
+//       data: {
+//         breadcrumb:
+//           { alias: 'ChildTwo' }
+//       }
+//     },
+//     {
+//       path: 'electronics',
+//       component: ElectronicsSubpageComponent,
+//       data: {
+//         breadcrumb:
+//           { alias: 'ChildThree' }
+//       }
+//     },
+//     {
+//       path: 'kitchen',
+//       component: KitchenSubpageComponent,
+//       data: {
+//         breadcrumb:
+//           { alias: 'ChildFour' }
+//       }
+//     },
+//     {
+//       path: 'cart',
+//       component: CartComponent,
+//       data: {
+//         breadcrumb:
+//           { alias: 'ChildFive' }
+//       }
+//       // ,canActivate:[ProtectRoutesGuard]
+//     },
+//     {
+//       path: 'adress',
+//       component: AddressComponent,
+//       data: {
+//         breadcrumb:
+//           { alias: 'ChildSix' }
+//       }
+//   },
+//     {
+//         path: 'adress/:id',
+//         component: AddressComponent,
+//         data: {
+//           breadcrumb:
+//             { alias: 'ChildSeven' }
+//         }
+//     },
+//     {path:"useradress", 
+//   component:AdressdiplayComponent,
+//   data: {
+//     breadcrumb:
+//       { alias: 'ChildEight' }
+//   }
+//   },
+//     {
+// path:"checkout",
+// component:CheckoutComponent,
+// data: {
+//   breadcrumb:
+//     { alias: 'ChildNine' }
+// }
+//     },
+//     {
+//       path:"payment",
+//       component:PaymentGateComponent,
+//       data: {
+//         breadcrumb:
+//           { alias: 'ChildTen' }
+//       }
+//           },
+//     {
+//       path: 'profile',
+//       component:UserProfileComponent,
+//       data: {
+//         breadcrumb:
+//           { alias: 'ChildEleven' }
+//       }
+//     },
+//     {path:"products",
+//     component:FiltersComponent,
+//     data: {
+//       breadcrumb:
+//         { alias: 'ChildTwele' }
+//     }
+//   },
+// {path:"products/:id",
+// component:ItemDisplayComponent,
+// data: {
+//   breadcrumb:
+//     { alias: 'ChildThirteen' }
+// }
+// },
+//     {
+//       path: 'order',
+//       component: OrdersComponent,
+//       children:[
+//         {
+//           path:"tracking",
+//           component:TrackingComponent,
+//           data: {
+//             breadcrumb:
+//               { alias: 'Child15' }
+//           }
+//         },
+//         {
+//           path:"postcomment",
+//           component:CommentsPostComponent,
+//           data: {
+//             breadcrumb:
+//               { alias: 'Child16' }
+//           }
+//         }
+//       ]
+//     }   
+//   ]
+// }
 
-
-    },
-    {
-      path:"payment",
-      component:PaymentGateComponent
-      
-      
-          },
-    {
-      path: 'profile',
-      component:UserProfileComponent
-    },
-    {path:"products",component:FiltersComponent},
-{path:"products/:id",component:ItemDisplayComponent},
-    {
-      path: 'order',
-      component: OrdersComponent,
-      children:[
-        {
-          path:"tracking",component:TrackingComponent
-        },
-        {
-          path:"postcomment",
-          component:CommentsPostComponent
-        }
-      ]
-    }   
-  ]
-}
 ];
 
 @NgModule({
