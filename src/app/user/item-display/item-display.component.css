@@ -1,8 +1,28 @@
-.image img{
-    margin-top: 10%;
-    width: 270px;
+.largeImage1{
+    width: 260px;
     height: 416px;
+    margin-top: 7%;
 }
+
+.largeImage1 .largeImage{
+    max-height: 500px;
+}
+
+.smallImage{
+    width: 30px;
+    height: 40px;
+    margin:20px
+}
+
+.smallImage:active{
+    width: 20px;
+    height: 30px;
+}
+
+.smallImageDiv{
+    margin-top: 50px;
+}
+
 ngb-rating{
     margin-bottom: 20px;
     font-size: xx-large;

@@ -11,7 +11,6 @@ export class LoginService {
   constructor(private hp:HttpClient , private route:Router) { }
 
   login(data:any):Observable<any>{
-    console.log(data);
     return this.hp.post("http://oshopping.ddns.net/api/user/login",data)
     // .pipe(
     //   map(user => {
@@ -27,20 +26,14 @@ export class LoginService {
     localStorage.clear()
     this.route.navigate(['/login'])
   }
-
-
   getToken(){
     return localStorage.getItem("token") || ''
    
   }
-
-
   public deactivate(data:any):Observable<any>{
     return this.hp.post("http://localhost:3000/users",data)
   }
   deleteaccount(data:any):Observable<any>{
-    console.log(data);
-  
     return this.hp.delete("http://localhost:3000/users/"+data)
   }
 

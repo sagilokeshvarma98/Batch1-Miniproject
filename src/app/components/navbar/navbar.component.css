@@ -1,6 +1,8 @@
 .navbar{
     background: #00aa8a;
+    
 }
+
 .form-control{
     height: 32px;
     border: none;
@@ -8,6 +10,13 @@
 .btn-light{
     height: 32px;
     color: black;
+}
+.cart-text{
+    font-weight: 700;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 15px;
+    color: #fff;
 }
 .search-icon{
     position: relative;

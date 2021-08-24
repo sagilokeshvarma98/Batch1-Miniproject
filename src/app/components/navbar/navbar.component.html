@@ -23,6 +23,7 @@
       <li class="nav-item">
         <div class="dropdown">
           <small class="text-Hello" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="istoken">Hello</small>
+
           <!-- <span>{{userName}}</span> -->
           <span class="sigin-text " *ngIf="!istoken">Sign In</span>
           <mat-icon class="text-light" id="userAccount"> account_circle </mat-icon>
@@ -37,13 +38,14 @@
           </div>
         </div>
       </li>
+
     </ul>
   </div>
 </nav>
 <app-subnav></app-subnav>
-<xng-breadcrumb [separator]="iconTemplate"></xng-breadcrumb>
-<ng-template #iconTemplate>
-  <mat-icon>chevron_right</mat-icon>
-</ng-template>
+<!-- <xng-breadcrumb [separator]="iconTemplate"></xng-breadcrumb>
+    <ng-template #iconTemplate>
+        <mat-icon>chevron_right</mat-icon>
+    </ng-template> -->
 <router-outlet></router-outlet>
 <app-footer></app-footer>
