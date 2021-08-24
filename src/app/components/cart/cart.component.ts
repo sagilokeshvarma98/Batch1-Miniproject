@@ -14,7 +14,8 @@ export class CartComponent implements OnInit {
   cart: any;
   confirm: any
   cartlength:any
-  cartitems:any;
+  cartitems:Array<any>=[];
+  obj:any
  result:any;
 
   
@@ -68,11 +69,19 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
   getcartitem() {
     this.os.getitem().subscribe((posres) => {
       this.cart = posres
-    //  this.cartitems= this.cart[0].cartItems
-    
+     console.log(posres)
+    //  this.cartitems=this.cart.cartItems[0]
+      // for(var i=0; i<=this.cart.length;i++){
+      //   // this.cartitems=this.cart[i].cartItems[0];
+      //  this.cartitems[i]= this.cart[i].cartItems[0]
+      //  console.log(this.cartitems)
+      
+      
+      // }
+ 
      console.log(this.os.changeData())
-    //   console.log("cart")
-    //   console.log(this.cartitems)
+    // 
+    //  
      
     //  this.cartlength =this.cartitems.length
     //  console.log("product")
@@ -82,7 +91,7 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
 
       this.total += this.total;
 
-      for (let x of this.cart) {
+      for (let x of this.cart.cartItems) {
       //  for (let x of this.cartitems) {
 
        this.total += x.quantity*x.price;

@@ -47,4 +47,90 @@
     .row{
         margin-top: 20px;
     }
+.text1{
+    line-height: 55px;
+    font-size: 60px;
+    letter-spacing: .5px;
+    color: #0a0747;
+    font-weight: 900;
+    position: relative;
+    margin-left: 150px;
+}
+.text2{
+    margin-bottom: 15px;
+    font-size: 60px;
+    letter-spacing: .5px;
+    line-height: 40px;
+    font-weight: 900;
+    position: relative;
+    margin-left: 155px;
+    color: rgb(99, 97, 97);
+}
+.mt10{
+    font-size: 15px;
+    line-height: 50px;
+    letter-spacing: .5px;
+    margin-left: 150px;
+}
+.text-p{
+    font-size: 15px;
+    letter-spacing: .5px;
+    margin-left: 150px;
+    position: relative;
+    top: -25px;
     
+}
+.mt-10{
+    text-decoration: none;
+    font-weight: 900;
+    line-height: px;
+    display: inline-block;
+    padding: 14px 18px;
+    margin-top: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    background: #fff;
+    color: #2c2b2b;
+    position: relative;
+    margin-left: 150px;
+    top: -20px;
+}
+.mat-icon{
+    position: relative;
+    top: 6px;
+    left: 5px;
+}
+#mens{
+    background: -webkit-gradient(linear, left top, right top, from(#08c4a1), to(#d0d0d3));
+    background: linear-gradient(to right, #494b7c, #48a564);
+}
+.col-lg-2 .img1{
+    position: relative;
+    bottom: 20px;
+}
+.col-lg-2 .img2{
+    position: relative;
+    bottom: 5px;
+   
+}
+.col-lg-2 .img1{
+    position: relative;
+    bottom: 20px;
+   
+}
+#card1{
+    max-width: 60%;
+    position: relative;
+    left: 120px;
+}
+#card2{
+    max-width: 60%;
+    position: relative;
+    left: 10px;
+   
+}
+#card3{
+    max-width: 60%;
+    position: relative;
+    left: -80px;
+}

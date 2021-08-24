@@ -14,11 +14,13 @@ electronics:any;
   ngOnInit(): void {
     
 
-  this.homepageservice.productsData().subscribe((posres)=>{
+  // this.homepageservice.productsData().subscribe((posres)=>{
   
-    this.electronics=posres;
+  //   this.electronics=posres;
     
-    })
+  //   })
+
+  
    
   }
 

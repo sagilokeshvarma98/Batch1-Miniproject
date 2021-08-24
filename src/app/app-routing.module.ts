@@ -24,10 +24,6 @@ const routes: Routes = [
   {
     path:'',
     component:NavbarComponent,
-    data: {
-      breadcrumb:
-        { alias: 'Parent' }
-    },
      children:[
       {
         path:"",
@@ -36,105 +32,53 @@ const routes: Routes = [
        {
          path:"home",
          component:HomepageComponent,
-         data: {
-          breadcrumb:
-            { alias: 'ChildOne' }
-        }
        },
       
     {
       path: 'mens',
       component: MensSubpageComponent,
-      data: {
-        breadcrumb:
-          { alias: 'ChildTwo' }
-      }
     },
     {
       path: 'electronics',
       component: ElectronicsSubpageComponent,
-      data: {
-        breadcrumb:
-          { alias: 'ChildThree' }
-      }
     },
     {
       path: 'kitchen',
       component: KitchenSubpageComponent,
-      data: {
-        breadcrumb:
-          { alias: 'ChildFour' }
-      }
     },
     {
       path: 'cart',
       component: CartComponent,
-      data: {
-        breadcrumb:
-          { alias: 'ChildFive' }
-      }
       // ,canActivate:[ProtectRoutesGuard]
     },
     {
       path: 'adress',
       component: AddressComponent,
-      data: {
-        breadcrumb:
-          { alias: 'ChildSix' }
-      }
   },
     {
         path: 'adress/:id',
         component: AddressComponent,
-        data: {
-          breadcrumb:
-            { alias: 'ChildSeven' }
-        }
     },
     {path:"useradress", 
   component:AdressdiplayComponent,
-  data: {
-    breadcrumb:
-      { alias: 'ChildEight' }
-  }
   },
     {
 path:"checkout",
 component:CheckoutComponent,
-data: {
-  breadcrumb:
-    { alias: 'ChildNine' }
-}
     },
     {
       path:"payment",
       component:PaymentGateComponent,
-      data: {
-        breadcrumb:
-          { alias: 'ChildTen' }
-      }
           },
     {
       path: 'profile',
       component:UserProfileComponent,
-      data: {
-        breadcrumb:
-          { alias: 'ChildEleven' }
-      }
     },
     {path:"products",
     component:FiltersComponent,
-    data: {
-      breadcrumb:
-        { alias: 'ChildTwele' }
-    }
   },
 {path:"products/:id",
 component:ItemDisplayComponent,
-data: {
-  breadcrumb:
-    { alias: 'ChildThirteen' }
-}
 },
     {
       path: 'order',
@@ -143,23 +87,16 @@ data: {
         {
           path:"tracking",
           component:TrackingComponent,
-          data: {
-            breadcrumb:
-              { alias: 'Child15' }
-          }
         },
         {
           path:"postcomment",
           component:CommentsPostComponent,
-          data: {
-            breadcrumb:
-              { alias: 'Child16' }
-          }
         }
       ]
     }   
   ]
 }
+
 ];
 
 @NgModule({
