@@ -11,35 +11,35 @@ export class PriceFilterPipe implements PipeTransform {
 
     if(filterTerm === 'Under 100'){
       return products.filter(x=>{
-        if(x.price<100){
+        if(x.afterDiscount<100){
           return x
         }
       })
     }
     else if(filterTerm === '100 - 500'){
       return products.filter(x=>{
-        if(x.price>100 && x.price<500){
+        if(x.afterDiscount>100 && x.afterDiscount<500){
           return x
         }
       })
     }
     else if(filterTerm === '500 - 1000'){
       return products.filter(x=>{
-        if(x.price>500 && x.price<1000){
+        if(x.afterDiscount>500 && x.afterDiscount<1000){
           return x
         }
       })
     }
     else if(filterTerm === '1000 - 5000'){
       return products.filter(x=>{
-        if(x.price>1000 && x.price<5000){
+        if(x.afterDiscount>1000 && x.afterDiscount<5000){
           return x
         }
       })
     }
     else if(filterTerm === 'Above 5000'){
       return products.filter(x=>{
-        if (x.price>5000){
+        if (x.afterDiscount>5000){
           return x
         }
       })

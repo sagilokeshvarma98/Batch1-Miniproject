@@ -28,6 +28,7 @@ export class ErrorInterceptor implements HttpInterceptor {
         }
         else {
           console.log('this is server side error');
+          console.log(error)
           errorMsg = `Error Code: ${error.status},  Message: ${error.message}`;
         }
         console.log(errorMsg);

@@ -33,13 +33,13 @@ export class CustomvalidatorsService {
   getData(){
 
 
-    return this.http.get("http://localhost:5100/products");
+    return this.http.get("http://localhost:3000/products");
    }
    validatorEmail(Email:any){
-     return this.http.get("http://localhost:5100/products")
+     return this.http.get("http://localhost:3000/products")
    }
    postdata(data:any){
-    return this.http.post("http://oshopping.ddns.net/api/register",data)   
+    return this.http.post("http://oshopping.ddns.net/api/user/register",data)   
     
   
   }

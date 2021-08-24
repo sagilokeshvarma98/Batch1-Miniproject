@@ -81,7 +81,7 @@ _id(id:any){
 
 getuser(){
   this.ud.userdemographics().subscribe((posres)=>{
-
+console.log(posres)
     this.userdemographics=posres;
   })
 }
