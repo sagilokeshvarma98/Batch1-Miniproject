@@ -6,6 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(products: any[], filterTerm:any): any {
+    console.log(products[1]);
     
     if(filterTerm === true){
       return products.filter(x=>{
@@ -14,10 +15,14 @@ export class FilterPipe implements PipeTransform {
       })
     }
     else if(filterTerm>0){
+      // let filteredData = products.filter(x=>{
+      //   if(x.mainRating >= filterTerm)
+      //   return x
+      // }).sort((x,y)=> x.mainRating - y.mainRating)
       let filteredData = products.filter(x=>{
-        if(x.mainRating >= filterTerm)
+        if(x.rating >= filterTerm)
         return x
-      }).sort((x,y)=> x.mainRating - y.mainRating)
+      }).sort((x,y)=> x.rating - y.rating)
       return filteredData
     }
     else
