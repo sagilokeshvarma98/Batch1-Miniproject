@@ -13,6 +13,7 @@
             <div class="col-lg-5 col-md-3 col-sm-3 col-xs-3">
                 <div *ngFor="let src of itemData.imageUrls" class="smallImageDiv">
                     <img src={{src.imgUrl}} (click)="getImageId(src)" class="smallImage" alt="">
+                    
                 </div>
             </div>
         </div>
