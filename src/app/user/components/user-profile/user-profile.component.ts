@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 
 import { LoginService } from 'src/app/services/login.service';
+import { UserprofileService } from 'src/app/services/userprofile.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class UserProfileComponent implements OnInit {
   unsplittedtoekn: any
   currentUser: any;
 
-  constructor(private token: LoginService) { }
+  constructor(private token: LoginService,private user:UserprofileService) { }
 
   logout() {
     this.token.logout();
@@ -25,21 +26,33 @@ export class UserProfileComponent implements OnInit {
     this.currentUser = localStorage.getItem("currentUser");
     return this.currentUser;
   }
+  
+deactivate(){
 
-  deactivate(data: any) {
-    this.token.deleteaccount(data).subscribe((posres) => {
-      console.log("deleted")
-    })
-    this.token.deactivate(this.currentUser).subscribe((posres) => {
-      console.log("deactivated")
-      this.logout();
-    })
-  }
+  // this.user.deleteaccount().subscribe((posres) => {
 
+  //   console.log("deleted")
+  // })
+  this.user.deleteaccount().subscribe((posres) => {
+console.log(posres)
+    console.log("deactivated")
+    this.logout();
+  })
+}
 
-  ngOnInit(): void {
-    this.gettoken()
-  }
+userprofile(){
+  this.user.userprofile().subscribe((posres)=>{
+    this.currentUser=posres
+    console.log(posres)
+  })
+}
+
+ngOnInit(): void {
+  console.log("hai")
+  // this.gettoken()
+  this.userprofile();
+  
+}
 
 }
 
