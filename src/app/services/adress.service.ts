@@ -27,7 +27,7 @@ deleteadress(data:any):Observable<any>{
   console.log(data);
   console.log("delete")
 
-  return this.http.delete(`http://localhost:2021/adress/${data}`)
+  return this.http.delete(`http://localhost:3000/adress/${data}`)
 }
 
 selctdefult(data:any):Observable<any>{

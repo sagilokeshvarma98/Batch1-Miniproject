@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdressService } from 'src/app/services/address.service';
 import { AddressService } from 'src/app/services/adress.service';
 
 
@@ -58,6 +59,7 @@ public getdefult(){
     this.confirm = confirm("do you want  delet you adress ")
     if (this.confirm == true) {
       this.address.deleteadress(id).subscribe((posres) => {
+        console.log("del")
         console.log(posres)
         this.getAddress();
       })

@@ -9,11 +9,11 @@ export class OrdersService {
 
   constructor(public http:HttpClient) { }
  public getmyorders():Observable<any>{
-   return this.http.get("http://localhost:3600/orders")
+   return this.http.get("http://localhost:3000/orders")
  }
 
  public posttocancel(data:any):Observable<any>{
-  return this.http.post("http://localhost:3400/cancel",data)
+  return this.http.post("http://localhost:3000/cancel",data)
 }
 
 
