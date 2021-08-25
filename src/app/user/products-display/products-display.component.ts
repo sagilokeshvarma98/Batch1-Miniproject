@@ -15,7 +15,7 @@ export class ProductsDisplayComponent implements OnInit {
   ctrl = new FormControl(null, Validators.required);
 
   sortTerm: string = ""
-
+  searchTerm:string = ""
   @Input() ratingTerm: Number = 0
   @Input() priceTerm: String = ''
 
@@ -34,7 +34,11 @@ export class ProductsDisplayComponent implements OnInit {
   Title: string = ""
 
   ngOnInit(): void {
+    this.PS.term.subscribe(res=>{
+      this.searchTerm = res
+    })
     this.PS.productsData().subscribe(res => {
+      console.log(res);
       this.Products = res
       this.length = res.length //For json file
       res.map((x: any, index: any) => {

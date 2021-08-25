@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output ,ViewChild, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { LoginService } from 'src/app/services/login.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 
 @Component({
@@ -14,12 +16,16 @@ export class NavbarComponent implements OnInit {
   currentUser: any;
   cart: any;
   result: any;
+  searchTerm:any
 
+  getSearchValue(searchTerm:any){
+    this.PS.changeSearchTerm(searchTerm)
+    this.route.navigate(['products'])
+  }
  
-  constructor(private token:LoginService ,private cartservice:CartService) { }
+  constructor(private token:LoginService ,private cartservice:CartService , private PS:ProductsService , private route:Router) { }
    
   ngOnInit(): void {
-    
     this.cartservice.cast.subscribe((posRes: any)=>{
       this.result = posRes;
       
@@ -32,7 +38,6 @@ export class NavbarComponent implements OnInit {
   gettoken(){
     if (this.token.getToken()) {
       this.istoken = true
-      
     }
   }
 
