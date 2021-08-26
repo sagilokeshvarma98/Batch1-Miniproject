@@ -1,47 +1,51 @@
-<div *ngIf="load">
+<div class="errorMessageToCart" *ngIf="showErrorMesage">
+    <h4>
+        Please select quantity to add.
+    </h4>
+</div>
 
-    <div class="itemBackCover">
-        <div class="container itemDes">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+<div *ngIf="load">
+<div class="itemBackCover">
+    <div class="container itemDes">
+        <div  *ngIf="itemData.imageUrls.length>0" class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-9">
+                <div class="largeImage1">
+                    <img class="largeImage" src={{imageUrl}} alt={{itemData.title}}>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-9">
-                    <div class="largeImage1">
-                        <img *ngIf="itemData.imageUrls.length>0" class="largeImage" src={{imageUrl}}
-                            alt={{itemData.title}}>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-3 col-sm-3 col-xs-3">
-                    <div *ngFor="let src of itemData.imageUrls" class="smallImageDiv">
+            </div>
+            <div class="col-lg-5 col-md-3 col-sm-3 col-xs-3">
+                    <div  *ngFor="let src of itemData.imageUrls" class="smallImageDiv">
                         <img src={{src.imgUrl}} (click)="getImageId(src)" class="smallImage" alt="">
                     </div>
-                </div>
-            </div>
-            <div class="decription">
-                <h2>{{itemData.title}}</h2>
-                <ngb-rating [rate]="itemData.mainRating" [readonly]='true' [max]="5"></ngb-rating>
-                <h4 class="normalPrice">
-                    Price : {{itemData.afterDiscount | currency:"INR"}}
-                    <span>{{itemData.price | currency:"INR"}}</span>
-                </h4>
-                <h4 class={{itemData.quantityClass}}>{{itemData.quantityText}}</h4>
-                <h2>{{itemData.category}}</h2>
-                Quantity :
-                <select name="quantity" (change)='selectQuantity($event)' id="quantity">
-                    <option selected value="0">0</option>
-                    <option *ngFor='let quantity of itemQuantity' value={{quantity}}>{{quantity}}</option>
-                </select>
-                <div class="cartButton">
-                    <app-cart-button [itemData]='itemData'></app-cart-button>
-                </div>
-                <h4>Description :</h4>
-                <ul *ngFor='let data of description'>
-                    <li>{{data}}</li>
-                </ul>
             </div>
         </div>
+        <div class="decription">
+            <h2>{{itemData.title}}</h2>
+            <ngb-rating [rate]="itemData.mainRating" [readonly]='true' [max]="5"></ngb-rating>
+            <h4 class="normalPrice">
+                Price : {{itemData.afterDiscount | currency:"INR"}}
+                <span>{{itemData.price | currency:"INR"}}</span>
+            </h4>
+            <h4 class={{itemData.quantityClass}}>{{itemData.quantityText}}</h4>
+            <h2>{{itemData.category}}</h2>
+            Quantity :
+            <select name="quantity" (change)='selectQuantity($event)' id="quantity">
+                <option selected value="0">0</option>
+                <option *ngFor='let quantity of itemQuantity' value={{quantity}}>{{quantity}}</option>
+            </select>
+            <div class="cartButton">
+                <app-cart-button [quantity]="quantity" (displayNotification)="displayQuantityError($event)" [itemData]='itemData'></app-cart-button>
+            </div>
+            <h4>Description :</h4>
+            <ul *ngFor='let data of description'>
+                <li>{{data}}</li>
+            </ul>
+        </div>
     </div>
-    <app-comments [itemComment]='itemData.productReviews'></app-comments>
+</div>
+<app-comments [itemComment]='itemData.productReviews'></app-comments>
 </div>
 
 
