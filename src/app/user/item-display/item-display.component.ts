@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { param } from 'jquery';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -12,17 +11,14 @@ export class ItemDisplayComponent implements OnInit {
 
   constructor(private PS:ProductsService , public routes:ActivatedRoute) { }
   itemData:any 
-
-
   itemQuantity:number[] = []
   description:string[] = []
   id:number = 0
   load:boolean = false
+  showErrorMesage:boolean = false
   imageUrl:string=""
+  quantity:any = 0
   ngOnInit(): void {
-
-
-
     this.routes.params.subscribe(params => {
       this.id = parseInt(params['id'])
       this.PS.getProductbyId(this.id).subscribe((res:any)=>{
@@ -42,7 +38,6 @@ export class ItemDisplayComponent implements OnInit {
             if(count == length)
               this.itemData.mainRating = ratingsSum/count
           })
-          
           this.itemData.afterDiscount = res.price - res.discount
           if(this.itemData.content)
           this.description = this.itemData.content.split('. ')
@@ -50,16 +45,46 @@ export class ItemDisplayComponent implements OnInit {
             this.itemQuantity.push(i)
           }          
           if(this.itemData.quantity>0){
+            this.itemData.btnDisabled = false
             this.itemData.quantityText = "In Stock"
             this.itemData.quantityClass = "text text-success"
           }
           else{
+            this.itemData.btnDisabled = true
             this.itemData.quantityText = "Out of Stock"
             this.itemData.quantityClass = "text text-danger"
           }
         }
       })
     });
+  }
+
+  getImageId(src:any){
+    this.imageUrl = src.imgUrl
+  }
+
+  selectQuantity(event:any){
+   this.quantity = event.target.value
+  }
+
+  displayQuantityError(val:any){
+    this.showErrorMesage = val
+    setInterval(()=>{
+      this.showErrorMesage = !val
+    },5000)
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -87,15 +112,3 @@ export class ItemDisplayComponent implements OnInit {
   // this.itemData.afterDiscount = this.itemData.price - this.itemData.discount
 
   
-  }
-
-  getImageId(src:any){
-    console.log(src.imgUrl);
-    
-    this.imageUrl = src.imgUrl
-  }
-
-  selectQuantity(event:any){
-    console.log(event.target.value);
-  }
-}
