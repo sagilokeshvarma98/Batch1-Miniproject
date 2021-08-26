@@ -16,21 +16,19 @@ export class CartButtonComponent implements OnInit {
   @Output() displayNotification = new EventEmitter()
   isincart: boolean = false;
   ngOnInit(): void {
-    console.log(this.quantity)
+    // console.log(this.quantity)
   }
   getitem() {
     this.os.getitem().subscribe((posres) => {
-      console.log("this posres")
       console.log(posres.cartItems.map((user: any) => {
         console.log(user.product.id)
         if (user.product.id == this.itemData.id) {
-          console.log("hai")
           this.isincart = true;
         }
       }))
       if (!this.isincart) {
-        console.log("if")
-        this.os.additem(this.quantity, this.itemData.id).subscribe((posres) => {
+        this.os.additem(this.quantity, this.itemData.id)
+        .subscribe((posres) => {
           console.log("item added")
           console.log(posres)
 
@@ -38,10 +36,8 @@ export class CartButtonComponent implements OnInit {
         })
       }
       else {
-        console.log("else")
         this.route.navigate(['cart']);
       }
-      console.log(this.isincart)
     })
   }
 
@@ -49,7 +45,9 @@ export class CartButtonComponent implements OnInit {
 
   AddToCart() {
     if(this.quantity>0){
-      this.getitem()
+      // this.getitem()
+      this.os.additem(this.quantity,this.itemData.id).subscribe(res=>console.log(res))
+      console.log(this.quantity,this.itemData);
     }
     else{
       this.displayNotification.emit(true)

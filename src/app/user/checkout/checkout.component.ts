@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { AddressService } from 'src/app/services/adress.service';
+import { CartService } from 'src/app/services/cart.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
 import { CouponService } from 'src/app/services/coupon.service';
 
@@ -12,7 +13,9 @@ import { CouponService } from 'src/app/services/coupon.service';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,private cs:CheckoutService,private adress:AddressService,private couponservice:CouponService){}
+  constructor(private fb:FormBuilder,private cs:CheckoutService,
+    private adress:AddressService,private couponservice:CouponService
+    ,public cart:CartService){}
 
 check:any
 grandtotal=0;
@@ -46,23 +49,27 @@ getadress(){
 
     console.log(this.default)
   })
-
 })
-
 }
-getchecked(){
-  this.cs.check().subscribe((posres)=>{
-    this.check=posres;
-    // this.checkitems=this.check[0].cartItems
 
-    this.grandtotal += this.grandtotal;
-    for (let x of this.check.cartItems) {
-    // for (let x of this.checkitems) {
-  
-      this.grandtotal += x.quantity*x.price;
-        console.log(this.grandtotal)
-     }
+getchecked(){
+  this.cart.getitem().subscribe(res=>{
+    console.log(res);
+    this.check = res
+    
   })
+
+  // this.cs.check().subscribe((posres)=>{
+  //   this.check=posres;
+  //   // this.checkitems=this.check[0].cartItems
+  //   this.grandtotal += this.grandtotal;
+  //   for (let x of this.check.cartItems) {
+  //   // for (let x of this.checkitems) {
+  
+  //     this.grandtotal += x.quantity*x.price;
+  //       console.log(this.grandtotal)
+  //    }
+  // })
 }
 
 change(val:any){
