@@ -40,11 +40,6 @@ export class RegisterComponent implements OnInit {
    this.customvalid.postdata(userData)
    
    .subscribe((res:any)=>{
-    this.cs.intializecart().subscribe((res)=>{
-      console.log("cart initialized")
-      console.log(res)
-    
-        })
      console.log(res);
      this.route.navigate(['successfulRegister'])
    })

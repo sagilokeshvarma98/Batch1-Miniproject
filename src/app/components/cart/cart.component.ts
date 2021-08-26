@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
   cartitems:Array<any>=[];
   obj:any
  result:any;
-
+ length:boolean = false
   
 
   constructor(private os: CartService , public check:CheckoutService) { }
@@ -26,13 +26,11 @@ export class CartComponent implements OnInit {
 let qty={
   "quantity":val.target.value
 };
-this.os.selcetquantity(qty ,id).subscribe((res)=>{
-  this.getcartitem();
-  console.log(res)
-
-})
+// this.os.selcetquantity(qty ,id).subscribe((res)=>{
+//   this.getcartitem();
+//   console.log(res)
+// })
     if (val.target.value == 0) {
-
       this.confirm = confirm("do you want confirm delet item")
       if (this.confirm == true) {
         this.os.deleteitem(id).subscribe((posres) => {
@@ -51,6 +49,24 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
     // console.log(id)
   }
 
+  deleteItem(id:any){
+
+    console.log(id);
+    
+    this.confirm = confirm("do you want confirm delet item")
+      if (this.confirm == true) {
+        this.os.deleteitem(id).subscribe((posres) => {
+          console.log(posres)
+          this.getcartitem();
+          // window.location.reload();
+          this.os.changeData();
+          console.log("delete success")
+        })
+      }
+      else {
+        alert("ok")
+      }
+  }
 
   chechOutCart(){
     this.check.checkout().subscribe(res=>console.log(res)
@@ -58,13 +74,12 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
   }
 
 
-
-
-
   getcartitem() {
     this.os.getitem().subscribe((posres) => {
       this.cart = posres
-     console.log(posres)
+      console.log(this.cart);
+      if(this.cart.cartItems.length>0)
+        this.length = true
     //  this.cartitems=this.cart.cartItems[0]
       // for(var i=0; i<=this.cart.length;i++){
       //   // this.cartitems=this.cart[i].cartItems[0];
@@ -84,35 +99,32 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
     //   console.log("imageurl")
     //   console.log(this.cartitems[0].product.imageUrls[0].imgUrl)
 
-      this.total += this.total;
+      // this.total += this.total;
 
-      for (let x of this.cart.cartItems) {
-      //  for (let x of this.cartitems) {
+      // for (let x of this.cart.cartItems) {
+      // //  for (let x of this.cartitems) {
 
-       this.total += x.quantity*x.price;
-      //  console.log("total")
-        //  console.log(this.total)
-      }
+      //  this.total += x.quantity*x.price;
+      // //  console.log("total")
+      //   //  console.log(this.total)
+      // }
+      this.cart.cartItems.map(
+        (x:any)=>{
+          this.total = this.total+x.price-x.discount
+        }
+      ) 
      }
     )
-
   }
 
 
   ngOnInit() {
-
     this.getcartitem();
-    this.os.getname(1).subscribe((posres)=>{
-      console.log(posres)
-      
-    
-
-    })
-
-
+    // this.os.getname(1).subscribe((posres)=>{
+    //   console.log(posres)
+    // })
     this.os.cast.subscribe((posRes)=>{
       this.result = posRes;
- 
   })
 
   
