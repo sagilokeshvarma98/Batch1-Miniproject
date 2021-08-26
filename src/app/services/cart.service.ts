@@ -67,7 +67,7 @@ public intializecart():Observable<any>{
 
 public additem(data:any,id:any):Observable<any>{
 
-  return this.http.post("http://oshopping.ddns.net/api/cartitems/add/usercart/product/"+id,data )
+  return this.http.post("http://oshopping.ddns.net/api/cartitems/add/usercart/product/"+id,data)
 }
 
 
