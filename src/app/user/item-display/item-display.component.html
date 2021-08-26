@@ -1,5 +1,10 @@
-<div *ngIf="load">
+<div class="errorMessageToCart" *ngIf="showErrorMesage">
+    <h4>
+        Please select quantity to add.
+    </h4>
+</div>
 
+<div *ngIf="load">
 <div class="itemBackCover">
     <div class="container itemDes">
         <div  *ngIf="itemData.imageUrls.length>0" class="row">
@@ -31,7 +36,7 @@
                 <option *ngFor='let quantity of itemQuantity' value={{quantity}}>{{quantity}}</option>
             </select>
             <div class="cartButton">
-                <app-cart-button [itemData]='itemData'></app-cart-button>
+                <app-cart-button [quantity]="quantity" (displayNotification)="displayQuantityError($event)" [itemData]='itemData'></app-cart-button>
             </div>
             <h4>Description :</h4>
             <ul *ngFor='let data of description'>
