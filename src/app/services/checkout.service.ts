@@ -12,7 +12,6 @@ export class CheckoutService {
 
 public check():Observable<any>{
     return this.http.get("http://oshopping.ddns.net/api/carts/user")
-  
   // return this.http.get("http://localhost:3000/cart")
   }
 

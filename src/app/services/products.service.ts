@@ -32,9 +32,9 @@ export class ProductsService {
     return this.hc.post("http://oshopping.ddns.net/api/products/add",data)
   }
 
-  getCartItem():Observable<any>{
-    return this.hc.get("http://oshopping.ddns.net/api/products/1")
-  }
+  // getCartItem():Observable<any>{
+  //   return this.hc.get("http://oshopping.ddns.net/api/products/1")
+  // }
 
   getProductbyId(id:number){
     return this.hc.get("http://oshopping.ddns.net/api/products/"+id)
