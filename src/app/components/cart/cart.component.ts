@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-import { ElementSchemaRegistry } from '@angular/compiler';
+// import { ElementSchemaRegistry } from '@angular/compiler';
 import { CartService } from 'src/app/services/cart.service';
+import { CheckoutService } from 'src/app/services/checkout.service';
 
 @Component({
   selector: 'app-cart',
@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
 
   
 
-  constructor(private os: CartService) { }
+  constructor(private os: CartService , public check:CheckoutService) { }
 
   change(val: any, id: any) {
 let qty={
@@ -35,32 +35,27 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
 
       this.confirm = confirm("do you want confirm delet item")
       if (this.confirm == true) {
-
         this.os.deleteitem(id).subscribe((posres) => {
           console.log(posres)
-
-
-
           this.getcartitem();
           // window.location.reload();
           this.os.changeData();
           console.log("delete success")
-
         })
-
       }
       else {
         alert("ok")
       }
-
     }
-
-    console.log(val.target.value)
-
-    console.log(id)
-
+    // console.log(val.target.value)
+    // console.log(id)
   }
 
+
+  chechOutCart(){
+    this.check.checkout().subscribe(res=>console.log(res)
+    )
+  }
 
 
 
@@ -79,7 +74,7 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
       
       // }
  
-     console.log(this.os.changeData())
+    //  console.log(this.os.changeData())
     // 
     //  
      
@@ -95,8 +90,8 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
       //  for (let x of this.cartitems) {
 
        this.total += x.quantity*x.price;
-       console.log("total")
-         console.log(this.total)
+      //  console.log("total")
+        //  console.log(this.total)
       }
      }
     )
