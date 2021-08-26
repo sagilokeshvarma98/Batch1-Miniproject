@@ -18,7 +18,7 @@ public check():Observable<any>{
 
   stripetoken(data: any): Observable<any> {
 
-    return this.http.post("http://localhost:2030/users", data)
+    return this.http.post("http://localhost:3000/users", data)
 
   }
 

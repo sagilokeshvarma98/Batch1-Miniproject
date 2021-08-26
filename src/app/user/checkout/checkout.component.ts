@@ -24,18 +24,12 @@ paytotal=0;
 applied:boolean= false;
 discount=0;
 isLinear = false;
-
-
-
 getcoupon(){
   this.couponservice.getCoupons().subscribe((coupounres)=>{
 
     this.coupon=coupounres;
   })
 }
-
-
-
 onSubmit(){}
 
 getadress(){
@@ -56,9 +50,6 @@ getadress(){
 })
 
 }
-
-
-
 getchecked(){
   this.cs.check().subscribe((posres)=>{
     this.check=posres;
@@ -74,17 +65,11 @@ getchecked(){
   })
 }
 
-
 change(val:any){
   this.paytotal= this.grandtotal-val.target.value;
   this.discount=this.grandtotal-this.paytotal
   this.applied=true;
-
-
-
 }
-
-
   ngOnInit(): void {
 this.getchecked()
 this.getadress();

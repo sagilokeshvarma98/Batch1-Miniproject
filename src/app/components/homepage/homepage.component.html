@@ -17,6 +17,28 @@
             </div>
         </div>
     </div>
+    <div class="row my-2" [routerLink]="['/products']">
+        <div class="header">
+            <p class="text1">Shop by</p>
+            <p class="text2">Products</p>
+        </div>
+        <div class="col-lg-4 col-md-6 my-2">
+            <div class="card" id="card1">
+                <img src="https://pantaloons.imgix.net/resources/img/pantaloons/shopbyproducts/activewear_26032021.jpg" alt="">
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 my-2" >
+            <div class="card" id="card2">
+            <img src="https://pantaloons.imgix.net/resources/img/pantaloons/shopbyproducts/tops_26032021.jpg?w=338&auto=format" alt="">
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 my-2" >
+            <div class="card" id="card3">
+            <img src="https://pantaloons.imgix.net/resources/img/pantaloons/shopbyproducts/ethnicwear_26032021.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
     <div class="row">
         <div class="col-lg-6">
             <div class="card card-text">
@@ -32,22 +54,24 @@
             </div>
         </div>
     </div>
-    <div class="row mt-5 my-3">
-        <div class=" col-lg-5 col-md-6">
-            <p class="text1 my-2">Best</p><small class="text-secondary">Selling</small>
+    <div class="row my-2"></div>
+    <div class="row mt-5 my-3" [routerLink]="['/products']">
+        <div class=" col-lg-2 my-3 col-md-6 my-2">                
+            <img class="img1" src="https://pantaloons.imgix.net/img/app/product/2/277021-1134400.jpg?w=238&auto=format" alt="">
+        </div>
+        <div class=" col-lg-2 my-3  col-md-6 my-2">
+            <img class="img2" src="https://pantaloons.imgix.net/img/app/product/2/277054-1134598.jpg?w=238&auto=format" alt="">
+        </div>
+        <div class=" col-lg-2 my-3 col-md-6 my-2">
+            <img  class="img1" src="https://pantaloons.imgix.net/img/app/product/2/277052-1134586.jpg?w=238&auto=format" alt="">
+        </div>
+        <div class=" col-lg-6 col-md-6" id="mens">
+            <p class="text1 my-2">Best</p><small class="text2">Selling</small>
             <p class="mt10">Most popular products </p>
             <p class="text-p">grab them till they last</p>
             <a href="#" class="mt-10" tabindex="-2">View more <mat-icon class="mat-icon">arrow_forward</mat-icon> </a> 
         </div>
-        <div class=" col-lg-2 my-3 col-md-6 ">                
-            <img class="img1" src="https://pantaloons.imgix.net/img/app/product/2/277021-1134400.jpg?w=238&auto=format" alt="">
-        </div>
-        <div class=" col-lg-2 my-3  col-md-6">
-            <img class="img2" src="https://pantaloons.imgix.net/img/app/product/2/277054-1134598.jpg?w=238&auto=format" alt="">
-        </div>
-        <div class=" col-lg-2 my-3 col-md-6">
-            <img  class="img3" src="https://pantaloons.imgix.net/img/app/product/2/277052-1134586.jpg?w=238&auto=format" alt="">
-        </div>
+        
     </div>
     <div class="row">
         <div class="col-lg-6">

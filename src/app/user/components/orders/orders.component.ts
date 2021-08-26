@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from 'src/app/services/orders.service';
 
-import { ProductsService } from 'src/app/services/products.service';
-import { convertToObject } from 'typescript';
+// import { ProductsService } from 'src/app/services/products.service';
+// import { convertToObject } from 'typescript';
 
 @Component({
   selector: 'app-orders',
@@ -22,9 +22,6 @@ state:boolean=false;
 cancelorder(id: any){
   this.confirm = confirm("do you want confirm cancel item")
   if (this.confirm == true) {
-
-    
-
   this.status="canceld"
 
   if( this.status="canceld"){
@@ -45,16 +42,15 @@ reorder(){
 }
 
 getorder(){
-  this.myorder.getmyorders() .subscribe(
+  console.log("hai");
+
+  this.myorder.getmyorders().subscribe(
     (data)=>{this.myorders = data
+      console.log("hello");
       console.log(data);
+      
       }  )
 }
-
-
-
-
-
 
   ngOnInit(): void {
 this.getorder();

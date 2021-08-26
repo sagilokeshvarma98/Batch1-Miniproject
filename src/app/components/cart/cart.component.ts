@@ -54,18 +54,11 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
       }
 
     }
-
     console.log(val.target.value)
 
     console.log(id)
 
   }
-
-
-
-
-
-
   getcartitem() {
     this.os.getitem().subscribe((posres) => {
       this.cart = posres
@@ -102,27 +95,16 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
     )
 
   }
-
-
   ngOnInit() {
 
     this.getcartitem();
     this.os.getname(1).subscribe((posres)=>{
       console.log(posres)
       
-    
-
     })
-
-
     this.os.cast.subscribe((posRes)=>{
       this.result = posRes;
  
   })
-
-  
-
 }
-
-
 }
