@@ -38,7 +38,6 @@ export class PaymentGateComponent implements OnInit {
         console.log("success");
         console.log(token);
         console.log(response);
-
       } else {
         console.log(response.error.message);
       }
@@ -46,19 +45,14 @@ export class PaymentGateComponent implements OnInit {
   }
 
 
-
-
   onSubmit() {
-
     this.card_data = {
-
       number: this.checkoutForm.value.Number,
       exp_month: this.checkoutForm.value.expMonth,
       exp_year: this.checkoutForm.value.expYear,
       cvc: this.checkoutForm.value.cvc
     }
     this.createToken()
-
   }
 
   get checkoutFormcontrol() {
