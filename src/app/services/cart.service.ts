@@ -26,6 +26,10 @@ getitem():Observable<any>{
     )
 }
 
+updateItem(id:any,data:any){
+  this.http.post("http://oshopping.ddns.net/api/cartitems/update/usercart/"+id,data)
+}
+
 
 private data = new BehaviorSubject<any>("");
  public cast = this.data.asObservable();

@@ -9,16 +9,15 @@ import { CheckoutService } from 'src/app/services/checkout.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  total = 0;
-  grandtotal: any;
-  cart: any;
-  confirm: any
-  cartlength:any
-  cartitems:Array<any>=[];
-  obj:any
- result:any;
- length:boolean = false
-  
+  public total = 0;
+  public grandtotal: any;
+  public cart: any;
+  public confirm: any
+  public cartlength:any
+  public cartitems:Array<any>=[];
+  public obj:any
+  public result:any;
+  public length:boolean = false
 
   constructor(private os: CartService , public check:CheckoutService) { }
 
@@ -53,7 +52,7 @@ let qty={
 
     console.log(id);
     
-    this.confirm = confirm("do you want confirm delet item")
+    this.confirm = confirm("do you want confirm delete item")
       if (this.confirm == true) {
         this.os.deleteitem(id).subscribe((posres) => {
           console.log(posres)
@@ -66,6 +65,39 @@ let qty={
       else {
         alert("ok")
       }
+  }
+
+  addQuantity(id:any){
+    this.cart.cartItems.map((x:any)=>{
+      if(x.id == id){
+        if(x.quantity<x.quantityChange)
+        {
+          x.quantity = x.quantity+1
+        }
+        else
+        alert(`The seller has only ${x.quantityChange} available`)
+      }
+    })
+  }
+
+  updateItem(id:any){
+    this.cart.cartItems.map((x:any)=>{
+      if(x.id == id){
+        this.os.updateItem(id,x.quantity)
+      }
+    })
+  }
+
+  minusQuantity(id:any){
+    this.cart.cartItems.map((x:any)=>{
+      if(x.id == id){
+        if(x.quantity>1){
+          x.quantity = x.quantity-1
+        }
+        else
+        this.deleteItem(id)
+      }
+    })
   }
 
   chechOutCart(){
@@ -110,6 +142,7 @@ let qty={
       // }
       this.cart.cartItems.map(
         (x:any)=>{
+          x.quantityChange = x.quantity
           this.total = this.total+x.price-x.discount
         }
       ) 
