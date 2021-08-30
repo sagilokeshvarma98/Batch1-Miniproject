@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ForgetService } from 'src/app/services/forget.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -9,7 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class ForgotPasswordComponent implements OnInit {
   forgotForm: FormGroup;
 
-  constructor(private formbuilder: FormBuilder) {
+  constructor(private forget:ForgetService,private formbuilder: FormBuilder) {
     this.forgotForm = this.formbuilder.group({
 
       'mobileNumber': new FormControl(
@@ -26,8 +27,11 @@ export class ForgotPasswordComponent implements OnInit {
     return this.forgotForm.get('mobileNumber')
   }
   onSubmit(value: any) {
-    console.log("forgotForm", value);
-    this.forgotForm.reset();
+    this.forget.postForget("thota.nagaraju1432@gmail.com").subscribe(res=>{
+      console.log("forgotForm",res);
+      this.forgotForm.reset();
+    })
+    
   }
 
 }

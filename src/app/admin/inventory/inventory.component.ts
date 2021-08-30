@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
-import * as $ from 'jquery'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductPostComponent } from '../product-post/product-post.component';
 @Component({
@@ -11,9 +9,12 @@ import { ProductPostComponent } from '../product-post/product-post.component';
 })
 export class InventoryComponent implements OnInit {
 
-  // productForm: FormGroup
-
   subCategoryArray: any
+  products: any
+  searchTerm: any = ''
+  imageArray: string[] = []
+  imageUrl: string = ""
+
 
   public obj =
     {
@@ -34,41 +35,25 @@ export class InventoryComponent implements OnInit {
   form2: boolean = false
   form3: boolean = false
 
+  
+
+  constructor(private PS: ProductsService, private dialog: MatDialog) { }
+
   openDialog() {
     const dialogRef = this.dialog.open(ProductPostComponent);
-    dialogRef.afterClosed().subscribe(result => {
-     this.openDialog=result
-    });
+    dialogRef.afterClosed().subscribe(
+      (res => {
+        console.log(`CouponPost : ${res}`)
+      })
+    )
   }
-
-  constructor(private PS: ProductsService,private dialog:MatDialog) {
-    // this.productForm = this.fb.group(
-    //   {
-    //     userId: ['', [Validators.required, Validators.minLength(16)]],
-    //     title: ['', [Validators.required]],
-    //     metaTitle: ['', [Validators.required]],
-    //     price: ['', [Validators.required]],
-    //     discount: ['', [Validators.required]],
-    //     summary: ['', [Validators.required]],
-    //     quantity: ['', [Validators.required]]
-    //   }
-
-    // )
-  }
-
 
   getSubs(ele: any) {
     this.subCategoryArray = this.sub_category[ele.target.value]
     console.log(this.subCategoryArray);
   }
 
-  // get productFormControl() {
-  //   return this.productForm.controls;
-  // }
 
-  products: any
-
-  searchTerm: any = ''
 
   getProductData() {
     this.PS.productsData().subscribe(res => this.products = res)
@@ -79,18 +64,8 @@ export class InventoryComponent implements OnInit {
     this.subCategoryArray = this.sub_category[0]
     this.getProductData()
   }
-  // submit() {
-  //   // this.productForm.value.image = this.imageArray[0]
-  //   this.PS.addProduct(this.productForm.value).subscribe((res: any) => {
-  //     console.log(res);
-  //     this.getProductData()
-  //   })
-  // }
 
-  imageArray: string[] = []
-
-  imageUrl: string = ""
-
+  
   getImage(e: any) {
     this.imageArray.push(e.target.value)
     console.log(this.imageArray);

@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ADMINRoutingModule } from './admin-routing.module';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { InventoryComponent } from './inventory/inventory.component';
-//import { ValuePipe } from './pipes/value.pipe';
-//import { SearchPipe } from './pipes/search.pipe';
-//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserdemograpicsComponent } from './userdemograpics/userdemograpics.component';
 import { UsermanagmentComponent } from './usermanagment/usermanagment.component';
 import { RecoveryComponent } from './recovery/recovery.component';
@@ -17,7 +14,6 @@ import { AlltransactionsComponent } from './transactionComponents/alltransaction
 import { TransactionHomeComponent } from './transactionComponents/transaction-home/transaction-home.component';
 import { RouterModule } from '@angular/router';
 import { AngmaterialModule } from '../angmaterial/angmaterial.module';
-//import { DatePipe } from './pipes/date.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
@@ -36,8 +32,6 @@ import { ProductPostComponent } from './product-post/product-post.component';
   declarations: [
     AdminHomeComponent,
     InventoryComponent,
-    //ValuePipe,
-   // SearchPipe,
     UserdemograpicsComponent,
     UsermanagmentComponent,
     RecoveryComponent,
@@ -51,13 +45,10 @@ import { ProductPostComponent } from './product-post/product-post.component';
     AdminNavbarComponent,
     CouponPostComponent,
     ProductPostComponent,
-    //DatePipe
   ],
   imports: [
     CommonModule,
     ADMINRoutingModule,
-   // FormsModule,
-    //ReactiveFormsModule,
     RouterModule,
     AngmaterialModule,
     ToastrModule.forRoot(),

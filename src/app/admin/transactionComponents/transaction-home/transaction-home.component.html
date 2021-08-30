@@ -1,13 +1,9 @@
-<div class="container">
-    <!-- <div class="transaction-links">
-        <a routerLink="all">All</a>
-        <a routerLink="pending">Pending/Cancelled</a>
-        <a routerLink="success">Successful</a>
-        <a routerLink="failed">Failed</a>
-    </div>
-    <div>
-        <router-outlet></router-outlet>
-    </div> -->
+<xng-breadcrumb [separator]="iconTemplate" class="px-2 ml-2"></xng-breadcrumb>
+<ng-template #iconTemplate>
+  <mat-icon>chevron_right</mat-icon>
+</ng-template>
+
+<div class="container mt-5">
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title>

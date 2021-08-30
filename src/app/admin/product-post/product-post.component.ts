@@ -13,6 +13,7 @@ export class ProductPostComponent implements OnInit {
   productForm: FormGroup;
   subCategoryArray: any
   products: any;
+  
 
   constructor(private PS: ProductsService, private fb: FormBuilder, private toastr: ToastrService) {
     this.productForm = this.fb.group(

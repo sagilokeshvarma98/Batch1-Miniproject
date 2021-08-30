@@ -1,4 +1,4 @@
-<h2 mat-dialog-title >Coupons</h2>
+<h2 mat-dialog-title class="text-center" >Coupons</h2>
 <mat-dialog-content class="mat-typography">
     <form action="" [formGroup]="couponPost" >
         <div class="mb-3">
@@ -29,6 +29,7 @@
                             *ngIf="(couponFormControl.start.touched || submitted) && couponFormControl.start.errors?.required">Starting
                             Date Required</span>
                     </td>
+                    <td><label class="to" for="to">To</label></td>
                     <td>
                         <label for="end">End</label><span class="text-danger">*</span>
                         <input type="date" class="form-control" placeholder="start date" formControlName="end">
@@ -43,5 +44,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="center">
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true" mat-raised-button color="primary" cdkFocusInitial type="submit"  (click)="onSaveCoupon()">AddCoupon</button>
+    <button mat-button [mat-dialog-close]="true" type="submit" mat-raised-button color="primary" cdkFocusInitial type="submit"  (click)="onSaveCoupon()">AddCoupon</button>
   </mat-dialog-actions>

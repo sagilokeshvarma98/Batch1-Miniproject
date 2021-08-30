@@ -18,6 +18,10 @@ export class CouponComponent implements OnInit {
   couponPost: any;
   submitted:boolean=false;
 
+  
+
+  constructor(private cup: CouponService,  private dialog: MatDialog) { }
+  
   openDialog() {
     const dialogRef = this.dialog.open(CouponPostComponent);
     dialogRef.afterClosed().subscribe(
@@ -26,8 +30,6 @@ export class CouponComponent implements OnInit {
       })
     )
   }
-
-  constructor(private cup: CouponService,  private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getCoupon();

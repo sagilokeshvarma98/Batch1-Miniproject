@@ -19,7 +19,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { SubnavComponent } from './components/subnav/subnav.component';
-//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login/login-routing.module';
 import { LoginInterceptor } from './Interceptors/login.interceptor';
 import { ErrorInterceptor } from './Interceptors/error.interceptor';
@@ -29,10 +28,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './components/cart/cart.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
-import { CartIconComponent } from './components/cart-icon/cart-icon.component';
-import {NgxPaginationModule} from "ngx-pagination";
+import { NgxPaginationModule } from "ngx-pagination";
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SharedModuleModule } from './shared-module/shared-module.module';
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -59,18 +58,16 @@ import { SharedModuleModule } from './shared-module/shared-module.module';
     ADMINRoutingModule,
     LoginRoutingModule,
     UserModule,
-    //HttpClientModule,
     RouterModule,
     AngmaterialModule,
     UserRoutingModule,
     BrowserAnimationsModule,
     OverlayModule,
-    //FormsModule,
-    //ReactiveFormsModule,
     NgbModule,
     NgxPaginationModule,
     MatExpansionModule,
-    SharedModuleModule
+    SharedModuleModule,
+    ChartsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true },

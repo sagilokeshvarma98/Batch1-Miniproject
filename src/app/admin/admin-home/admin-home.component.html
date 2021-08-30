@@ -1,3 +1,8 @@
+<xng-breadcrumb [separator]="iconTemplate" class="px-2 ml-2"></xng-breadcrumb>
+<ng-template #iconTemplate>
+    <mat-icon>chevron_right</mat-icon>
+</ng-template>
+
 <div class="container mt-5">
     <div class="row mt-3">
         <div class="col-12">
@@ -84,100 +89,33 @@
         </div>
     </div>
     <div class="row mt-5">
-        <div class="col-xl-4 col-lg-12">
-            <div class="card white bg-info text-center">
-                <div class="card-content">
-                    <div class="card-body py-3">
-                        <img src="https://pixinvent.com/bootstrap-admin-template/robust/app-assets/images/elements/01.png"
-                            alt="element 01" width="140" class="float-left">
-                        <h4 class="text-white mt-3 mb-2">Brand Minute</h4>
-                        <p class="card-text text-light">Donut toffee candy brownie.</p>
-                        <button class="btn btn-info btn-darken-3 text-white">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card bg-info">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="media-left media-middle">
-                                <i class="ft-bar-chart-2 white font-large-2 float-left"></i>
-                            </div>
-                            <div class="media-body white text-right">
-                                <h3 class="white">1,278</h3>
-                                <span>Most Loved</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-8 col-lg-12">
+        <div class="col-xl-12 col-lg-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Recent Orders</h4>
-                    <a class="heading-elements-toggle"><i class="ft-more-horizontal font-medium-3"></i></a>
-                    <div class="heading-elements visible">
-                        <ul class="list-inline mb-0">
-                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+                <h4 class="card-title text-center text-muted"></h4>
                 <div class="card-content">
                     <div class="card-body">
-                        <p>Total paid invoices 240, unpaid 150. <span class="float-right"><a href="project-summary.html"
-                                    target="_blank">Invoice Summary <i class="ft-arrow-right"></i></a></span></p>
+                        <p>Recent Orders <span class="float-right"><a href="#"  target="_blank">Invoice Summary </a></span></p>
                     </div>
                     <div class="table-responsive">
-                        <table id="recent-orders" class="table table-hover mb-0 ps-container ps-theme-default"
-                            data-ps-id="0247549b-2ab2-990a-deab-38d2a09914a5">
+                        <table id="recent-orders" class="table table-hover mb-0 ps-container ps-theme-default">
                             <thead>
-                                <tr>
-                                    <th>SKU</th>
-                                    <th>Invoice#</th>
+                                <tr class="text-center">
+                                    <th>S.No</th>
                                     <th>Customer Name</th>
+                                    <th>ProductName</th>
+                                    <th>Date</th>
+                                    <th>Payment</th>
                                     <th>Status</th>
-                                    <th>Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="text-truncate">PO-10521</td>
-                                    <td class="text-truncate"><a href="#">INV-001001</a></td>
-                                    <td class="text-truncate">Elizabeth W.</td>
-                                    <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
-                                    <td class="text-truncate">$ 1200.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-truncate">PO-532521</td>
-                                    <td class="text-truncate"><a href="#">INV-01112</a></td>
-                                    <td class="text-truncate">Doris R.</td>
-                                    <td class="text-truncate"><span class="tag tag-default tag-warning">Overdue</span>
-                                    </td>
-                                    <td class="text-truncate">$ 5685.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-truncate">PO-05521</td>
-                                    <td class="text-truncate"><a href="#">INV-001012</a></td>
-                                    <td class="text-truncate">Andrew D.</td>
-                                    <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
-                                    <td class="text-truncate">$ 152.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-truncate">PO-15521</td>
-                                    <td class="text-truncate"><a href="#">INV-001401</a></td>
-                                    <td class="text-truncate">Megan S.</td>
-                                    <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
-                                    <td class="text-truncate">$ 1450.00</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-truncate">PO-32521</td>
-                                    <td class="text-truncate"><a href="#">INV-008101</a></td>
-                                    <td class="text-truncate">Walter R.</td>
-                                    <td class="text-truncate"><span class="tag tag-default tag-warning">Overdue</span>
-                                    </td>
-                                    <td class="text-truncate">$ 685.00</td>
+                                <tr  class="text-center" *ngFor="let x of  Transactions">
+                                    <td class="text-truncate">{{x.id}}</td>
+                                    <td class="text-truncate">{{x.name}}</td>
+                                    <td class="text-truncate">{{x.Poduct_name}}</td>
+                                    <td class="text-truncate">{{x.date}}</td>
+                                    <td class="text-truncate">{{x.transaction}}</td>
+                                    <td class="text-truncate">{{x.progress}}</td>
                                 </tr>
                             </tbody>
                             <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
@@ -193,13 +131,3 @@
         </div>
     </div>
 </div>
-<footer class="footer sticky-bottem navbar-border ">
-    <p class="clearfix text-grey lighten-2 text-sm-center mb-0 px-2">
-        <span class="float-md-left d-block d-md-inline-block h5 te">Copyright © 2021
-            <a class="text-bold-800  darken-2" href="#" target="_blank">E Shopping </a>, All rights reserved.
-        </span>
-        <span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Hand-crafted &amp; Made with
-            <i class="ft-heart pink"></i>
-        </span>
-    </p>
-</footer>
