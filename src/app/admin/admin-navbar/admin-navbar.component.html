@@ -1,23 +1,63 @@
-<nav class="navbar navbar-light bg-success">
-    <span class="navbar-brand mb-0 h1">Admin</span>
-    <div>
-        <a>
-            <img src="../../../assets/user-solid.svg" class="user-profile-svg" alt="profile" [matMenuTriggerFor]="menu">
-        </a>
-        <!-- <button mat-button [matMenuTriggerFor]="menu">
-                    LogOut
-                 </button>  -->
-        <mat-menu #menu="matMenu" class="dropdown">
-            <a mat-menu-item id="profileLink" routerLink="adminProfile">Profile</a>
-            <button mat-menu-item id="profileLink" class="mat-menu-button" (click)="Logut()">LogOut</button>
-        </mat-menu>
-    </div>
+<!-- <nav class="navbar navbar-light bg-success">
+  <span class="navbar-brand mb-0 h1">Admin</span>
+  <div>
+    <a>
+      <img src="../../../assets/user-solid.svg" class="user-profile-svg" alt="profile" [matMenuTriggerFor]="menu">
+    </a>
+    <mat-menu #menu="matMenu" class="dropdown">
+      <a mat-menu-item id="profileLink" routerLink="adminProfile">Profile</a>
+      <button mat-menu-item id="profileLink" class="mat-menu-button" (click)="Logut()">LogOut</button>
+    </mat-menu>
+  </div>
 </nav>
 
 <xng-breadcrumb [separator]="iconTemplate"></xng-breadcrumb>
-    <ng-template #iconTemplate>
-        <mat-icon>chevron_right</mat-icon>
-    </ng-template>
+<ng-template #iconTemplate>
+  <mat-icon>chevron_right</mat-icon>
+</ng-template>
 
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+<mat-sidenav-container  class="sidenav-container">
+  <mat-sidenav  #drawer class="sidenav" mode="side" [opened]="opened">
+    <mat-toolbar>
+      <mat-icon id="face">face</mat-icon>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink='adminHome'>Home</a>
+      <a mat-list-item routerLink='inventory'>Inventory</a>
+      <a mat-list-item routerLink='coupon'>Coupons</a>
+      <a mat-list-item [routerLink]="['usermanagement']">Management </a>
+      <a mat-list-item routerLink="transactions" >Transaction</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Admin</span>
+      <span class="spacer"></span>
+      
+      <mat-icon class="mat-icon" matBadgeColor="accent" matBadgeSize="small" matBadgeOverlap="false">circle_notifications</mat-icon>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>portrait</mat-icon>
+          <span routerLink="adminProfile">Profile</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>logout</mat-icon>
+          <span>SignOut</span>
+        </button>
+      </mat-menu>
+      
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

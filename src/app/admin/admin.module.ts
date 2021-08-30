@@ -22,6 +22,15 @@ import { ToastrModule } from 'ngx-toastr';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { ChartsModule } from 'ng2-charts';
+import { CouponPostComponent } from './coupon-post/coupon-post.component';
+import { ProductPostComponent } from './product-post/product-post.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +49,8 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
     TransactionHomeComponent,
     AdminProfileComponent,
     AdminNavbarComponent,
+    CouponPostComponent,
+    ProductPostComponent,
     //DatePipe
   ],
   imports: [
@@ -50,7 +61,14 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
     RouterModule,
     AngmaterialModule,
     ToastrModule.forRoot(),
-    SharedModuleModule
+    SharedModuleModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    ChartsModule
   ]
 })
 export class ADMINModule { }

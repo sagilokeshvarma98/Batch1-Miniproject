@@ -1,21 +1,4 @@
 
-/* Add-Coupon  */
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
-  td {
-    padding-right: 8px;
-  }
-
-  /* Coupon */
-
     .card:hover{
         border: none;
         margin: 0.5rem;
@@ -40,4 +23,7 @@
     .card-body p{
         font-size: 15px;
     }
+    button{
+    margin-left: 20px;
+  }
     

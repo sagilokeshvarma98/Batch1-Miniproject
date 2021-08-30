@@ -107,6 +107,27 @@
       "start": "2021-08-12",
       "end": "2021-08-12",
       "id": 5
+    },
+    {
+      "coupon": "polaiah10",
+      "eligibul": "320",
+      "start": "2021-08-19",
+      "end": "2021-09-10",
+      "id": 6
+    },
+    {
+      "coupon": "dwdd5022",
+      "eligibul": "2100",
+      "start": "2021-09-01",
+      "end": "2021-09-04",
+      "id": 7
+    },
+    {
+      "coupon": "dwdd5011",
+      "eligibul": "2222",
+      "start": "2021-08-20",
+      "end": "2021-08-19",
+      "id": 8
     }
   ],
   "address": [
@@ -214,19 +235,11 @@
   ],
   "lostedusers": [
     {
-      "id": 1,
-      "username": "pavan",
-      "useremail": "pavan@gmail.com",
-      "usermobile": "778945612",
-      "password": "Ab@121212",
-      "confirmPassword": "Ab@121212"
-    },
-    {
       "id": 2,
       "username": "rajesh",
       "useremail": "rajesh@gmail.com",
       "usermobile": "778945612",
-      "password": "",
+      "password": "Ab@121212",
       "confirmPassword": "Re@121212"
     },
     {
@@ -244,6 +257,14 @@
       "usermobile": "6985741230",
       "password": "Nk@121212",
       "confirmPassword": "Ab@121212"
+    },
+    {
+      "id": 5,
+      "username": "varun",
+      "useremail": "varun@gmail.com",
+      "usermobile": "8794561230",
+      "password": "Sm@121212",
+      "confirmPassword": "Sm@121212"
     }
   ],
   "orders": [
@@ -383,11 +404,6 @@
       "usermobile": "9874562130",
       "password": "Abc@121212",
       "confirmPassword": "Abc@121212"
-    },
-    {
-      "username": "varun",
-      "useremail": "varun@gmail.com",
-      "id": 10
     }
   ],
   "useradress": {

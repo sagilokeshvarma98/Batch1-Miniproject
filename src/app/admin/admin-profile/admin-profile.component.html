@@ -10,18 +10,18 @@
                     <p>This is admin page. Here admin description will be Displayed. Go through all the admin
                         functionlity</p>
                     <h3>
-                        <span id="manageText">Manage</span>
+                        <span id="manageText">Manager</span>
                         <span>
-                            <a href="">Inventory</a>
+                            <a  routerLink='/inventory'>Inventory</a>
                         </span>
                         <span>
-                            <a href="">Users</a>
+                            <a routerLink='coupon'>Users</a>
                         </span>
                         <span>
-                            <a href="">Coupons</a>
+                            <a [routerLink]="['usermanagement']">Coupons</a>
                         </span>
                         <span>
-                            <a href="">Transactions</a>
+                            <a routerLink="transactions">Transactions</a>
                         </span>
                     </h3>
                 </div>
@@ -66,13 +66,13 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="card-deck">
-                                <div class="card">
+                                <div class="card ">
                                     <div class="card-body">
                                         <h3>Total products</h3>
                                         17
                                     </div>
                                 </div>
-                                <div class="card">
+                                <div class="card bg-info">
                                     <div class="card-body">
                                         <h3>Total transactions</h3>
                                         10

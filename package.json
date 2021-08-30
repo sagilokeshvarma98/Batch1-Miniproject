@@ -28,6 +28,8 @@
     "jquery": "^3.6.0",
     "json-server": "^0.16.3",
     "mdb-ui-kit": "^3.9.0",
+    "ng-chat": "^3.1.0",
+    "ng2-charts": "^2.4.3",
     "ngx-pagination": "^5.1.1",
     "ngx-toastr": "^14.1.0",
     "popper.js": "^1.14.3",
