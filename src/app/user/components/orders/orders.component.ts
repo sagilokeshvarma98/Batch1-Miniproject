@@ -11,50 +11,51 @@ import { OrdersService } from 'src/app/services/orders.service';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor(private myorder:OrdersService) { }
+  constructor(private myorder: OrdersService) { }
 
-  id:any;
-myorders:any;
-confirm:any
-status="shipped"
-state:boolean=false;
+  id: any;
+  myorders: any;
+  confirm: any
+  status = "shipped"
+  state: boolean = false;
+  public orderItems:any = []
 
-cancelorder(id: any){
-  this.confirm = confirm("do you want confirm cancel item")
-  if (this.confirm == true) {
-  this.status="canceld"
+  cancelorder(id: any) {
+    this.confirm = confirm("do you want confirm cancel item")
+    if (this.confirm == true) {
+      this.status = "canceld"
 
-  if( this.status="canceld"){
-    this.state=true
+      if (this.status = "canceld") {
+        this.state = true
+      }
+
+      this.getorder();
+      console.log(id);
+
+    }
+    else {
+      alert("ok")
+    }
   }
- 
-  this.getorder();
-  console.log(id);
-  
+  reorder() {
+    this.state = false;
+    this.status = "reorderd"
   }
-else {
-  alert("ok")
-}
-}
-reorder(){
-  this.state=false;
-  this.status="reorderd"
-}
 
-getorder(){
-  console.log("hai");
-
-  this.myorder.getmyorders().subscribe(
-    (data)=>{this.myorders = data
-      console.log("hello");
-      console.log(data);
-      
-      }  )
-}
+  getorder() {
+    console.log("hai");
+    this.myorder.getmyorders().subscribe(
+      (data) => {
+        this.myorders = data
+        this.myorders.map((x:any)=>{
+          this.orderItems.push(x.orderItems)
+        })
+        console.log(this.orderItems);
+        
+      })
+    }
 
   ngOnInit(): void {
-this.getorder();
- 
-  
+    this.getorder();
   }
 }

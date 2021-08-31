@@ -21,7 +21,7 @@ export class SigninComponent implements OnInit {
 
   wrongCreden:Boolean = false
 
-  inputClass:string = "loginForm"
+  inputClass:string = "btn btn-success"
 
   ngOnInit(): void {
   }
@@ -43,6 +43,7 @@ export class SigninComponent implements OnInit {
     let password = this.loginForm.value.password
     if(username !="" || password!=""){
       this.ls.login(this.loginForm.value).subscribe(res=>{
+        console.log(res);
        if(res.token){
         let user = JSON.parse(atob(res.token?.split(".")[1]))
         localStorage.setItem("currentUser",user.sub)
@@ -55,13 +56,11 @@ export class SigninComponent implements OnInit {
        }
        },
        error=>{
-         console.log(error);
+         console.log(error.error);
+        this.wrongCreden = true
+        this.inputClass = "btn btn-success loginFormError"
        }
        )
-    }
-    else{
-      this.wrongCreden = true
-      this.inputClass = "loginFormError"
     }
   }
 

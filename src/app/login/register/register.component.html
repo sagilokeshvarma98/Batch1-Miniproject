@@ -1,11 +1,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5 mx-auto">
-            <div class="card">
+            <div class={{registerFormValidate}}>
                 <div class="card-header">
                     <h2>Create Account</h2>
                 </div>
                 <div class="card-body">
+                    <div class="text text-center" *ngIf="wrongCreden">
+                        <b class="text text-danger">{{ErrorMessage}}</b>
+                        <b class="text text-danger">Entered details are incorrect</b>
+                    </div>
                     <form class="form"   [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         <div class="form-group">
                             <label>Full Name</label>

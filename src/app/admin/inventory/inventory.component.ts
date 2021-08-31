@@ -15,17 +15,19 @@ export class InventoryComponent implements OnInit {
 
   public obj =
   {​​​
-userId: "AGTHYUCDGT1235HY",
-title: "MEN Shirt Regular wear",
-metaTitle: "Stylish shirt , party wear",
-summary: "Best shirt for party wear",
-price: 10000,
-discount: 500,
-quantity: 20,
+    fullName : "lokesh varma",
+    line1 : "H.No 53",
+    line2 : "kphb phase 2",
+    landmark : "temple",
+    city : "Hyd",
+    district : "ranga",
+    state : "AP",
+    country : "India",
+    pincode : 500090,
+    mobile : "9908193918",
+    addressType : 1,
+    addressDefault : 0
 }​​​
-
-
- 
 
   sub_category:any = [
    ["mens","womens","kids"],
@@ -73,7 +75,7 @@ quantity: 20,
   }
 
   ngOnInit(): void {
-    this.PS.testOrderApi().subscribe(res=>console.log(res)    )
+    // this.PS.testOrderApi().subscribe(res=>console.log(res))
     this.subCategoryArray = this.sub_category[0]
     this.getProductData()
   }
