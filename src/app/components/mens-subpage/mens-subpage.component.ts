@@ -9,16 +9,31 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class MensSubpageComponent implements OnInit {
 
-  constructor(private homepageservice:ProductsService) { }
-mens:any;
-  ngOnInit(): void {
-    
+  mens:any;
+  mens1=[
+    {'name':'T-shirts','img':'assets/Mens/m1.jpg'},
+    {'name':'Jeans','img':'assets/Mens/m2.jpg'},
+    {'name':'CasualShirts','img':'assets/Mens/m3.jpg'},
+    {'name':'FormalShirts','img':'assets/Mens/m4.jpg'},
+    {'name':'WinterWare','img':'assets/Mens/m5.jpg'},
+    // {'name':'EthnicWare','img':'assets/Mens/m6.jpg'},
+    // {'name':'InnerWare','img':'assets/Mens/m7.jpg'},
+  ]
+  mens2=[
+    {'name':'MIN.40%OFF','img':'assets/Mens/m10.jpg'},
+    {'name':'MIN.40%OFF','img':'assets/Mens/m11.jpg'},
+    {'name':'MIN.40%OFF','img':'assets/Mens/m12.jpg'},
+    {'name':'MIN.40%OFF','img':'assets/Mens/m13.jpg'},
+    {'name':'MIN.40%OFF','img':'assets/Mens/m14.jpg'},
+    {'name':'MIN.40%OFF','img':'assets/Mens/m15.jpg'},
+    {'name':'MIN.40%OFF','img':'assets/Mens/m16.jpg'},
+    {'name':'MIN.40%OFF','img':'assets/Mens/m17.jpg'},
+  ]
 
-    // this.homepageservice.productsData().subscribe((posres)=>{
-  
-    //   this.mens=posres;
-      
-    //   })
+  constructor(private homepageservice:ProductsService) { }
+ 
+  ngOnInit(): void {
+
   }
 
 }

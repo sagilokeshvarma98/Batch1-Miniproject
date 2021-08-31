@@ -1,7 +1,51 @@
-
-.container-fluid{
-    background: linear-gradient(115deg, #aeb1b0 60%, #e2f5f5 60%);
+#text1{
+    font: bold;
+    letter-spacing: 5px;
 }
+#TRENDING{
+    font-weight: bold;
+}
+img {
+    border: 0;
+    max-width: 100%;
+    page-break-inside: avoid;
+    vertical-align: middle;
+}
+
+.card .card-body img{
+    border: 0;
+    width: 100%;
+    height: 140px;
+    page-break-inside: avoid;
+    vertical-align: middle;
+}
+.row-carousel{
+    position: relative;
+    top: 20px;
+}
+.card-body1{
+    position: relative;
+    top: -65px;
+    left: -10px;
+}
+.card-body2{
+
+    position: relative;
+    top: -140px;
+    left: -10px;
+}
+#img:hover{
+   box-shadow: gray;
+}
+
+
+
+
+
+
+
+
+
 .container{
     margin-top: 0px;
     /* margin-bottom: 20px; */
@@ -154,14 +198,14 @@
     width: 100px;
     left: 35%;
 }
-.text-center{
+/* .text-center{
  text-align: center; 
  background-color: white;
  border-radius: 10px;
 font-size: 30px;
 font-weight: bold;
 padding: 20px;
-}
+} */
 .text-sub{
     font-size: 20px;
     font-weight: bolder;
@@ -201,7 +245,7 @@ padding: 20px;
 .btn-warning{
     position: relative;
     top: -100px;
-    left: 410px ;
+    left: 200px ;
     
 
 }

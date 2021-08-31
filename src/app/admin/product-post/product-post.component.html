@@ -1,5 +1,5 @@
 <mat-dialog-content class="mat-typography">
-    <form class="form" [formGroup]="productForm">
+    <form class="form" [formGroup]="productForm" (onSubmit)='submit()'>
         <div class="container">
             <h2 mat-dialog-title class="text-center">Add Product</h2>
             <div class="row">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <label for="file">ProductImage</label>
+                    <label for="file">ProductImage</label>(optional)
                     <input type="file" class="form-control" name="" id="">
                 </div>
             </div>
@@ -86,5 +86,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="center">
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button type="submit" [mat-dialog-close]="true" cdkFocusInitial (click)='submit()'>AddProduct</button>
+    <button mat-button type="submit" [mat-dialog-close]="true"cdkFocusInitial>AddProduct</button>
 </mat-dialog-actions>

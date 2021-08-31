@@ -1,6 +1,6 @@
 
 <mat-sidenav-container  class="sidenav-container">
-  <mat-sidenav  #drawer class="sidenav"  [opened]="opened">
+  <mat-sidenav  #drawer class="sidenav" mode="side" [opened]="opened">
     <mat-toolbar>
       <mat-icon id="face">face</mat-icon>
     </mat-toolbar>
@@ -20,12 +20,12 @@
       <span>Admin</span>
       <span class="spacer"></span>
       
-      <a>
+      <!-- <a>
         <mat-icon class="mat-icon" matBadge="0" matBadgeColor="accent" matBadgeSize="small" matBadgeOverlap="false">circle_notifications</mat-icon>
       </a>
       <a>
         <mat-icon lass="mat-icon" matBadge="0" matBadgeColor="accent" matBadgeSize="small" matBadgeOverlap="false">mail_outline</mat-icon>
-      </a>  
+      </a>   -->
 
       
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">

@@ -9,29 +9,29 @@ import { ForgetService } from 'src/app/services/forget.service';
 })
 export class ForgotPasswordComponent implements OnInit {
   forgotForm: FormGroup;
+  submitted:boolean=false;
 
   constructor(private forget:ForgetService,private formbuilder: FormBuilder) {
     this.forgotForm = this.formbuilder.group({
 
-      'mobileNumber': new FormControl(
-        null,
-        [
-          Validators.required,
-          Validators.pattern('^\\s*(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?\\s*$')
-        ]),
+      mobileNumber: ['', Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')],
+
     });
   }
+  get forgetFormControl() {
+    return this.forgotForm.controls;
+  }
+
   ngOnInit(): void {
   }
-  get mobileNumber() {
-    return this.forgotForm.get('mobileNumber')
-  }
+  
   onSubmit(value: any) {
-    this.forget.postForget("thota.nagaraju1432@gmail.com").subscribe(res=>{
+    this.submitted=true;
+    this.forget.postForget(value).subscribe(res=>{
       console.log("forgotForm",res);
       this.forgotForm.reset();
     })
-    
   }
+
 
 }
