@@ -47,7 +47,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h1 class="SignIn_title">Sign-In</h1>
-                        <div class={{inputClass}} id="loginCards">
+                        <div id="loginCards">
                             <p *ngIf="wrongCreden" class="wrongCredentials text text-center">
                                 <b class="text text-danger">*Entered username or password is incorrect</b>
                             </p>
@@ -75,14 +75,12 @@
                                 </div>
                             </div>
                             <div class="text-left loginDiv">
-                                <button *ngIf="!loginForm.valid" class="btn btn-success" id='loginBtn' type="submit"
-                                    disabled>Login</button>
-                                <button *ngIf="loginForm.valid" class="btn btn-success" id='loginBtn'
-                                    type="submit">Login</button>
+                                <button class={{inputClass}} id='loginBtn' type="submit"
+                                    [disabled]="!loginForm.valid">Login</button>
                                 <a routerLink="/forgotPass" class="forgot-link">forgot password?</a>
                             </div>
                         </form>
-                        <div class="center">
+                        <div class="text text-center">
                             <button class="form-control rg-btn" (click)="routeToRegister()">
                                 Register Here
                             </button>

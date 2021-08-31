@@ -12,6 +12,7 @@ export class FiltersComponent implements OnInit {
   price:any
   allPrices:Boolean = false
   allRates:Boolean = false
+  sizes : string[] = []
 
   rates = [4,3,2,1]
 
@@ -37,6 +38,23 @@ export class FiltersComponent implements OnInit {
   outOfStock(data:any){
     this.checked = !this.checked
     this.rate = this.checked
+  }
+  getSizes(data:any){
+    let count = 0
+    let index:any
+    this.sizes.map((x:any,y:any)=>{
+      if(x==data.target.value)
+      {
+        index = y
+        count++
+      }
+    })
+    if(count==0)
+    this.sizes.push(data.target.value)
+    else{
+      this.sizes.splice(index,1)
+      count = 0
+    }
   }
   clearPrices(){
     this.price = ''
