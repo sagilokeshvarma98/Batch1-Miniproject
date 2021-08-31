@@ -3,7 +3,12 @@
 }
 
 .container-fluid{
-    background-color: rgba(128, 128, 128, 0.158);
+    /* background-color: rgba(128, 128, 128, 0.158); */
+    background-color: #ffff;
+}
+.bg-c-line-primary{
+    background: -webkit-gradient(linear, left top, right top, from(#316262), to(#00FF00));
+    background: linear-gradient(to right, #2b8170   ,#E9F7EF    )
 }
 
 .imageCircle{
@@ -16,18 +21,23 @@
     padding-bottom: 8.5%;
 }
 
+
 .card-admin-name h2{
-    color: #4b4949;
+
+    font-size:23px ;
+    font-family: 'Abril Fatface', cursive;
 }
+
 
 .card-admin-name h3{
     padding-top: 10px;
+    
 }
 
 .card-admin-name h3 span a{
     font-weight: 400;
     font-size: medium;
-    color: #333;
+    color: rgb(19, 18, 18);
     text-decoration: none;
     margin-left: 22px;
 }
@@ -38,14 +48,16 @@
 }
 
 .card-admin-name p{
-    color: #868383;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+    
+    
+    
+       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+} 
 
 .card .imageCircle{
     height: 80px;
     width: 80px;
-    border: 1px solid #686868;
+    border: 1px solid #6d6b6b;
     border-radius: 50%;
 }
 
@@ -53,42 +65,142 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
+}
+.bg-d-line{
+    background: -webkit-gradient(linear, left top, right top, from(#316262), to(#00FF00));
+    background: linear-gradient(to right,#D4EFDF,#D5F5E3  )
 } 
 
 
-#manageText{
-    font-size: 20px;
+#manageText {
+    font-size: 18px;
     cursor: context-menu;
-    color: #21413b;
+ color: #E9F7EF ;
+    font-family: 'Courgette', cursive;
 }
+#manageText span  a{
+    font-size: 18px;
+    color: #E9F7EF ;
+    cursor: context-menu;
+    font-family: 'Courgette', cursive;
+}
+#message a{
+    color: #E9F7EF ;
+}
+#message2 a{
+    color: #E9F7EF ;
+}
+#message3 a{
+    color: #E9F7EF ;
+}
+#message4 a{
+    color: #E9F7EF ;
+}
+#message a:hover{
+    /* color: #121213; */
+    color:yellow;
+    
+
+    font-size:17px ;
+    font-family: 'Courgette', cursive;
+}
+#message2 a:hover{
+    color: #FF0000;
+    font-size:17px ;
+    font-family: 'Courgette', cursive;
+}
+#message3 a:hover{
+    /* color:#141413; */
+    color:#36F613;
+    font-size:17px ;
+    font-family: 'Courgette', cursive;
+}
+#message4 a:hover{
+    color:#B107DF;
+    font-size:17px ;
+    font-family: 'Courgette', cursive;
+}
+
+
+
 
 .adminCards{
     margin-top: 2%;
+    font-family: 'Courgette', cursive;
+}
+.card-header-bg-d-line  {
+    
+    font-size:100px ;
+    font-weight:bolder;
+    font-family: 'Courgette', cursive;
+    color: rgb(8, 2, 2);
+
 }
 
 .adminDetails .card-body h5 #attribute{
     float: left;
-    font-size: large;
+    font-size: 17px;
     font-family: monospace;
-    color: gray;
+    color:#0f0f0c;
     width: 20%;
     min-width: 100px;
+    font-family: 'Abril Fatface', cursive;
 }
 
 .adminDetails .card-body h3{
     margin-bottom: 1%;
 }
+.card1{
+    box-shadow: 4px 4px 8px 4px #DE3163;
+    border-radius:20px ;
+    margin-left:10px ;
+    width: 300px;
+    justify-content: space-between;
+    display: flex;
+}
+.card2{
+    box-shadow: 4px 4px 8px 4px blue;
+    border-radius: 20px;
+    width:300px ;
+    margin-left:10px ;
+    justify-content: space-between;
+}
+.card3{
+    box-shadow: 4px 4px 8px 4px #F217D8;
+    border-radius:20px ;
+    margin-left:10px ;
+    width: 300px;
+    justify-content: space-between;
+    display: flex;
+}
+.card4{
+    box-shadow: 4px 4px 8px 4px #8DE10B ;
+    border-radius: 20px;
+    width:300px ;
+    margin-left:10px ;
+    justify-content: space-between;
+}
+.card-body h3{
+    /* font-family: 'Poppins', sans-serif; */
+    color: burlywood;
+    font-family: 'Roboto Condensed', sans-serif;
+}
 
 #adminContactHead{
-    color: #686868;
+    
+    font-family: 'Abril Fatface', cursive;
+    color: rgb(19, 18, 18);
+    font-weight: bolder;
 }
 
 .adminDetails .card-body h5 #value{
     font-weight: 450;
     font-size: 14px;
-    color: gray;
+    color: rgb(90, 44, 44);
     padding-left: 20px;
+    font-family: 'Courgette', cursive;
 }
+
 
 
 

@@ -6,16 +6,22 @@
   </button> -->
   <mat-stepper  #stepper>
     <mat-step >
-      <form >
-        <ng-template matStepLabel>map coupons</ng-template>
-        <h1>checkout</h1>
-        <div class="form-group"   >
+      
+      <!-- <form > -->
+        <!-- <ng-template matStepLabel>map coupons</ng-template> -->
+        <div class="container">
+          <div class="row">
+        <div class="card">
+          <div class="title">
+        <h1> Check Out</h1>
+      </div>
+        <div class="body"   >
           
             <table class="table" >
-                <tr>
-                  <th>product name</th>
-                  <th>price</th>
-                  <th>quantity</th>
+                <tr class="content">
+                  <th class="head1">Product Name</th>
+                  <th class="side-head">Price</th>
+                  <th class="side-head2">Quantity</th>
                  
                 </tr >
                 <tr *ngFor="let x of check.cartItems">
@@ -36,26 +42,27 @@
     
                 </tr>
     
-                <tr>
+                <tr class="main-content">
     
-                    <td> total amount to be paid :</td>
+                    <td class="main"> Total amount to be Paid :</td>
                     <td> {{grandtotal}}  </td>
     
                   </tr>
-                  <tr>
+                  <tr class="main-content2">
     
-                    <td>  <p>you have discount </p>  </td>
+                    <td>  <p>You have Discount </p>  </td>
                     <td>- {{discount}} </td>
     
     
                   </tr>
                  
-                  <tr  > 
-                    <td>total amount to be paid  : </td>
-                    <td>{{grandtotal-discount}}</td></tr>
+                  <tr  class="main-content3" > 
+                    <td>Total amount to be Paid  : </td>
+                    <td>{{grandtotal-discount}}</td>
+                  </tr>
                  
 
-                    <label for="coupon">add coupon:</label> <br>
+                    <label for="coupon" class="add">Add Coupon:</label> <br>
         
                     <select name="coupon" id="coupon"  (change)="change($event)" [(ngModel)]="coupon"   >
                         <option class="coupon"  value="0"  >none</option>
@@ -74,9 +81,13 @@
     
         </div>
         <div>
-          <button mat-button matStepperNext>Next</button>
+          <!-- <button mat-button matStepperNext>Next</button> -->
+          <button type="button" class="btn btn-warning">Next</button>
         </div>
-      </form>
+      </div>
+      </div>
+      </div>
+      <!-- </form> -->
     </mat-step>
     <mat-step  label="Fill out your address">
       <form >
@@ -125,6 +136,7 @@
         <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
     </form>
+
     </mat-step>
   </mat-stepper>
   
