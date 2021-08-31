@@ -2,13 +2,22 @@
 .container-fluid{
   background:rgb(51,144,158);
 }
-.col-md-2:hover{
-  background-color: rgb(63, 73, 78);
+.col-md-3:hover{
+  background-color: rgb(43, 46, 48);
   border-radius: 20px;
   
 }
-.col-md-2 a{
+.col-md-3 a{
   font-weight: bold;
   font-family: serif;
   box-shadow: 1px;
 }
+.text-light{
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  
+}
+/* .text-light:hover{
+  border: 1px solid #fff;
+} */

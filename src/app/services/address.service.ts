@@ -2,40 +2,47 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-
-const url = "http://localhost:3000/address";
-
 @Injectable({
   providedIn: 'root'
 })
-export class AdressService {
-
-   
+export class AddressService {
+   url = "http://localhost:3000/address";
+  
+  constructor(private http:HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
 
-  constructor(private http: HttpClient) { }
+postAddress(data:any,id:any): Observable<any> {
+   // return this.http.post(this.url, data,this.httpOptions)
+   return this.http.post("http://oshopping.ddns.net/api/useraddress/user/add",data);
+   }
+ getAddress(): Observable<any> {
+     return this.http.get("http://oshopping.ddns.net/api/useraddress/user")
+    //return this.http.get(this.url);
+  }
+deleteAddress(id: any): Observable<any> {
+   return this.http.delete("http://oshopping.ddns.net/api/useraddress/"+id)
+   }
+edit(id:any):Observable<any>{
+return this.http.get("http://oshopping.ddns.net/api/useraddress/"+id)
+   }
+ putAddress(data: any): Observable<any> {
+    return this.http.put("http://oshopping.ddns.net/api/useraddress/user/"+data.id, data)
+   }
 
-//   postAddress(data: any): Observable<any> {
-//     return this.http.post(url, data,this.httpOptions)
-//   }
+selctdefult(data:any):Observable<any>{
+  console.log(data)
+  return  this.http.patch("http://localhost:3000/useradress",data)
+}
+getdefult():Observable<any>{
+ 
+  return  this.http.get("http://localhost:3000/useradress")
+}
+ getdefaultadress(id:any):Observable<any>{
   
-//   putAddress(data: any): Observable<any> {
-//     return this.http.put(url+'/'+data.id, data,this.httpOptions)
-//   }
-//   getAddress(): Observable<any> {
-//     return this.http.get(url)
-//   }
-
-//   deleteAddress(id: any): Observable<any> {
-//     return this.http.delete(`${url}/${id}`)
-//   }
-
-//   edit(id:any):Observable<any>{
-// return this.http.get(`${url}/${id}`)
-//   }
-
+  return this.http.get("http://localhost:3000/address/"+id)
+}
 }

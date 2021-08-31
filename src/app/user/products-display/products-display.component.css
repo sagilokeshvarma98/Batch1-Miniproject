@@ -1,10 +1,11 @@
 .card{
   min-height: 360px;
-  min-width: 210px;
+  min-width: 200px;
   max-width: none;
   margin-bottom: 30px;
+  border: none;
+  background-color: rgb(239, 248, 239);
 }
-
 #productAnchorTag{
   text-decoration: none;
 }
@@ -16,18 +17,30 @@
 }
 
 .productTitle{
-height: 40px;
-overflow: hidden;
-}
 
+overflow: hidden;
+font-family: Roboto, Arial, Helvetica, sans-serif;
+font-size: 15px;
+color: #0f1111;
+font-weight: 500;
+}
+.discount-price{
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #e46060;
+}
+.normalPrice{
+  color: #757575;
+}
 .card .card-body .productImage{
-  height: 200px;
+  height: 250px;
 }
 
 .card #productAnchorTag .card-body .productImage img{
   position: inherit;
-  width: 50%;
-  height: 150px;
+  /* width: 50%; */
+  height: 200px
 }
 
 .card-footer{
@@ -47,6 +60,7 @@ overflow: hidden;
   display: inline-block;
   overflow: hidden;
   color: red;
+  font-size: 15px;
 }
 
 #filter{
