@@ -20,21 +20,27 @@ getitem():Observable<any>{
       map((x:any)=> {
         console.log(x);
         this.len=x.cartItems.length
-        console.log("this is length");
+        console.log("this is length",this.len);
         return x
     })
     )
 }
 
-updateItem(id:any,data:any){
-  this.http.post("http://oshopping.ddns.net/api/cartitems/update/usercart/"+id,data)
+updateItem(id:any,data:any):Observable<any>{
+  let quantity = {
+    quantity : data
+  }
+  return this.http.put("http://oshopping.ddns.net/api/cartitems/update/usercart/"+id,quantity)
 }
 
-
 private data = new BehaviorSubject<any>("");
+
  public cast = this.data.asObservable();
+
  public changeData(){
  this.data.next(this.len);
+ console.log(this.data);
+ 
  };
 
 

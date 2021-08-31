@@ -46,7 +46,7 @@ export class CartButtonComponent implements OnInit {
   AddToCart() {
     if(this.quantity>0){
       // this.getitem()
-      this.os.additem(this.quantity,this.itemData.id).subscribe(res=>console.log(res))
+      this.os.additem(this.quantity,this.itemData.id).subscribe(res=>this.os.changeData())
       console.log(this.quantity,this.itemData);
     }
     else{

@@ -70,21 +70,20 @@ let qty={
   addQuantity(id:any){
     this.cart.cartItems.map((x:any)=>{
       if(x.id == id){
-        if(x.quantity<x.quantityChange)
+        if(x.quantity<x.product.quantity)
         {
           x.quantity = x.quantity+1
         }
         else
-        alert(`The seller has only ${x.quantityChange} available`)
+        alert(`The seller has only ${x.product.quantity} available`)
       }
     })
   }
 
   updateItem(id:any){
     this.cart.cartItems.map((x:any)=>{
-      if(x.id == id){
-        this.os.updateItem(id,x.quantity)
-      }
+      if(x.id == id)
+        this.os.updateItem(id,x.quantity).subscribe(res=>this.getcartitem())
     })
   }
 
@@ -108,8 +107,15 @@ let qty={
 
   getcartitem() {
     this.os.getitem().subscribe((posres) => {
+      this.total = 0  
       this.cart = posres
       console.log(this.cart);
+      this.cart.cartItems.map(
+        (x:any)=>{
+          x.quantityChange = x.quantity
+          this.total = this.total+x.price-x.discount
+        }
+      ) 
       if(this.cart.cartItems.length>0)
         this.length = true
     //  this.cartitems=this.cart.cartItems[0]
@@ -117,14 +123,10 @@ let qty={
       //   // this.cartitems=this.cart[i].cartItems[0];
       //  this.cartitems[i]= this.cart[i].cartItems[0]
       //  console.log(this.cartitems)
-      
-      
       // }
- 
     //  console.log(this.os.changeData())
     // 
     //  
-     
     //  this.cartlength =this.cartitems.length
     //  console.log("product")
     //   console.log(this.cartitems[0].product.imageUrls[0])
@@ -140,12 +142,6 @@ let qty={
       // //  console.log("total")
       //   //  console.log(this.total)
       // }
-      this.cart.cartItems.map(
-        (x:any)=>{
-          x.quantityChange = x.quantity
-          this.total = this.total+x.price-x.discount
-        }
-      ) 
      }
     )
   }
@@ -159,9 +155,6 @@ let qty={
     this.os.cast.subscribe((posRes)=>{
       this.result = posRes;
   })
-
-  
-
 }
 
 

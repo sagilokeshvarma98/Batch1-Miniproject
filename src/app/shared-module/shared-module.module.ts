@@ -12,6 +12,7 @@ import { ValuePipe } from './pipes/value.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AngmaterialModule } from '../angmaterial/angmaterial.module';
+import { SizeFilterPipe } from './pipes/size-filter.pipe';
 
 
 
@@ -24,7 +25,8 @@ import { AngmaterialModule } from '../angmaterial/angmaterial.module';
     SortPipe,
     DatePipe,
     SearchPipe,
-    ValuePipe
+    ValuePipe,
+    SizeFilterPipe
   ],
   imports: [
     CommonModule,
@@ -48,7 +50,8 @@ import { AngmaterialModule } from '../angmaterial/angmaterial.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    SizeFilterPipe
   ]
 })
 export class SharedModuleModule { }
