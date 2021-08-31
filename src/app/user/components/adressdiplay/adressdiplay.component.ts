@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AdressService } from 'src/app/services/address.service';
-import { AddressService } from 'src/app/services/adress.service';
+import { AddressService } from 'src/app/services/address.service';
+
 
 
 @Component({
@@ -21,10 +21,17 @@ d:any
   constructor(public address:AddressService,private router:Router) { }
 
   getAddress() {
-    this.address.getadress().subscribe(
+    this.address.getAddress().subscribe(
     // this.address.getAddress().subscribe(
-(data)=>{this.userAddress=data}
+
+     (data)=>{
+       
+       console.log("----------",data);
+       this.userAddress=data
+      
+      }
     )
+
   }
   
   
@@ -45,20 +52,19 @@ public getdefult(){
   this.address.getdefult().subscribe((posres)=>{
     this.d=posres;
     console.log("resss")
-    console.log(this.d)
+    //console.log(this.d)
   })
 }
 
   ngOnInit(): void {
     this.getAddress();
     this.getdefult();
+    
   }
-  
-  
- deleteAddress(val: any, id: any) {
+ deleteAddress(id:any) {
     this.confirm = confirm("do you want  delet you adress ")
     if (this.confirm == true) {
-      this.address.deleteadress(id).subscribe((posres) => {
+      this.address.deleteAddress(id).subscribe((posres) => {
         console.log("del")
         console.log(posres)
         this.getAddress();

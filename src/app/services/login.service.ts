@@ -36,6 +36,9 @@ export class LoginService {
   deleteaccount(data:any):Observable<any>{
     return this.hp.delete("http://localhost:3000/users/"+data)
   }
-
+   
+  forgotpost(data:any):Observable<any>{
+    return this.hp.post("http://oshopping.ddns.net/api/user/forgotpassword?mobile="+data,{})
+  }
 
 }

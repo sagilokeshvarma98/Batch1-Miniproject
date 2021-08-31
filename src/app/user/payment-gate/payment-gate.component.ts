@@ -14,8 +14,6 @@ export class PaymentGateComponent implements OnInit {
   card_data: any
   token: any
   checkoutForm: FormGroup
-
-
   constructor(private fb: FormBuilder, private cs: CheckoutService) {
 
     this.checkoutForm = this.fb.group(

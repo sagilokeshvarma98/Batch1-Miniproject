@@ -15,7 +15,7 @@ export class ProductsDisplayComponent implements OnInit {
   ctrl = new FormControl(null, Validators.required);
 
   sortTerm: string = ""
-  searchTerm:string = ""
+  searchTerm: string = ""
   @Input() ratingTerm: Number = 0
   @Input() priceTerm: String = ''
 
@@ -28,13 +28,13 @@ export class ProductsDisplayComponent implements OnInit {
   }
 
   Products: any[] = []
-  length : any 
-  pageNumber:number = 1 
+  length: any
+  pageNumber: number = 1
   NotifyAddedToCart: Boolean = false
   Title: string = ""
 
   ngOnInit(): void {
-    this.PS.term.subscribe(res=>{
+    this.PS.term.subscribe(res => {
       this.searchTerm = res
     })
     this.PS.productsData().subscribe(res => {
@@ -42,21 +42,21 @@ export class ProductsDisplayComponent implements OnInit {
       this.Products = res
       this.length = res.length //For json file
       res.map((x: any, index: any) => {
-        x.afterDiscount = x.price-x.discount
+        x.afterDiscount = x.price - x.discount
         let length = res[index].productReviews.length
         let totalRates = 0
         let count = 0
-        if(length == 0){
+        if (length == 0) {
           x.mainRating = 0
         }
         else
-        x.productReviews.map((y: any) => {
-          totalRates = totalRates + y.rating
-          count++
-          if (length == count)
-          x.mainRating = totalRates/length
-        })
-      }   
+          x.productReviews.map((y: any) => {
+            totalRates = totalRates + y.rating
+            count++
+            if (length == count)
+              x.mainRating = totalRates / length
+          })
+      }
       )
     })
   }
@@ -74,4 +74,5 @@ export class ProductsDisplayComponent implements OnInit {
   // getItem(x: any) {
   //   localStorage.setItem('itemData', JSON.stringify(x))
   // }
+  
 }
