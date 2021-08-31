@@ -41,12 +41,12 @@ getitem(){
 
     this.os.additem(qty,this.itemData.id).subscribe((posres)=>{
   
-  
+      this.os.changeData();
   
       console.log("item added")
       console.log(posres)
       
-      this.os.changeData();
+      
     })
     
    }
@@ -65,7 +65,7 @@ getitem(){
     console.log(this.itemData);
     this.getitem();
  
-
+    this.os.changeData();
 
  
   

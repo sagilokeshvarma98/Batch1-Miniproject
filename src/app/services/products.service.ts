@@ -13,6 +13,7 @@ export class ProductsService {
 
   productsData():Observable<any>{
      return this.hc.get("http://oshopping.ddns.net/api/products/all")
+    //  return this.hc.get("https://fakestoreapi.com/products")
   }
 
   addProduct(data:any){

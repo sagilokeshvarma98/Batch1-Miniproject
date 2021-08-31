@@ -39,11 +39,11 @@ this.os.selcetquantity(qty ,id).subscribe((res)=>{
         this.os.deleteitem(id).subscribe((posres) => {
           console.log(posres)
 
-
+          this.os.changeData();
 
           this.getcartitem();
           // window.location.reload();
-          this.os.changeData();
+          
           console.log("delete success")
 
         })

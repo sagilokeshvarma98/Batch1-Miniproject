@@ -34,11 +34,15 @@
             <a id="productAnchorTag" routerLink="{{x.id}}" target="_blank">
             <!-- <div class="card-body" (click)="getItem(x)"> -->
             <div class="card-body">
-                <div class="productImage">
-                <img *ngIf="x.imageUrls.length > 0" src={{x.imageUrls[0].imgUrl}} alt="image">
+                <div class="productImage" *ngIf="smallview" (mouseover)="handleDefault()">
+
+                <img   *ngIf="x.imageUrls.length > 0" src={{x.imageUrls[0].imgUrl}} alt="image">
+                <p class="productTitle">{{x.metaTitle}}</p>
                 </div>
+                <div *ngIf="!smallview" (mouseleave)="handleDefault()">
                 <p class="productTitle">{{x.metaTitle}}</p>
                 <h3>{{x.afterDiscount | currency:"INR"}} <span class="normalPrice">{{x.price | currency:"INR"}}</span> </h3>
+            </div>
                 <ng-template #t let-fill="fill">
                     <span class="star" [class.full]="fill === 100">
                     <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;

@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./products-display.component.css']
 })
 export class ProductsDisplayComponent implements OnInit {
+  smallview:boolean=true;
+
+
+
 
   constructor(public PS: ProductsService, private route: Router) { }
 
@@ -26,6 +30,13 @@ export class ProductsDisplayComponent implements OnInit {
       this.ctrl.disable();
     }
   }
+
+
+  handleDefault(){
+    this.smallview = !this.smallview;
+  }
+
+
 
   Products: any[] = []
   length : any 
