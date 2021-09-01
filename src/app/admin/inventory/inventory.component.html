@@ -1,128 +1,18 @@
-<!-- <button >AddCoupons</button> -->
-<div class="modal fade" id="coupon" tabindex="-1" aria-labelledby="coupon" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
 
+<xng-breadcrumb [separator]="iconTemplate" class="px-2 ml-2"></xng-breadcrumb>
+<ng-template #iconTemplate>
+  <mat-icon>chevron_right</mat-icon>
+</ng-template>
 
-                <!-- <form class="form">
-                    <label for="discount">Select Category</label>
-                    <select class="form-control" name="discount" id="discount" (change)="getSubs($event)">
-                        <option value="0">Apparels</option>
-                        <option value="1">Electronics</option>
-                        <option value="2">Home and Kitchen</option>
-                    </select>
-                    <label for="discount">Select Sub Category</label>
-                    <select class="form-control" name="sub_discount" id="sub_discount">
-                        <option *ngFor="let ele of subCategoryArray" value="ele">{{ele}}</option>
-                    </select>
-                    <div class="text text-center mt-3">
-                        <button class="btn btn-primary" (click)="changeForm()">Continue</button>
-                    </div>
-                </form> -->
-
-
-                <form class="form" [formGroup]="productForm" (ngSubmit)='submit()'>
-                    <div class="floated">
-                        <div class="form-group">
-                            <label for="userId">Enter ID</label>
-                            <input type="text" name="userId" formControlName='userId' class="form-control">
-                            <div *ngIf='productFormControl.userId.touched && productFormControl.userId.invalid'>
-                                <div *ngIf='productFormControl.userId.errors?.required && productFormControl.userId.errors?.minLength'>
-                                    <b class="text text-danger">*Enter 16 digit ID</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="title">title of Product</label>
-                            <input type="text" name="title" formControlName='title' class="form-control">
-                            <div *ngIf='productFormControl.title.touched && productFormControl.title.invalid'>
-                                <div *ngIf='productFormControl.title.errors?.required'>
-                                    <b class="text text-danger">*Required</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="metaTitle">Meta title</label>
-                            <input type="text" name="metaTitle" formControlName='metaTitle' class="form-control">
-                            <div *ngIf='productFormControl.metaTitle.touched && productFormControl.metaTitle.invalid'>
-                                <div *ngIf='productFormControl.metaTitle.errors?.required'>
-                                    <b class="text text-danger">*Required</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="price">Enter Price</label>
-                            <input type="text" name="price" formControlName='price' class="form-control">
-                            <div *ngIf='productFormControl.price.touched && productFormControl.price.invalid'>
-                                <div *ngIf='productFormControl.price.errors?.required'>
-                                    <b class="text text-danger">*Required</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="discount">Discount</label>
-                            <input type="text" name="discount" formControlName='discount' class="form-control">
-                            <div *ngIf='productFormControl.discount.touched && productFormControl.discount.invalid'>
-                                <div *ngIf='productFormControl.discount.errors?.required'>
-                                    <b class="text text-danger">*Required</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="quantity">Quantity available</label>
-                            <input type="text" name="quantity" formControlName='quantity' class="form-control">
-                            <div *ngIf='productFormControl.quantity.touched && productFormControl.quantity.invalid'>
-                                <div *ngIf='productFormControl.quantity.errors?.required'>
-                                    <b class="text text-danger">*Required</b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="summary">Summary</label>
-                            <textarea name="summary" id="summary" class="form-control"
-                                formControlName='summary' cols="10" rows="2"></textarea>
-                            <div
-                                *ngIf='productFormControl.summary.touched && productFormControl.summary.invalid'>
-                                <div *ngIf='productFormControl.summary.errors?.required'>
-                                    <b class="text text-danger">*Required</b>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="form-group">
-                            <label for="id">Select an product image</label>
-                            <input type="file" name="image" (change)="getImage($event)" formControlName='image'
-                                class="form-control">
-                        </div> -->
-                        <button type="submit" [disabled]='!productForm.valid' class="btn btn-warning"
-                            data-bs-dismiss="modal">Submit</button>
-                    </div>
-                </form>
-
-
-                <!-- <form action="" class="form">
-                    <div class="form-group">
-                        <label for="">Enter image url</label>
-                        <input type="text" name="imageUrl" ngModel [ngModel]="imageUrl" class="form-control">
-                    </div>
-                    <button type="submit">Add image</button>
-                </form> -->
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="container">
+<div class="container mt-5">
     <div class="search">
         <input type="text" [(ngModel)]='searchTerm' class="form-control" placeholder="Enter your search term">
-        <div class="add-product-div">
-            <a data-bs-toggle="modal" data-bs-target="#coupon" mat-raised-buttoncolor="accent">
-                <img class="add-product-svg" src="../../../assets/plus-solid.svg" alt="add_product">
-                <span id="tooltip">Add a product</span>
-            </a>
-        </div>
     </div>
-    <table class="table table-bordered">
+    <div class="productAdd">
+        <button mat-raised-button color="accent" class="btn mb-5" (click)="openDialog()"> Add Product <span></span> <mat-icon class="add-product-svg ml-1">add_box</mat-icon></button>
+    </div>
+
+    <table datatable class="table table-bordered">
         <thead>
             <tr>
                 <th>SKU ID</th>
@@ -143,4 +33,5 @@
             </tr>
         </tbody>
     </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
 </div>

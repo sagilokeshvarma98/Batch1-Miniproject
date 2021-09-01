@@ -1,106 +1,21 @@
-/* .admin-nav a{
-    float: right;
-    color: rgb(148, 78, 212);
-    text-decoration: none;
-    font-size: large;
+#line{
+    border-right: 2px solid gray;
 }
-
-.admin-nav{
-    padding:50px 0px 50px 0px;
-    
+.footer{
+    margin-top: 47px;
+    line-height: 50px;
+    background-color: rgb(87, 81, 81);
 }
-
-.admin-nav a:hover{
-    color: rgba(0, 0, 0, 0.171);
-     */
-/* } */
-
-.container-fluid .row{ 
-    margin-top: 5%;
+.float-md-left{
+    position: relative;
+    top: 10px;
 }
-
-.managementLinks{
-    height: 500px;
+*,*:after,*:before{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
 }
-
-.managementLinks ul li a:hover{
-    color: white;
+.chart{
+    margin-top: 10px;
 }
-
-.user-profile-svg{
-    margin-right: 30px;
-    width: 25px; 
-    display: inherit;
-    
-}
-nav{
-    margin-top: 20px;
-    height: 45px;
-}
-
-.managementLinks{
-    width: max-content;
-    background: linear-gradient(to top, #dcf1f1, rgb(33, 214, 241));
-    /* background-color: rgba(114, 172, 248, 0.904); */
-    padding:30px 20px 10px 0px;
-}
-
-.managementLinks ul li:nth-child(1n+2){
-    margin-top: 80px;
-}
-
-.managementLinks ul li a{
-    color: rgb(240, 240, 240);
-}
-
-.managementLinks ul li{
-    padding-left: 10px;
-    /* border-bottom: 2px solid rgb(32, 6, 6);
-    border-left: 2px solid rgb(56, 11, 11);; */
-    font-size: 17px;
-    list-style: none;
-    cursor: context-menu;
-}
-
-.navbar a img{
-    width: 20px;
-}
-
-.navbar span{
-    color: white;
-    cursor: context-menu;
-}
-
-
-/* .mat-menu-button{
-    font-weight: 400;
-<<<<<<< HEAD
-    font-size: 20px;
-=======
-    font-size: 10px;
->>>>>>> b96153bf04b80af64129c601ea4393da3014837f
-    color: #0f1111;
-    font-family: "Amazon Ember", Arial, sans-serif;
-
-}
-.mat-menu-button:hover{
-    background-color: #000;
-    color: #fff;
-} */
-
-
-
-/* .dropdown-menu{
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 158px;
-    z-index: 1;
-}
-.dropdown-menu a:hover{
-background-color:#000 ;
-color: #fff;
-}
-.user-profile-svg:hover .dropdown-menu{
-    display: block;
-
-} */

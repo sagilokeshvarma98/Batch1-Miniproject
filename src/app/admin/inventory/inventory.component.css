@@ -1,6 +1,7 @@
 .search input{
-    width: 250px;
-    margin-bottom:20px;
+    margin-top: 5%;
+    width: 20%;
+    margin-bottom:25px;
 }
 .add-product-svg{
     width: 20px;
@@ -10,14 +11,24 @@
     margin-right: 50%;
 }
 
+a span{
+    margin: 10px;
+    font-size: 25px;
+    font-weight: bolder;
+  }
 .search .add-product-div a:hover{
-    color: chartreuse;
+    color: rgb(21, 6, 85);
 }
 
 .add-product-div{
+    padding: 10px;
     cursor: context-menu;
     width: fit-content;
     font-size: large;
-    color: brown;
+    color: rgb(122, 12, 12);
     margin-bottom: 30px;
 }
+
+table {
+    width: 100%;
+  }
