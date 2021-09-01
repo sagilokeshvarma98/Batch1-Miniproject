@@ -18,7 +18,7 @@ export class ProductsDisplayComponent implements OnInit {
   searchTerm: string = ""
   @Input() ratingTerm: Number = 0
   @Input() priceTerm: String = ''
-  @Input() sizes : any[] = []
+  @Input() sizes:any
 
   toggle() {
     if (this.ctrl.disabled) {
