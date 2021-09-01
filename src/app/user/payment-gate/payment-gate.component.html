@@ -1,29 +1,43 @@
-
-
-
-
- <form class="form"   [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label>card number</label>
-        <input type="text" class="form-control" name="Number" formControlName="Number" placeholder="number" >
-    </div>
-    <div class="form-group">
-        <label>expMonth</label>
-        <input type="text" class="form-control" name="expMonth" formControlName="expMonth" placeholder="expMonth" >
-    </div>
-    <div class="form-group">
-        <label>expYear</label>
-        <input type="text" class="form-control" name="expYear" formControlName="expYear" placeholder="expYear" >
-  
-    </div>
-    <div class="form-group">
-        <label>cvc Number</label>
-        <input type="number"  class="form-control " name="cvc" formControlName="cvc" placeholder="cvc number">
-        
-    </div>
-  
-    <div class="form-group">
-        <button type="submit" class="btn btn-warning"  >submit</button>
-    </div>
-    
-</form>  
+<section class="container-fluid">
+    <section class="row justify-content-center">
+        <section class="col-12 col-sm-6 col-md-4">
+            <form class="form-container" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+                <h3>Card Details</h3>
+                <hr style="color: whitesmoke;">
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label class="text" for="">Card Number</label>
+                        <input type="text" class="form-control" name="Numbar" formControlName="Number">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label class="text">Exp Month</label>
+                                <input type="text" class="form-control" name="expMonth" formControlName="expMonth"  >
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="text">ExpYear</label>
+                                <input type="text" class="form-control" name="expYear" formControlName="expYear" >
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label class="text">CVV Number</label>
+                                <input type="text" class="form-control " name="cvc" formControlName="cvc" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label class="text" for="name">CardHolder Name</label>
+                        <input type="text" class="form-control " name="cvc" formControlName="cardHolder" >
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="btn btn-warning btn-block text-light ">Pay</button>
+                </div>
+            </form>
+        </section>
+    </section>
+</section>

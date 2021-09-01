@@ -6,14 +6,12 @@
         <option value="high to low">price : high to low</option>
         <option value="low to high">price : low to high</option>
         <option value="rating">rating</option>
-    </select>`
+    </select>
 </div>
 <div class="container-fluid" style="margin-top: 5%;">
     <div class="row">
-        <div class="col-md-6 col-sm-8 col-xs-12 col-lg-4" *ngFor="let x of Products | filter : ratingTerm | sort : sortTerm | priceFilter : priceTerm
-    | paginate: { itemsPerPage: 6, currentPage: pageNumber}">
-
-
+        <div class="col-md-6 col-sm-8 col-xs-12 col-lg-4" *ngFor="let x of Products | sizeFilter : sizes | filter : ratingTerm
+         | search:searchTerm | sort : sortTerm | priceFilter : priceTerm | paginate: { itemsPerPage: 6, currentPage: pageNumber}">
         <!-- <div class="card">
             <a routerLink="{{x.id}}" target="_blank">
                 <div class="card-body">
@@ -30,31 +28,29 @@
             </a>
         </div> -->
 
-        <div class="card">
-            <a id="productAnchorTag" routerLink="{{x.id}}" target="_blank">
-            <!-- <div class="card-body" (click)="getItem(x)"> -->
-            <div class="card-body">
-                <div class="productImage" *ngIf="smallview" (mouseover)="handleDefault()">
+            <div class="card">
+                <a id="productAnchorTag" routerLink="{{x.id}}" target="_blank">
+                    
+                    <div class="card-body">
+                        <div class="productImage" style="text-align: center;">
+                            <img *ngIf="x.imageUrls.length > 0" style="width: auto;" src={{x.imageUrls[0].imgUrl}} alt="image">
+                            
+                        </div>
+                        <p class="productTitle" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;" >{{x.metaTitle}}</p>
+                        <h3 class="discount-price">{{x.afterDiscount | currency:"INR"}} <span class="normalPrice">{{x.price |
+                                currency:"INR"}}</span> </h3>
+                        <ng-template #t let-fill="fill">
+                            <span class="star" [class.full]="fill === 100">
+                                <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                            </span>
+                        </ng-template>
+                        <ngb-rating [(rate)]="x.mainRating" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+                    </div>
+                </a>
+            </div>
 
-                <img   *ngIf="x.imageUrls.length > 0" src={{x.imageUrls[0].imgUrl}} alt="image">
-                <p class="productTitle">{{x.metaTitle}}</p>
-                </div>
-                <div *ngIf="!smallview" (mouseleave)="handleDefault()">
-                <p class="productTitle">{{x.metaTitle}}</p>
-                <h3>{{x.afterDiscount | currency:"INR"}} <span class="normalPrice">{{x.price | currency:"INR"}}</span> </h3>
-            </div>
-                <ng-template #t let-fill="fill">
-                    <span class="star" [class.full]="fill === 100">
-                    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
-                    </span>
-                </ng-template>
-                <ngb-rating [(rate)]="x.mainRating" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
-            </div>
-        </a>
+
         </div>
-
-
-    </div>
     </div>
     <div class="pagination">
         <pagination-controls class="pagenation-controls" (pageChange)="pageNumber = $event">

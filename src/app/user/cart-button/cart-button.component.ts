@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 
@@ -9,72 +9,49 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartButtonComponent implements OnInit {
 
-  constructor(private os:CartService,private route :Router) { }
+  constructor(private os: CartService, private route: Router) { }
 
-  @Input() itemData:any
+  @Input() itemData: any
+  @Input() quantity: any = 0
   @Output() displayNotification = new EventEmitter()
-isincart:boolean=false;
+  isincart: boolean = false;
   ngOnInit(): void {
-    console.log("this is false")
-    console.log(this.isincart)
-   
+    // console.log(this.quantity)
   }
+  getitem() {
+    this.os.getitem().subscribe((posres) => {
+      console.log(posres.cartItems.map((user: any) => {
+        console.log(user.product.id)
+        if (user.product.id == this.itemData.id) {
+          this.isincart = true;
+        }
+      }))
+      if (!this.isincart) {
+        this.os.additem(this.quantity, this.itemData.id)
+        .subscribe((posres) => {
+          console.log("item added")
+          console.log(posres)
 
-getitem(){
-  this.os.getitem().subscribe((posres)=>{
-    
-    console.log("this posres")
-    console.log(posres.cartItems.map((user:any)=>{
-      console.log(user.product.id)
-      if(user.product.id==this.itemData.id){
-        console.log("hai")
-        this.isincart=true;
+          this.os.changeData();
+        })
       }
-      
-
-    }))
-   if(!this.isincart){
-    console.log("if")
-    let qty={
-      "quantity":this.itemData.quantity-2
-    }
-
-    this.os.additem(qty,this.itemData.id).subscribe((posres)=>{
-  
-      this.os.changeData();
-  
-      console.log("item added")
-      console.log(posres)
-      
-      
+      else {
+        this.route.navigate(['cart']);
+      }
     })
-    
-   }
-    
-   else{
-     console.log("else")
-     this.route.navigate(['cart']);
-   }
-   console.log(this.isincart)
-  })
-}
-
-
-
-  AddToCart(){
-    console.log(this.itemData);
-    this.getitem();
- 
-    this.os.changeData();
-
- 
-  
-  
-    
-
-    
-   
-    this.displayNotification.emit('true')
   }
 
+
+
+  AddToCart() {
+    if(this.quantity>0){
+      // this.getitem()
+      this.os.additem(this.quantity,this.itemData.id).subscribe(res=>this.os.changeData())
+      console.log(this.quantity,this.itemData);
+      this.os.changeData();
+    }
+    else{
+      this.displayNotification.emit(true)
+    }
+  }
 }

@@ -1,12 +1,13 @@
 <div  class="order-class">
-<table class="sortable" *ngFor="let x of myorders">
+<table class="sortable" *ngFor="let x of orderItems">
     <tr>
       <th>item Name</th>
       <th>price</th>
+      <th>Status</th>
       <th>image</th>
     </tr>
     <tr class="item">
-      <td>{{x.category}}</td> &nbsp;
+      <td>{{x.product.title}}</td> 
       <td>{{x.price}}</td>
       <td>{{status}}</td>
       <td><img src="{{x.image}}" alt=""></td>

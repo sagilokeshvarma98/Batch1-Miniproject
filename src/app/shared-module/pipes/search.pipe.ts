@@ -11,9 +11,7 @@ export class SearchPipe implements PipeTransform {
       return arrObj.filter(x=>{
        return JSON.stringify(x.id).toLowerCase().match(searchTerm.toLocaleLowerCase()) || JSON.stringify(x.metaTitle).toLowerCase().match(searchTerm.toLocaleLowerCase())
       })
-      
     }
     return arrObj
   }
-
 }

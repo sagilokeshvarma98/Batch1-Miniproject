@@ -1,149 +1,99 @@
-
-
 <!-- 
 <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
   </button> -->
-  <mat-stepper  #stepper>
-    <mat-step >
-      <form >
-        <ng-template matStepLabel>map coupons</ng-template>
-        <h1>checkout</h1>
-        <div class="form-group"   >
-          
-            <table class="table" >
-                <tr>
-                  <th>product name</th>
-                  <th>price</th>
-                  <th>quantity</th>
-                 
-                </tr >
-                <tr *ngFor="let x of check.cartItems">
-                    <td>{{x.metaTitle}}</td>
-                <!-- <tr *ngFor="let x of checkitems"> 
+<mat-stepper #stepper>
+  <mat-step>
+    <form>
+      <ng-template matStepLabel>map coupons</ng-template>
+      <h1>checkout</h1>
+      <div class="form-group">
+
+        <table class="table">
+          <tr>
+            <th>product name</th>
+            <th>price</th>
+            <th>quantity</th>
+          </tr>
+          <tr *ngFor="let x of check.cartItems">
+            <td>{{x.metaTitle}}</td>
+            <!-- <tr *ngFor="let x of checkitems"> 
                   <td>{{x.content}}</td>-->
-                  <td>{{x.price}}</td>
-                  <td>{{x.quantity}}</td>
-                  <td></td>
-                </tr>
-                <tr>
-     <td>
-       
-    
-    
-    </td>
-    
-    
-                </tr>
-    
-                <tr>
-    
-                    <td> total amount to be paid :</td>
-                    <td> {{grandtotal}}  </td>
-    
-                  </tr>
-                  <tr>
-    
-                    <td>  <p>you have discount </p>  </td>
-                    <td>- {{discount}} </td>
-    
-    
-                  </tr>
-                 
-                  <tr  > 
-                    <td>total amount to be paid  : </td>
-                    <td>{{grandtotal-discount}}</td></tr>
-                 
+            <td>{{x.price}}</td>
+            <td>{{x.quantity}}</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+            </td>
+          </tr>
+          <tr>
+            <td> total amount to be paid :</td>
+            <td> {{grandtotal}} </td>
+          </tr>
+          <tr>
+            <td>
+              <p>you have discount </p>
+            </td>
+            <td>- {{discount}} </td>
+          </tr>
+          <tr>
+            <td>total amount to be paid : </td>
+            <td>{{grandtotal-discount}}</td>
+          </tr>
+          <label for="coupon">add coupon:</label> <br>
 
-                    <label for="coupon">add coupon:</label> <br>
-        
-                    <select name="coupon" id="coupon"  (change)="change($event)" [(ngModel)]="coupon"   >
-                        <option class="coupon"  value="0"  >none</option>
-                      <option class="coupon"  value="{{c.eligibul}}"  *ngFor="let c of coupon">{{c.coupon}}</option>
-                    
-                    </select>
+          <select name="coupon" id="coupon" (change)="change($event)" [(ngModel)]="coupon">
+            <option class="coupon" value="0">none</option>
+            <option class="coupon" value="{{c.eligibul}}" *ngFor="let c of coupon">{{c.coupon}}</option>
+          </select>
+        </table> <br>
 
+        <!-- <tfoot  >total amount to be paid : <del>{{grandtotal}}</del> {{paytotal}} </tfoot> -->
 
-              </table> <br>  
-             
-      
-               
-              
-      
-              <!-- <tfoot  >total amount to be paid : <del>{{grandtotal}}</del> {{paytotal}} </tfoot> -->
-    
-        </div>
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step  label="Fill out your address">
-      <form >
-        <mat-expansion-panel  hideToggle>
-            <mat-expansion-panel-header >
-              <mat-panel-title>
-              delivery adress
-              </mat-panel-title>
-              <mat-panel-description >
-            hyd
-              </mat-panel-description>
-            </mat-expansion-panel-header >
+      </div>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step label="Fill out your address">
+    <form>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            delivery adress
+          </mat-panel-title>
+          <mat-panel-description>
             
-    
-                <address  *ngIf="default" >
-                    {{default.flat}}
-                    {{default.area}}
-                    {{default.Landmark}}
-                  
-                    
-    
-                </address>
-    
-    
-                <button type="submit" class="btn btn-warning"  [routerLink]="['/adress']"    >change</button>
-    
-           
-          </mat-expansion-panel>
-    
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step>
-        <form >
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <address *ngIf="default">
+          {{default.line1}}
+      
+          {{default.city}}
+        </address>
+        <button type="submit" class="btn btn-warning" [routerLink]="['/adress']">change</button>
+      </mat-expansion-panel>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <form>
       <ng-template matStepLabel>Done</ng-template>
       <p>You are now done.</p>
       <div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-warning"  [routerLink]="['/payment']"    >procced to buy</button>
+          <button type="submit" class="btn btn-warning" [routerLink]="['/payment']">procced to buy</button>
         </div>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
     </form>
-    </mat-step>
-  </mat-stepper>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </mat-step>
+</mat-stepper>
