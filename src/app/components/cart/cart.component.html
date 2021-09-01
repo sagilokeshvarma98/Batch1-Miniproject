@@ -50,8 +50,8 @@
             <div>
                 <h4>Total bill amount to be paid: {{total |currency:"INR"}}</h4>
                 <!-- <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td> --> <br>
-                <button class="btn btn-success" [routerLink]="['/checkout']">Checkout</button> &nbsp;
-                <!-- <button class="btn btn-success" (click)="chechOutCart()">Checkout</button> &nbsp; -->
+                <!-- <button class="btn btn-success" [routerLink]="['/checkout']">Checkout</button> &nbsp; -->
+                <button class="btn btn-success" (click)="chechOutCart()">Checkout</button> &nbsp;
                 <button routerLink="/products" class="btn btn-primary">Shop More</button>
             </div>
         </div>

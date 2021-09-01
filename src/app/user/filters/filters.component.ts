@@ -12,7 +12,7 @@ export class FiltersComponent implements OnInit {
   price:any
   allPrices:Boolean = false
   allRates:Boolean = false
-  sizes : string[] = []
+  sizes : any[] = []
 
   rates = [4,3,2,1]
 
@@ -40,6 +40,7 @@ export class FiltersComponent implements OnInit {
     this.rate = this.checked
   }
   getSizes(data:any){
+    // this.sizes = data.target.value
     let count = 0
     let index:any
     this.sizes.map((x:any,y:any)=>{

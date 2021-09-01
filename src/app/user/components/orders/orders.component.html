@@ -9,8 +9,8 @@
     <tr class="item">
       <td>{{x.product.title}}</td> 
       <td>{{x.price}}</td>
-      <td>{{status}}</td>
-      <td><img src="{{x.image}}" alt=""></td>
+      <td>{{x.status.description}}</td>
+      <td><img src="{{x.product.imageUrls[0].imgUrl}}" alt=""></td>
       <td *ngIf="!state" (click)="cancelorder(x.id)" class="btn btn-danger btn-round">cancel</td>
       <td *ngIf="state"   (click)=" reorder()" class="btn btn-danger btn-round">reorder</td>
      
