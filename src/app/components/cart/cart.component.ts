@@ -36,7 +36,7 @@ let qty={
           console.log(posres)
           this.getcartitem();
           // window.location.reload();
-          this.os.changeData();
+          
           console.log("delete success")
         })
       }
@@ -154,6 +154,8 @@ let qty={
     // })
     this.os.cast.subscribe((posRes)=>{
       this.result = posRes;
+      console.log("aaaaaaaaaa")
+      console.log(posRes)
   })
 }
 

@@ -48,6 +48,7 @@ export class CartButtonComponent implements OnInit {
       // this.getitem()
       this.os.additem(this.quantity,this.itemData.id).subscribe(res=>this.os.changeData())
       console.log(this.quantity,this.itemData);
+      this.os.changeData();
     }
     else{
       this.displayNotification.emit(true)

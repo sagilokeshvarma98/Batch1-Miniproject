@@ -41,7 +41,7 @@
                             <img *ngIf="x.imageUrls.length > 0" style="width: auto;" src={{x.imageUrls[0].imgUrl}} alt="image">
                             
                         </div>
-                        <p class="productTitle">{{x.metaTitle}}</p>
+                        <p class="productTitle" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;" >{{x.metaTitle}}</p>
                         <h3 class="discount-price">{{x.afterDiscount | currency:"INR"}} <span class="normalPrice">{{x.price |
                                 currency:"INR"}}</span> </h3>
                         <ng-template #t let-fill="fill">

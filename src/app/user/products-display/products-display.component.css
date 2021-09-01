@@ -35,12 +35,24 @@ font-weight: 500;
 }
 .card .card-body .productImage{
   height: 250px;
+ 
+
+}
+.card #productAnchorTag .card-body .productImage img:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
 }
 
+
+.card{
+  height: 400px;
+  box-shadow: 4px 4px 4px 4px rgb(156, 245, 233);
+}
 .card #productAnchorTag .card-body .productImage img{
   position: inherit;
   /* width: 50%; */
-  height: 200px
+  height: 200px;
+  transition: 0.3s ease-in-out;
 }
 
 .card-footer{
@@ -76,3 +88,4 @@ ngb-rating{
 .pagination{
   margin: 30px 25% 30px 30%;
 }
+

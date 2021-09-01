@@ -33,12 +33,14 @@ updateItem(id:any,data:any):Observable<any>{
   return this.http.put("http://oshopping.ddns.net/api/cartitems/update/usercart/"+id,quantity)
 }
 
-private data = new BehaviorSubject<any>("");
+private data = new BehaviorSubject<any>("0");
 
  public cast = this.data.asObservable();
 
  public changeData(){
+   
  this.data.next(this.len);
+
  console.log(this.data);
  
  };
