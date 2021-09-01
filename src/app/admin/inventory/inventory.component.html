@@ -12,7 +12,7 @@
         <button mat-raised-button color="accent" class="btn mb-5" (click)="openDialog()"> Add Product <span></span> <mat-icon class="add-product-svg ml-1">add_box</mat-icon></button>
     </div>
 
-    <table class="table table-bordered">
+    <table datatable class="table table-bordered">
         <thead>
             <tr>
                 <th>SKU ID</th>
@@ -33,4 +33,5 @@
             </tr>
         </tbody>
     </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
 </div>

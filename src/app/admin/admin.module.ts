@@ -24,9 +24,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { ChartsModule } from 'ng2-charts';
 import { CouponPostComponent } from './coupon-post/coupon-post.component';
 import { ProductPostComponent } from './product-post/product-post.component';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +59,6 @@ import { ProductPostComponent } from './product-post/product-post.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    ChartsModule
   ]
 })
 export class ADMINModule { }

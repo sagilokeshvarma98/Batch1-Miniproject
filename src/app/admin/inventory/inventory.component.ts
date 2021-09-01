@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductPostComponent } from '../product-post/product-post.component';
+
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',

@@ -28,3 +28,7 @@ a span{
     color: rgb(122, 12, 12);
     margin-bottom: 30px;
 }
+
+table {
+    width: 100%;
+  }
