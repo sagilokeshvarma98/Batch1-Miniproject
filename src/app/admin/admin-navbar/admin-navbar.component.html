@@ -1,50 +1,50 @@
 
 <mat-sidenav-container  class="sidenav-container">
-  <mat-sidenav  #drawer class="sidenav" mode="side" [opened]="opened">
-    <mat-toolbar>
-      <mat-icon id="face">face</mat-icon>
-    </mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink='adminHome'><mat-icon class="mr-3">home</mat-icon>Home </a>
-      <a mat-list-item routerLink='inventory'><mat-icon class="mr-3">inventory</mat-icon>Inventory </a>
-      <a mat-list-item routerLink='coupon'> <mat-icon class="mr-3">style</mat-icon>Coupons </a>
-      <a mat-list-item [routerLink]="['usermanagement']"> <mat-icon class="mr-3">manage_accounts</mat-icon>Management </a>
-      <a mat-list-item routerLink="transactions" > <mat-icon class="mr-3">paid</mat-icon>Transaction </a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>Admin</span>
-      <span class="spacer"></span>
-      
-      <!-- <a>
-        <mat-icon class="mat-icon" matBadge="0" matBadgeColor="accent" matBadgeSize="small" matBadgeOverlap="false">circle_notifications</mat-icon>
-      </a>
-      <a>
-        <mat-icon lass="mat-icon" matBadge="0" matBadgeColor="accent" matBadgeSize="small" matBadgeOverlap="false">mail_outline</mat-icon>
-      </a>   -->
-
-      
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-          <a><mat-icon>account_circle</mat-icon></a>
+    <mat-sidenav  #drawer class="sidenav" mode="side" [opened]="opened">
+      <mat-toolbar>
+        <mat-icon id="face">face</mat-icon>
+      </mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink='adminHome'><mat-icon class="mr-3">home</mat-icon>Home </a>
+        <a mat-list-item routerLink='inventory'><mat-icon class="mr-3">inventory</mat-icon>Inventory </a>
+        <a mat-list-item routerLink='coupon'> <mat-icon class="mr-3">style</mat-icon>Coupons </a>
+        <a mat-list-item [routerLink]="['usermanagement']"> <mat-icon class="mr-3">manage_accounts</mat-icon>Management </a>
+        <a mat-list-item routerLink="transactions" > <mat-icon class="mr-3">paid</mat-icon>Transaction </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>portrait</mat-icon>
-          <span routerLink="adminProfile">Profile</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>logout</mat-icon>
-          <span>SignOut</span>
-        </button>
-      </mat-menu>
+        <span>Admin</span>
+        <span class="spacer"></span>
+        
+        <!-- <a>
+          <mat-icon class="mat-icon" matBadge="0" matBadgeColor="accent" matBadgeSize="small" matBadgeOverlap="false">circle_notifications</mat-icon>
+        </a>
+        <a>
+          <mat-icon lass="mat-icon" matBadge="0" matBadgeColor="accent" matBadgeSize="small" matBadgeOverlap="false">mail_outline</mat-icon>
+        </a>   -->
+  
+        
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <a><mat-icon>account_circle</mat-icon></a>
+          </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>portrait</mat-icon>
+            <span routerLink="adminProfile">Profile</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>SignOut</span>
+          </button>
+        </mat-menu>
+        
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <router-outlet></router-outlet>
       
-    </mat-toolbar>
-    <!-- Add Content Here -->
-    <router-outlet></router-outlet>
-    
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

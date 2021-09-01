@@ -27,8 +27,9 @@ export class NavbarComponent implements OnInit {
    
   ngOnInit(): void {
     this.cartservice.cast.subscribe((posRes: any)=>{
-      this.result = posRes;
+      console.log(posRes);
       
+      this.result = posRes;
       });
     this.gettoken()
   }

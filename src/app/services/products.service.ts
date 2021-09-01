@@ -17,13 +17,23 @@ export class ProductsService {
     this.term.next(arg)
   }
 
-  productsData(): Observable<any> {
-    return this.hc.get("http://oshopping.ddns.net/api/products/all")
+  productsData():Observable<any>{
+     return this.hc.get("http://oshopping.ddns.net/api/products/all")
+    //  return this.hc.get("https://fakestoreapi.com/products")
   }
 
 
-  testOrderApi(): Observable<any> {
-    return this.hc.get("http://oshopping.ddns.net/api/orders/user/all")
+  testOrderApi():Observable<any>{
+
+    return this.hc.delete("http://oshopping.ddns.net/api/useraddress/9")
+
+    
+    // return this.hc.get("http://oshopping.ddns.net/api/useraddress/user")
+
+    // return this.hc.get("http://oshopping.ddns.net/api/orders/user/all")
+
+    // return this.hc.post("http://oshopping.ddns.net/api/useraddress/user/add",data)
+
   }
 
 

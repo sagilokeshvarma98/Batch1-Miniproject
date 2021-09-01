@@ -65,13 +65,13 @@
             delivery adress
           </mat-panel-title>
           <mat-panel-description>
-            hyd
+            
           </mat-panel-description>
         </mat-expansion-panel-header>
         <address *ngIf="default">
-          {{default.flat}}
-          {{default.area}}
-          {{default.Landmark}}
+          {{default.line1}}
+      
+          {{default.city}}
         </address>
         <button type="submit" class="btn btn-warning" [routerLink]="['/adress']">change</button>
       </mat-expansion-panel>

@@ -147,22 +147,17 @@
   ],
   "address": [
     {
-      "id": 1,
-      "fullName": "Nagaraju ",
-      "flat": "2-66/b",
-      "mobile": 9705081432,
-      "area": "97050",
-      "town": "Guntur",
-      "Landmark": "frnrvnhthtubry"
-    },
-    {
-      "fullName": "Nagaraju Thota",
-      "flat": "2-66/B",
-      "mobile": 9705081432,
-      "area": "",
-      "town": "Guntur",
-      "Landmark": "Guntur",
-      "id": 2
+      "id": 2,
+      "fullName": "SANGU ADINARAYANA REDDY",
+      "line1": "KATAMVALIPALLI,KURICHEDU(MD),PRAKASAM(DT),ANDHRA PRADESH",
+      "line2": "KATAMVARIPALLI,KURICHEDU(MD),PRAKASAM(DT),",
+      "city": "kcd",
+      "state": "Andhra Pradesh",
+      "district": "prakasam",
+      "mobile": 9666702556,
+      "pincode": 523304,
+      "addressType": "1",
+      "addressDefault": 0
     }
   ],
   "cancel": [
@@ -424,27 +419,22 @@
   "useradress": {
     "main": {
       "userId": 1,
-      "adress": [
+      "address": [
         {
-          "fullName": "pavan sai ",
-          "flat": "amarsai hostel",
-          "mobile": 9133953205,
-          "area": "shivabagh ",
-          "town": "hyderabad",
-          "Landmark": "near cdac",
-          "id": 2
-        },
-        {
-          "fullName": "pavan",
-          "flat": "vikas flats",
-          "mobile": 9986745123,
-          "area": "sr nagar",
-          "town": "hyderbad",
-          "Landmark": "umesh chandra statute",
+          "fullName": "tcs",
+          "line1": "techwave",
+          "line2": "wave",
+          "city": "wipro",
+          "state": "Telangana",
+          "district": "rangareddy",
+          "mobile": 234456778,
+          "pincode": 234345,
+          "addressType": "0",
+          "addressDefault": 0,
           "id": 3
         }
       ]
     },
-    "default": 2
+    "default": 1
   }
 }

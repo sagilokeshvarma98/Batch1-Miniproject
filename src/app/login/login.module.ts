@@ -7,6 +7,7 @@ import { SigninComponent } from './signin/signin.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { SuccessfulRegistrationComponent } from './successful-registration/successful-registration.component';
 import { PasswordShowDirective } from './directives/password-show.directive';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PasswordShowDirective } from './directives/password-show.directive';
     SigninComponent,
     ForgotPasswordComponent,
     SuccessfulRegistrationComponent,
-    PasswordShowDirective
+    PasswordShowDirective,
+    ResetpasswordComponent
   ],
   imports: [
     CommonModule,

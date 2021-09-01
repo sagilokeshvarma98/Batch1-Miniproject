@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -32,16 +33,24 @@ export class RegisterComponent implements OnInit {
       }
     )
    }
+
+   public wrongCreden:any = false
+   ErrorMessage : string = ""
+   registerFormValidate : string = "card"
    onSubmit(){
     this.submitted = true;
     let userData = {
       ...this.registerForm.value
     }
    this.customvalid.postdata(userData)
-   
    .subscribe((res:any)=>{
      console.log(res);
      this.route.navigate(['successfulRegister'])
+   },
+   (error:HttpErrorResponse)=>{
+     this.registerFormValidate = "card loginFormError"
+     this.ErrorMessage = error.error.apierror.subErrors
+    this.wrongCreden = true
    })
    }
    get registerFormControl() {
@@ -51,7 +60,6 @@ export class RegisterComponent implements OnInit {
     this.customvalid.getData().subscribe((res:any)=>{
       console.log(res)
       this.Getresponse=res;
-     
     })
     //console.log(this.Getresponse);
   }

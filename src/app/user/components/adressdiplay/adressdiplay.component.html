@@ -1,16 +1,27 @@
 
+<<<<<<< HEAD
 <div class="container">
     <div class="row">
         <div class="col-lg-3" *ngFor="let x of userAddress">
             <div class="card">
 
+=======
+<!-- <button (click)="deleteAddress($event,x.id)"  >delete</button>
+<button (click)="selctdefault($event,x.id)"  >select defult</button>
+
+    </p> -->
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let x of userAddress">
+            <div class="card">
+>>>>>>> c725099fa12a99154c1f550053941bf0b0f5d4f5
                 <div class="card-body">
                     <p>{{x.fullName}}</p>
-                    <p>{{x.flat}}</p>
+                    <p>{{x.line1}}</p>
                     <p>{{x.mobile}}</p>
-                    <p>{{x.area}}</p>
-                    <p>{{x.town}}</p>
-                    <p>{{x.Landmark}}</p>
+                    <p>{{x.city}}</p>
+                    <p>{{x.districk}}</p>
+                    <p>{{x.state}}</p>
                    <span></span> <button class="btn btn-danger" (click)="deleteAddress($event,x.id)">delete</button>
                     <button class="btn btn-warning"  routerLink="/adress/{{x.id}}">edit</button>
                     <button  class="btn btn-danger"  (click)="selctdefault($event,x.id)"  >select defult</button>
@@ -20,6 +31,42 @@
         </div>
         <div class="add-address" routerLink="/adress" >
             <mat-icon class=" display-1">add</mat-icon>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Your Addresses</h1>
+        </div>
+    </div>
+    <div class="row box-style">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card add-card" routerLink="/adress">
+                <mat-icon class="display-1">add</mat-icon>
+                <h2>Add address</h2>
+            </div>
+
+        </div>
+        
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let x of userAddress">
+            <div class="card address-card">
+                <address>
+             <p class="name">{{x.fullName}}</p>
+             <span>{{x.line1}}</span>, 
+              <span>{{x.city}}</span><br>
+             <span>{{x.district}}</span>,
+             <span>{{x.state}}</span>,  
+              <span>{{x.pincode}}</span>  
+              <p>{{x.country}}</p>
+               <label>Phone Number:</label> {{x.mobile}}
+                </address>
+                <div >
+                    <button class="btn btn-danger" (click)="deleteAddress(x.id)">delete</button>
+                    <button class="btn btn-warning"  routerLink="/adress/{{x.id}}">edit</button>
+                    <button  class="btn btn-danger"  (click)="selctdefault($event,x.id)"  >select defult</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
