@@ -256,6 +256,7 @@ export class OrdersComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    console.log(this.myorders);
     this.myorders.map((x:any)=>{
       x.orderItems.map((y:any)=>{
         y.status = x.status
