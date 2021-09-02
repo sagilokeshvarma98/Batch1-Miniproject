@@ -13,7 +13,8 @@ export class ProductPostComponent implements OnInit {
   productForm: FormGroup;
   subCategoryArray: any
   products: any;
-  
+  submitted=false;
+  error:any;
 
   constructor(private PS: ProductsService, private fb: FormBuilder, private toastr: ToastrService) {
     this.productForm = this.fb.group(
@@ -26,25 +27,32 @@ export class ProductPostComponent implements OnInit {
         summary: ['', [Validators.required]],
         quantity: ['', [Validators.required]]
       }
-
-    )
+    );
   }
 
-  get productFormControl() {
+  get f() {
     return this.productForm.controls;
   }
   ngOnInit(): void {
   }
   submit() {
-    this.PS.addProduct(this.productForm.value).subscribe(
-      () => {
-        this.productForm.reset();
-        this.toastr.success("Products are saved successfully.", "Success")
-      },
-      () => {
-        this.productForm.reset();
-        this.toastr.error("Products con't Post.", "Error")
-      }
-    )
+    this.submitted=true;
+    if(this.productForm.invalid){
+      this.error="Must Fill the All";
+      this.toastr.error("Products con't Post.", "Error")
+    }
+    else{
+      this.PS.addProduct(this.productForm.value).subscribe(
+        () => {
+          this.productForm.reset();
+          this.toastr.success("Products are saved successfully.", "Success")
+        },
+        () => {
+          this.productForm.reset();
+          
+        }
+      )
+    }
+    
   }
 }

@@ -1,25 +1,22 @@
 <mat-dialog-content class="mat-typography">
-    <form class="form" [formGroup]="productForm" (onSubmit)='submit()'>
+    <form class="form" [formGroup]="productForm" (ngSubmit)='submit()'>
         <div class="container">
             <h2 mat-dialog-title class="text-center">Add Product</h2>
+            <span class="text-center err">{{error}}</span>
             <div class="row">
                 <div class="col-xl-6 col-md-6">
                     <label for="userId">Enter ID</label>
                     <input type="text" name="userId" size="40px" formControlName='userId' class="form-control">
-                    <div *ngIf='productFormControl.userId.touched && productFormControl.userId.invalid'>
-                        <div
-                            *ngIf='productFormControl.userId.errors?.required && productFormControl.userId.errors?.minLength'>
-                            <b class="text text-danger">*Enter 16 digit ID</b>
-                        </div>
+                    <div class="err" *ngIf="submitted && f.userId.errors ">
+                        <span *ngIf="f.userId.errors.required"> Id required</span>
+                        <span *ngIf="f.userId.errors.minlength">Minimam 16 Number </span>
                     </div>
                 </div>
                 <div class="col-xl-6 col-md-6">
                     <label for="title">ProductName</label>
                     <input type="text" name="title" formControlName='title' class="form-control">
-                    <div *ngIf='productFormControl.title.touched && productFormControl.title.invalid'>
-                        <div *ngIf='productFormControl.title.errors?.required'>
-                            <b class="text text-danger">*Required</b>
-                        </div>
+                    <div class="err" *ngIf="submitted && f.title.errors ">
+                        <span *ngIf="f.title.errors.required">Product Title is required</span>
                     </div>
                 </div>
             </div>
@@ -27,19 +24,15 @@
                 <div class="col-xl-6 col-md-12">
                     <label for="metaTitle">Meta title</label>
                     <input type="text" name="metaTitle" formControlName='metaTitle' class="form-control">
-                    <div *ngIf='productFormControl.metaTitle.touched && productFormControl.metaTitle.invalid'>
-                        <div *ngIf='productFormControl.metaTitle.errors?.required'>
-                            <b class="text text-danger">*Required</b>
-                        </div>
+                    <div class="err" *ngIf="submitted && f.metaTitle.errors ">
+                        <span *ngIf="f.metaTitle.errors.required">Brand Title is required</span>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <label for="price">Enter Price</label>
                     <input type="text" name="price" formControlName='price' class="form-control">
-                    <div *ngIf='productFormControl.price.touched && productFormControl.price.invalid'>
-                        <div *ngIf='productFormControl.price.errors?.required'>
-                            <b class="text text-danger">*Required</b>
-                        </div>
+                    <div class="err" *ngIf="submitted && f.price.errors ">
+                        <span *ngIf="f.price.errors.required">Price is required</span>
                     </div>
                 </div>
             </div>
@@ -47,19 +40,15 @@
                 <div class="col-lg-4 col-md-6">
                     <label for="discount">Discount</label>
                     <input type="text" name="discount" formControlName='discount' class="form-control">
-                    <div *ngIf='productFormControl.discount.touched && productFormControl.discount.invalid'>
-                        <div *ngIf='productFormControl.discount.errors?.required'>
-                            <b class="text text-danger">*Required</b>
-                        </div>
+                    <div class="err" *ngIf="submitted && f.discount.errors ">
+                        <span *ngIf="f.discount.errors.required">Discount is required</span>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <label for="quantity">AvailableQuantity</label>
                     <input type="text" name="quantity" formControlName='quantity' class="form-control">
-                    <div *ngIf='productFormControl.quantity.touched && productFormControl.quantity.invalid'>
-                        <div *ngIf='productFormControl.quantity.errors?.required'>
-                            <b class="text text-danger">*Required</b>
-                        </div>
+                    <div class="err" *ngIf="submitted && f.quantity.errors ">
+                        <span *ngIf="f.quantity.errors.required">Quantity is required</span>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -67,24 +56,21 @@
                     <input type="file" class="form-control" name="" id="">
                 </div>
             </div>
-            
             <div class="row">
                 <div class="col-lg-12 col-md-6">
                     <label for="summary">Summary</label>
-                    <textarea type="text" name="summary" id="summary" class="form-control" formControlName='summary' cols="5"
-                        rows="1"></textarea>
-                    <div *ngIf='productFormControl.summary.touched && productFormControl.summary.invalid'>
-                        <div *ngIf='productFormControl.summary.errors?.required'>
-                            <b class="text text-danger">*Required</b>
-                        </div>
+                    <textarea type="text" name="summary" id="summary" class="form-control" formControlName='summary'
+                        cols="5" rows="1">
+                    </textarea>
+                    <div class="err" *ngIf="submitted && f.summary.errors ">
+                        <span *ngIf="f.summary.errors.required">Summaer is required</span>
                     </div>
                 </div>
             </div>
         </div>
-        
+        <div class="text-center">
+            <button mat-button mat-dialog-close>Cancel</button>
+            <button mat-button type="submit"  mat-raised-button color="primary" cdkFocusInitial>AddProduct</button>
+        </div>
     </form>
 </mat-dialog-content>
-<mat-dialog-actions align="center">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button type="submit" [mat-dialog-close]="true"cdkFocusInitial>AddProduct</button>
-</mat-dialog-actions>

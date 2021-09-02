@@ -86,5 +86,6 @@ export class ProductsDisplayComponent implements OnInit {
   // getItem(x: any) {
   //   localStorage.setItem('itemData', JSON.stringify(x))
   // }
+
   
 }
