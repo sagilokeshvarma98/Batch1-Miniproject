@@ -10,12 +10,6 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CarouselComponent implements OnInit {
 
-  carousel = [
-    { 'img': 'assets\corosal\baner1.jpg' },
-    { 'img': 'assets\corosal\baner2.jpg' },
-    { 'img': 'assets\corosal\baner3.jpg' },
-    { 'img': 'assets\corosal\baner4.jpg' }
-  ]
   
   constructor() { }
 

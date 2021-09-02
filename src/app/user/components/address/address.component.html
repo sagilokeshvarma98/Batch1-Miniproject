@@ -1,17 +1,71 @@
-
 <div class="container">
     <div class="row">
         <div class="col-lg-6 mx-auto">
             <h2>Add your address</h2>
-            <form class="form" [formGroup]="useradress" (ngSubmit)="onSubmit()">
-             
-
+            <form class="form" [formGroup]="useraddress" (ngSubmit)="onSubmit()">
                 <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" name="fullName" formControlName="fullName">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Address Line1</label>
+                        <input type="text" class="form-control" name="line1" formControlName="line1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>Address Line2(optional)</label>
+                        <input type="text" class="form-control" name="line2" formControlName="line2">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>City/twon</label>
+                        <input type="text" class="form-control" name="city" formControlName="city">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>State</label>
+                        <!-- <input type="text" class="form-control" name="state" formControlName="state"> -->
+                        <select class="form-select form-control" aria-label="Default select example" name="state" formControlName="state">
+                            <option selected>Select your State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Telangana">Telangana</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>District</label>
+                        <input type="text" class="form-control" name="district" formControlName="district">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label>Mobile</label>
+                        <input type="number" class="form-control" name="mobile" formControlName="mobile">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <label>Pincode</label>
+                        <input type="number" class="form-control" name="pincode" formControlName="pincode">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>Addres Type</label>
+                    <div class="form-group col-lg-12">
+                
+                        <mat-radio-group aria-label="Select an option" name="addressType" type="number" formControlName="addressType">
+                            <mat-radio-button value="0" id="Home" checked>Home</mat-radio-button>
+                            <mat-radio-button value="1">Office</mat-radio-button>
+                            <mat-radio-button value="2">Others</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+
+                <!-- <div class="row">
                     <div class="form-group col-lg-6">
 
                         <label>Full Name</label>
-                        <input type="text" class="form-control " name="Name" formControlName="fullName"
-                            placeholder="">
+                        <input type="text" class="form-control " name="Name" formControlName="fullName" placeholder="">
                         <span class="text-danger"
                             *ngIf="(adressFormControl.fullName.touched || submitted) && adressFormControl.fullName.errors?.required">Name
                             is Required*</span>
@@ -19,8 +73,9 @@
                             Letters Required*</span>
                     </div>
                     <div class="form-group col-lg-6 ">
-                        <label>Flat, House no.</label>
-                        <input type="text" class="form-control" name="flat" formControlName="flat" placeholder="">
+                        <label>Address Line1</label>
+                        <input type="text" class="form-control" name="flat" formControlName="flat"
+                            placeholder="H.no,Streat,Area">
                         <span class="text-danger"
                             *ngIf="(adressFormControl.flat.touched || submitted) && adressFormControl.flat.errors?.required">flat
                             no required*</span>
@@ -30,59 +85,145 @@
                 </div>
                 <div class="row">
                     <div class=" form-group col-lg-6">
-                        <label>Area, Colony, Street</label>
+                        <label>Address Line2(optional)</label>
                         <input type="text" class="form-control" name="area" formControlName="area" placeholder="">
                         <span class="text-danger"
                             *ngIf="(adressFormControl.area.touched || submitted) && adressFormControl.area.errors?.required">area
                             required*</span>
 
-                
+
                     </div>
                     <div class="form-group col-lg-6">
-                       <label>Mobile Number</label>
-                            <input type="number" class="form-control " name="Mobile" formControlName="mobile"
-                                placeholder="">
-                            <span class="text-danger"
-                                *ngIf="(adressFormControl.mobile.touched || submitted) &&adressFormControl.mobile.errors?.required">Mobile
-                                number is Required*</span>
-                            <span class="text-danger" *ngIf="adressFormControl.mobile.errors?.pattern">Mobile Number
-                                must have 10 digit*</span>
-
-                    
+                        <label>Mobile Number</label>
+                        <input type="number" class="form-control " name="Mobile" formControlName="mobile"
+                            placeholder="">
+                        <span class="text-danger"
+                            *ngIf="(adressFormControl.mobile.touched || submitted) &&adressFormControl.mobile.errors?.required">Mobile
+                            number is Required*</span>
+                        <span class="text-danger" *ngIf="adressFormControl.mobile.errors?.pattern">Mobile Number
+                            must have 10 digit*</span>
                     </div>
                 </div>
-               
+
                 <div class="row">
                     <div class="form-group col-lg-6 ">
-                        <label>Landmark</label>
-                        <input type="text" class="form-control pass-key" formControlName="Landmark"
-                            placeholder="">
-                        
+                        <label>Distric</label>
+                        <input type="text" class="form-control pass-key" formControlName="district" placeholder="">
+
                         <span class="text-danger"
                             *ngIf="(adressFormControl.Landmark.touched || submitted) && adressFormControl.Landmark.errors?.required">
                             Landmark required
                         </span>
 
                     </div>
-                    <div class="form-group col-lg-6">
+                    <!-- <div class="form-group col-lg-6">
                         <label>Town/City</label>
-                        <input type="text" class="form-control" formControlName="town" placeholder="">
+                        <input type="text" class="form-control" name="town" formControlName="town" placeholder="">
                         <span class="text-danger"
                             *ngIf="(adressFormControl.town.touched || submitted)&& adressFormControl.town.errors?.required">
                             town required
                         </span>
 
+                    </div> -->
+                <!-- </div> -->
+                <!-- <div class="row">
+                    <div class=" form-group col-lg-6">
+                        <label>State</label>
+                        <select class="form-select" aria-label="Default select example" name="state" formControlName="state">
+                            <option selected>Select your State</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
                     </div>
-                </div>
+                    <div class="form-group col-lg-6">
+                        <label>Pin Code</label>
+                        <input type="number" class="form-control" placeholder="" name="pincode" formControlName="pincode">
+                    </div>
+                </div> -->
+                <!-- <div class="row">
+                        <div class="form-group col-lg-12">
+                            <label>Address Type</label>
+                            
+                                <div class="col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Home
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Home
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Home
+                                        </label>
+                                    </div>
+                                </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Home
+                                </label>
+                            </div>
+                            <div class="form-check">
 
-                <div class="form-group ">
-                    <button type="submit" class="btn ">ADD</button>
-                </div>
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Office
+                                </label>
+                            </div>
+                            <div class="form-check">
 
-        
+                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                    id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Others
+                                </label>
+                            </div>
+                        </div>
+                    </div> -->
+                <!-- <div class="row"> 
+                    <label >Address Type</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled" formControlName="addressType" >
+                        <label class="form-check-label" for="flexRadioDisabled">
+                          Disabled radio
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioCheckedDisabled" formControlName="addressType" >
+                        <label class="form-check-label" for="flexRadioCheckedDisabled">
+                          Disabled checked radio
+                        </label>
+                      </div>
+                   
+
+                </div> -->
+                <!-- <div class="row">
+                  <section class="example-section">
+                   <mat-checkbox class="example-margin">Set as your</mat-checkbox>
+                      </section>
+                  </div> -->
+                <div class="form-group text-center">
+                    <button class="btn btn-primary btn-center" type="submit">Submit</button>
+                </div>
             </form>
-        
-
         </div>
     </div>
 </div>

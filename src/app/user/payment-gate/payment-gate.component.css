@@ -1,11 +1,37 @@
-form{
-    margin-left: 400px;
-    margin-top: 60px;
-    margin-bottom: 20px;
-    border: 2px solid rgb(4, 4, 41);
-    width: 40%;
+
+h3{
+    margin: 10px;
+    padding: 0 0 20px;
     text-align: center;
-    padding: 5%;
-    
-    
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(22, 21, 21);
+    line-height: 10px;
+
+}
+label{
+font-weight: bold;
+color: rgb(19, 18, 18);
+}
+.row{
+    margin-bottom: 20px;
+}
+.form-container{
+    margin-top: 10px;
+    border: 1px solid thistle;
+    padding: 20px;
+    background-color: rgba(239, 239, 247, 0.616);
+    border-radius: 10px;
+}
+.form-group input{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form-group input[type="text"]{
+    border: none;
+    border-bottom: 1px solid rgb(8, 8, 8);
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: rgb(110, 103, 103);
 }

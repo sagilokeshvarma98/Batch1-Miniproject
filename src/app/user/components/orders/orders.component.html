@@ -1,22 +1,75 @@
-<div  class="order-class">
-<table class="sortable" *ngFor="let x of myorders">
+<!-- <div  class="order-class">
+<table class="sortable">
     <tr>
+      <th>image</th>
       <th>item Name</th>
       <th>price</th>
-      <th>image</th>
+      <th>Status</th>
     </tr>
-    <tr class="item">
-      <td>{{x.category}}</td> &nbsp;
+    <tr class="item" *ngFor="let x of orderItems">
+      <td><img src="{{x.product.imageUrls[0].imgUrl}}" class="imageShow" alt=""></td>
+      <td>{{x.product.metaTitle}}</td> 
       <td>{{x.price}}</td>
-      <td>{{status}}</td>
-      <td><img src="{{x.image}}" alt=""></td>
+      <td>{{x.status.description}}</td>
       <td *ngIf="!state" (click)="cancelorder(x.id)" class="btn btn-danger btn-round">cancel</td>
-      <td *ngIf="state"   (click)=" reorder()" class="btn btn-danger btn-round">reorder</td>
-     
+      <td *ngIf="state"   (click)="reorder()" class="btn btn-danger btn-round">reorder</td>
     </tr>
   </table>  
   <a [routerLink]="['tracking']" class="btn btn-danger btn-round">track my order</a> 
   <br><br><br>
   <a class="btn btn-danger btn-round" [routerLink]="['postcomment']" disabled="">Review</a>
 <router-outlet></router-outlet>
+</div> -->
+<div *ngFor="let x of myorders">
+  <div class="card mainDetails">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-3">
+        <div>
+          <span class="headerTitle">Order Placed</span>
+        <p class="headerResultData">{{x.updatedAt}}</p>
+        </div>
+      </div>
+      <div class="col-3">
+        <div>
+          <span class="headerTitle">Total</span>
+        <p class="headerResultData">{{x.subTotal - x.itemDiscount - x.discount | currency:"INR"}}</p>
+        </div>
+      </div>
+      <div class="col-3">
+        <div>
+          <span class="headerTitle">SHIP TO</span>
+        <p class="headerResultDataName">{{x.fullName}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <h2 class="deleiveredDate">Delivered 10-10-2021</h2>
+    <p class="description">{{x.status.description}}</p>
+    <div *ngFor="let ele of x.orderItems">
+      <div class="row">
+        <div class="col-3">
+          <img class="orderImage" src={{ele.product.imageUrls[0].imgUrl}} alt="">
+        </div>
+        <div class="col-4">
+          <h4 class="orderTitle">{{ele.product.title}}</h4>
+          <button class="orderButton">Buy it again</button>
+        </div>
+        <div class="col-4">
+          <button class="btn-sm btn-warning">Delete order</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+
+<!-- 
+
+
+
+
+
+
+ -->

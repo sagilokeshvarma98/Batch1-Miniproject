@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
-import * as $ from 'jquery'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ProductPostComponent } from '../product-post/product-post.component';
+
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
@@ -9,64 +10,79 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class InventoryComponent implements OnInit {
 
-  productForm:FormGroup
+  subCategoryArray: any
+  products: any
+  searchTerm: any = ''
+  imageArray: string[] = []
+  imageUrl: string = ""
 
 
+  public obj =
+    {
+      userId: "AGTHYUCDGT1235HY",
+      title: "MEN Shirt Regular wear",
+      metaTitle: "Stylish shirt , party wear",
+      summary: "Best shirt for party wear",
+      price: 10000,
+      discount: 500,
+      quantity: 20,
+    }
+  sub_category: any = [
+    ["mens", "womens", "kids"],
+    ["mobiles", "laptops", "home appliances"],
+    ["kitchen", "home furnishings"]
+  ]
+  form1: boolean = true
+  form2: boolean = false
+  form3: boolean = false
 
-  constructor(private PS:ProductsService , private fb:FormBuilder) {
-    this.productForm = this.fb.group(
-      {
-        id : ['',[Validators.required]],
-        title: ['',[Validators.required]],
-        price: ['',[Validators.required]],
-        category: ['',[Validators.required]],
-        quantity: ['',[Validators.required]],
-        description: ['',[Validators.required]],
-        image: ['']
-      }
+  
+
+  constructor(private PS: ProductsService, private dialog: MatDialog) { }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ProductPostComponent);
+    dialogRef.afterClosed().subscribe(
+      (res => {
+        console.log(`CouponPost : ${res}`)
+      })
     )
-   }
-
-   get productFormControl() {
-    return this.productForm.controls;
   }
 
-  products:any
+  getSubs(ele: any) {
+    this.subCategoryArray = this.sub_category[ele.target.value]
+    console.log(this.subCategoryArray);
+  }
 
-  searchTerm:any = ''
 
-  getProductData(){ 
-    this.PS.productsData().subscribe(res=>this.products=res)
+
+  getProductData() {
+    this.PS.productsData().subscribe(res => this.products = res)
   }
 
   ngOnInit(): void {
+    this.PS.testOrderApi().subscribe(res => console.log(res))
+    this.subCategoryArray = this.sub_category[0]
     this.getProductData()
   }
 
-
-
-
-
-
   
-  submit(){
-    this.productForm.value.image = this.imageArray[0]
-    this.PS.addProduct(this.productForm.value).subscribe((res:any)=>{
-      console.log(res,res.length);
-      this.getProductData()
-    })
+  getImage(e: any) {
+    this.imageArray.push(e.target.value)
+    console.log(this.imageArray);
+
+    //  if(e.target.files){
+    //    var reader = new FileReader();
+    //    reader.readAsDataURL(e.target.files[0])
+    //   reader.onload = (event:any)=>{
+    //     this.imageArray.push(event.target.result)
+    //   }
+    //  }
   }
 
-  imageArray:string[]=[]
-
-  getImage(e:any){
-   if(e.target.files){
-     var reader = new FileReader();
-     reader.readAsDataURL(e.target.files[0])
-    reader.onload = (event:any)=>{
-      this.imageArray.push(event.target.result)
-    }
-   }
+  changeForm() {
+    this.form1 = false;
+    this.form2 = true
   }
 
 }

@@ -1,64 +1,72 @@
-{"transactions": [
-  {
-    "id": 1,
-    "Poduct_name": "Mi_Phone",
-    "progress": "Delivered",
-    "transaction": "success",
-    "time": "1620757800000"
-  },
-  {
-    "id": 2,
-    "Poduct_name": "Men's T-shirt",
-    "progress": "Delivered",
-    "transaction": "success",
-    "time": "1623177000000"
-  },
-  {
-    "id": 3,
-    "Poduct_name": "Women's stylish T-Shirt",
-    "progress": "Out for delivery",
-    "transaction": "success",
-    "time": "1624905000000"
-  },
-  {
-    "id": 4,
-    "Poduct_name": "Death:An inside story Book",
-    "progress": "Delivered",
-    "transaction": "success",
-    "time": "1625509800000 "
-  },
-  {
-    "id": 5,
-    "Poduct_name": "Super vooc charger",
-    "progress": "Out for delivery",
-    "transaction": "failed",
-    "time": "1627669800000"
-  },
-  {
-    "id": 34,
-    "Poduct_name": "Mens Cotton Jacket",
-    "progress": "On the way",
-    "transaction": "failed",
-    "time": "1629225000000"
-  },
-  {
-    "id": 45,
-    "Poduct_name": "Three thousand stiches",
-    "progress": "Packed",
-    "transaction": "failed",
-    "time": "1628447400000"
-  }
-],
-"pending": [
-  {
-    "id": 547,
-    "Poduct_name": "Mens Casual Premium Slim Fit T-Shirts",
-    "progress": "Out for delivery",
-    "transaction": "failed",
-    "time": "1628015400000"
-  }
-]
-  ,"comment": [
+{
+  "transactions": [
+    {
+      "id": 1,
+      "name": "Nagaraju",
+      "Poduct_name": "Mi_Phone",
+      "progress": "Delivered",
+      "transaction": "success",
+      "time": "1620757800000"
+    },
+    {
+      "id": 2,
+      "name": "Lokesh",
+      "Poduct_name": "Men's T-shirt",
+      "progress": "Delivered",
+      "transaction": "success",
+      "time": "1623177000000"
+    },
+    {
+      "id": 3,
+      "name": "Suma",
+      "Poduct_name": "Women's stylish T-Shirt",
+      "progress": "Out for delivery",
+      "transaction": "success",
+      "time": "1624905000000"
+    },
+    {
+      "id": 4,
+      "name": "Pavan",
+      "Poduct_name": "Death:An inside story Book",
+      "progress": "Delivered",
+      "transaction": "success",
+      "time": "1625509800000 "
+    },
+    {
+      "id": 5,
+      "name": "Adi",
+      "Poduct_name": "Super vooc charger",
+      "progress": "Out for delivery",
+      "transaction": "failed",
+      "time": "1627669800000"
+    },
+    {
+      "id": 6,
+      "Poduct_name": "Mens Cotton Jacket",
+      "name": "Thota",
+      "progress": "On the way",
+      "transaction": "failed",
+      "time": "1629225000000"
+    },
+    {
+      "id": 7,
+      "Poduct_name": "Three thousand stiches",
+      "name": "RajuThota",
+      "progress": "Packed",
+      "transaction": "failed",
+      "time": "1628447400000"
+    },
+    {
+      "id": 8,
+      "Poduct_name": "Mens Casual Premium Slim Fit T-Shirts",
+      "name": "Nagaraju",
+      "progress": "Out for delivery",
+      "transaction": "failed",
+      "time": "1628015400000"
+    }
+  ],
+  "pending": [],
+  "comment": [
     {
       "id": 1,
       "name": "Nagaraju",
@@ -107,26 +115,49 @@
       "start": "2021-08-12",
       "end": "2021-08-12",
       "id": 5
+    },
+    {
+      "coupon": "polaiah10",
+      "eligibul": "320",
+      "start": "2021-08-19",
+      "end": "2021-09-10",
+      "id": 6
+    },
+    {
+      "coupon": "dwdd5022",
+      "eligibul": "2100",
+      "start": "2021-09-01",
+      "end": "2021-09-04",
+      "id": 7
+    },
+    {
+      "coupon": "dwdd5011",
+      "eligibul": "2222",
+      "start": "2021-08-20",
+      "end": "2021-08-19",
+      "id": 8
+    },
+    {
+      "coupon": "dwdd5011",
+      "eligibul": "3000",
+      "start": "2021-09-04",
+      "end": "2021-08-14",
+      "id": 9
     }
   ],
   "address": [
     {
-      "id": 1,
-      "fullName": "Nagaraju ",
-      "flat": "2-66/b",
-      "mobile": 9705081432,
-      "area": "97050",
-      "town": "Guntur",
-      "Landmark": "frnrvnhthtubry"
-    },
-    {
-      "fullName": "Nagaraju Thota",
-      "flat": "2-66/B",
-      "mobile": 9705081432,
-      "area": "",
-      "town": "Guntur",
-      "Landmark": "Guntur",
-      "id": 2
+      "id": 2,
+      "fullName": "SANGU ADINARAYANA REDDY",
+      "line1": "KATAMVALIPALLI,KURICHEDU(MD),PRAKASAM(DT),ANDHRA PRADESH",
+      "line2": "KATAMVARIPALLI,KURICHEDU(MD),PRAKASAM(DT),",
+      "city": "kcd",
+      "state": "Andhra Pradesh",
+      "district": "prakasam",
+      "mobile": 9666702556,
+      "pincode": 523304,
+      "addressType": "1",
+      "addressDefault": 0
     }
   ],
   "cancel": [
@@ -214,19 +245,11 @@
   ],
   "lostedusers": [
     {
-      "id": 1,
-      "username": "pavan",
-      "useremail": "pavan@gmail.com",
-      "usermobile": "778945612",
-      "password": "Ab@121212",
-      "confirmPassword": "Ab@121212"
-    },
-    {
       "id": 2,
       "username": "rajesh",
       "useremail": "rajesh@gmail.com",
       "usermobile": "778945612",
-      "password": "",
+      "password": "Ab@121212",
       "confirmPassword": "Re@121212"
     },
     {
@@ -244,6 +267,14 @@
       "usermobile": "6985741230",
       "password": "Nk@121212",
       "confirmPassword": "Ab@121212"
+    },
+    {
+      "id": 5,
+      "username": "varun",
+      "useremail": "varun@gmail.com",
+      "usermobile": "8794561230",
+      "password": "Sm@121212",
+      "confirmPassword": "Sm@121212"
     }
   ],
   "orders": [
@@ -383,37 +414,27 @@
       "usermobile": "9874562130",
       "password": "Abc@121212",
       "confirmPassword": "Abc@121212"
-    },
-    {
-      "username": "varun",
-      "useremail": "varun@gmail.com",
-      "id": 10
     }
   ],
   "useradress": {
     "main": {
       "userId": 1,
-      "adress": [
+      "address": [
         {
-          "fullName": "pavan sai ",
-          "flat": "amarsai hostel",
-          "mobile": 9133953205,
-          "area": "shivabagh ",
-          "town": "hyderabad",
-          "Landmark": "near cdac",
-          "id": 2
-        },
-        {
-          "fullName": "pavan",
-          "flat": "vikas flats",
-          "mobile": 9986745123,
-          "area": "sr nagar",
-          "town": "hyderbad",
-          "Landmark": "umesh chandra statute",
+          "fullName": "tcs",
+          "line1": "techwave",
+          "line2": "wave",
+          "city": "wipro",
+          "state": "Telangana",
+          "district": "rangareddy",
+          "mobile": 234456778,
+          "pincode": 234345,
+          "addressType": "0",
+          "addressDefault": 0,
           "id": 3
         }
       ]
     },
-    "default": 2
+    "default": 1
   }
 }

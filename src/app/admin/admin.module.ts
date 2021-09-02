@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ADMINRoutingModule } from './admin-routing.module';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { InventoryComponent } from './inventory/inventory.component';
-//import { ValuePipe } from './pipes/value.pipe';
-//import { SearchPipe } from './pipes/search.pipe';
-//import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserdemograpicsComponent } from './userdemograpics/userdemograpics.component';
 import { UsermanagmentComponent } from './usermanagment/usermanagment.component';
 import { RecoveryComponent } from './recovery/recovery.component';
@@ -17,18 +14,24 @@ import { AlltransactionsComponent } from './transactionComponents/alltransaction
 import { TransactionHomeComponent } from './transactionComponents/transaction-home/transaction-home.component';
 import { RouterModule } from '@angular/router';
 import { AngmaterialModule } from '../angmaterial/angmaterial.module';
-//import { DatePipe } from './pipes/date.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { CouponPostComponent } from './coupon-post/coupon-post.component';
+import { ProductPostComponent } from './product-post/product-post.component';
+
 
 @NgModule({
   declarations: [
     AdminHomeComponent,
     InventoryComponent,
-    //ValuePipe,
-   // SearchPipe,
     UserdemograpicsComponent,
     UsermanagmentComponent,
     RecoveryComponent,
@@ -40,17 +43,23 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
     TransactionHomeComponent,
     AdminProfileComponent,
     AdminNavbarComponent,
-    //DatePipe
+    CouponPostComponent,
+    ProductPostComponent,
   ],
   imports: [
     CommonModule,
     ADMINRoutingModule,
-   // FormsModule,
-    //ReactiveFormsModule,
     RouterModule,
     AngmaterialModule,
     ToastrModule.forRoot(),
-    SharedModuleModule
+    SharedModuleModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ]
 })
 export class ADMINModule { }
+  

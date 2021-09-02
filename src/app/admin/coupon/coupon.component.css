@@ -1,43 +1,29 @@
 
-/* Add-Coupon  */
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
-  td {
-    padding-right: 8px;
-  }
-
-  /* Coupon */
-
     .card:hover{
-        border: none;
-        margin: 0.5rem;
-        box-shadow:5px 4px 5px rgb(83, 83, 83);
-        display: flexbox;
-        z-index: 1;
-        cursor: context-menu;
-    }
-    .card-body {
       border: none;
-        text-align: center;
-        background-color: rgb(186, 240, 136);
-        
-    }
-        
-    .card-title{
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: center;
-    }
-    
-    .card-body p{
-        font-size: 15px;
-    }
-    
+      margin: 0.5rem;
+      box-shadow:5px 4px 5px rgb(83, 83, 83);
+      display: flexbox;
+      z-index: 1;
+      cursor: context-menu;
+  }
+  .card-body {
+    border: none;
+      text-align: center;
+      background-color: rgb(186, 240, 136);
+      
+  }
+      
+  .card-title{
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+  }
+  
+  .card-body p{
+      font-size: 15px;
+  }
+  button{
+  margin-left: 20px;
+}
+  
