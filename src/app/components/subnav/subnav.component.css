@@ -1,12 +1,12 @@
 
 .container-fluid{
-  background:rgb(51,144,158);
+  background:#29292b;
 }
-.col-md-3:hover{
+/* .col-md-3:hover{
   background-color: rgb(43, 46, 48);
   border-radius: 20px;
   
-}
+} */
 .col-md-3 a{
   font-weight: bold;
   font-family: serif;
@@ -14,7 +14,7 @@
 }
 .text-light{
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   font-family: "Amazon Ember", Arial, sans-serif;
   margin-top: 5px;
 }

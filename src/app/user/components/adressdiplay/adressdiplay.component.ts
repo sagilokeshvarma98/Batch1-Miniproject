@@ -9,16 +9,13 @@ import { AddressService } from 'src/app/services/address.service';
   templateUrl: './adressdiplay.component.html',
   styleUrls: ['./adressdiplay.component.css']
 })
+
 export class AdressdiplayComponent implements OnInit {
-
-
-d:any
-  
-
+  d: any
   userAddress: any
   confirm: any
 
-  constructor(public address:AddressService,private router:Router) { }
+  constructor(public address: AddressService, private router: Router) { }
 
   getAddress() {
     this.address.getAddress().subscribe(
@@ -33,19 +30,14 @@ d:any
     )
 
   }
-  
-  
-  selctdefault(val:any,id:any){
-  
-    let defult={
-      "default":id
-  }
-    this.address.selctdefult(defult).subscribe((posres)=>{
+  selctdefault(val: any, id: any) {
+    let defult = {
+      "default": id
+    }
+    this.address.selctdefult(defult).subscribe((posres) => {
       console.log("this")
       console.log(posres)
-      
     })
-
   }
 public getdefult(){
 
@@ -71,6 +63,4 @@ public getdefult(){
       })
     }
   }
-
-
 }

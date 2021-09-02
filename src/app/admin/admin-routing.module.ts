@@ -111,3 +111,57 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class ADMINRoutingModule { }
+
+
+
+
+// const routes: Routes = [
+//   {
+//     path: "admin", component: AdminNavbarComponent,
+//     data: { breadcrumb: { alias: 'Parent' } },
+//     children: [
+//       { path: '', redirectTo: 'home', pathMatch: 'full' },
+//       {path: 'home', component: AdminHomeComponent},
+//       {
+//         path: "inventory", component: InventoryComponent,
+//         data: { breadcrumb: { alias: 'ChildOne' } }
+//       },
+//       {
+//         path: 'coupon', component: CouponComponent,
+//         data: { breadcrumb: { alias: 'ChildTwo' } }
+//       },
+//       {
+//         path: "usermanagement", component: UserdemograpicsComponent,
+//         data: { breadcrumb: { alias: 'ChildThree' } }
+//       },
+//       {
+//         path: "transactions", component: TransactionHomeComponent,
+//         children: [
+//           {
+//             path: "", component: AlltransactionsComponent,
+//             data: { breadcrumb: { alias: 'ChildOne' } }
+//           },
+//           {
+//             path: "all", component: AlltransactionsComponent,
+//             data: { breadcrumb: { alias: 'ChildTwo' } }
+//           },
+//           {
+//             path: "failed", component: FailedComponent,
+//             data: { breadcrumb: { alias: 'ChildThree' } }
+//           },
+//           {
+//             path: "pending", component: PendingCancellationComponent,
+//             data: { breadcrumb: { alias: 'ChildFour' } }
+//           },
+//           {
+//             path: "success", component: SuccessfulComponent,
+//             data: { breadcrumb: { alias: 'ChildFive' } }
+//           },
+//           { path: "adminProfile", component: AdminProfileComponent,
+//             data: {   breadcrumb: { alias: 'ChildOne' } }
+//           }
+//         ]
+//       }
+//     ]
+//   }
+// ];
