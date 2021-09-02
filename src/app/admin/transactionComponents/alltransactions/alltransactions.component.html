@@ -10,9 +10,10 @@
     <thead>
         <tr class="text-center">
             <th>Product ID</th>
-            <th>Date</th>
-            <th>Name</th>
-            <th>Progress</th>
+            <th>Transaction date</th>
+            <th>Product name</th>
+            <th>Delivery status</th>
+            <th>Transaction status</th>
         </tr>
     </thead>
     <tbody *ngFor="let ele of Transactions | date:[fromDate,toDate]">
