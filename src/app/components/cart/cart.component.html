@@ -19,28 +19,34 @@
                         <td>{{x.product.metaTitle}}</td>
                         <!-- <td><img src="{{x.image}}" alt=""></td> -->
                         <td class="qunatityDiv">
-                            <h4><span><img src="../../../assets/minus-square-regular.svg"  (click)="minusQuantity(x.id)" alt=""></span>
+                            <!-- <h4><span><img src="../../../assets/minus-square-regular.svg"  (click)="minusQuantity(x.id)" alt=""></span>
                                 {{x.quantity}}
-                                <span><img src="../../../assets/plus-square-regular.svg" (click)="addQuantity(x.id)" alt=""></span></h4>
-                            <!-- <select (change)="change($event,x.id)" [(ngModel)]="x.quantity">
-                                <option value="12">{{x.quantity}}</option>
-                                <option value="0">0(delete)</option>
+                                <span><img src="../../../assets/plus-square-regular.svg" (click)="addQuantity(x.id)" alt=""></span></h4> -->
+                            <select *ngIf="x.quantityBool" (change)="change($event,x.id)"
+                                [(ngModel)]="x.quantityChange">
+                                <option value="0">0<span>:Delete</span></option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
-                            </select> -->
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10+">10+</option>
+                            </select>
+                            <div *ngIf="!x.quantityBool">
+                                <input value={{x.quantity}} [(ngModel)]="x.quantity" type="number" name="changeQuantity"
+                                    #changeQuantity id="changeQuantity">
+                                <button (click)="changeQuantityHere(x.quantity,x.id)">update</button>
+                            </div>
                         </td>
                         <td><img src="{{x.product.imageUrls[0].imgUrl}}" alt=""></td>
                         <td>
                             {{x.product.price-x.product.discount | currency:"INR"}}
                         </td>
-                        <td>{{x.price-x.discount | currency: "INR"}}</td>
-                        <td>
-                            <button class="btn btn-secondary" (click)="updateItem(x.id)">update</button>
-                        </td>
+                        <td>{{(x.product.price-x.product.discount) * x.quantity | currency: "INR"}}</td>
                         <td>
                             <button class="btn btn-danger" (click)="deleteItem(x.id)">Delete</button>
                             <!-- <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> -->
