@@ -89,7 +89,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <!-- <div class="container">
     <div class="row  mt-5 my-3">
         <div class="col-lg-3 my-3 col-md-6 my-2">
             <div class ="card-main">
@@ -124,7 +124,7 @@
             </div>
         </div>
         </div>
-        <div class="col-lg-3 my-3 col-md-4 my-2">
+        <div class="col-lg-3 my-3 col-md-6 my-2">
             <div class ="card-main4">
             <div class="header">
                 <img src ="https://img-premium.flaticon.com/png/128/3110/premium/3110581.png?token=exp=1630332239~hmac=250833462ef188218b8d5f2cd60439c0" class="img-card4"  alt="">
@@ -140,4 +140,27 @@
         
         
     </div> 
+    </div> -->
+    <div class="container">
+        <div class="row">
+            
+            <div class="row">
+                <div class="col-lg-3 clo-sm-6" *ngFor="let x of hs">
+                    <div class="card-head">
+                        <img src="{{x.img}}" alt="" id="img1">
+                        
+                        <h5>{{x.heading}}</h5>
+                        <h4>{{x.confirm}}</h4>
+    
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+                         
+                                
+        </div>
+    
     </div>
+    

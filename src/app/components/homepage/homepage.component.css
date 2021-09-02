@@ -134,7 +134,7 @@
     position: relative;
     left: -80px;
 }
-.container{
+/* .container{
     width:3000px ;
     margin-left:5px ;
 }
@@ -258,4 +258,23 @@
     margin-left:50px ;
     color:  rgb(173, 180, 173);
     font-size:12px ;
+} */
+.card-head{
+    width:200px;
+    margin-left:60px ;
+    box-shadow: 12px 12px  12px 12px rgb(241, 246, 244);
+
 }
+.card-head h5{
+    font-size: 15px;
+    margin-top:20px ;
+    
+}
+.card-head h4{
+    font-size: 13px;
+    margin-top:20px ;
+    margin-left:10px ;
+}
+
+
+
