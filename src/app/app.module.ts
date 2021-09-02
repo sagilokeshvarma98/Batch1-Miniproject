@@ -27,7 +27,6 @@ import { ADMINRoutingModule } from './admin/admin-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './components/cart/cart.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
 import { NgxPaginationModule } from "ngx-pagination";
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SharedModuleModule } from './shared-module/shared-module.module';
@@ -49,7 +48,6 @@ import { KidsSubpageComponent } from './kids-subpage/kids-subpage.component';
     SubnavComponent,
     CartComponent,
     FooterComponent,
-    SideNavbarComponent,
     WomensSubpageComponent,
     KidsSubpageComponent
 
