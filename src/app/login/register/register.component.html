@@ -6,8 +6,10 @@
                     <h2>Create Account</h2>
                 </div>
                 <div class="card-body">
-                    <div class="text text-center" *ngIf="wrongCreden">
+                    <div class="text text-center">
                         <b class="text text-danger">{{ErrorMessage}}</b>
+                    </div>
+                    <div class="text text-center" *ngIf="wrongCreden">
                         <b class="text text-danger">Entered details are incorrect</b>
                     </div>
                     <form class="form"   [formGroup]="registerForm" (ngSubmit)="onSubmit()">
@@ -19,13 +21,13 @@
                         </div>
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" class="form-control" name="username" formControlName="username" placeholder="username" >
+                            <input type="text" class="form-control" (blur)="checkUsername(registerFormControl.username)" name="username" formControlName="username" placeholder="username" >
                           <span class="text-danger"  *ngIf="(registerFormControl.username.touched || submitted) && registerFormControl.username.errors?.required">Name is Required*</span>
                           <span class="text-danger" *ngIf=" registerFormControl.username.errors?.minlength">Minimum 3 Letters Required*</span>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" class="form-control" name="email" formControlName="email" placeholder="something@gmail.com" (blur)="validteEmail()" >
+                            <input type="text" class="form-control" (blur)="validteEmail(registerFormControl.email)" name="email" formControlName="email" placeholder="something@gmail.com">
                         <span class="text-danger"  *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">Email is Required*</span>
                         <span class="text-danger"
                         *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.pattern">
@@ -35,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <label>Mobile Number</label>
-                            <input type="number"  class="form-control " name="Mobile" formControlName="mobile" placeholder="Mobile number">
+                            <input type="number" (blur)="validteMobile(registerFormControl.mobile)" class="form-control " name="Mobile" formControlName="mobile" placeholder="Mobile number">
                            <span class="text-danger" *ngIf="(registerFormControl.mobile.touched || submitted) && registerFormControl.mobile.errors?.required">Mobile number is Required*</span>
                            <span class="text-danger" *ngIf="registerFormControl.mobile.errors?.pattern">Mobile Number must have 10 digit*</span>
                             

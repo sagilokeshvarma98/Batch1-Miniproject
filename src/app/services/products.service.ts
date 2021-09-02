@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { hasClassName } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -20,6 +21,11 @@ export class ProductsService {
   productsData():Observable<any>{
      return this.hc.get("http://oshopping.ddns.net/api/products/all")
     //  return this.hc.get("https://fakestoreapi.com/products")
+  }
+
+
+  searchByTerm(term:any):Observable<any>{
+    return this.hc.get("http://oshopping.ddns.net/api/products/search/"+term)
   }
 
 
