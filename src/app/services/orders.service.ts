@@ -17,7 +17,8 @@ export class OrdersService {
 // }
 
 public deleteOrder(id:any):Observable<any>{
-  return this.http.delete("http://oshopping.ddns.net/api/orders/"+id)
+  console.log(id);
+  
+  return this.http.post("http://oshopping.ddns.net/api/orders/user/cancel/"+id,{})
 }
-
 }

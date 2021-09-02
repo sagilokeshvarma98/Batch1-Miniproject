@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/services/products.service';
 import { TransactionsService } from 'src/app/services/transactions.service';
 import { UsermanagementService } from 'src/app/services/usermanagement.service';
 
@@ -12,9 +13,15 @@ export class AdminHomeComponent implements OnInit {
   Transactions: any[] = []
 
  
-  constructor(private transaction:TransactionsService) { }
+  constructor(private transaction:TransactionsService , public PS:ProductsService) { }
+
+  public productsLength:any
 
   ngOnInit(): void {
+    this.PS.productsData().subscribe(res=>{
+      this.productsLength = res.length
+
+    })
     this.getTransactions();
   }
 
