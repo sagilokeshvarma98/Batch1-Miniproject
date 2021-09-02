@@ -32,6 +32,8 @@ import { NgxPaginationModule } from "ngx-pagination";
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SharedModuleModule } from './shared-module/shared-module.module';
 import { ChartsModule } from 'ng2-charts';
+import { WomensSubpageComponent } from './components/womens-subpage/womens-subpage.component';
+import { KidsSubpageComponent } from './kids-subpage/kids-subpage.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { ChartsModule } from 'ng2-charts';
     SubnavComponent,
     CartComponent,
     FooterComponent,
-    SideNavbarComponent
+    SideNavbarComponent,
+    WomensSubpageComponent,
+    KidsSubpageComponent
 
   ],
   imports: [

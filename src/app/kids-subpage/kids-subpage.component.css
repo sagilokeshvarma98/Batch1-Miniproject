@@ -63,12 +63,12 @@ ul li{
     color: #000000;
     text-transform: uppercase;
     border: solid 1px #d1d1d1;
-    padding:10px 30px;
+    padding:20px 40px;
     margin-inline: 45px;
     margin-bottom: 10px;
 }
 li:hover{
     color: #fff !important;
-    background-color: #000 !important;
-    border-color: #000 !important;
+    background-color: rgb(80, 78, 78) !important;
+    border-color: rgb(59, 57, 57) !important;
 }
