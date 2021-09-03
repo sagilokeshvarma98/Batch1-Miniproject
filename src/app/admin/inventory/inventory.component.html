@@ -14,8 +14,8 @@
     </div>
 
     <div class="table-responsive">
-        <table id="recent-orders" class="table table-hover mb-0 ps-container ps-theme-default">
-            <thead>
+        <table class="table table-hover mb-0 ps-container ps-theme-default">
+            <thead  id="recent-orders">
                 <tr class="text-center">
                     <th>ID</th>
                     <th>Product name</th>
@@ -26,14 +26,14 @@
             </thead>
             <tbody>
                 <tr class="text-center" *ngFor="let product of products | search:searchTerm | test">
-                    <th>
+                    <td>
                         <span style="margin: 7px; float: left;">{{product.id}}</span>
                         <img style="width: 50px;" src={{product.imageUrls[0].imgUrl}} alt="">
-                    </th>
-                    <th>{{product.title}}</th>
-                    <th>{{product.quantity}}</th>
-                    <th>{{product.price | currency:"INR"}}</th>
-                    <th>{{product.price | value:product.quantity | currency:"INR"}}</th>
+                    </td>
+                    <td>{{product.title}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.price | currency:"INR"}}</td>
+                    <td>{{product.price | value:product.quantity | currency:"INR"}}</td>
                 </tr>
             </tbody>
             <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
