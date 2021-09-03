@@ -12,6 +12,11 @@ export class KidsSubpageComponent implements OnInit {
     { 'name': 'MIN .50% OFF', 'img': 'assets/Kids/k4.jpg' },
     { 'name': 'MIN .55% OFF', 'img': 'assets/Kids/k5.jpg' },
     { 'name': 'MIN .60% OFF', 'img': 'assets/Kids/k6.jpg' },
+    { 'name': 'MIN .60% OFF', 'img': 'assets/Kids/k21.jpg' },
+    { 'name': 'MIN .60% OFF', 'img': 'assets/Kids/k22.jpg' },
+    { 'name': 'MIN .60% OFF', 'img': 'assets/Kids/k23.jpg' },
+    { 'name': 'MIN .60% OFF', 'img': 'assets/Kids/k24.jpg' },
+
   ]
  
   Kids2 = [
