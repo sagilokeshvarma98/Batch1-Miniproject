@@ -37,19 +37,19 @@ export class CartComponent implements OnInit {
       this.cart.cartItems.map((x: any) => {
         if (x.id == id) {
           if (value < x.product.quantity && value <= 9) {
-            console.log("Hello1",x.quantity);
             x.quantity = value
-            // this.updateItem(id)
-            x.quantity = x.quantityChange = value
+            this.updateItem(id)
             x.quantityBool = true
           }
-          else if ((value == "10+" || value > 9) && value < x.product.quantity) {
-            x.quantityBool = false
-            console.log("Hello 2");
-            // this.updateItem(id)
-          }
-          else
+          else if(value > x.product.quantity)
             alert(`The seller has only ${x.product.quantity} available`)
+          else{
+              x.quantityBool = false
+              if(value!="10+"){
+                x.quantity = value
+                this.updateItem(id)
+              }
+            }
         }
       })
     }
