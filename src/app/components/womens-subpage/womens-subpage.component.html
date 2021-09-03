@@ -1,211 +1,103 @@
-
- <div class="container">
-    <div class="row">
-        <h1 class="text">Women's Clothing</h1>
-    </div>
-    <div class="row mt-3">
-        <div class="col-lg-2 col-sm-2" *ngFor="let x of womens1">
-            <img id="img1" class="card-img-top my-2" src="{{x.img}}" alt="...">
-            <p id="text1" class="card-text text-center my-1">{{x.name}}</p>
+<div class="womens">
+    <h1 class="text m-5">Women's Clothing</h1>
+    <div class="container">
+        <div class="row mt-3 p-2">
+            <div class="col-lg-2 col-sm-2" *ngFor="let x of womens1">
+                <img id="img1" class="card-img-top my-2" src="{{x.img}}" alt="...">
+                <p id="text1" class="card-text text-center my-1">{{x.name}}</p>
+            </div>
         </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-lg-9 col-md-6">
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets\corosal\baner9.jpg" class="d-block w-100" height="350px" alt="...">
+        <div class="row my-2">
+            <div class="col-lg-9 col-md-6 p-4">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets\corosal\baner9.jpg" class="d-block w-100" height="350px" style="border-radius: 10px;" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets\corosal\baner10.jpg" class="d-block w-100" height="350px" style="border-radius: 10px;" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets\corosal\baner11.jpg" class="d-block w-100" height="350px" style="border-radius: 10px;" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets\corosal\baner12.jpg" class="d-block w-100" height="350px" style="border-radius: 10px;" alt="...">
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="assets\corosal\baner10.jpg" class="d-block w-100" height="350px" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets\corosal\baner11.jpg" class="d-block w-100" height="350px" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets\corosal\baner12.jpg" class="d-block w-100" height="350px" alt="...">
-                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+                        <span class="visually-hidden ">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleFade"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-                    <span class="visually-hidden ">Next</span>
-                </button>
+            </div>
+            <div class="col-lg-3 col-md-6 my-2 pr-3">
+                <div class="card my-2 p-2"style="border-radius: 10px;">
+                    <img id="img3" src="assets/Women/w11.jpg" class="rounded float-start" class="w-100" height="160px"  style="border-radius: 10px;box-shadow:0px 2px 3px rgb(133, 165, 165);" alt="">
+                </div>
+                <div class="card my-2 p-2"style="border-radius: 10px;">
+                    <img id="img3" src="assets/Women/w12.jpg" class="rounded float-start" class="w-100" height="160px"  style="border-radius: 10px;box-shadow:0px 2px 3px rgb(133, 165, 165);" alt="">
+                </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 my-2">
-            <div class="row my-2">
-                <img src="assets/Women/w11.jpg" class="rounded float-start" class="w-100" height="160px" alt="">
-            </div>
-            <div class="row my-2">
-                <img src="assets/Women/w12.jpg" class="rounded float-start" class="w-100" height="160px" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="row">
         <h1 id="text2">SHOP BY PRICE</h1>
-    </div>
-    <div class="row">
-        <div class="col-lg-4 mt-3">
-            <p id="text3" class="my-1"> Kurtis Under Rs. 399 </p>
+        <div class="row p-3">
+            <div class="col-lg-4 mt-1">
+                <p id="text3" class="my-1"> Kurtis Under Rs. 399 </p>
+            </div>
+            <div class="col-lg-4 mt-1">
+                <p id="text3" class="my-1">Sarees Under Rs. 499</p>
+            </div>
+            <div class="col-lg-4 mt-1">
+                <p id="text3" class="my-1">Materials Under Rs. 599</p>
+            </div>
+
         </div>
-        <div class="col-lg-4 mt-3">
-            <p id="text3" class="my-1">Sarees Under Rs. 499</p>
-        </div>
-        <div class="col-lg-4 mt-3">
-            <p id="text3" class="my-1"> DressMaterials Under Rs. 599</p>
-        </div>
-        
-    </div>
-    <div class="row">
+
         <h1 id="text2">TRENDING BRANDS</h1>
-    </div>
-    <div class="row">
-        <div class="col-lg-3 col-sm-6" *ngFor="let x of womens2">
-            <div class="card">
-                <img id="img2" src="{{x.img}}" class="rounded float-start" alt="img">
-                <div class="card-body">
-                    <p class="fs-3">{{x.name}}</p>
+
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 p-3 mt-1" *ngFor="let x of womens2">
+                <div class="card">
+                    <img id="img2" src="{{x.img}}" class="rounded float-start" alt="img">
+                    <div class="card-body">
+                        <p class="fs-3">{{x.name}}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-3 mt-3">
-            <p id="text3" class="my-1">HOT DEALS</p>
+        <div class="row mt-5 p-3">
+            <div class="col-lg-3 mt-1">
+                <p id="text3" class="my-1">HOT DEALS</p>
+            </div>
+            <div class="col-lg-3 mt-1">
+                <p id="text3" class="my-1">BEST SELLERS</p>
+            </div>
+            <div class="col-lg-3 mt-1">
+                <p id="text3" class="my-1">NEW ARRIVALS</p>
+            </div>
+            <div class="col-lg-3 mt-1">
+                <p id="text3" class="my-1">VALUE COMBOS</p>
+            </div>
+
         </div>
-        <div class="col-lg-3 mt-3">
-            <p id="text3" class="my-1">BEST SELLERS</p>
-        </div>
-        <div class="col-lg-3 mt-3">
-            <p id="text3" class="my-1">NEW ARRIVALS</p>
-        </div>
-        <div class="col-lg-3 mt-3">
-            <p id="text3" class="my-1">VALUE COMBOS</p>
-        </div>
-        
-    </div>
-    <div class="row">
+
         <h1 id="text2">SHOP BY OCCASION</h1>
-    </div>
-    <div class="row">
-        <div class="col-lg-3 col-sm-6" *ngFor="let x of womens3">
-            <div class="card">
-                <img id="img2" src="{{x.img}}" class="rounded float-start"  alt="">
-                <div class="card-body">
-                    <p class="text-center fs-2 mt-1 ">{{x.title}}</p>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 p-3" *ngFor="let x of womens3">
+                <div class="card">
+                    <img id="img2" src="{{x.img}}" class="rounded float-start" alt="">
+                    <div class="card-body">
+                        <p class="text-center fs-2 mt-1 ">{{x.title}}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
-
-<!-- 
-
-<div class="container">
-    <div class="row">
-        <h1 class="text">Women's Clothing</h1>
-        <div class="col-lg-1 col-sm-12 ml-3" *ngFor="let x of mens1">
-            <div class="card">
-                <div class="car-body">
-                    <img id="img1" src="{{x.img}}" width="100%" class="card-img-top" alt="...">
-                </div>
-                <small id="text1" class="card-text text-center">{{x.name}}</small>
-            </div>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-lg-8 col-sm-12">
-            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="assets\corosal\baner9.jpg" class="d-block w-100" height="350px" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets\corosal\baner10.jpg" class="d-block w-100" height="350px" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets\corosal\baner11.jpg" class="d-block w-100" height="350px" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="assets\corosal\baner12.jpg" class="d-block w-100" height="350px" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleFade"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-                    <span class="visually-hidden ">Next</span>
-                </button>
-            </div>
-
-        </div>
-        <div class="col-lg-4 col-sm-12">
-            <div class="row p-1">
-                <div class="col-lg-12">
-                    <img src='assets/Women/w11.jpg' height="170px" alt="">
-                </div>
-            </div> 
-            <div class="row p-1">
-                <div class="col-lg-12 ">
-                    <img src='assets/Women/w12.jpg' height="170px" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <h1  id="text2">SHOP BY PRICE</h1>
-    </div>
-    <div class="row">
-        <div class="col-lg-12 mt-3">
-            <ul>
-                <li class="my-1">
-                    <span>Kurtis</span> <br>
-                    <span>Under Rs.399</span></li>
-                <li class="my-1">
-                    <span>Sarees</span><br>
-                    <span>Under Rs.599</span></li>
-                <li class="my-1">
-                    <span>Material</span><br>
-                    <span>Under Rs.399</span></li>
-            </ul>
-        </div>
-    </div>
-    <div class="row">
-        <h1 id="text2">TRENDING BRANDS</h1>
-    </div>
-    <div class="row">
-        <div class="col-lg-3 col-sm-12" *ngFor="let x of mens2">
-            <div class="card">
-                <div class="card-body">
-                    <img id="img2" src="{{x.img}}" class="card-img-top" alt="img">
-                </div>
-                <p>{{x.name}}</p>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <h1 id="text2">SHOP BY OCCASION</h1>
-    </div>
-    <div class="row">
-        <div class="col-lg-3 col-sm-12" *ngFor="let x of mens3">
-            <div class="card">
-                <div class="card-body">
-                    <img id="img2" src="{{x.img}}" alt="">
-                    <p class="text-center h1 mt-1 ">{{x.title}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</div> -->
