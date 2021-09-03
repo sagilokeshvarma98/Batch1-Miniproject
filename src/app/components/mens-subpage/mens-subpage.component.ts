@@ -16,11 +16,7 @@ export class MensSubpageComponent implements OnInit {
     { 'name': 'Casual Shirts', 'img': 'assets/Mens/m3.jpg' },
     { 'name': 'Formal Shirts', 'img': 'assets/Mens/m4.jpg' },
     { 'name': 'Winter  Ware', 'img': 'assets/Mens/m5.jpg' },
-    { 'name': 'Ethnic Ware', 'img': 'assets/Mens/m6.jpg' },
-    { 'name': 'Inner Ware', 'img': 'assets/Mens/m7.jpg' },
-    { 'name': 'Formal Shirts', 'img': 'assets/Mens/m18.jpg' },
-    { 'name': 'Jacket', 'img': 'assets/Mens/m19.jpg' },
-    { 'name': 'Odoky', 'img': 'assets/Mens/m20.jpg' },
+    { 'name': 'Ethnic Ware', 'img': 'assets/Mens/m6.jpg' }
   ]
   mens2 = [
     { 'name': 'MIN .40% OFF', 'img': 'assets/Mens/m10.jpg' },
