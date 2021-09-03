@@ -11,6 +11,27 @@
     margin-right: 50%;
 }
 
+#recent-orders tr th{
+    color: white;
+    min-width: 150px;
+}
+
+#recent-orders{
+    background-color: rgb(76, 76, 134);
+}
+
+tbody tr th {
+    color: #686868;
+    font-weight: 600;
+}
+
+
+tbody{
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+}
+
 a span{
     margin: 10px;
     font-size: 25px;

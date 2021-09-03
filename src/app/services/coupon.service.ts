@@ -23,7 +23,7 @@ export class CouponService {
     return throwError('There is a Problem with the Service!')
   }
 
-  getCoupons():Observable<Object>{
+  getCoupons():Observable<any>{
 
     return this.http.get<Object>(`${this.url}`).pipe(catchError(this.handelError))
   }
