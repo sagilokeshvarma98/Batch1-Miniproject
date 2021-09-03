@@ -18,7 +18,6 @@ getitem():Observable<any>{
   //return this.http.get("http://localhost:3000/cart").pipe(
     return this.http.get("http://oshopping.ddns.net/api/carts/user").pipe(
       map((x:any)=> {
-        console.log(x);
         this.len=x.cartItems.length
         console.log("this is length",this.len);
         return x

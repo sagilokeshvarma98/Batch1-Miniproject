@@ -19,17 +19,13 @@ export class AdressdiplayComponent implements OnInit {
 
   getAddress() {
     this.address.getAddress().subscribe(
-    // this.address.getAddress().subscribe(
-
-     (data)=>{
-       
-       console.log("----------",data);
-       this.userAddress=data
-      
+      (data) => {
+        console.log("----------", data);
+        this.userAddress = data
       }
     )
-
   }
+
   selctdefault(val: any, id: any) {
     let defult = {
       "default": id
@@ -39,21 +35,20 @@ export class AdressdiplayComponent implements OnInit {
       console.log(posres)
     })
   }
-public getdefult(){
 
-  this.address.getdefult().subscribe((posres)=>{
-    this.d=posres;
-    console.log("resss")
-    //console.log(this.d)
-  })
-}
+  public getdefult() {
+    this.address.getdefult().subscribe((posres) => {
+      this.d = posres;
+      console.log("resss")
+    })
+  }
 
   ngOnInit(): void {
     this.getAddress();
     this.getdefult();
-    
   }
- deleteAddress(id:any) {
+
+  deleteAddress(id: any) {
     this.confirm = confirm("do you want  delet you adress ")
     if (this.confirm == true) {
       this.address.deleteAddress(id).subscribe((posres) => {
@@ -63,4 +58,5 @@ public getdefult(){
       })
     }
   }
+  
 }
