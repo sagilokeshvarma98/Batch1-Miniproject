@@ -28,7 +28,7 @@
                 <tr class="text-center" *ngFor="let product of products | search:searchTerm | test">
                     <td>
                         <span style="margin: 7px; float: left;">{{product.id}}</span>
-                        <img style="width: 50px;" src={{product.imageUrls[0].imgUrl}} alt="">
+                        <img *ngIf="product.imageUrls.length>0" style="width: 50px;" src={{product.imageUrls[0].imgUrl}} alt="">
                     </td>
                     <td>{{product.title}}</td>
                     <td>{{product.quantity}}</td>
@@ -36,42 +36,11 @@
                     <td>{{product.price | value:product.quantity | currency:"INR"}}</td>
                 </tr>
             </tbody>
-            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
-                <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-            </div>
-            <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;">
-                <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 0px;"></div>
-            </div>
         </table>
     </div>
-
-    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
 </div>
 
 
 
 
 
-
-
-<!-- <table datatable class="table table-bordered">
-    <thead>
-        <tr>
-            <th>SKU ID</th>
-            <th>Category</th>
-            <th>Quantity</th>
-            <th>MRP</th>
-            <th>Total value</th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let product of products | search:searchTerm | test">
-        <tr>
-            <th>{{product.id}}</th>
-            <th>{{product.metaTitle}}</th>
-            <th>{{product.metaTitle}}</th>
-            <th>{{product.quantity}}</th>
-            <th>{{product.price | currency:"INR"}}</th>
-            <th>{{product.price | value:product.quantity | currency:"INR"}}</th>
-        </tr>
-    </tbody>
-</table> -->
