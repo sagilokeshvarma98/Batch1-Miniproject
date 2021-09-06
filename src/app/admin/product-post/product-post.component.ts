@@ -9,21 +9,22 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./product-post.component.css']
 })
 export class ProductPostComponent implements OnInit {
-
+  submitted:boolean = false;
   productForm: FormGroup;
   subCategoryArray: any
   products: any;
+  error:any = ""
   
   categories : any = ["Apparels","Electronics","Home and Kitchen"]
   
   sub_category: any = 
-    {"Apparels" : ["Men’s wear", "Women’s wear", "Kids wear"],
+    {"Apparels" : ["Men's wear", "Women's wear", "Kids wear"],
     "Electronics" : ["Mobiles", "Laptops", "Home appliances"],
     "Home and Kitchen" : ["Kitchen items", "Home furnishings"]
   }
 
   toSentCategory : string = "Apparels"
-  toSentSub : string = "Men’s wear"
+  toSentSub : string = "Men's wear"
 
   getSubs(ele: any) {
     this.subCategoryArray = this.sub_category[ele.target.value]
@@ -63,6 +64,12 @@ export class ProductPostComponent implements OnInit {
     this.subCategoryArray = this.sub_category.Apparels
   }
   submit(val:any) {
+    this.submitted=true;
+    if(this.productForm.invalid){
+      this.error="Must Fill the All";
+      this.toastr.error("Products con't Post.", "Error")
+    }
+    else
     this.PS.addProduct(val).subscribe(
       () => {
         this.productForm.reset();

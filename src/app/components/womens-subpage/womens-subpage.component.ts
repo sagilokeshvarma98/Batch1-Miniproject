@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-womens-subpage',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./womens-subpage.component.css']
 })
 export class WomensSubpageComponent implements OnInit {
+
+  womensWear:any[] = []
 
   mens1 = [
     { 'name': 'Sarees', 'img': 'assets/Women/w1.jpg' },
@@ -33,10 +36,16 @@ export class WomensSubpageComponent implements OnInit {
     { 'title': 'COTTEN', 'img': 'assets/Women/w19.jpg' },
     { 'title': 'SILK',  'img': 'assets/Women/w20.jpg' },
   ]
-  constructor() { }
+  constructor(private homepageservice: ProductsService) { }
 
   ngOnInit(): void {
-
+    this.homepageservice.productsData().subscribe(res=>{
+      res.map((x:any)=>{
+        if(x.subCategory == "Women’s wear" || x.subCategory ==  "Women's wear")
+          this.womensWear.push(x)
+      })
+      console.log(this.womensWear);
+    })
   }
 
 
