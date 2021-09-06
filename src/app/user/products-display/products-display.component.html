@@ -12,7 +12,23 @@
     <div class="row">
         <div class="col-md-6 col-sm-8 col-xs-12 col-lg-4"
             *ngFor="let x of Products | sizeFilter : sizes | filter : ratingTerm
-         | search:searchTerm | sort : sortTerm | priceFilter : priceTerm | paginate: { itemsPerPage: 6, currentPage: pageNumber}">
+          | sort : sortTerm | priceFilter : priceTerm | paginate: { itemsPerPage: 6, currentPage: pageNumber}">
+            <!-- <div class="card">
+            <a routerLink="{{x.id}}" target="_blank">
+                <div class="card-body">
+                    <img class="productImage" src={{x.image}} alt="image">
+                    <p class="productTitle">{{x.title}}</p>
+                    <h3>{{x.price | currency:"INR"}} </h3>
+                    <ng-template #t let-fill="fill">
+                        <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                        </span>
+                    </ng-template>
+                    <ngb-rating [(rate)]="x.mainRating" [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+                </div>
+            </a>
+        </div> -->
+
             <div class="card">
                 <a id="productAnchorTag" routerLink="{{x.id}}" target="_blank">
                     <div class="card-body">

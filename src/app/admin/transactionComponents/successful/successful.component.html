@@ -2,12 +2,13 @@
     <thead>
         <tr class="text-center">
             <th>Product ID</th>
-            <th>Name</th>
-            <th colspan="2">Progress</th>
+            <th>Product name</th>
+            <th>Delivery status</th>
+            <th>Update Delivery status</th>
         </tr>
     </thead>
     <tbody *ngFor="let ele of Transactions">
-        <tr>
+        <tr class="text-center">
             <th>{{ele.id}}</th>
             <th>{{ele.Poduct_name}}</th>
             <th>{{ele.progress}}</th>

@@ -51,11 +51,14 @@ export class AddressComponent implements OnInit {
     // this.useraddress("addressDefault")
     let userData = {
       ...this.useraddress.value
-
     }
     console.log(this.useraddress);
-    userData.addressDefault = 1;
+    userData.addressDefault = 0;
    
+    console.log("wnekfhwbknefbkwrhf");
+    
+
+
     if(userData.id!=undefined && userData.id!=0 && userData.id!=null){
       this.adressservice.putAddress(userData)
       .subscribe((res:any)=>{

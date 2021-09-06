@@ -48,6 +48,9 @@ export class ProductsDisplayComponent implements OnInit {
   ngOnInit(): void {
     this.PS.term.subscribe(res => {
       this.searchTerm = res
+      if(this.searchTerm)
+      this.PS.searchByTerm(this.searchTerm).subscribe(res=>this.Products = res);
+        
     })
     this.PS.productsData().subscribe(res => {
       console.log(res);
