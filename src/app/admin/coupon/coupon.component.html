@@ -7,12 +7,15 @@
 <button class="btn m-5 " mat-raised-button color="accent" (click)="openDialog()">Add Coupons </button>
 <div class="container">
     <div class="row">
-        <div class="col-lg-3" *ngFor="let x of couponCard" [id]="x">
+        <div class="col-lg-4" *ngFor="let x of couponCard">
             <div class="card m-1">
                 <div class="card-body">
-                    <h5 class="card-title text-light h4">You get this : <span class="text-dark">{{x.coupon}}</span></h5>
-                    <p class="card-text text-light h5 m-2">From this Price : {{x.eligibul}}</p>
-                    <span class="h6">{{x.start}} <small class="text-danger h4">To</small> {{x.end}}</span>
+                    <p class="card-title text-success h6">You get this : <span class="text-dark">{{x.code}}</span></p>
+                    <p class="card-text text-dark h5 m-2">From this Price : {{x.couponAmount}}</p>
+                    <p class="card-text text-Danger h5 m-2">{{x.description}}</p>
+                    <span class="h6"> StatingDate : <span class="text-danger">{{x.createdAt}}</span></span><br>
+                    <small class="text-danger h4">To</small> <br>
+                    <span class="h6">EndingDate :<span class="text-danger"> {{x.expiryDate}}</span></span>
                 </div>
             </div>
         </div>

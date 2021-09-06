@@ -16,10 +16,12 @@ export class CouponPostComponent implements OnInit {
 
   constructor(private cup: CouponService, private fb: FormBuilder, private toastr: ToastrService) {
     this.couponPost = this.fb.group({
-      coupon: ['', [Validators.required, Validators.minLength(8)]],
-      eligibul: ['', [Validators.required]],
-      start: ['', [Validators.required]],
-      end: ['', [Validators.required]]
+      code: ['', [Validators.required, Validators.minLength(8)]],
+      couponType:['',[Validators.required]],
+      couponAmount: ['', [Validators.required]],
+      createdAt: ['', [Validators.required]],
+      expiryDate: ['', [Validators.required]],
+      description:['',[Validators.required]]
     });
   }
 
@@ -39,8 +41,9 @@ export class CouponPostComponent implements OnInit {
     else {
       this.cup.postCoupon(this.couponPost.value).subscribe(
         () => {
+          
+          this.toastr.success("Coupons are saved successfully.", "Success"),
           this.couponPost.reset();
-          this.toastr.success("Coupons are saved successfully.", "Success")
         }
       );
     }
