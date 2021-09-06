@@ -44,10 +44,10 @@
       </div>
     </div>
   </div>
-  <div class="card-body">
+  <div class="card-body" >
     <h2 class="deleiveredDate">Delivered 10-10-2021</h2>
-    <p class="description">{{x.status.description}}</p>
-    <div *ngFor="let ele of x.orderItems">
+    <div class="orderDescription" *ngFor="let ele of x.orderItems">
+    <p class="description">{{ele.status.description}}</p>
       <div class="row">
         <div class="col-3">
           <img class="orderImage" src={{ele.product.imageUrls[0].imgUrl}} alt="">
