@@ -9,6 +9,8 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class KitchenSubpageComponent implements OnInit {
 
+  public kitchenItems:any[] = []
+
   constructor(private homepageservice: ProductsService) { }
   jwelery: any;
   ab = [
@@ -63,13 +65,13 @@ export class KitchenSubpageComponent implements OnInit {
 
   ]
   ngOnInit(): void {
-
-
-    // this.homepageservice.productsData().subscribe((posres)=>{
-
-    //   this.jwelery=posres;
-
-    //   })
+    this.homepageservice.productsData().subscribe(res=>{
+      res.map((x:any)=>{
+        if(x.subCategory == "Kitchen items")
+          this.kitchenItems.push(x)
+      })
+      console.log(this.kitchenItems);
+    })
   }
 
 }
