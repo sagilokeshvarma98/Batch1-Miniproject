@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class CouponService {
 
-  url=" http://localhost:3000/coupons";
+  url=" http://oshopping.ddns.net/api/coupon/add";
   
   httpOptions: any;
 
