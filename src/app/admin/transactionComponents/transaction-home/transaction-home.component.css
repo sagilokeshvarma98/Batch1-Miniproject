@@ -1,3 +1,29 @@
-mat-expansion-panel{
-    margin-bottom: 50px;
+
+.dropdown{
+    margin-right:200px ;
+    position: relative;
+    display: inline-block;
+}
+
+dropdown-menu{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-menu a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+.dropdown-menu a:hover{
+    background-color: #00aa8a;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
 }

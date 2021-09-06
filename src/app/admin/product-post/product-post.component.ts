@@ -14,6 +14,22 @@ export class ProductPostComponent implements OnInit {
   subCategoryArray: any
   products: any;
   
+  categories : any = ["Apparels","Electronics","Home and Kitchen"]
+  
+  sub_category: any = 
+    {"Apparels" : ["Men’s wear", "Women’s wear", "Kids wear"],
+    "Electronics" : ["Mobiles", "Laptops", "Home appliances"],
+    "Home and Kitchen" : ["Kitchen items", "Home furnishings"]
+  }
+
+  toSentCategory : string = "Apparels"
+  toSentSub : string = "Men’s wear"
+
+  getSubs(ele: any) {
+    this.subCategoryArray = this.sub_category[ele.target.value]
+    console.log(this.subCategoryArray);
+  }
+
 
   constructor(private PS: ProductsService, private fb: FormBuilder, private toastr: ToastrService) {
     this.productForm = this.fb.group(
@@ -24,26 +40,37 @@ export class ProductPostComponent implements OnInit {
         price: ['', [Validators.required]],
         discount: ['', [Validators.required]],
         summary: ['', [Validators.required]],
-        quantity: ['', [Validators.required]]
+        quantity: ['', [Validators.required]],
+        category: [this.toSentCategory],
+        subCategory: [this.toSentSub]
       }
-
     )
+  }
+
+  changeCategory(event:any){
+    this.toSentCategory = event.target.value
+    this.subCategoryArray = this.sub_category[this.toSentCategory]
+  }
+
+  changeSubCategory(event:any){
+    this.toSentSub = event.target.value
   }
 
   get productFormControl() {
     return this.productForm.controls;
   }
   ngOnInit(): void {
+    this.subCategoryArray = this.sub_category.Apparels
   }
-  submit() {
-    this.PS.addProduct(this.productForm.value).subscribe(
+  submit(val:any) {
+    this.PS.addProduct(val).subscribe(
       () => {
         this.productForm.reset();
         this.toastr.success("Products are saved successfully.", "Success")
       },
-      () => {
+      (error) => {
         this.productForm.reset();
-        this.toastr.error("Products con't Post.", "Error")
+        this.toastr.error("Products con't Post.", error)
       }
     )
   }

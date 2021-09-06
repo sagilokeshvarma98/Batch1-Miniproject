@@ -27,29 +27,10 @@ export class ProductsService {
     return this.hc.get("http://oshopping.ddns.net/api/products/search/"+term)
   }
 
-
-  testOrderApi():Observable<any>{
-
-    return this.hc.delete("http://oshopping.ddns.net/api/useraddress/9")
-
-    
-    // return this.hc.get("http://oshopping.ddns.net/api/useraddress/user")
-
-    // return this.hc.get("http://oshopping.ddns.net/api/orders/user/all")
-
-    // return this.hc.post("http://oshopping.ddns.net/api/useraddress/user/add",data)
-
-  }
-
-
-
   addProduct(data: any) {
     return this.hc.post("http://oshopping.ddns.net/api/products/add", data)
   }
 
-  // getCartItem():Observable<any>{
-  //   return this.hc.get("http://oshopping.ddns.net/api/products/1")
-  // }
 
   getProductbyId(id: number) {
     return this.hc.get("http://oshopping.ddns.net/api/products/" + id)

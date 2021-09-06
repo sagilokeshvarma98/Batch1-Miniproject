@@ -19,10 +19,10 @@ export class NavbarComponent implements OnInit {
   searchTerm:any
 
   getSearchValue(searchTerm:any){
-    // this.PS.changeSearchTerm(searchTerm)
-    // this.route.navigate(['products'])
+    this.PS.changeSearchTerm(searchTerm)
+    this.route.navigate(['products'])
     console.log(searchTerm);
-    this.PS.searchByTerm(searchTerm).subscribe(res=>console.log(res))
+    // this.PS.searchByTerm(searchTerm).subscribe(res=>console.log(res))
     // this.route.navigate(['products'])
   }
  
@@ -31,8 +31,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.cartservice.cast.subscribe((posRes: any)=>{
       console.log(posRes);
-      
       this.result = posRes;
+      });
+    this.cartservice.getitem().subscribe((posRes: any)=>{
+      console.log(posRes);
+      this.result = posRes.cartItems.length;
       });
     this.gettoken()
   }
