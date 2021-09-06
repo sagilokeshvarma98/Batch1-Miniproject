@@ -7,7 +7,7 @@
 <button class="btn m-5 " mat-raised-button color="accent" (click)="openDialog()">Add Coupons </button>
 <div class="container">
     <div class="row">
-        <div class="col-lg-3" *ngFor="let x of couponCard">
+        <div class="col-lg-3" *ngFor="let x of couponCard" [id]="x">
             <div class="card m-1">
                 <div class="card-body">
                     <h5 class="card-title text-light h4">You get this : <span class="text-dark">{{x.coupon}}</span></h5>
