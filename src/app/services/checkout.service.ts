@@ -20,7 +20,10 @@ public check():Observable<any>{
     let data ={
       coupon : ""
     }
-    return this.http.post("http://oshopping.ddns.net/api/orders/user/checkout",data)
+    //before billing
+    return this.http.post("http://oshopping.ddns.net/api/orders/user/init",data)
+    //after billing
+    // return http.post("http://oshopping.ddns.net/api/orders/checkout/Orderid",{})  
   }
 
   stripetoken(data: any): Observable<any> {

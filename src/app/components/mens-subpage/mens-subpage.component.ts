@@ -9,6 +9,8 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class MensSubpageComponent implements OnInit {
 
+  public mensWear:any [] = []
+
   mens: any;
   mens1 = [
     { 'name': 'T-shirts', 'img': 'assets/Mens/m1.jpg' },
@@ -38,10 +40,16 @@ export class MensSubpageComponent implements OnInit {
     { 'title': 'FESTIVE', 'name': 'UPTO 70% OFF', 'img': 'assets/Mens/m23.jpg' },
     { 'title': 'WINTER WEAR', 'name': 'MIN .70%OFF', 'img': 'assets/Mens/m24.jpg' },
   ]
+
   constructor(private homepageservice: ProductsService) { }
 
   ngOnInit(): void {
-
+    this.homepageservice.productsData().subscribe(res=>{
+      res.map((x:any)=>{
+        if(x.subCategory == "Men's wear")
+          this.mensWear.push(x)
+      })
+      console.log(this.mensWear);
+    })
   }
-
 }

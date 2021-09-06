@@ -26,7 +26,6 @@ getitem():Observable<any>{
       map((x:any)=> {
         this.len=x.cartItems.length
         this.changeData()
-        console.log("this is length",this.len);
         return x
     })
     )
@@ -46,7 +45,6 @@ updateItem(id:any,data:any):Observable<any>{
 //to delete user cart item
 
 deleteitem(data:any):Observable<any>{
-  console.log(data);
   return this.http.delete(`http://oshopping.ddns.net/api/cartitems/${data}`)
   // return this.http.delete(`http://oshopping.ddns.net/api/cartitems/${data}`)
 }
@@ -61,7 +59,6 @@ deleteitem(data:any):Observable<any>{
 
 
 public additem(data:any,id:any):Observable<any>{
-  console.log(data,id);
   return this.http.post("http://oshopping.ddns.net/api/cartitems/add/usercart/product/"+id,{
    "quantity" : data 
   })
