@@ -32,13 +32,6 @@ export class WomensSubpageComponent implements OnInit {
   constructor(private homepageservice: ProductsService) { }
 
   ngOnInit(): void {
-    this.homepageservice.productsData().subscribe(res=>{
-      res.map((x:any)=>{
-        if(x.subCategory == "Women’s wear" || x.subCategory ==  "Women's wear")
-          this.womensWear.push(x)
-      })
-      console.log(this.womensWear);
-    })
   }
 
 
