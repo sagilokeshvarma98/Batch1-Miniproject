@@ -15,7 +15,7 @@ export class AdminNavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  Logut(){
+  Logot(){
     this.lg.logout()
   }
 

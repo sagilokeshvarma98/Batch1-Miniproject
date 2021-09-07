@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AngmaterialModule } from '../angmaterial/angmaterial.module';
 import { SizeFilterPipe } from './pipes/size-filter.pipe';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -26,7 +27,8 @@ import { SizeFilterPipe } from './pipes/size-filter.pipe';
     DatePipe,
     SearchPipe,
     ValuePipe,
-    SizeFilterPipe
+    SizeFilterPipe,
+    ErrorComponent
   ],
   imports: [
     CommonModule,

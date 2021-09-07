@@ -20,7 +20,7 @@
     page-break-inside: avoid;
     vertical-align: middle; 
     position:inherit;
-    left: 50px;  
+    left: 50px;
 }
 #img1:hover{
     -ms-transform: scale(1.1);

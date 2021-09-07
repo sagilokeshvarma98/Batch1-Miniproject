@@ -18,13 +18,13 @@ export class ProductPostComponent implements OnInit {
   categories : any = ["Apparels","Electronics","Home and Kitchen"]
   
   sub_category: any = 
-    {"Apparels" : ["Men’s wear", "Women’s wear", "Kids wear"],
+    {"Apparels" : ["Men's wear", "Women's wear", "Kids wear"],
     "Electronics" : ["Mobiles", "Laptops", "Home appliances"],
     "Home and Kitchen" : ["Kitchen items", "Home furnishings"]
   }
 
   toSentCategory : string = "Apparels"
-  toSentSub : string = "Men’s wear"
+  toSentSub : string = "Men's wear"
 
   getSubs(ele: any) {
     this.subCategoryArray = this.sub_category[ele.target.value]

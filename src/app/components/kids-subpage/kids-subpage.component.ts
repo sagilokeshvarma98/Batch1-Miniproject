@@ -32,6 +32,7 @@ export class KidsSubpageComponent implements OnInit {
     { 'title': 'CASUAL WEAR',  'img': 'assets/Kids/k14.jpg' },
     { 'title': 'TRADITIONAL WEAR', 'img': 'assets/Kids/k15.jpg' },
     { 'title': 'EVERYDAY WEAR', 'img': 'assets/Kids/k16.jpg' },
+
   ]
   constructor() { }
 
