@@ -105,8 +105,8 @@ export class CartComponent implements OnInit {
   }
 
 
-  chechOutCart() {
-    this.check.checkout().subscribe(res => console.log(res)
+  initCart() {
+    this.check.initializeCart().subscribe(res => console.log(res)
     )
   }
 
