@@ -11,27 +11,24 @@ import { OrdersService } from 'src/app/services/orders.service';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor(private myorder: OrdersService) { }
+  constructor(private OS: OrdersService) { }
 
   id: any;
-  myorders: any;
+  myorders: any
   confirm: any
   status = "shipped"
   state: boolean = false;
-  public orderItems:any = []
+  orderItems: any[] = []
 
   cancelorder(id: any) {
     this.confirm = confirm("do you want confirm cancel item")
     if (this.confirm == true) {
       this.status = "canceld"
-
       if (this.status = "canceld") {
         this.state = true
       }
-
       this.getorder();
       console.log(id);
-
     }
     else {
       alert("ok")
@@ -44,16 +41,23 @@ export class OrdersComponent implements OnInit {
 
   getorder() {
     console.log("hai");
-    this.myorder.getmyorders().subscribe(
+    this.OS.getmyorders().subscribe(
       (data) => {
         this.myorders = data
-        this.myorders.map((x:any)=>{
-          this.orderItems.push(x.orderItems)
+        console.log(this.myorders);
+        this.myorders.map((x: any) => {
+          x.orderItems.map((y: any) => {
+            y.status = x.status
+            this.orderItems.push(y)
+          })
         })
         console.log(this.orderItems);
-        
       })
-    }
+  }
+
+  deleteItem(id:any){
+    this.OS.deleteOrder(id).subscribe(res=>this.getorder())
+  }
 
   ngOnInit(): void {
     this.getorder();

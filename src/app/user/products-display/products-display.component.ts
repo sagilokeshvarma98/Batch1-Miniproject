@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-display',
@@ -14,7 +14,7 @@ export class ProductsDisplayComponent implements OnInit {
 
 
 
-  constructor(public PS: ProductsService, private route: Router) { }
+  constructor(public PS: ProductsService, private route: Router , private routes:ActivatedRoute) { }
 
   ctrl = new FormControl(null, Validators.required);
 
@@ -22,7 +22,8 @@ export class ProductsDisplayComponent implements OnInit {
   searchTerm: string = ""
   @Input() ratingTerm: Number = 0
   @Input() priceTerm: String = ''
-  @Input() sizes : any[] = []
+  @Input() sizes:any
+  public searchCount:any = 0
 
   toggle() {
     if (this.ctrl.disabled) {
@@ -45,13 +46,40 @@ export class ProductsDisplayComponent implements OnInit {
   NotifyAddedToCart: Boolean = false
   Title: string = ""
 
-  ngOnInit(): void {
-    this.PS.term.subscribe(res => {
+  ngOnInit(): void {    
+    
+    this.PS.term.subscribe(res =>{
+      console.log("search term",this.searchTerm);
       this.searchTerm = res
+      if(this.searchTerm)
+      this.PS.searchByTerm(this.searchTerm).subscribe(res=>this.setProducts(res,this.searchTerm));
     })
-    this.PS.productsData().subscribe(res => {
-      console.log(res);
-      this.Products = res
+    
+    this.routes.params.subscribe(params => {
+      // params.name
+      this.PS.productsData().subscribe(res => {
+        let res1:any[] = []
+        if(params.name === "All")
+          this.setProducts(res,params.name)
+        else{
+          res.map((x:any)=>{
+            if(x.subCategory == params.name || x.category == params.name)
+              res1.push(x)
+          })
+          this.setProducts(res1,params.name)
+        }
+        console.log("search term 4",this.searchTerm);
+      })
+    })
+  }
+
+  setProducts(res:any[],term:string){
+      if (res.length == 0 && this.searchCount<=1) {
+        this.searchCount++
+        this.PS.changeSearchTerm(term)
+      }
+      else{
+        this.Products = res
       this.length = res.length //For json file
       res.map((x: any, index: any) => {
         x.afterDiscount = x.price - x.discount
@@ -70,8 +98,9 @@ export class ProductsDisplayComponent implements OnInit {
           })
       }
       )
-    })
+      }
   }
+
   displayNotification(event: any) {
     this.NotifyAddedToCart = event
     setTimeout(() => {

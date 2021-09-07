@@ -56,28 +56,43 @@ export class RegisterComponent implements OnInit {
    get registerFormControl() {
     return this.registerForm.controls;
   }
-  getData(){
-    this.customvalid.getData().subscribe((res:any)=>{
-      console.log(res)
-      this.Getresponse=res;
-    })
-    //console.log(this.Getresponse);
-  }
-  hideEmailValidate = false
-   validteEmail(){
-    this.customvalid.validatorEmail(this.registerForm.value.Email)
-    // subscribe((res:any)=>{
-    //   console.log(this.registerForm.value.Email)
-    //   this.hideEmailValidate = true
-    // }
-    //)
-    console.log(this.registerForm.value.Email);
 
-    
+  hideEmailValidate = false
+
+  checkUsername(check:any){
+    let userName = this.registerForm.value.username
+    if(!check.errors)
+    this.customvalid.checkUsername(userName).subscribe(res=>console.log(res)
+    ,
+    error=>{
+      this.ErrorMessage = error.error.apiresponse.description
+    })
+  }
+
+   validteEmail(check:any){
+     let Email = this.registerForm.value.email
+    if(!check.errors)
+    this.customvalid.checkEmail(Email).subscribe(res=>{
+      this.ErrorMessage = ""
+    }
+    ,
+    error=>{
+      this.ErrorMessage = error.error.apiresponse.description
+    })
    }
+
+   validteMobile(check:any){
+    let Mobile = this.registerForm.value.mobile
+   if(!check.errors)
+     this.customvalid.checkMobile(Mobile).subscribe(res=>console.log(res)
+     ,
+    error=>{
+      this.ErrorMessage = error.error.apiresponse.description
+    })
+  }
   
   ngOnInit(): void {
-  this.getData();
+  // this.getData();
  }
 
 }

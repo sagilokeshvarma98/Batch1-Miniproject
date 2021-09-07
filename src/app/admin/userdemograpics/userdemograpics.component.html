@@ -1,4 +1,9 @@
-<app-recovery (recover)="recoversuccess($event)"></app-recovery>
+<xng-breadcrumb [separator]="iconTemplate" class="px-2 ml-2"></xng-breadcrumb>
+<ng-template #iconTemplate>
+  <mat-icon>chevron_right</mat-icon>
+</ng-template>
+<div class="container mt-5">
+  <app-recovery (recover)="recoversuccess($event)"></app-recovery>
 <br><br>
 <mat-accordion>
   <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -70,3 +75,4 @@
     </div>
   </mat-expansion-panel>
 </mat-accordion>
+</div>

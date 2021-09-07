@@ -1,7 +1,77 @@
-img{
+
+.headerTitle{
+    font-size: 14px!important;
+    line-height: 16px!important;
+    color: #565959!important;
+}
+
+
+.headerResultData{
+    color:  #565959!important;
+    font-size: 14px!important;
+    line-height: 20px!important;
+}
+
+.headerResultDataName{
+    color:  #5e2d9e!important;
+    font-size: 14px!important;
+    line-height: 20px!important;
+}
+
+.deleiveredDate{
+    font-size: larger;
+    font-weight: 700;
+    color: #333;
+}
+
+.description{
+    padding: 10px;
+    font-size: 15px!important;
+    font-weight: 400;
+    color: #333;
+}
+
+
+.card-body .orderImage{
+    vertical-align: top;
+    height: 70px;
+    aspect-ratio: auto 70 / 70;
+    width: 70px;
+}
+
+.orderButton{
+    background-color: rgb(243, 243, 67);
+    border: 0;
+    display: block;
+    font-size: 13px;
+    line-height: 29px;
+    margin: 0;
+    outline: 0;
+    padding: 0 10px 0 11px;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.btn-sm{
+    border-radius: 20px;
+    margin-left: 35%;
+}
+
+.orderTitle{
+    color: #007185;
+}
+
+.mainDetails{
+    margin: 20px 10% 10px 10%;
+}
+
+/* img{
     width: 150px;
     height: 150px;
 }
+
 
 tr{
    
@@ -18,3 +88,12 @@ td{
     text-align: center;
     padding: 50px;
 }
+
+.sortable .item{
+    margin: 50px;
+}
+
+.item .imageShow{
+    width: 200px;
+    height: 200px;
+} */

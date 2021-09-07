@@ -1,51 +1,24 @@
-<div class="container">
-    <!-- <div class="transaction-links">
-        <a routerLink="all">All</a>
-        <a routerLink="pending">Pending/Cancelled</a>
-        <a routerLink="success">Successful</a>
-        <a routerLink="failed">Failed</a>
-    </div>
-    <div>
-        <router-outlet></router-outlet>
-    </div> -->
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                <h2 class="text text-secondary">
-                    All Transactions
-                </h2>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <app-alltransactions></app-alltransactions>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                <h2 class="text text-secondary">
-                    Pending Transactions
-                </h2>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <app-pending-cancellation></app-pending-cancellation>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                <h2 class="text text-secondary">
-                    Successful Transactions
-                </h2>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <app-successful></app-successful>
-    </mat-expansion-panel>
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-            <mat-panel-title>
-                <h2 class="text text-secondary">
-                    Failed Transactions
-                </h2>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <app-failed></app-failed>
-    </mat-expansion-panel>
+
+<div class="dropdown m-5">
+    <img src="assets/transaction.svg" style="width: 45px;" id="dropdownMenuButton" alt="" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" routerLink="all">All Transactions</a>
+                <div class="dropdown-divider">
+                </div>
+                <a class="dropdown-item" routerLink="pending">Cancellation Requests</a>
+                <div class="dropdown-divider">
+                </div>
+                <a class="dropdown-item" routerLink="success">Update order delivery status</a>
+                <div class="dropdown-divider">
+                </div>
+                <a class="dropdown-item" routerLink="failed"> Failed Transactions</a>
+        </div>
 </div>
+<div>
+    <router-outlet></router-outlet>
+</div>
+
+
+
+

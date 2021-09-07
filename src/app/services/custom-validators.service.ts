@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AbstractControl, FormGroup, ValidatorFn } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -30,18 +31,21 @@ export class CustomvalidatorsService {
   }
 
   constructor(public http:HttpClient) { }
-  getData(){
 
+  checkUsername(name:any):Observable<any>{
+    return this.http.get("http://oshopping.ddns.net/api/user/checkusername/"+name)
+  }
 
-    return this.http.get("http://localhost:3000/products");
-   }
-   validatorEmail(Email:any){
-     return this.http.get("http://localhost:3000/products")
-   }
+  checkEmail(email:any):Observable<any>{
+    return this.http.get("http://oshopping.ddns.net/api/user/checkemail/"+email)
+  }
+
+  checkMobile(mobile:any):Observable<any>{
+    return this.http.get("http://oshopping.ddns.net/api/user/checkmobile/"+mobile)
+  }
+
    postdata(data:any){
-    return this.http.post("http://oshopping.ddns.net/api/user/register",data)   
-    
-  
+    return this.http.post("http://oshopping.ddns.net/api/user/register",data) 
   }
 
 }

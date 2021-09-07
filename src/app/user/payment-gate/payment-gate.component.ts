@@ -27,8 +27,6 @@ export class PaymentGateComponent implements OnInit {
     )
   }
 
-
-
   createToken() {
     (<any>window).Stripe.card.createToken(this.card_data, (status: number, response: any) => {
       if (status === 200) {
@@ -48,11 +46,11 @@ export class PaymentGateComponent implements OnInit {
       number: this.checkoutForm.value.Number,
       exp_month: this.checkoutForm.value.expMonth,
       exp_year: this.checkoutForm.value.expYear,
-      cvc: this.checkoutForm.value.cvc
+      cvc: this.checkoutForm.value.cvc,
+      cardHolder:this.checkoutForm.value.cardHolder
     }
     this.createToken()
   }
-
   get checkoutFormcontrol() {
     return this.checkoutForm.controls;
   }

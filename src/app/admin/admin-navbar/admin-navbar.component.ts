@@ -8,12 +8,14 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class AdminNavbarComponent implements OnInit {
 
+  opened=false;
+  
   constructor( private lg:LoginService) { }
 
   ngOnInit(): void {
   }
 
-  Logut(){
+  Logot(){
     this.lg.logout()
   }
 

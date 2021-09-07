@@ -1,3 +1,7 @@
+<xng-breadcrumb [separator]="iconTemplate" class="px-2 ml-2"></xng-breadcrumb>
+<ng-template #iconTemplate>
+    <mat-icon>chevron_right</mat-icon>
+</ng-template>
 <div class="container-fluid">
     <div class="adminProfile">
         <div class="card">
@@ -10,18 +14,18 @@
                     <p>This is admin page. Here admin description will be Displayed. Go through all the admin
                         functionlity</p>
                     <h3>
-                        <span id="manageText">Manage</span>
+                        <span id="manageText">Manager</span>
                         <span>
-                            <a href="">Inventory</a>
+                            <a routerLink='/inventory'>Inventory</a>
                         </span>
                         <span>
-                            <a href="">Users</a>
+                            <a routerLink='coupon'>Users</a>
                         </span>
                         <span>
-                            <a href="">Coupons</a>
+                            <a [routerLink]="['usermanagement']">Coupons</a>
                         </span>
                         <span>
-                            <a href="">Transactions</a>
+                            <a routerLink="transactions">Transactions</a>
                         </span>
                     </h3>
                 </div>
@@ -66,13 +70,13 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="card-deck">
-                                <div class="card">
+                                <div class="card ">
                                     <div class="card-body">
                                         <h3>Total products</h3>
                                         17
                                     </div>
                                 </div>
-                                <div class="card">
+                                <div class="card bg-info">
                                     <div class="card-body">
                                         <h3>Total transactions</h3>
                                         10
@@ -98,129 +102,5 @@
                 </div>
             </div>
         </div>
-
-
-
-
-        <!-- 
-        <div class=" card-deck adminBasicInfo">
-            <div class="card" style="float: left;">
-                <div class="card-body">
-                    <h3>Total products</h3>
-                    17
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                   
-                </div>
-            </div>
-            <div class="card" style="float: left;">
-                <div class="card-body">
-                   
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    
-                </div>
-            </div>
-        </div>  -->
-
-
-
     </div>
 </div>
-
-
-
-
-
-
-
-<!-- 
-<div class="card adminDetails">
-    <div class="card-header">
-        <h3>Admin Details</h3>
-    </div>
-    <div class="card-body">
-        <h5>
-            <div id="attribute">Full name</div>
-            <span id="value">Hubert Blaine Wolfeschlegelstein</span>
-        </h5>
-        <h5>
-            <div id="attribute">Birthday</div>
-            <span id="value"> 3 August 1913</span>
-        </h5>
-        <h5>
-            <div id="attribute">Country</div>
-            <span id="value">Germany</span>
-        </h5>
-        <h5>
-            <div id="attribute">Languages</div>
-            <span id="value">German , English</span>
-        </h5>
-        <h2 id="adminContactHead">
-            Contacts
-        </h2>
-        <h5>
-            <div id="attribute">Email</div>
-            <span id="value">hubertbanile1913@gmail.com</span>
-        </h5>
-        <h5>
-            <div id="attribute">Phone</div>
-            <span id="value">+ 0 (123) 356 799</span>
-        </h5>
-    </div>
-</div>
-
-<div class="adminBasicInfo" style="float: left;">
-    <div class="card" style="float: left;">
-        <div class="card-body">
-            <h3>Total products</h3>
-            17
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <h3>Total transactions</h3>
-            10
-        </div>
-    </div>
-    <div class="card" style="float: left;">
-        <div class="card-body">
-            <h3>Pending Requests</h3>
-            2
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <h3>Password changes</h3>
-            17
-        </div>
-    </div>
-</div> 
-
-
- -->
-
-
-
-
-
-
-
-
-<!-- <div class="row">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-       <div class="imageCircle">
-           <img src="../../../assets/user-solid.svg" alt="">
-       </div>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-        Hello
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-        Hello
-    </div>
-</div> -->
