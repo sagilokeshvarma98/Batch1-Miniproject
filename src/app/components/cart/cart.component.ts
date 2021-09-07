@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { data } from 'jquery';
 // import { ElementSchemaRegistry } from '@angular/compiler';
 import { CartService } from 'src/app/services/cart.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
@@ -22,7 +21,8 @@ export class CartComponent implements OnInit {
   public result: any;
   public length: boolean = false
 
-  constructor(private os: CartService, public check: CheckoutService,private route:Router) { }
+  constructor(private os: CartService, public check: CheckoutService , public route:Router) { }
+
 
   changeQuantityHere(val:any,id:any){
     let ele = {
