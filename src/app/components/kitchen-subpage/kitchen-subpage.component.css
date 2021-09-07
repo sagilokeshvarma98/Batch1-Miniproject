@@ -1,68 +1,118 @@
 .text{
-    margin-top: 30px;
-    font-size: 30px;
-    font-weight: bold;
-    color: red;
-    text-decoration: underline;
-}
 
-#img1{
-   width: 100px;
-    border: none;
-    page-break-inside: avoid;
-    vertical-align: middle; 
-    position:inherit;
-    left: 50px;  
+    margin-top: 30px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color:#0c0a09 ;
+
+    text-decoration: underline;
+
 }
-#img1:hover{
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-}
-#text1{
-    margin-top: 15px;
-    font: bold;
-    font-size: 12px;
-    line-height: 10px;
-    letter-spacing: 0px; 
-}
-.card{
-    border: none;
-    width: 100%;
-}
-img{
-    width: 100%;
+.text-center {
+    margin-top: 30px;
+    color: #e2b01a;
+    font-weight: 600;
+    font-size: 17px;
+
 }
 #text2{
     margin-top: 20px;
     font-size: 30px;
-    font-weight: bold;
-    color: red;
+    color: rgb(15, 15, 15);
+    font-weight:lighter;
+    text-transform: uppercase!important;
     font-family: sans-serif;
     text-align: center;
-    text-decoration: underline;
-}
-#img2:hover{
-    -ms-transform: scale(1.02);
-    -webkit-transform: scale(1.02);
-    transform: scale(1.02);
-}
-p{
-    font-size: 20px;
-    text-align: center;
-    line-height: 15px;
+    
 }
 #text3{
-    font-size: 24px;
-    font-weight: 600;
-    color: #000000;
-    border: solid 1px #d1d1d1;
-    padding:20px 45px;
-    line-height: 25px;
-    margin-bottom: 10px;
+    margin-top: 40px;
+    font-size: 25px;
+    color: rgb(15, 15, 15);
+    font-weight:lighter;
+    
+    text-transform: uppercase!important;
+    font-family: sans-serif;
+    text-align: center;
+    
 }
-#text3:hover{
-    color: #fff !important;
-    background-color: #000 !important;
-    border-color: #000 !important;
+#text4{
+    margin-top: 40px;
+    font-size: 30px;
+    color: rgb(15, 15, 15);
+    font-weight:lighter;
+    font-family: sans-serif;
+    text-align: center;
+    
 }
+
+.card {
+
+    padding: 20px;
+    border: none;
+    width: 100%;
+    height: 100%px;
+    
+    page-break-inside: avoid;
+    vertical-align: middle;
+}
+.card4{
+    margin-bottom: 20px;
+}
+.card4:hover{
+
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.card2 {
+
+    padding: 20px;
+    border: none;
+    width: 300px;
+    margin-left:35px ;
+    height: 250px;
+    box-shadow: 12px 12px  12px 12px rgb(241, 246, 244);
+    page-break-inside: avoid;
+    vertical-align: middle;
+}
+
+#img1{
+
+    border: none;
+    width: 200px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left:20px ;
+    page-break-inside: avoid;
+    vertical-align: middle;   
+}
+
+.card2:hover{
+
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+#img2:hover{
+
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+#text1{
+
+    margin-top: 10px;
+    font: bold;
+    color: rgb(15, 15, 15);
+    font-size: 12px;
+    line-height: 10px;
+    letter-spacing: 0px;
+    position: relative;
+}
+
