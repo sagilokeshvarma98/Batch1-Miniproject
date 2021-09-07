@@ -1,4 +1,6 @@
-
+.card{
+  border-radius: 15px;
+}
     .card:hover{
       border: none;
       margin: 0.5rem;
@@ -10,18 +12,20 @@
   .card-body {
     border: none;
       text-align: center;
-      background-color: rgb(186, 240, 136);
+      background-color: rgb(221, 232, 236);
+      border-radius: 15px;
       
   }
       
   .card-title{
-      font-size: 1rem;
-      font-weight: bold;
+      font-size: 2rem;
+      font-weight: bolder;
       text-align: center;
   }
   
   .card-body p{
-      font-size: 15px;
+    line-height: 10px;
+      font-size: 18px;
   }
   button{
   margin-left: 20px;

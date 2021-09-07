@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { data } from 'jquery';
 import { ToastrService } from 'ngx-toastr';
 import { CouponService } from 'src/app/services/coupon.service';
 import { CouponPostComponent } from '../coupon-post/coupon-post.component';
@@ -25,9 +26,7 @@ export class CouponComponent implements OnInit {
   openDialog() {
     const dialogRef = this.dialog.open(CouponPostComponent);
     dialogRef.afterClosed().subscribe(
-      (res => {
-        console.log(`CouponPost : ${res}`)
-      })
+      (res => {  console.log(`CouponPost : ${res}`) })
     )
   }
 
@@ -37,7 +36,12 @@ export class CouponComponent implements OnInit {
 
   getCoupon() {
     this.cup.getCoupons().subscribe(
-      (data) => { this.couponCard = data }
+      (data)=>{  this.couponCard = data,
+      console.log(`coupon data`,data.map((x:any)=>
+      {
+        x.createdAt=new Date(x.createdAt).toDateString()
+        x.expiryDate=new Date(x.expiryDate).toDateString()
+      })) }
     )
   }
 }

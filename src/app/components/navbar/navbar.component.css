@@ -1,5 +1,5 @@
 .navbar{
-    background: #5d5d5d;
+    background: #C70039;
     
 }
 
@@ -52,7 +52,7 @@
     text-align: center;
 }
 .dropdown-menu a:hover{
-    background-color: #00aa8a;
+    background-color: #C70039;
 }
 .dropdown:hover .dropdown-menu{
     display: block;

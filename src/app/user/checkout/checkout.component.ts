@@ -26,6 +26,8 @@ paytotal=0;
 applied:boolean= false;
 discount=0;
 isLinear = false;
+
+
 getcoupon(){
   this.couponservice.getCoupons().subscribe((coupounres)=>{
 

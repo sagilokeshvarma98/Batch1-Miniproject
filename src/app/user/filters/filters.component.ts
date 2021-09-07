@@ -33,7 +33,7 @@ export class FiltersComponent implements OnInit {
     this.rate = 0
     this.price = ''
     this.allPrices = false
-    this.allRates= false
+    this.allRates= false  
   }
   outOfStock(data:any){
     this.checked = !this.checked
@@ -41,7 +41,6 @@ export class FiltersComponent implements OnInit {
   }
   getSizes(data:any){
     // console.log(data.target.value);
-    
     this.sizes = data.target.value
     // let count = 0
     // let index:any
