@@ -1,4 +1,6 @@
-
+.err{
+    color: red;
+}
 h2{
     color: gray;
     position: relative;
