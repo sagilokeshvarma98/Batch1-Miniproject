@@ -39,6 +39,14 @@ export class OrdersComponent implements OnInit {
     this.status = "reorderd"
   }
 
+  reOrder(id:any){
+    this.OS.reOrder(id).subscribe(res=>{
+      console.log(res);
+      this.getorder()
+    }
+    )
+  }
+
   getorder() {
     console.log("hai");
     this.OS.getmyorders().subscribe(
@@ -58,6 +66,7 @@ export class OrdersComponent implements OnInit {
   deleteItem(id:any){
     this.OS.deleteOrder(id).subscribe(res=>this.getorder())
   }
+
 
   ngOnInit(): void {
     this.getorder();
