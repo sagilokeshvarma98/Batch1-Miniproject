@@ -1,99 +1,152 @@
-<!-- 
-<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-  </button> -->
-<mat-stepper #stepper>
-  <mat-step>
-    <form>
-      <ng-template matStepLabel>map coupons</ng-template>
-      <h1>checkout</h1>
-      <div class="form-group">
-
-        <table class="table">
-          <tr>
-            <th>product name</th>
-            <th>price</th>
-            <th>quantity</th>
-          </tr>
-          <tr *ngFor="let x of check.cartItems">
-            <td>{{x.metaTitle}}</td>
-            <!-- <tr *ngFor="let x of checkitems"> 
-                  <td>{{x.content}}</td>-->
-            <td>{{x.price}}</td>
-            <td>{{x.quantity}}</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-            </td>
-          </tr>
-          <tr>
-            <td> total amount to be paid :</td>
-            <td> {{grandtotal}} </td>
-          </tr>
-          <tr>
-            <td>
-              <p>you have discount </p>
-            </td>
-            <td>- {{discount}} </td>
-          </tr>
-          <tr>
-            <td>total amount to be paid : </td>
-            <td>{{grandtotal-discount}}</td>
-          </tr>
-          <label for="coupon">add coupon:</label> <br>
-
-          <select name="coupon" id="coupon" (change)="change($event)" [(ngModel)]="coupon">
-            <option class="coupon" value="0">none</option>
-            <option class="coupon" value="{{c.eligibul}}" *ngFor="let c of coupon">{{c.coupon}}</option>
-          </select>
-        </table> <br>
-
-        <!-- <tfoot  >total amount to be paid : <del>{{grandtotal}}</del> {{paytotal}} </tfoot> -->
-
-      </div>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step label="Fill out your address">
-    <form>
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            delivery adress
-          </mat-panel-title>
-          <mat-panel-description>
-            
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <address *ngIf="default">
-          {{default.line1}}
-      
-          {{default.city}}
-        </address>
-        <button type="submit" class="btn btn-warning" [routerLink]="['/adress']">change</button>
-      </mat-expansion-panel>
-
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <form>
-      <ng-template matStepLabel>Done</ng-template>
-      <p>You are now done.</p>
-      <div>
-
-        <div class="form-group">
-          <button type="submit" class="btn btn-warning" [routerLink]="['/payment']">procced to buy</button>
+<div class="container mt-3">
+  <div class="row justify-content-center mt-3">
+    <div class="col-md-8 col-lg-5">
+      <div class="card">
+        <div class="card-header">
+          <h1 class="text-center text-danger">Bill Details</h1>
+          <hr>
+          <div class="card-body">
+            <table>
+              <thead>
+                <tr class="w-100 ">
+                  <th class="text-center py-3">Bill type</th>
+                  <th class="text-center py-3">-</th>
+                  <th class="text-center py-3">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center w-50">Product Price</td>
+                  <td class="text-center w-50">:</td>
+                  <td class="text-center w-50">{{data.subTotal}}</td>
+                </tr>
+                <tr>
+                  <td class="text-center w-50">Discount </td>
+                  <td class="text-center w-50">:</td>
+                  <td class="text-center w-50"> - {{data.itemDiscount}}</td>
+                  
+                </tr>
+                <tr>
+                  <td class="text-center w-50">Amount to be paid </td>
+                  <td class="text-center w-50">:</td>
+                  <td class="text-center w-50">{{data.grandTotal}}</td>
+                </tr>
+                <tr>
+                  <td class="text-center w-50">Coupon</td>
+                  <td class="text-center w-50">:</td>
+                  <td class="text-center w-50">
+                    <input type="text" class="form-control sm" name="" id="">
+                  </td>
+                  <td class="text-center w-50">
+                    <span class="py-2">
+                      <a class="btn btn-sm btn-danger " (click)="couponApply()" *ngIf="!click"> Apply </a>
+                      <a class="btn btn-sm btn-danger " (click)="couponCancel()" *ngIf="click">Cancel</a>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-warning btn-block" (click)="checkOut()">CheckOut</button>
+          </div>
         </div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
-    </form>
-  </mat-step>
-</mat-stepper>
+    </div>
+  </div>
+<!-- 
+  <mat-stepper #stepper>
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>map coupons</ng-template>
+        <h1>checkout</h1>
+        <div class="form-group">
+
+          <table class="table">
+            <tr>
+              <th>product name</th>
+              <th>price</th>
+              <th>quantity</th>
+            </tr>
+            <tr *ngFor="let x of check.cartItems">
+              <td>{{x.metaTitle}}</td> -->
+              <!-- <tr *ngFor="let x of checkitems"> 
+                  <td>{{x.content}}</td>-->
+              <!-- <td>{{x.price}}</td>
+              <td>{{x.quantity}}</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+              </td>
+            </tr>
+            <tr>
+              <td> total amount to be paid :</td>
+              <td> {{grandtotal}} </td>
+            </tr>
+            <tr>
+              <td>
+                <p>you have discount </p>
+              </td>
+              <td>- {{discount}} </td>
+            </tr>
+            <tr>
+              <td>total amount to be paid : </td>
+              <td>{{grandtotal-discount}}</td>
+            </tr>
+            <label for="coupon">add coupon:</label> <br>
+
+            <select name="coupon" id="coupon" (change)="change($event)" [(ngModel)]="coupon">
+              <option class="coupon" value="0">none</option>
+              <option class="coupon" value="{{c.eligibul}}" *ngFor="let c of coupon">{{c.coupon}}</option>
+            </select>
+          </table> <br> -->
+
+          <!-- <tfoot  >total amount to be paid : <del>{{grandtotal}}</del> {{paytotal}} </tfoot> -->
+
+        <!-- </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step label="Fill out your address">
+      <form>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              delivery adress
+            </mat-panel-title>
+            <mat-panel-description>
+
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <address *ngIf="default">
+            {{default.line1}}
+
+            {{default.city}}
+          </address>
+          <button type="submit" class="btn btn-warning" [routerLink]="['/adress']">change</button>
+        </mat-expansion-panel>
+
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <form>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-warning" [routerLink]="['/payment']">procced to buy</button>
+          </div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </form>
+    </mat-step>
+  </mat-stepper> -->
