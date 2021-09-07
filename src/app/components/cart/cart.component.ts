@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { ElementSchemaRegistry } from '@angular/compiler';
 import { CartService } from 'src/app/services/cart.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
 
@@ -67,7 +66,6 @@ export class CartComponent implements OnInit {
       this.os.deleteitem(id).subscribe((posres) => {
         console.log(posres)
         this.getcartitem();
-        // window.location.reload();
         this.os.changeData();
         console.log("delete success")
       })
@@ -109,7 +107,6 @@ export class CartComponent implements OnInit {
 
   initCart() {
     this.check.initializeCart().subscribe( (res) => {
-      console.log(data);
       localStorage.setItem("id",res.id)
       this.route.navigate(['/checkout'])}
     )

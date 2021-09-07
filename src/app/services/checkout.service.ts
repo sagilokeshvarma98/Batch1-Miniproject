@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class CheckoutService {
 
   constructor(private http: HttpClient) { }
@@ -23,10 +24,6 @@ public check():Observable<any>{
 
   cancelCoupon(id:any):Observable<any>{
     return this.http.post("http://oshopping.ddns.net/api/orders/coupon/cancel/"+id,{})
-  }
-
-  checkout(id:any):Observable<any>{
-    return this.http.post("http://oshopping.ddns.net/api/orders/checkout/"+id,{})
   }
 
 
