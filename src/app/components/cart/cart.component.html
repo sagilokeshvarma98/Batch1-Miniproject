@@ -68,41 +68,6 @@
 
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8">
-             <span>Your cart Items</span>
-             <span style="float: right;">Items</span>
-             <hr>
-             <table>
-                 <thead>
-                     <tr style="text-align: center;">
-                     <th>Image </th>
-                     <th >Name</th>
-                     <th>Quantity</th>
-                     <th>Price</th>
-                     <th>TOTAl</th>
-                    </tr>
-                 </thead>
-                 <tbody>
-                     <tr *ngFor="let x of cart.cartItems">
-                         <td class="text-center"><img class="w-100"  src="{{x.product.imageUrls[0].imgUrl}}" alt=""></td>
-                         <div class="dropdown-divider" ></div>
-                     </tr>
-                     <div class="dropdown-divider" ></div>
-                 </tbody>
-                 
-             </table>
-        </div>
-        <div class="col-lg-4">
-          <span>Order Summary</span>
-          <hr>
-        </div>
-    </div>
-</div>
-
-
-
 
 
 

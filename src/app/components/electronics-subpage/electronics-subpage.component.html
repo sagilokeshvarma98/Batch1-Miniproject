@@ -26,15 +26,16 @@
         <a href="#" class="mt-10" tabindex="-2">View more <mat-icon class="mat-icon">arrow_forward</mat-icon> </a>
     </div> -->
 <div class="container">
-   
+
 </div>
-<div class="row mt-5 my-3" [routerLink]="['/products']" id="mens">
+
+<div class="row mt-5 my-3" routerLink="/products/Mobiles" id="mens">
     <div class="col-lg-2 my-3 col-md-6 ">
 
         <img class="img1" src="assets/Phones/Mobile3.jpg" alt="">
     </div>
     <div class=" col-lg-2 my-3  col-md-6 ">
-        <img class="img2" src="assets/Laptops/img.jpg" alt="">
+        <img class="img2" src="assets/Laptops/img.jpg" alt="" routerLink="/products/Laptops">
     </div>
     <div class=" col-lg-2  col-md-6 my-3">
         <img class="img1" src="assets/Phones/Mobile.jpg" alt="">
@@ -43,66 +44,68 @@
         <p class="text1 my-2">latest</p><small class="text2">featured</small>
         <p class="mt10"> elctronic gadgets </p>
         <p class="text-p">grab them till they last</p>
-        <a href="#" class="mt-10" tabindex="-2">View more <mat-icon class="mat-icon">arrow_forward</mat-icon> </a>
+        <a href="#" class="mt-10" tabindex="-2" routerLink="/products/Mobiles">View more <mat-icon class="mat-icon">
+                arrow_forward</mat-icon> </a>
     </div>
 </div>
 
 <div class="container ">
     <div class="row">
         <p class="text h3 text-center">Mobiles Phones</p>
-        <div class="row  row-img" [routerLink]="['/products']">
-            <div class="col-lg-3 my-3 ">
-                <div class="card">
-                    <img src="assets/Phones/Mobile.jpg" alt="">
+        <a href="" routerLink="/products/Mobiles">
+            <div class="row  row-img">
+                <div class="col-lg-3 my-3 ">
+                    <div class="card">
+                        <img src="assets/Phones/Mobile.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 my-3">
+                    <div class="card">
+                        <img src="assets/Phones/Mobile1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 my-3">
+                    <div class="card">
+                        <img src="assets/Phones/Mobile2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 my-3">
+                    <div class="card">
+                        <img src="assets/Phones/Mobile3.jpg" alt="">
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 my-3">
-                <div class="card">
-                    <img src="assets/Phones/Mobile1.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-lg-3 my-3">
-                <div class="card">
-                    <img src="assets/Phones/Mobile2.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-lg-3 my-3">
-                <div class="card">
-                    <img src="assets/Phones/Mobile3.jpg" alt="">
-                </div>
-            </div>
-        </div>
-
+        </a>
     </div>
     <hr>
     <!-- Laptops -->
     <div class="container">
 
         <p class="text h3 text-center">Laptops</p>
-
-        <div class="row row-img" [routerLink]="['/products']">
-            <div class="col-lg-3 my-3">
-                <div class="card">
-                    <img src="assets/Laptops/img.jpg" alt="">
+        <a href="" routerLink="/products/Laptops">
+            <div class="row row-img">
+                <div class="col-lg-3 my-3">
+                    <div class="card">
+                        <img src="assets/Laptops/img.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 my-3">
+                    <div class="card">
+                        <img src="assets/Laptops/img2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 my-3">
+                    <div class="card">
+                        <img src="assets/Laptops/img3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 my-3">
+                    <div class="card">
+                        <img src="assets/Laptops/img4.jpg" alt="">
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 my-3">
-                <div class="card">
-                    <img src="assets/Laptops/img2.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-lg-3 my-3">
-                <div class="card">
-                    <img src="assets/Laptops/img3.jpg" alt="">
-                </div>
-            </div>
-            <div class="col-lg-3 my-3">
-                <div class="card">
-                    <img src="assets/Laptops/img4.jpg" alt="">
-                </div>
-            </div>
-        </div>
-
+        </a>
     </div>
     <hr>
     <!-- Home appliance -->
@@ -110,7 +113,7 @@
 
         <p class="text h3 text-center">Home appliance</p>
 
-        <div class="row row-img" [routerLink]="['/products']">
+        <div class="row row-img" routerLink="/products/Home appliances">
             <div class="col-lg-3 my-3">
                 <div class="card">
                     <img src="assets/Homeappliance/Homeappliance.jpg" alt="">

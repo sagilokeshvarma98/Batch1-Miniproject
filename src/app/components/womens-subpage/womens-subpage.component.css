@@ -2,7 +2,7 @@
     margin-top: 30px;
     font-size: 30px;
     font-weight: bold;
-    color: red;
+    /* color: red; */
     text-decoration: underline;
 }
 .card {
@@ -39,7 +39,7 @@
     margin-top: 20px;
     font-size: 30px;
     font-weight: bold;
-    color: red;
+    /* color: red; */
     font-family: sans-serif;
     text-align: center;
     text-decoration: underline;
