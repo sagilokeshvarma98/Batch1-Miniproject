@@ -263,17 +263,33 @@
     width:200px;
     margin-left:60px ;
     box-shadow: 12px 12px  12px 12px rgb(241, 246, 244);
+    margin-top:10px ;
 
+}
+#img1{
+    width: 80px;
+}
+.title{
+   margin-top:10px ; 
+   
+
+   color: rgb(31, 29, 29);
 }
 .card-head h5{
     font-size: 15px;
     margin-top:20px ;
     
 }
-.card-head h4{
+.para{
+ color:rgb(82, 82, 207); 
+ margin-right:10px ;
+ 
+ 
+}
+.card-head p{
     font-size: 13px;
     margin-top:20px ;
-    margin-left:10px ;
+    margin-left:2px ;
 }
 
 

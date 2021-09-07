@@ -26,7 +26,7 @@ public toggleShow() {
     {'heading':'100% SECURE PAYMENTS', 'confirm':"Moving your card deatails into  more secure place ", 'img':'assets/Homeappliance/s.png'},
     {'heading':'TRUSTPAY', 'confirm': '100% Payments Protection.Easy Return Policy'  ,'img':'assets/Homeappliance/z.png'},
     { 'heading':'HELP CENTER', 'confirm':'Got a Question?look at this further Submit your FAQ here','img':'assets/Homeappliance/x.png'},
-    { 'heading':'SHOP ON THE GO', 'confirm':'Download the app and  get exiciting the app  only offers at your fingertips' ,'img':'assets/Homeappliance/e.png'},
+    { 'heading':'SHOP ON THE GO', 'confirm':'Download the app and  get exiciting the app  only offers at your fingertips' ,'img':'assets/Homeappliance/icon.png'},
     
     
     
