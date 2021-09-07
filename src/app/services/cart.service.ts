@@ -21,7 +21,6 @@ httpOptions:any;
   };
 
 getitem():Observable<any>{
-  //return this.http.get("http://localhost:3000/cart").pipe(
     return this.http.get("http://oshopping.ddns.net/api/carts/user").pipe(
       map((x:any)=> {
         this.len=x.cartItems.length
@@ -38,15 +37,10 @@ updateItem(id:any,data:any):Observable<any>{
   return this.http.put("http://oshopping.ddns.net/api/cartitems/update/usercart/"+id,quantity)
 }
 
-
-
-
-
 //to delete user cart item
 
 deleteitem(data:any):Observable<any>{
   return this.http.delete(`http://oshopping.ddns.net/api/cartitems/${data}`)
-  // return this.http.delete(`http://oshopping.ddns.net/api/cartitems/${data}`)
 }
 
 // selcetquantity(data:any,id:any):Observable<any>{
@@ -54,15 +48,9 @@ deleteitem(data:any):Observable<any>{
 //   return  this.http.patch("http://localhost:3000/cart/"+id,data)
 // }
 
- //add product to cart
-
-
-
 public additem(data:any,id:any):Observable<any>{
   return this.http.post("http://oshopping.ddns.net/api/cartitems/add/usercart/product/"+id,{
    "quantity" : data 
   })
 }
-
-
 }

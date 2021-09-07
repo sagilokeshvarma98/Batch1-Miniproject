@@ -16,7 +16,7 @@ public check():Observable<any>{
   }
 
 
-  checkout():Observable<any>{
+  initializeCart():Observable<any>{
     let data ={
       coupon : ""
     }

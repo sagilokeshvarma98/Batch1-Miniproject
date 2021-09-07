@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CustomvalidatorsService } from 'src/app/services/custom-validators.service';
 import { ForgetService } from 'src/app/services/forget.service';
 
+
 @Component({
   selector: 'app-resetpassword',
   templateUrl: './resetpassword.component.html',
@@ -14,6 +15,7 @@ export class ResetpasswordComponent implements OnInit {
   resetForm:FormGroup ;
   strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
   constructor(private formBuilder:FormBuilder,public reset:ForgetService, public customvalid:CustomvalidatorsService,public route:Router){
+
     this.resetForm=this.formBuilder.group({
      newPassword: ['',[Validators.required,Validators.pattern(this.strongRegex)]],
       confirmPassword: ['', [Validators.required]],

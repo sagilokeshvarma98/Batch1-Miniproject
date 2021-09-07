@@ -46,15 +46,7 @@ export class ProductsDisplayComponent implements OnInit {
   NotifyAddedToCart: Boolean = false
   Title: string = ""
 
-  ngOnInit(): void {    
-    
-    this.PS.term.subscribe(res =>{
-      console.log("search term",this.searchTerm);
-      this.searchTerm = res
-      if(this.searchTerm)
-      this.PS.searchByTerm(this.searchTerm).subscribe(res=>this.setProducts(res,this.searchTerm));
-    })
-    
+  ngOnInit(): void {        
     this.routes.params.subscribe(params => {
       // params.name
       this.PS.productsData().subscribe(res => {
@@ -71,12 +63,25 @@ export class ProductsDisplayComponent implements OnInit {
         console.log("search term 4",this.searchTerm);
       })
     })
+
+        
+    this.PS.term.subscribe(res =>{
+      console.log("search term",this.searchTerm);
+      this.searchTerm = res
+      if(this.searchTerm)
+      this.PS.searchByTerm(this.searchTerm).subscribe(res=>this.setProducts(res,this.searchTerm));
+    })
   }
+
+  public productsDisplay:boolean = true
 
   setProducts(res:any[],term:string){
       if (res.length == 0 && this.searchCount<=1) {
         this.searchCount++
         this.PS.changeSearchTerm(term)
+      }
+      else if(this.searchCount>1){
+        this.productsDisplay = false
       }
       else{
         this.Products = res
@@ -115,5 +120,6 @@ export class ProductsDisplayComponent implements OnInit {
   // getItem(x: any) {
   //   localStorage.setItem('itemData', JSON.stringify(x))
   // }
+
   
 }
