@@ -12,6 +12,11 @@ export class KidsSubpageComponent implements OnInit {
     { 'name': 'MIN .50% OFF', 'img': 'assets/Kids/k4.jpg' },
     { 'name': 'MIN .55% OFF', 'img': 'assets/Kids/k5.jpg' },
     { 'name': 'MIN .60% OFF', 'img': 'assets/Kids/k6.jpg' },
+    { 'name': 'MIN .40% OFF', 'img': 'assets/Kids/k21.jpg' },
+    { 'name': 'MIN .45% OFF', 'img': 'assets/Kids/k22.jpg' },
+    { 'name': 'MIN .55% OFF', 'img': 'assets/Kids/k23.jpg' },
+    { 'name': 'MIN .60% OFF', 'img': 'assets/Kids/k24.jpg' },
+
   ]
  
   Kids2 = [
@@ -24,9 +29,10 @@ export class KidsSubpageComponent implements OnInit {
   ]
   Kids3 = [
     { 'title': 'PARTY WEAR', 'img': 'assets/Kids/k13.jpg' },
-    { 'title': 'CASUAL EAR',  'img': 'assets/Kids/k14.jpg' },
+    { 'title': 'CASUAL WEAR',  'img': 'assets/Kids/k14.jpg' },
     { 'title': 'TRADITIONAL WEAR', 'img': 'assets/Kids/k15.jpg' },
-    { 'title': 'EVERYDAT WEAR', 'img': 'assets/Kids/k16.jpg' },
+    { 'title': 'EVERYDAY WEAR', 'img': 'assets/Kids/k16.jpg' },
+
   ]
   constructor() { }
 

@@ -31,12 +31,10 @@
 
             <div class="card">
                 <a id="productAnchorTag" routerLink="{{x.id}}" target="_blank">
-
                     <div class="card-body">
-                        <div class="productImage" style="text-align: center;">
+                        <div class="productImage"  style="text-align: center;">
                             <img *ngIf="x.imageUrls.length > 0" style="width: auto;" src={{x.imageUrls[0].imgUrl}}
                                 alt="image">
-
                         </div>
                         <p class="productTitle"
                             style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">

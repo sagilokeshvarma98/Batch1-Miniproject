@@ -9,6 +9,7 @@ import { CheckoutService } from 'src/app/services/checkout.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  
   public total = 0;
   public grandtotal: any;
   public cart: any;
