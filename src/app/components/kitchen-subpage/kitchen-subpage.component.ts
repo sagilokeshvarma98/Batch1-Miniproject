@@ -14,12 +14,12 @@ export class KitchenSubpageComponent implements OnInit {
   constructor(private homepageservice: ProductsService) { }
   jwelery: any;
   ab = [
-    { 'price': 'containers', 'img3': 'assets/Kitchen/containers.jpg' },
-    { 'price': 'cookware sets', 'img3': 'assets/Kitchen/cookware sets.jpg' },
-    { 'price': 'choppers', 'img3': 'assets/Kitchen/choppers.jpg' },
-    { 'price': 'Dinner Sets', 'img3': 'assets/Kitchen/dinner sets.jpg' },
-    { 'price': 'Lunch Box', 'img3': 'assets/Kitchen/lunch box.jpg' },
-    { 'price': '  Pressure Cooker', 'img3': 'assets/Kitchen/cooker.jpg' },
+    { 'name': 'containers', 'img': 'assets/Kitchen/containers.jpg' },
+    { 'name': 'cookware sets', 'img': 'assets/Kitchen/cookware sets.jpg' },
+    { 'name': 'choppers', 'img': 'assets/Kitchen/choppers.jpg' },
+    { 'name': 'Dinner Sets', 'img': 'assets/Kitchen/dinner sets.jpg' },
+    { 'name': 'Lunch Box', 'img': 'assets/Kitchen/lunch box.jpg' },
+    { 'name': ' Pressure Cooker', 'img': 'assets/Kitchen/cooker.jpg' },
 
   ]
 
@@ -40,10 +40,10 @@ export class KitchenSubpageComponent implements OnInit {
 
   ]
   ht = [
-    { 'img2': 'assets/Kitchen/1.jpg' },
-    { 'img2': 'assets/Kitchen/2.jpg' },
-    { 'img2': 'assets/Kitchen/3.jpg' },
-    { 'img2': 'assets/Kitchen/4.jpg' },
+    { 'img': 'assets/Kitchen/399.jpg' },
+    { 'img': 'assets/Kitchen/2.jpg' },
+    { 'img': 'assets/Kitchen/3.jpg' },
+    { 'img': 'assets/Kitchen/4.jpg' },
 
 
 
@@ -64,14 +64,46 @@ export class KitchenSubpageComponent implements OnInit {
     { 'img': 'assets/Kitchen/glasses.jpg' },
 
   ]
-  ngOnInit(): void {
-    this.homepageservice.productsData().subscribe(res=>{
-      res.map((x:any)=>{
-        if(x.subCategory == "Kitchen items")
-          this.kitchenItems.push(x)
-      })
-      console.log(this.kitchenItems);
-    })
-  }
+  ks = [
+    { 'img': 'assets/Kitchen/p.jpg' },
+    { 'img': 'assets/Kitchen/q.jpg' },
+    { 'img': 'assets/Kitchen/r.jpg' },
+    { 'img': 'assets/Kitchen/s.jpg' },
 
+  ]
+  bs = [
+    { 'img': 'assets/Kitchen/10.jpg' },
+    { 'img': 'assets/Kitchen/20.jpg' },
+    { 'img': 'assets/Kitchen/30.jpg' },
+    { 'img': 'assets/Kitchen/40.jpg' },
+
+  ]
+  cv = [
+    { 'img': 'assets/Kitchen/a.jpg' },
+    { 'img': 'assets/Kitchen/b.jpg' },
+    { 'img': 'assets/Kitchen/a.jpg' },
+    { 'img': 'assets/Kitchen/d.jpg' },
+  ]
+  rs = [
+    { 'img': 'assets/Furniture/homefurniture4.jpg' },
+    { 'img': 'assets/Furniture/homefurniture5.jpg' },
+    { 'img': 'assets/Furniture/homefurniture6.jpg' },
+    { 'img': 'assets/Furniture/homefurniture7.jpg' },
+
+
+
+  ]
+  fg = [
+    { 'img': 'assets/Furniture/homefurniture.jpg' },
+    { 'img': 'assets/Furniture/homefurniture1.jpg' },
+    { 'img': 'assets/Furniture/homefurniture2.jpg' },
+    { 'img': 'assets/Furniture/homefurniture3.jpg' },
+
+
+
+  ]
+  ngOnInit(): void {
+    
+
+}
 }

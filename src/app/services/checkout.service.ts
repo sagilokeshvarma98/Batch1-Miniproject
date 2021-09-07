@@ -45,6 +45,9 @@ public check():Observable<any>{
     return this.http.post("http://localhost:3000/users", data)
 
   }
+  checkout(id:any):Observable<any>{
+    return this.http.post("http://oshopping.ddns.net/api/orders/checkout/"+id,{})
+  }
 
   
 

@@ -1,87 +1,113 @@
 <app-carousel></app-carousel>
 <div class="container">
-
-
-    <h3>Kitchen And Dining</h3>
+    <h3 class="text">Kitchen And Dining</h3>
+    <div class="row" routerLink="/products/Kitchen items">
+        <div class="col-lg-2 col-sm-4" *ngFor="let x of ab">
+            <div class="card">
+                <div class="car-body">
+                    <img id="img2" src="{{x.img}}" width="100%" class="card-img-top" alt="...">
+                </div>
+                <p id="text1" class="card-text text-center">{{x.name}}</p>
+            </div>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-lg-2 clo-sm-4" *ngFor="let x of ab">
-            <div class="box">
-                <img src="{{x.img3}}" alt="" id="img3">
-                <h3>{{x.price}}</h3>
-            </div>
-
-
-        </div>
+        <h1  id="text2">| Best Sellers |</h1>
     </div>
-</div>
-<div class="container">
     <div class="row">
-        <div class="col-lg-12">
-            <span class="txtHeading">| Best Sellers |</span>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 clo-sm-6" *ngFor="let x of bt">
-                <div class="card">
-                    <img src="{{x.img}}" alt="" id="img1">
-                    <h5>{{x.price}}</h5>
-                </div>
-            </div>
-
-        </div>
-
-
-    </div>
-    <div class="row ">
-        <div class="col-lg-12">
-            <span class="txtHeading2">| New Arrivals |</span>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 clo-sm-6" *ngFor="let x of kt">
-                <div class="card">
-                    <img src="{{x.img}}" alt="" id="img1">
-                    <h5>{{x.price}}</h5>
-                </div>
+        <div class="col-lg-4 col-sm-6" *ngFor="let x of bt">
+            <div class="card2">
+                <img src="{{x.img}}" alt="" id="img1">
+                <h3 class="text-center">{{x.price}}</h3>
             </div>
         </div>
     </div>
-
-</div>
-<div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12" id="middle">
-                <span class="txtHeading3">| Shop By Price |</span>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 clo-sm-6" *ngFor="let x of ht">
-                    <div class="card-">
-                        <img src="{{x.img2}}" alt="" id="img2">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</div>
-<div class="container">
     <div class="row">
-        <div class="col-lg-12">
-            <span class="txtHeading3">| Kichen Storage |</span>
-        </div>
-        <div class="row">
-            <div class="col-lg-3 clo-sm-6" *ngFor="let x of hs">
-                <div class="card-head">
-                    <img src="{{x.img}}" alt="" id="img1">
-
-                </div>
+        <h1  id="text3">| New Arrivals |</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-sm-6" *ngFor="let x of kt">
+            <div class="card2">
+                <img src="{{x.img}}" alt="" id="img1">
+                <h3 class="text-center">{{x.price}}</h3>
             </div>
         </div>
-
-
-
     </div>
-
+    <!-- <div class="row">
+        <h1  id="text3">| Shop By Price |</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-6" *ngFor="let x of ht">
+            <div class="card3">
+                <img src="{{x.img}}" alt="" id="img1">
+                
+            </div>
+        </div>
+    </div> -->
+    <div class="row">
+        <h1  id="text3">| Kichen Storage  |</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-6" *ngFor="let x of hs">
+            <div class="card4">
+                <img src="{{x.img}}" alt="" id="img1">
+            
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h1  id="text3">| CookWare |</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-6" *ngFor="let x of ks">
+            <div class="card4">
+                <img src="{{x.img}}" alt="" id="img1">
+            
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h1  id="text3">|  BakeWare  |</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-6" *ngFor="let x of bs">
+            <div class="card4">
+                <img src="{{x.img}}" alt="" id="img1">
+            
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <h1  id="text3">| Shop By Price |</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-sm-6" *ngFor="let x of cv">
+            <div class="card3">
+                <img src="{{x.img}}" alt="" id="img1">
+                
+            </div>
+        </div>
+    </div> -->
+    <div class="row">
+        <h1  id="text3">|  Homefurniture |</h1>
+    </div>
+    <div class="row" routerLink="/products/Home furnishings">
+        <div class="col-lg-3 col-sm-6" *ngFor="let x of rs">
+            <div class="card4">
+                <img src="{{x.img}}" alt="" id="img1">
+            
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" routerLink="/products/Home furnishings">
+        <div class="col-lg-3 col-sm-6" *ngFor="let x of fg">
+            <div class="card4">
+                <img src="{{x.img}}" alt="" id="img1">
+            
+            </div>
+        </div>
+    </div>
+    
 </div>
+

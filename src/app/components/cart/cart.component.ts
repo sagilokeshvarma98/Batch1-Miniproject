@@ -23,6 +23,7 @@ export class CartComponent implements OnInit {
 
   constructor(private os: CartService, public check: CheckoutService , public route:Router) { }
 
+
   changeQuantityHere(val:any,id:any){
     let ele = {
       target : {
@@ -107,10 +108,10 @@ export class CartComponent implements OnInit {
 
 
   initCart() {
-    this.check.initializeCart().subscribe(res => {
-      console.log(res)
-      this.route.navigate(['/checkout'])
-    }
+    this.check.initializeCart().subscribe( (res) => {
+      console.log(data);
+      localStorage.setItem("id",res.id)
+      this.route.navigate(['/checkout'])}
     )
   }
 
