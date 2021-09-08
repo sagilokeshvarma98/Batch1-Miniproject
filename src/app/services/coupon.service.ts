@@ -24,8 +24,7 @@ export class CouponService {
   }
 
   getCoupons():Observable<any>{
-
-    return this.http.get<Object>(` http://oshopping.ddns.net/api/coupon/all`).pipe(catchError(this.handelError))
+    return this.http.get<Object>(`http://oshopping.ddns.net/api/coupon/all`).pipe(catchError(this.handelError))
   }
 
  postCoupon(obj:any):Observable<Object>{

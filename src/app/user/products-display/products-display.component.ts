@@ -73,7 +73,7 @@ export class ProductsDisplayComponent implements OnInit {
     })
   }
 
-  public productsDisplay:boolean = false
+  public productsDisplay:boolean = true
 
   setProducts(res:any[],term:string){
       if (res.length == 0 && this.searchCount<=1) {
