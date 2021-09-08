@@ -1,9 +1,9 @@
 /* .background{
     background-image:url("https://images.pexels.com/photos/952670/pexels-photo-952670.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500") ;
 } */
-.background{
-    background-color: rgb(240, 238, 238);
-}
+/* .item-body{
+    
+} */
 .text{
     margin: 20px;
     color: #292727;
@@ -23,6 +23,7 @@
     width:100%;
     border: none;
     /* background-color: #00aa8a; */
+    background: none;
 }
 .card img{
     width: 100%;
