@@ -1,23 +1,108 @@
 
 
-
-
+.curve-img{
+    width: 600px;
+    height: 600px;
+    margin-top: 0;
+    float: right;
+    margin-right: 0px;
+    margin-bottom: 0;
+    
+}
+.but-img{
+    transform: rotate(-90deg);
+    margin-left: 20px;
+    width: 300px;
+    height: 300px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    
+}
 .hero-container {
-   background-color: #40E0D0 ;
-    /* background-image: url(https://thumbs.dreamstime.com/b/boxes-online-shopping-delivered-outside-door-could-be-stolen-add-your-own-copy-to-labels-154437283.jpg); */
+   /* background-color: #399c92 ; */
+   background-image: linear-gradient(#399c92, rgb(255, 255, 255));
+    /* background-image: url(https://media.istockphoto.com/photos/full-body-photo-of-enthusiastic-candid-lady-in-eyewear-eyeglasses-go-picture-id1171895601?k=20&m=1171895601&s=612x612&w=0&h=vZ9bsX-FzZGTUdAEp5QkcRyMX3ru6TI-iXNgCxRuu_w=); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
     padding: 2.625rem 0;
     /* clip-path: polygon(0 0, 99% 0, 100% 100%, 63% 83%, 48% 100%, 24% 86%, 1% 100%); */
-    clip-path: polygon(100% 0%, 0% 0% , 0% 65%, 1% 64.95%, 2% 64.8%, 3% 64.6%, 4% 64.3%, 5% 63.9%, 6% 63.45%, 7% 62.9%, 8% 62.25%, 9% 61.55%, 10% 60.8%, 11% 59.95%, 12% 59.05%, 13% 58.1%, 14% 57.1%, 15% 56.05%, 16% 55%, 17% 53.9%, 18% 52.8%, 19% 51.65%, 20% 50.5%, 21% 49.35%, 22% 48.2%, 23% 47.05%, 24% 45.9%, 25% 44.8%, 26% 43.75%, 27% 42.75%, 28% 41.75%, 29% 40.8%, 30% 39.9%, 31% 39.1%, 32% 38.35%, 33% 37.65%, 34% 37.05%, 35% 36.5%, 36% 36.05%, 37% 35.65%, 38% 35.35%, 39% 35.15%, 40% 35.05%, 41% 35%, 42% 35.05%, 43% 35.2%, 44% 35.45%, 45% 35.75%, 46% 36.15%, 47% 36.65%, 48% 37.2%, 49% 37.85%, 50% 38.55%, 51% 39.35%, 52% 40.2%, 53% 41.1%, 54% 42.05%, 55% 43.05%, 56% 44.1%, 57% 45.15%, 58% 46.3%, 59% 47.4%, 60% 48.55%, 61% 49.7%, 62% 50.85%, 63% 52%, 64% 53.15%, 65% 54.25%, 66% 55.35%, 67% 56.4%, 68% 57.45%, 69% 58.4%, 70% 59.35%, 71% 60.2%, 72% 61.05%, 73% 61.8%, 74% 62.45%, 75% 63.05%, 76% 63.6%, 77% 64.05%, 78% 64.4%, 79% 64.7%, 80% 64.85%, 81% 65%, 82% 65%, 83% 64.9%, 84% 64.75%, 85% 64.5%, 86% 64.2%, 87% 63.75%, 88% 63.25%, 89% 62.7%, 90% 62.05%, 91% 61.3%, 92% 60.5%, 93% 59.65%, 94% 58.75%, 95% 57.8%, 96% 56.8%, 97% 55.75%, 98% 54.65%, 99% 53.55%, 100% 52.4%);
-height: 120%;
+    /* clip-path: polygon(100% 0%, 0% 0% , 0% 65%, 1% 64.95%, 2% 64.8%, 3% 64.6%, 4% 64.3%, 5% 63.9%, 6% 63.45%, 7% 62.9%, 8% 62.25%, 9% 61.55%, 10% 60.8%, 11% 59.95%, 12% 59.05%, 13% 58.1%, 14% 57.1%, 15% 56.05%, 16% 55%, 17% 53.9%, 18% 52.8%, 19% 51.65%, 20% 50.5%, 21% 49.35%, 22% 48.2%, 23% 47.05%, 24% 45.9%, 25% 44.8%, 26% 43.75%, 27% 42.75%, 28% 41.75%, 29% 40.8%, 30% 39.9%, 31% 39.1%, 32% 38.35%, 33% 37.65%, 34% 37.05%, 35% 36.5%, 36% 36.05%, 37% 35.65%, 38% 35.35%, 39% 35.15%, 40% 35.05%, 41% 35%, 42% 35.05%, 43% 35.2%, 44% 35.45%, 45% 35.75%, 46% 36.15%, 47% 36.65%, 48% 37.2%, 49% 37.85%, 50% 38.55%, 51% 39.35%, 52% 40.2%, 53% 41.1%, 54% 42.05%, 55% 43.05%, 56% 44.1%, 57% 45.15%, 58% 46.3%, 59% 47.4%, 60% 48.55%, 61% 49.7%, 62% 50.85%, 63% 52%, 64% 53.15%, 65% 54.25%, 66% 55.35%, 67% 56.4%, 68% 57.45%, 69% 58.4%, 70% 59.35%, 71% 60.2%, 72% 61.05%, 73% 61.8%, 74% 62.45%, 75% 63.05%, 76% 63.6%, 77% 64.05%, 78% 64.4%, 79% 64.7%, 80% 64.85%, 81% 65%, 82% 65%, 83% 64.9%, 84% 64.75%, 85% 64.5%, 86% 64.2%, 87% 63.75%, 88% 63.25%, 89% 62.7%, 90% 62.05%, 91% 61.3%, 92% 60.5%, 93% 59.65%, 94% 58.75%, 95% 57.8%, 96% 56.8%, 97% 55.75%, 98% 54.65%, 99% 53.55%, 100% 52.4%); */
+height: 100%;
 
 
   }
+  .mat-menu{
+      background-color: none;
+      float: right;
+      overflow: hidden;
+  }
+
+
+.home-cls{
+    background-image: linear-gradient(#399c92, rgb(255, 255, 255));
+    position: relative;
+    top: -10;
+}
+
+
+
+  /* [[[[[[[[[[[ */
+
+.wrapper{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mens-home{
+  display: inline;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  display: flex;
+  float: left;
+  overflow: hidden;
+}
+
+.mens-home span{
+  position: relative;
+  z-index: 2;
+}
+
+.mens-home:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff003b;
+  transition: all .35s;
+}
+
+.mens-home:hover{
+  color: #fff;
+}
+
+.mens-home:hover:after{
+  width: 100%;
+}
+
+  /* ]]]]]]]]]]] */
   
   .hero-container:after {
-    content: url('http://svgshare.com/i/Hud.svg');
+   
     position: absolute;
     width: 100%;
     height: auto;
@@ -39,7 +124,7 @@ height: 120%;
     transform: translateZ(-25px);
     transition: transform .25s;
     font-family: 'Montserrat', sans-serif;
-    
+   
   }
   span a:before,
   span a:after{
@@ -53,6 +138,7 @@ height: 120%;
     border: 1px solid black;
     box-sizing: border-box;
     border-radius: 5px;
+   
   }
   span a:before{
     color: #fff;
@@ -67,7 +153,43 @@ height: 120%;
     transform: translateZ(-25px) rotateX(-90deg);
   }
   
-  
+  .sub-navbar{
+    margin-left: 500px;
+ 
+  }
+b{
+    margin: 10px;
+    color: white;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 3px;
+    
+}
+.side-class{
+    width: 200px;
+    height: 200px;
+    margin-top: 200px;
+    background-color: white;
+
+}
+.ic{
+    display: inline;
+    float: right;
+    background-color: none;
+}
+.side-navitem{
+   text-align: center;
+   width: 100%;
+margin-top: 5px;
+   border: 1px solid black;
+   display: block;
+
+}
+.side-navitem:hover{
+   background-color: teal;
+ 
+ }
 /* ++++++++++++++++++ */
 
 
@@ -83,6 +205,7 @@ height: 120%;
 
 .container-fluid{
     padding-bottom: 20px;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(163, 248, 237));
   }
       .card{
           height: 400px;

@@ -1,7 +1,12 @@
 .navbar{
-    background: #40E0D0 ;
+    background: #399c92;
     /* background-color: none; */
+   
     
+}
+.logo-img{
+    width: 50px;
+    height: 50px;
 }
 
 .form-control{

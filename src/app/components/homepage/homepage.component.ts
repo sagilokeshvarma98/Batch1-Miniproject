@@ -15,6 +15,8 @@ mens:any;
 elctronics:any;
 jwelery:any;
 showFiller = false;
+sidenavWidth = 1;
+  ngStyle: string | undefined;
 
 isShown: boolean = false ; // hidden by default
 public toggleShow() {
@@ -22,6 +24,20 @@ public toggleShow() {
   this.isShown =  this.isShown;
   
   }
+
+
+  increase() {
+    this.sidenavWidth = 15;
+    console.log('increase sidenav width');
+  }
+  decrease() {
+    this.sidenavWidth = 4;
+    console.log('decrease sidenav width');
+  }
+
+
+
+
   ngOnInit(): void {
 
 // this.homepageservice.productsData().subscribe((posres)=>{
