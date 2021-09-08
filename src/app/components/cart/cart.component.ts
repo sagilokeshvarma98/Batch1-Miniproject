@@ -107,8 +107,7 @@ export class CartComponent implements OnInit {
 
   initCart() {
     this.check.initializeCart().subscribe( (res) => {
-      localStorage.setItem("id",res.id)
-      this.route.navigate(['/checkout'])}
+      this.route.navigate(['/checkout/res.id'])}
     )
   }
 

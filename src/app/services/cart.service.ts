@@ -15,6 +15,7 @@ httpOptions:any;
   private data = new BehaviorSubject<any>("0");
 
   public cast = this.data.asObservable();
+
  
   public changeData(){
   this.data.next(this.len);
