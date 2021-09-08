@@ -107,7 +107,7 @@ export class CartComponent implements OnInit {
 
   initCart() {
     this.check.initializeCart().subscribe( (res) => {
-      this.route.navigate(['/checkout/res.id'])}
+      this.route.navigate(['/checkout/'+res.id])}
     )
   }
 

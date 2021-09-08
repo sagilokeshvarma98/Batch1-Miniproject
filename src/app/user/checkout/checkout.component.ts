@@ -81,10 +81,12 @@ getOrderById(){
  }
 
  checkOut(){
-   this.cs.checkout(localStorage.getItem("id")).subscribe(
+   this.cs.checkout(this.data.id).subscribe(
      (res)=>{
        console.log(res)
-      //  this.route.navigate(['/order'])
+      localStorage.setItem("id",this.data.id)
+      //  this.route.navigate([`/payment/${this.data.id}`])
+      this.route.navigate(['/payment'])
      }
    )
  }

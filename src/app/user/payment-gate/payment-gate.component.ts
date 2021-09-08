@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 
 
 import { CheckoutService } from 'src/app/services/checkout.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-payment-gate',
@@ -14,7 +15,7 @@ export class PaymentGateComponent implements OnInit {
   card_data: any
   token: any
   checkoutForm: FormGroup
-  constructor(private fb: FormBuilder, private cs: CheckoutService) {
+  constructor(private fb: FormBuilder, private cs: CheckoutService , public ls:LoginService) {
 
     this.checkoutForm = this.fb.group(
       {
@@ -30,6 +31,7 @@ export class PaymentGateComponent implements OnInit {
     (<any>window).Stripe.card.createToken(this.card_data, (status: number, response: any) => {
       if (status === 200) {
         let token = response.id;
+        this.payment(response.id)
         console.log("success");
         console.log(token);
         console.log(response);
@@ -39,6 +41,10 @@ export class PaymentGateComponent implements OnInit {
     });
   }
 
+  payment(id:any){
+    localStorage.setItem("stripetoken",id)
+    this.ls.paymentGateway().subscribe(res=>console.log(res))
+  }
 
   onSubmit() {
     this.card_data = {
