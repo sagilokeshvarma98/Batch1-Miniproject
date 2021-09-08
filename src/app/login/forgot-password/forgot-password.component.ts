@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class ForgotPasswordComponent implements OnInit {
   forgotForm: FormGroup;
   submitted:boolean=false;
+  err:any;
 
   constructor(private formbuilder: FormBuilder,private forgot:LoginService) {
     this.forgotForm = this.formbuilder.group({
@@ -26,13 +27,9 @@ export class ForgotPasswordComponent implements OnInit {
   onSubmit(value: any) {
     console.log("forgotForm", value.mobileNumber);
     this.forgotForm.reset();
-    
-    // let userData = {
-    //   ...this.forgotForm.value
-    // }
     this.forgot.forgotpost(value.mobileNumber).subscribe(res=>{
-      console.log(res);
-    
+      console.log(res),
+      this.err="Check Your Register Email"
     })
     // console.log(userData);
   }
