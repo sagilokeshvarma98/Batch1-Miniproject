@@ -130,25 +130,3 @@ h4{
     font-weight: 600;
     margin-top: 10px;
 }
-.empty-cart{
-    width: 600px;
-    height: 300px;
-  
-}
-h4{
-    font-size: 20px;
-    font-weight: 600;
-    margin-top: 10px;
-}
-.center {
-    
-    
-    text-align: center;
-}
-.center .btn {
-    font-size: 14px !important;
-    margin-top: 20px !important;
-    font-weight: 400;
-    padding: 12px 72px;
-    border-radius: 3px !important;
-}
