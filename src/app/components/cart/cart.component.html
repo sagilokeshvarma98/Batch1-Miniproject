@@ -68,29 +68,22 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     </ng-container> 
     
-    <ng-container *ngIf="cart.cartItems.length ==0">
+    <ng-container *ngIf="cart.cartItems.length==0">
         <div class="container">
             <div class="card">
-                <h5 class="card-title">My Cart</h5>
-            </div>
+                <h1 class="card-title"> My Cart</h1>
+            
             <div class="center">
-                <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+                <img  class="empty-cart" src="https://freshfirst.in/public/images/empty-cart.png" alt="">
                 <h4>Your cart is empty!</h4>
                 <h6>Add item to it now</h6>
                 <button routerLink="/products" class="btn btn-primary">Shop Now</button>
             </div>
         </div>
+    </div>
     </ng-container>
     <!-- 
     <div id="cart-content">
