@@ -151,38 +151,40 @@
     margin-bottom: 1%;
 }
 .card1{
-    box-shadow: 4px 4px 8px 4px #DE3163;
-    border-radius:20px ;
+    /* box-shadow: 4px 4px 8px 4px #DE3163; */
+    border-radius:10px ;
     margin-left:10px ;
     width: 300px;
     justify-content: space-between;
     display: flex;
 }
 .card2{
-    box-shadow: 4px 4px 8px 4px blue;
-    border-radius: 20px;
+    /* box-shadow: 4px 4px 8px 4px blue; */
+    border-radius: 10px;
     width:300px ;
     margin-left:10px ;
     justify-content: space-between;
 }
 .card3{
-    box-shadow: 4px 4px 8px 4px #F217D8;
-    border-radius:20px ;
+    /* box-shadow: 2px 2px 3px 2px #F217D8; */
+    border-radius:10px ;
     margin-left:10px ;
     width: 300px;
     justify-content: space-between;
     display: flex;
+    
 }
 .card4{
-    box-shadow: 4px 4px 8px 4px #8DE10B ;
-    border-radius: 20px;
+    /* box-shadow: 4px 4px 8px 4px #8DE10B ; */
+    border-radius: 10px solid black;
     width:300px ;
     margin-left:10px ;
     justify-content: space-between;
+    display: flex;
 }
 .card-body h3{
     /* font-family: 'Poppins', sans-serif; */
-    color: burlywood;
+    color: rgb(13, 14, 10);
     font-family: 'Roboto Condensed', sans-serif;
 }
 
