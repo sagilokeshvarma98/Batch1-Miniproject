@@ -1,6 +1,7 @@
 <div *ngIf="!productsDisplay" class="noProducts">
-    <img src="assets/empty.svg" alt="">
-    <h1>No products to display</h1>
+    <img class="no-product-img" id="no-product" src="assets/empty.svg" alt="">
+    <h3>No products to display</h3>
+    <p>We're sorry. The address you entered is not a functioning page on our site</p>
 </div>
 <div *ngIf="productsDisplay">
     <div id="filter">

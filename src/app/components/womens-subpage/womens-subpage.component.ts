@@ -11,7 +11,7 @@ export class WomensSubpageComponent implements OnInit {
   womens1 = [
     { 'name': 'Sarees', 'img': 'assets/Women/w1.jpg' },
     { 'name': 'Dreem Material', 'img': 'assets/Women/w2.jpg' },
-    { 'name': 'Kuris', 'img':'assets/Women/w3.jpg' },
+    { 'name': 'Kurtis', 'img':'assets/Women/w3.jpg' },
     { 'name': 'Designer sarees', 'img':'assets/Women/w4.jpg' },
     { 'name': 'Lehenges', 'img':'assets/Women/w5.jpg' },
     { 'name': 'Patials ', 'img': 'assets/Women/w6.jpg' }
