@@ -20,6 +20,7 @@ export class MensSubpageComponent implements OnInit {
     { 'name': 'Winter  Ware', 'img': 'assets/Mens/m5.jpg' },
     { 'name': 'Ethnic Ware', 'img': 'assets/Mens/m6.jpg' }
   ]
+  
   mens2 = [
     { 'name': 'MIN .40% OFF', 'img': 'assets/Mens/m10.jpg' },
     { 'name': 'MIN .50% OFF', 'img': 'assets/Mens/m11.jpg' },

@@ -20,7 +20,6 @@ input[type="text"]{
     background-color: white;
     background-position: 10px 10px;
     background-repeat: no-repeat;
-    padding-left: 40px;
 }
 input[type="date"]{
     border: none;

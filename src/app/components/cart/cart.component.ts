@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { ElementSchemaRegistry } from '@angular/compiler';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
 
@@ -20,7 +20,8 @@ export class CartComponent implements OnInit {
   public result: any;
   public length: boolean = false
 
-  constructor(private os: CartService, public check: CheckoutService) { }
+  constructor(private os: CartService, public check: CheckoutService , public route:Router) { }
+
 
   changeQuantityHere(val:any,id:any){
     let ele = {
@@ -65,7 +66,6 @@ export class CartComponent implements OnInit {
       this.os.deleteitem(id).subscribe((posres) => {
         console.log(posres)
         this.getcartitem();
-        // window.location.reload();
         this.os.changeData();
         console.log("delete success")
       })
@@ -106,7 +106,9 @@ export class CartComponent implements OnInit {
 
 
   initCart() {
-    this.check.initializeCart().subscribe(res => console.log(res)
+    this.check.initializeCart().subscribe( (res) => {
+      localStorage.setItem("id",res.id)
+      this.route.navigate(['/checkout'])}
     )
   }
 
