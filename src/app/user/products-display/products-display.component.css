@@ -88,15 +88,24 @@ ngb-rating{
 .pagination{
   margin: 30px 25% 30px 30%;
 }
-
+.noProducts{
+  text-align: center;
+}
 .noProducts img{
-  width: 400px;
-  margin: 4% 10% 1% 10%;
+  width: 350px;
+  margin: 4% 10% 1% 5%;
 }
 
-.noProducts h1{
+.noProducts h3{
   font-size: xx-large;
-  color: #686868;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #e47911;
+    font-family: verdana, arial, helvetica, sans-serif;
   margin-top: 10%;
+ 
+}
+.noProducts p{
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
 }
