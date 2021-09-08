@@ -1,7 +1,7 @@
 <app-carousel></app-carousel>
 <div class="container">
     <h3 class="text">Kitchen And Dining</h3>
-    <div class="row">
+    <div class="row" routerLink="/products/Kitchen items">
         <div class="col-lg-2 col-sm-4" *ngFor="let x of ab">
             <div class="card">
                 <div class="car-body">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <h1  id="text3">| Shop By Price |</h1>
     </div>
     <div class="row">
@@ -43,7 +43,7 @@
                 
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="row">
         <h1  id="text3">| Kichen Storage  |</h1>
     </div>
@@ -77,7 +77,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <h1  id="text3">| Shop By Price |</h1>
     </div>
     <div class="row">
@@ -87,11 +87,11 @@
                 
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="row">
-        <h1  id="text3">|  Shop By Brand  |</h1>
+        <h1  id="text3">|  Homefurniture |</h1>
     </div>
-    <div class="row">
+    <div class="row" routerLink="/products/Home furnishings">
         <div class="col-lg-3 col-sm-6" *ngFor="let x of rs">
             <div class="card4">
                 <img src="{{x.img}}" alt="" id="img1">
@@ -100,7 +100,7 @@
         </div>
     </div>
     
-    <div class="row">
+    <div class="row" routerLink="/products/Home furnishings">
         <div class="col-lg-3 col-sm-6" *ngFor="let x of fg">
             <div class="card4">
                 <img src="{{x.img}}" alt="" id="img1">

@@ -89,3 +89,14 @@ ngb-rating{
   margin: 30px 25% 30px 30%;
 }
 
+.noProducts img{
+  width: 400px;
+  margin: 4% 10% 1% 10%;
+}
+
+.noProducts h1{
+  font-size: xx-large;
+  color: #686868;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin-top: 10%;
+}

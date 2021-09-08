@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { ElementSchemaRegistry } from '@angular/compiler';
+import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
 
@@ -9,6 +9,7 @@ import { CheckoutService } from 'src/app/services/checkout.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  
   public total = 0;
   public grandtotal: any;
   public cart: any;
@@ -19,7 +20,8 @@ export class CartComponent implements OnInit {
   public result: any;
   public length: boolean = false
 
-  constructor(private os: CartService, public check: CheckoutService) { }
+  constructor(private os: CartService, public check: CheckoutService , public route:Router) { }
+
 
   changeQuantityHere(val:any,id:any){
     let ele = {
@@ -37,19 +39,19 @@ export class CartComponent implements OnInit {
       this.cart.cartItems.map((x: any) => {
         if (x.id == id) {
           if (value < x.product.quantity && value <= 9) {
-            console.log("Hello1",x.quantity);
             x.quantity = value
-            // this.updateItem(id)
-            x.quantity = x.quantityChange = value
+            this.updateItem(id)
             x.quantityBool = true
           }
-          else if ((value == "10+" || value > 9) && value < x.product.quantity) {
-            x.quantityBool = false
-            console.log("Hello 2");
-            // this.updateItem(id)
-          }
-          else
+          else if(value > x.product.quantity)
             alert(`The seller has only ${x.product.quantity} available`)
+          else{
+              x.quantityBool = false
+              if(value!="10+"){
+                x.quantity = value
+                this.updateItem(id)
+              }
+            }
         }
       })
     }
@@ -64,7 +66,6 @@ export class CartComponent implements OnInit {
       this.os.deleteitem(id).subscribe((posres) => {
         console.log(posres)
         this.getcartitem();
-        // window.location.reload();
         this.os.changeData();
         console.log("delete success")
       })
@@ -104,8 +105,10 @@ export class CartComponent implements OnInit {
   }
 
 
-  chechOutCart() {
-    this.check.checkout().subscribe(res => console.log(res)
+  initCart() {
+    this.check.initializeCart().subscribe( (res) => {
+      localStorage.setItem("id",res.id)
+      this.route.navigate(['/checkout'])}
     )
   }
 

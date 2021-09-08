@@ -10,6 +10,7 @@ import { CustomvalidatorsService } from 'src/app/services/custom-validators.serv
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
 
   registerForm:FormGroup;

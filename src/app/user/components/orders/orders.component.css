@@ -5,6 +5,7 @@
     color: #565959!important;
 }
 
+
 .headerResultData{
     color:  #565959!important;
     font-size: 14px!important;
@@ -24,6 +25,7 @@
 }
 
 .description{
+    padding: 10px;
     font-size: 15px!important;
     font-weight: 400;
     color: #333;
@@ -49,6 +51,7 @@
     text-align: center;
     white-space: nowrap;
     border-radius: 20px;
+    margin-bottom: 30px;
 }
 
 .btn-sm{

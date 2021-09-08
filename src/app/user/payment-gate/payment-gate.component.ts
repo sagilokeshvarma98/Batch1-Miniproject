@@ -22,7 +22,6 @@ export class PaymentGateComponent implements OnInit {
         expMonth: ['', [Validators.required]],
         expYear: ['', [Validators.required, Validators.minLength(4), Validators.minLength(4)]],
         cvc: ['', [Validators.required, Validators.minLength(3), Validators.minLength(3)]],
-        cardHolder:['',[Validators.required]]
       }
     )
   }
@@ -47,7 +46,6 @@ export class PaymentGateComponent implements OnInit {
       exp_month: this.checkoutForm.value.expMonth,
       exp_year: this.checkoutForm.value.expYear,
       cvc: this.checkoutForm.value.cvc,
-      cardHolder:this.checkoutForm.value.cardHolder
     }
     this.createToken()
   }

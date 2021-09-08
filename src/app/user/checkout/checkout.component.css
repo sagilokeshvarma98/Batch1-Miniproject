@@ -1,33 +1,30 @@
-.container{
-  width: 1000%;
-  background-color:#ffffff ;
+hr{
+  line-height: 20px;
+  color: black;
 }
-.row{
-  display: flex;
-  width: 60%;
-  margin: auto;
-  flex-direction: row ;
-  flex-wrap: wrap;
-  justify-content: center;
+input[type="text"]{
+  border: none;
+    box-shadow: none;
+    margin-bottom: 10px;
+    border-bottom: 2px solid gray;
+    background-color: white;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 170px;
+}
+.btn{
+  
 }
 
 
-.card{
-  width:500px;
-  height: 700px;
-  margin-left:100px ;
-  background-color: white;
-  padding: 10px  10px 10px 10px;
-  
-  }
-  
-.title{
-  margin-top: 20px;
-  margin-left:200px;
-  font-family: 'Oswald', sans-serif;
-  font-size:30px ;
-  color: rgb(8, 5, 5);
 
+
+
+
+
+
+.form-control{
+    width: 300px;
 }
  .body{
   width:300px;

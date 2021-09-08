@@ -22,32 +22,50 @@
 </div> -->
 <div *ngFor="let x of myorders">
   <div class="card mainDetails">
-  <div class="card-header">
-    <div class="row">
-      <div class="col-3">
-        <div>
-          <span class="headerTitle">Order Placed</span>
-        <p class="headerResultData">{{x.updatedAt}}</p>
+    <div class="card-header">
+      <div class="row">
+        <div class="col-3">
+          <div>
+            <span class="headerTitle">Order Placed</span>
+            <p class="headerResultData">{{x.updatedAt}}</p>
+          </div>
         </div>
-      </div>
-      <div class="col-3">
-        <div>
-          <span class="headerTitle">Total</span>
-        <p class="headerResultData">{{x.subTotal - x.itemDiscount - x.discount | currency:"INR"}}</p>
+        <div class="col-3">
+          <div>
+            <span class="headerTitle">Total</span>
+            <p class="headerResultData">{{x.subTotal - x.itemDiscount - x.discount | currency:"INR"}}</p>
+          </div>
         </div>
-      </div>
-      <div class="col-3">
-        <div>
-          <span class="headerTitle">SHIP TO</span>
-        <p class="headerResultDataName">{{x.fullName}}</p>
+        <div class="col-3">
+          <div>
+            <span class="headerTitle">SHIP TO</span>
+            <p class="headerResultDataName">{{x.fullName}}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="card-body">
-    <h2 class="deleiveredDate">Delivered 10-10-2021</h2>
-    <p class="description">{{x.status.description}}</p>
-    <div *ngFor="let ele of x.orderItems">
+    <div class="card-body">
+      <h2 class="deleiveredDate">Delivered 10-10-2021</h2>
+      <p *ngIf="x.status.name=='CANCELLED'" class="description text text-danger">{{x.status.description}}</p>
+      <p *ngIf="x.status.name!='CANCELLED'" class="description text text-primary">{{x.status.description}}</p>
+      <div class="row">
+        <div class="col-8" *ngFor="let ele of x.orderItems">
+          <div class="row">
+            <div class="col-3">
+              <img class="orderImage" src={{ele.product.imageUrls[0].imgUrl}} alt="">
+            </div>
+            <div class="col-5">
+              <h4 class="orderTitle">{{ele.product.title}}</h4>
+              <button class="orderButton" (click)="reOrder(x.id)">Order again</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-3" *ngIf="x.status.name!='CANCELLED'">
+          <button class="btn-sm btn-warning"  (click)="deleteItem(x.id)">Delete order</button>
+        </div>
+      </div>
+      <!-- <div class="orderDescription" *ngFor="let ele of x.orderItems">
+    <p class="description">{{ele.status.description}}</p>
       <div class="row">
         <div class="col-3">
           <img class="orderImage" src={{ele.product.imageUrls[0].imgUrl}} alt="">
@@ -57,12 +75,11 @@
           <button class="orderButton">Buy it again</button>
         </div>
         <div class="col-4">
-          <button class="btn-sm btn-warning" (click)="deleteItem(ele.id)">Delete order</button>
         </div>
       </div>
+    </div> -->
     </div>
   </div>
-</div>
 </div>
 
 <!-- 

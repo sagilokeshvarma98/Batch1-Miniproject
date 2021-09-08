@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,9 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class ForgetService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  postForget(data:any):Observable<any>{
-    return this.http.post("http://oshopping.ddns.net/api/user/forgotpassword",data);
+  postForget(data: any): Observable<any> {
+    return this.http.post("http://oshopping.ddns.net/api/user/forgotpassword", data);
+  }
+  
+  resPassword(data: any, token: any): Observable<any> {
+    localStorage.setItem('token',token)
+    return  this.http.post("http://oshopping.ddns.net/api/user/profile/changepassword", data);
   }
 }

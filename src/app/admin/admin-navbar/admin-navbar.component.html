@@ -8,7 +8,7 @@
         <a mat-list-item routerLink='adminHome'><mat-icon class="mr-3">home</mat-icon>Home </a>
         <a mat-list-item routerLink='inventory'><mat-icon class="mr-3">inventory</mat-icon>Inventory </a>
         <a mat-list-item routerLink='coupon'> <mat-icon class="mr-3">style</mat-icon>Coupons </a>
-        <a mat-list-item [routerLink]="['usermanagement']"> <mat-icon class="mr-3">manage_accounts</mat-icon>Management </a>
+        <a mat-list-item [routerLink]="['usermanagement']"> <mat-icon class="mr-3">manage_accounts</mat-icon>User Management </a>
         <a mat-list-item routerLink="transactions" > <mat-icon class="mr-3">paid</mat-icon>Transaction </a>
       </mat-nav-list>
     </mat-sidenav>
@@ -36,7 +36,7 @@
             <mat-icon>portrait</mat-icon>
             <span routerLink="adminProfile">Profile</span>
           </button>
-          <button mat-menu-item>
+          <button mat-menu-item (click)="Logot()">
             <mat-icon>logout</mat-icon>
             <span>SignOut</span>
           </button>

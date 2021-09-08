@@ -13,9 +13,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   constructor(private formbuilder: FormBuilder,private forgot:LoginService) {
     this.forgotForm = this.formbuilder.group({
-
-      mobileNumber: ['', Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')],
-
+      mobileNumber: ['',[ Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
     });
   }
   get forgetFormControl() {

@@ -9,6 +9,8 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class KitchenSubpageComponent implements OnInit {
 
+  public kitchenItems:any[] = []
+
   constructor(private homepageservice: ProductsService) { }
   jwelery: any;
   ab = [
@@ -79,38 +81,29 @@ export class KitchenSubpageComponent implements OnInit {
   cv = [
     { 'img': 'assets/Kitchen/a.jpg' },
     { 'img': 'assets/Kitchen/b.jpg' },
-    { 'img': 'assets/Kitchen/c.jpg' },
+    { 'img': 'assets/Kitchen/a.jpg' },
     { 'img': 'assets/Kitchen/d.jpg' },
-
-
-
   ]
   rs = [
-    { 'img': 'assets/Kitchen/50.jpg' },
-    { 'img': 'assets/Kitchen/60.jpg' },
-    { 'img': 'assets/Kitchen/70.jpg' },
-    { 'img': 'assets/Kitchen/80.jpg' },
+    { 'img': 'assets/Furniture/homefurniture4.jpg' },
+    { 'img': 'assets/Furniture/homefurniture5.jpg' },
+    { 'img': 'assets/Furniture/homefurniture6.jpg' },
+    { 'img': 'assets/Furniture/homefurniture7.jpg' },
 
 
 
   ]
   fg = [
-    { 'img': 'assets/Kitchen/100.jpg' },
-    { 'img': 'assets/Kitchen/200.jpg' },
-    { 'img': 'assets/Kitchen/300.jpg' },
-    { 'img': 'assets/Kitchen/400.jpg' },
+    { 'img': 'assets/Furniture/homefurniture.jpg' },
+    { 'img': 'assets/Furniture/homefurniture1.jpg' },
+    { 'img': 'assets/Furniture/homefurniture2.jpg' },
+    { 'img': 'assets/Furniture/homefurniture3.jpg' },
 
 
 
   ]
   ngOnInit(): void {
+    
 
-
-    // this.homepageservice.productsData().subscribe((posres)=>{
-
-    //   this.jwelery=posres;
-
-    //   })
-  }
-
+}
 }

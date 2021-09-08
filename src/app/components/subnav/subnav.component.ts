@@ -7,14 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SubnavComponent implements OnInit {
 
-  @Output() SideNavToggle = new EventEmitter();
-
   constructor() { }
-
-  openSidenav() {
-    this.SideNavToggle.emit();
-  }
-
   ngOnInit(): void {
   }
 
