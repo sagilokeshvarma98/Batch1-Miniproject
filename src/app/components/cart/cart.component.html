@@ -1,26 +1,27 @@
-
-<div class="backgroung">
-    <div class="container">  
-        <div class="row my-4 p-3">
-            <h1 id="text" class="text text-center text-bold">Your Cart Items </h1>
-            <div class="col-lg-12  col-6" *ngIf="length">
+<ng-container *ngIf="cart.cartItems.length !=0">
+    <div class="container" *ngIf="length">
+        <div id="cart-content">
+            <h3>your cart items</h3>
+            <div id="pro-table">
                 <table>
                     <thead>
-                        <tr class="w-100 ">
-                            <th class="text-center py-3">Image </th>
-                            <th class="text-center py-3">Name</th>
-                            <th class="text-center py-3">Quantity</th>
-                            <th class="text-center py-3">Price</th>
-                            <th class="text-center py-3">Total</th>
-                            <th class="text-center py-3">Operation</th>
+                        <tr>
+                            <th [style.width]="'300px'">Name</th>
+                            <th [style.width]="'100px'">Quantity</th>
+                            <th [style.width]="'100px'">Image</th>
+                            <th [style.width]="'100px'">Price</th>
+                            <th [style.width]="'100px'">Amount</th>
+                            <th [style.width]="'100px'"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let x of cart.cartItems">
-                            <td class="text-center"><img class="p-2" src="{{x.product.imageUrls[0].imgUrl}}" alt="">
-                            </td>
-                            <td class="text-center w-50">{{x.product.metaTitle}}</td>
-                            <td class="text-center ">
+                            <td>{{x.product.metaTitle}}</td>
+                            <!-- <td><img src="{{x.image}}" alt=""></td> -->
+                            <td class="qunatityDiv">
+                                <!-- <h4><span><img src="../../../assets/minus-square-regular.svg"  (click)="minusQuantity(x.id)" alt=""></span>
+                                    {{x.quantity}}
+                                    <span><img src="../../../assets/plus-square-regular.svg" (click)="addQuantity(x.id)" alt=""></span></h4> -->
                                 <select *ngIf="x.quantityBool" (change)="change($event,x.id)"
                                     [(ngModel)]="x.quantityChange">
                                     <option value="0">0<span>:Delete</span></option>
@@ -36,21 +37,29 @@
                                     <option value="10+">10+</option>
                                 </select>
                                 <div *ngIf="!x.quantityBool">
-                                    <input value={{x.quantity}} [(ngModel)]="x.quantity" type="number"
-                                        name="changeQuantity" #changeQuantity id="changeQuantity">
-                                    <button class="btn btn-warning btn-sm"
-                                        (click)="changeQuantityHere(x.quantity,x.id)">update</button>
+                                    <input value={{x.quantity}} [(ngModel)]="x.quantity" type="number" name="changeQuantity"
+                                        #changeQuantity id="changeQuantity">
+                                    <button (click)="changeQuantityHere(x.quantity,x.id)">update</button>
                                 </div>
                             </td>
-                            <td class="text-center w-50">{{x.product.price-x.product.discount | currency:"INR"}}</td>
-                            <td class="text-center w-50">{{(x.product.price-x.product.discount) * x.quantity | currency:
-                                "INR"}}
+                            <td><img src="{{x.product.imageUrls[0].imgUrl}}" alt=""></td>
+                            <td>
+                                {{x.product.price-x.product.discount | currency:"INR"}}
                             </td>
-                            <td class="text-center w-50"><button class="btn btn-danger btn-sm"
-                                    (click)="deleteItem(x.id)">Delete</button> </td>
-                        </tr>
+                            <td>{{(x.product.price-x.product.discount) * x.quantity | currency: "INR"}}</td>
+                            <td>
+                                <button class="btn btn-danger" (click)="deleteItem(x.id)">Delete</button>
+                                <!-- <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> -->
+                            </td>
                     </tbody>
                 </table>
+                <div>
+                    <h4>Total bill amount to be paid: {{total |currency:"INR"}}</h4>
+                    <!-- <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td> --> <br>
+                    <!-- <button class="btn btn-success" [routerLink]="['/checkout']">Checkout</button> &nbsp; -->
+                    <!-- <button class="btn btn-success" (click)="chechOutCart()">Checkout</button> &nbsp; -->
+                    <button routerLink="/products" class="btn btn-primary">Shop More</button>
+                </div>
             </div>
             <h4 class="text-right">Total bill amount to be paid : <span class="text text-primary">{{total
                     |currency:"INR"}}</span></h4>
@@ -60,4 +69,18 @@
             </div>
         </div>
     </div>
-</div>
+    </ng-container>
+    <!-- 
+    <div id="cart-content">
+        <h3>Products You have Purchased</h3>
+        <div id="pro-table">
+           <table>
+               <thead>
+               </tbody>
+           </table>
+        </div>
+       <div id="amounter"> Total bill amount to be paid:  {{total  | number : '1.2-2' | currency:"USD"}} </div>
+       <div id="pay-button"><button className="btn" (click)="placeOrder()">
+       Place the order</button></div>
+       <br> <br> <br> <br> <br> <br> <br>
+    </div> -->
