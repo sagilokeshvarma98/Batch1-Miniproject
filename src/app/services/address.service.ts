@@ -34,16 +34,16 @@ return this.http.get("http://oshopping.ddns.net/api/useraddress/"+id)
     return this.http.put("http://oshopping.ddns.net/api/useraddress/user/"+data.id, data)
    }
 
-selctdefult(data:any):Observable<any>{
-  console.log(data)
-  return  this.http.patch("http://localhost:3000/useradress",data)
+selctdefult(id:any):Observable<any>{
+  console.log(id)
+  console.log("set default");
+  return  this.http.post("http://oshopping.ddns.net/api/useraddress/user/setdefault/"+id,{})
 }
 getdefult():Observable<any>{
  
   return  this.http.get("http://localhost:3000/useradress")
 }
- getdefaultadress(id:any):Observable<any>{
-  
-  return this.http.get("http://localhost:3000/address/"+id)
+ getdefaultadress():Observable<any>{
+  return this.http.get("http://oshopping.ddns.net/api/useraddress/user/defaultaddress");
 }
 }
