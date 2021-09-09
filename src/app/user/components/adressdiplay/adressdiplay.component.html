@@ -1,35 +1,4 @@
-<<<<<<< HEAD
-
-<!-- <button (click)="deleteAddress($event,x.id)"  >delete</button>
-<button (click)="selctdefault($event,x.id)"  >select defult</button>
-
-    </p> -->
 <!-- <div class="container">
-    <div class="row">
-        <div class="col-lg-3" *ngFor="let x of userAddress">
-            <div class="card">
-                <div class="card-body">
-                    <p>{{x.fullName}}</p>
-                    <p>{{x.line1}}</p>
-                    <p>{{x.mobile}}</p>
-                    <p>{{x.city}}</p>
-                    <p>{{x.districk}}</p>
-                    <p>{{x.state}}</p>
-                   <span></span> <button class="btn btn-danger" (click)="deleteAddress($event,x.id)">delete</button>
-                    <button class="btn btn-warning"  routerLink="/adress/{{x.id}}">edit</button>
-                    <button  class="btn btn-danger"  (click)="selctdefault($event,x.id)"  >select defult</button>
-                </div> 
-             
-            </div>
-        </div>
-        <div class="add-address" routerLink="/adress" >
-            <mat-icon class=" display-1">add</mat-icon>
-        </div>
-    </div>
-</div> -->
-=======
->>>>>>> 0458b32687eafd99acd1fcc2441973a6e696ea22
-<div class="container">
     <div class="row">
         <div class="col-lg-12">
             <h1>Your Addresses</h1>
@@ -60,6 +29,38 @@
                     <button class="btn btn-danger" (click)="deleteAddress(x.id)">delete</button>
                     <button class="btn btn-warning" routerLink="/adress/{{x.id}}">edit</button>
                     <button class="btn btn-danger" *ngIf="x.addressDefault !=1"  (click)="selctdefault(x.id)">select defult</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="container mt-2">
+    <p >Your Address</p>
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 p-3">
+            <div class="card add-card " routerLink="/adress">
+                <mat-icon class="display-1">add</mat-icon>
+                <h1>Add address</h1>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 p-3" *ngFor="let x of userAddress">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="name">{{x.fullName}}</h5>
+                </div>
+                <div class="card-body text-center">
+                    <small>{{x.line1}}, </small>
+                    <small>{{x.city}}, </small>
+                    <small>{{x.district}}, </small><br>
+                    <small>{{x.state}}</small>
+                    <small> - {{x.pincode}}</small>
+                    <small>{{x.country}}</small><br>
+                    <h1>{{x.mobile}}</h1>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger ml-3" (click)="deleteAddress(x.id)">delete</button>
+                    <button class="btn btn-warning  ml-5" routerLink="/adress/{{x.id}}">edit</button>
+                    <button class="btn btn-danger ml-5" *ngIf="x.addressDefault !=1" (click)="selctdefault(x.id)">select defult</button>
                 </div>
             </div>
         </div>
