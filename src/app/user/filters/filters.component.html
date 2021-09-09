@@ -56,6 +56,12 @@
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <div class="form-check">
+                    <input class="form-check-input" name="size" (change)="getSizes($event)" type="radio" value="all" id="all">
+                    <label class="form-check-label" for="all">
+                        All
+                    </label>
+                </div>
+                <div class="form-check">
                     <input class="form-check-input" name="size" (change)="getSizes($event)" type="radio" value="S" id="S">
                     <label class="form-check-label" for="S">
                         S

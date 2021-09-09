@@ -33,7 +33,8 @@ export class FiltersComponent implements OnInit {
     this.rate = 0
     this.price = ''
     this.allPrices = false
-    this.allRates= false  
+    this.allRates= false
+    this.sizes = ""
   }
   outOfStock(data:any){
     this.checked = !this.checked

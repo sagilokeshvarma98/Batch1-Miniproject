@@ -1,25 +1,9 @@
-<!-- <div  class="order-class">
-<table class="sortable">
-    <tr>
-      <th>image</th>
-      <th>item Name</th>
-      <th>price</th>
-      <th>Status</th>
-    </tr>
-    <tr class="item" *ngFor="let x of orderItems">
-      <td><img src="{{x.product.imageUrls[0].imgUrl}}" class="imageShow" alt=""></td>
-      <td>{{x.product.metaTitle}}</td> 
-      <td>{{x.price}}</td>
-      <td>{{x.status.description}}</td>
-      <td *ngIf="!state" (click)="cancelorder(x.id)" class="btn btn-danger btn-round">cancel</td>
-      <td *ngIf="state"   (click)="reorder()" class="btn btn-danger btn-round">reorder</td>
-    </tr>
-  </table>  
-  <a [routerLink]="['tracking']" class="btn btn-danger btn-round">track my order</a> 
-  <br><br><br>
-  <a class="btn btn-danger btn-round" [routerLink]="['postcomment']" disabled="">Review</a>
-<router-outlet></router-outlet>
-</div> -->
+<div class="container textAllOrders">
+  <h3 >
+    A L L  O R D E R S
+  </h3>
+</div>
+
 <div *ngFor="let x of myorders">
   <div class="card mainDetails">
     <div class="card-header">
@@ -64,29 +48,6 @@
           <button class="btn-sm btn-warning"  (click)="deleteItem(x.id)">Delete order</button>
         </div>
       </div>
-      <!-- <div class="orderDescription" *ngFor="let ele of x.orderItems">
-    <p class="description">{{ele.status.description}}</p>
-      <div class="row">
-        <div class="col-3">
-          <img class="orderImage" src={{ele.product.imageUrls[0].imgUrl}} alt="">
-        </div>
-        <div class="col-4">
-          <h4 class="orderTitle">{{ele.product.title}}</h4>
-          <button class="orderButton">Buy it again</button>
-        </div>
-        <div class="col-4">
-        </div>
-      </div>
-    </div> -->
     </div>
   </div>
 </div>
-
-<!-- 
-
-
-
-
-
-
- -->

@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(products: any[], filterTerm:any): any {    
+  transform(products: any[], filterTerm:any): any {
     if(filterTerm === true){
       return products.filter(x=>{
         if(x.quantity>0)
