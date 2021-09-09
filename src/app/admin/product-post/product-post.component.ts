@@ -43,7 +43,8 @@ export class ProductPostComponent implements OnInit {
         summary: ['', [Validators.required]],
         quantity: ['', [Validators.required]],
         category: [this.toSentCategory],
-        subCategory: [this.toSentSub]
+        subCategory: [this.toSentSub],
+        // imgUrl : ["",[Validators.required]]
       }
     )
   }
@@ -71,7 +72,8 @@ export class ProductPostComponent implements OnInit {
     }
     else
     this.PS.addProduct(val).subscribe(
-      () => {
+      (res) => {
+        console.log(res);
         this.productForm.reset();
         this.toastr.success("Products are saved successfully.", "Success")
       },

@@ -31,6 +31,9 @@ export class ProductsService {
     return this.hc.post("http://oshopping.ddns.net/api/products/add", data)
   }
 
+  addImageByProductId(id:any,obj:any){
+    this.hc.post(`http://oshopping.ddns.net/api/productimages/${id}/add`,obj)
+  }
 
   getProductbyId(id: number) {
     return this.hc.get("http://oshopping.ddns.net/api/products/" + id)
