@@ -14,17 +14,32 @@
     </form>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <div class="cart-icon my-2" [routerLink]="['cart']">
-          <mat-icon matBadge="{{result}}" matBadgeColor="warn" >shopping_cart</mat-icon>
-          <span class="cart-text">Cart</span>
-        </div>
-      </li>
-     <div class="vl"></div>
-      <li class="nav-item">
         <div class="dropdown">
           <small class="text-Hello" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="istoken">Hello</small>
+          <small class="text-login" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="!istoken">please login</small>
+          <mat-icon   id="dropdownMenuButton" class="text-light"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> account_circle </mat-icon>
+          <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+          </button> -->
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a  class="mens-home" *ngIf="istoken" [routerLink]="['/profile']"><span> <mat-icon>perm_identity</mat-icon> &nbsp; Profile  </span></a>
+            <a  class="mens-home" *ngIf="istoken" [routerLink]="['/order']"><span> <mat-icon>loyalty</mat-icon>&nbsp; Your Order</span></a>
+            <a class="mens-home"  *ngIf="!istoken" routerLink='login'><span> <mat-icon> vpn_key</mat-icon>&nbsp; signIn</span></a>
+            <a class="mens-home" *ngIf="istoken" (click)="islogout()"><span > <mat-icon>nfc</mat-icon> &nbsp;  SiginOut</span></a>
+           
+            <!-- <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a> -->
+          </div>
+        </div>
 
-          <!-- <span>{{userName}}</span> -->
+
+
+
+        <!-- <div class="dropdown">
+          <small class="text-Hello" data-bs-toggle="dropdown" aria-expanded="false" *ngIf="istoken">Hello</small>
+
+          <span>{{userName}}</span>
           <span class="sigin-text " *ngIf="!istoken">Sign In</span>
           <mat-icon class="text-light" id="userAccount"> account_circle </mat-icon>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -36,8 +51,17 @@
             <a class="btn  dropdown-item" *ngIf="!istoken" routerLink='login'>signIn</a>
             <a class="btn dropdown-item" *ngIf="istoken" (click)="islogout()">SiginOut</a>
           </div>
+        </div> -->
+      </li>
+       <div class="vl"></div>
+      <li class="nav-item mr-3" >
+        <div class="cart-icon my-2" [routerLink]="['cart']">
+          <mat-icon matBadge="{{result}}" matBadgeColor="warn" >shopping_cart</mat-icon>
+          <span class="cart-text">Cart</span>
         </div>
       </li>
+    
+     
 
     </ul>
   </div>
