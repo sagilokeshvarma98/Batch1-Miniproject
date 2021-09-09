@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-cart-button',
@@ -31,8 +32,7 @@ export class CartButtonComponent implements OnInit {
         .subscribe((posres) => {
           console.log("item added")
           console.log(posres)
-
-          this.os.changeData();
+          this.os.getitem().subscribe(res=>console.log(res))
         })
       }
       else {
@@ -44,14 +44,21 @@ export class CartButtonComponent implements OnInit {
 
 
   AddToCart() {
-    if(this.quantity>0){
-      // this.getitem()
-      this.os.additem(this.quantity,this.itemData.id).subscribe(res=>this.os.changeData())
-      console.log(this.quantity,this.itemData);
-      this.os.changeData();
+    if(localStorage.getItem('token'))
+    {
+      if(this.quantity>0){
+        this.getitem()
+        // this.os.additem(this.quantity,this.itemData.id).subscribe(res=>this.os.changeData())
+        // console.log(this.quantity,this.itemData);
+        this.os.changeData();
+      }
+      else{
+        this.displayNotification.emit(true)
+      }
     }
-    else{
-      this.displayNotification.emit(true)
-    }
+    else
+     {
+      confirm("Please login to continue")
+     }
   }
 }

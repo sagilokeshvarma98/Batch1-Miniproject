@@ -12,7 +12,7 @@ export class FiltersComponent implements OnInit {
   price:any
   allPrices:Boolean = false
   allRates:Boolean = false
-  sizes : any[] = []
+  sizes : any = ""
 
   rates = [4,3,2,1]
 
@@ -34,28 +34,30 @@ export class FiltersComponent implements OnInit {
     this.price = ''
     this.allPrices = false
     this.allRates= false
+    this.sizes = ""
   }
   outOfStock(data:any){
     this.checked = !this.checked
     this.rate = this.checked
   }
   getSizes(data:any){
-    // this.sizes = data.target.value
-    let count = 0
-    let index:any
-    this.sizes.map((x:any,y:any)=>{
-      if(x==data.target.value)
-      {
-        index = y
-        count++
-      }
-    })
-    if(count==0)
-    this.sizes.push(data.target.value)
-    else{
-      this.sizes.splice(index,1)
-      count = 0
-    }
+    // console.log(data.target.value);
+    this.sizes = data.target.value
+    // let count = 0
+    // let index:any
+    // this.sizes.map((x:any,y:any)=>{
+    //   if(x==data.target.value)
+    //   {
+    //     index = y
+    //     count++
+    //   }
+    // })
+    // if(count==0)
+    // this.sizes.push(data.target.value)
+    // else{
+    //   this.sizes.splice(index,1)
+    //   count = 0
+    // }
   }
   clearPrices(){
     this.price = ''

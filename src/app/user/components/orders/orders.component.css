@@ -1,8 +1,15 @@
-
 .headerTitle{
     font-size: 14px!important;
     line-height: 16px!important;
     color: #565959!important;
+}
+
+.textAllOrders h3{
+    padding: 50px 0px 0px 30px;
+    font-size: large;
+    color: #5e2d9e;
+    font-weight: 500;
+
 }
 
 .headerResultData{
@@ -24,6 +31,7 @@
 }
 
 .description{
+    padding: 10px;
     font-size: 15px!important;
     font-weight: 400;
     color: #333;
@@ -49,6 +57,7 @@
     text-align: center;
     white-space: nowrap;
     border-radius: 20px;
+    margin-bottom: 30px;
 }
 
 .btn-sm{

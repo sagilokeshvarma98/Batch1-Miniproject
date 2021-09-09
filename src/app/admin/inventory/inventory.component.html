@@ -1,7 +1,6 @@
-
 <xng-breadcrumb [separator]="iconTemplate" class="px-2 ml-2"></xng-breadcrumb>
 <ng-template #iconTemplate>
-  <mat-icon>chevron_right</mat-icon>
+    <mat-icon>chevron_right</mat-icon>
 </ng-template>
 
 <div class="container mt-5">
@@ -9,29 +8,39 @@
         <input type="text" [(ngModel)]='searchTerm' class="form-control" placeholder="Enter your search term">
     </div>
     <div class="productAdd">
-        <button mat-raised-button color="accent" class="btn mb-5" (click)="openDialog()"> Add Product <span></span> <mat-icon class="add-product-svg ml-1">add_box</mat-icon></button>
+        <button mat-raised-button color="accent" class="btn mb-5" (click)="openDialog()"> Add Product <span></span>
+            <mat-icon class="add-product-svg ml-1">add_box</mat-icon>
+        </button>
     </div>
 
-    <table datatable class="table table-bordered">
-        <thead>
-            <tr>
-                <th>SKU ID</th>
-                <th>Category</th>
-                <th>Quantity</th>
-                <th>MRP</th>
-                <th>Total value</th>
-            </tr>
-        </thead>
-        <tbody *ngFor="let product of products | search:searchTerm | test">
-            <tr>
-                <th>{{product.id}}</th>
-                <!-- <th>{{product.metaTitle}}</th> -->
-                <th>{{product.metaTitle}}</th>
-                <th>{{product.quantity}}</th>
-                <th>{{product.price | currency:"INR"}}</th>
-                <th>{{product.price | value:product.quantity | currency:"INR"}}</th>
-            </tr>
-        </tbody>
-    </table>
-    <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+    <div class="table-responsive">
+        <table class="table table-hover mb-0 ps-container ps-theme-default">
+            <thead  id="recent-orders">
+                <tr class="text-center">
+                    <th>ID</th>
+                    <th>Product name</th>
+                    <th>Available Quantity</th>
+                    <th>Product price</th>
+                    <th>Total product value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center" *ngFor="let product of products | search:searchTerm | test">
+                    <td>
+                        <span style="margin: 7px; float: left;">{{product.id}}</span>
+                        <img *ngIf="product.imageUrls.length>0" style="width: 50px;" src={{product.imageUrls[0].imgUrl}} alt="">
+                    </td>
+                    <td>{{product.title}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{product.price | currency:"INR"}}</td>
+                    <td>{{product.price | value:product.quantity | currency:"INR"}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+
+
+
+
+

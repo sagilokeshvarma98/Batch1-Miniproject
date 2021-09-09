@@ -1,64 +1,41 @@
-<!-- <div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class=" mx-auto">
-            <div class={{inputClass}} id="loginCards">
-                <p *ngIf="wrongCreden" class="wrongCredentials text text-center">
-                    <b class="text text-danger">*Entered username or password is incorrect</b>
-                </p>
-                <h3 style="margin-bottom:10px;">Sign-In</h3>
-                <form [formGroup]="loginForm" (ngSubmit)="submit()">
-                    <div class="form-group">
-                        <input type="text" formControlName='username' id="username" class="form-control "
-                            placeholder="Enter Email/mobile phone number">
-                        <div *ngIf='controls.username.touched && controls.username.invalid'>
-                            <div *ngIf='controls.username.errors?.required'>
-                                <b class="text text-danger">*Enter userid</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <input type="password" id="password" formControlName='password' class="form-control"
-                            placeholder="Enter your password">
-                        <div *ngIf='controls.password.touched && controls.password.invalid'>
-                            <div *ngIf='controls.password.errors?.required'>
-                                <b class="text text-danger">*Enter password</b>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-left loginDiv">
-                        <button style="margin-right: 50%;" *ngIf="!loginForm.valid" class="btn btn-success"
-                            id='loginBtn' type="submit" disabled>Login</button>
-                        <button style="margin-right: 50%;" *ngIf="loginForm.valid" class="btn btn-success" id='loginBtn'
-                            type="submit">Login</button>
-                        <a routerLink="/forgotPass">forgot password?</a>
-                    </div>
-                </form>
-                <button class="form-control btn btn-secondary" (click)="routeToRegister()">Create your new
-                    account</button>
+<!-- <div class="main">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-5">
+                
             </div>
         </div>
     </div>
 </div> -->
+<div class="curveRightTop">
 
-<div class="main">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-5">
-                <div class="card">
-                    <div class="card-header">
-                        <h1 class="SignIn_title">Sign-In</h1>
-                        <div id="loginCards">
-                            <p *ngIf="wrongCreden" class="wrongCredentials text text-center">
-                                <b class="text text-danger">*Entered username or password is incorrect</b>
-                            </p>
-                        </div>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-body imagesBack">
+            <div class="row">
+                <div class="col-lg-6 showDiv">
+                    <div class="imageDiv">
+                        <img src="assets/shutter.jpg" alt="">
                     </div>
-                    <div class="card-body">
-                        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="SignIn_title">Log In</h1>
+                    <form [formGroup]="loginForm">
+                    <div class="loginInput">
+                        <div class="errorMessage" *ngIf="errorLoginString">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                            <h4> &nbsp;{{errorLoginString}}</h4>
+                        </div>
                             <div class="form-group">
-                                <input type="text" formControlName='username' id="username" class="form-control inputTag"
-                                    placeholder="Enter username">
+                             <span>   <i class="fa fa-user icon"></i> 
 
+                              
+
+
+
+                                <input type="text" formControlName='username' id="username" class={{inputClass}}
+                                    placeholder="      Enter username"></span>
                                 <div *ngIf='controls.username.touched && controls.username.invalid'>
                                     <div *ngIf='controls.username.errors?.required'>
                                         <b class="text text-danger">Enter userid*</b>
@@ -66,8 +43,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="password" id="password" formControlName='password' class="form-control inputTag"
-                                    placeholder="Enter your password">
+                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                <input type="password" id="password" formControlName='password'
+                                    class={{inputClass}} placeholder="      Enter your password">
                                 <div *ngIf='controls.password.touched && controls.password.invalid'>
                                     <div *ngIf='controls.password.errors?.required'>
                                         <b class="text text-danger">Enter password*</b>
@@ -75,19 +53,75 @@
                                 </div>
                             </div>
                             <div class="text-left loginDiv">
-                                <button class={{inputClass}} id='loginBtn' type="submit"
-                                    [disabled]="!loginForm.valid">Login</button>
-                                <a routerLink="/forgotPass" class="forgot-link">forgot password?</a>
+                                <button class="loginButton" id='loginBtn' (click)="submit()" type="submit"
+                                    [disabled]="!loginForm.valid">Log In</button>
+                                <!-- <a routerLink="/forgotPass" class="forgot-link">forgot password?</a> -->
                             </div>
-                        </form>
-                        <div class="text text-center">
-                            <button class="form-control rg-btn" (click)="routeToRegister()">
-                                Register Here
-                            </button>
-                        </div>
                     </div>
+                </form>
+                </div>
+            </div>
+            <div class="row linksDiv">
+                <div class="col-6 text text-center">
+                    <a routerLink="/register">Create an account</a>
+                </div>
+                <div class="col-6">
+                    <span class="forgot-link" routerLink="/forgotPass">forgot password<i class="fa fa-question-circle" aria-hidden="true"></i></span>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="curveLeftBottom">
+
+</div>
+
+
+
+
+
+
+
+<!-- <div class="card">
+                <div class="card-header">
+                    <h1 class="SignIn_title">Sign-In</h1>
+                    <div id="loginCards">
+                        <p *ngIf="wrongCreden" class="wrongCredentials text text-center">
+                            <b class="text text-danger">*Entered username or password is incorrect</b>
+                        </p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                        <div class="form-group">
+                            <input type="text" formControlName='username' id="username" class="form-control inputTag"
+                                placeholder="Enter username">
+
+                            <div *ngIf='controls.username.touched && controls.username.invalid'>
+                                <div *ngIf='controls.username.errors?.required'>
+                                    <b class="text text-danger">Enter userid*</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="password" formControlName='password'
+                                class="form-control inputTag" placeholder="Enter your password">
+                            <div *ngIf='controls.password.touched && controls.password.invalid'>
+                                <div *ngIf='controls.password.errors?.required'>
+                                    <b class="text text-danger">Enter password*</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-left loginDiv">
+                            <button class={{inputClass}} id='loginBtn' type="submit"
+                                [disabled]="!loginForm.valid">Login</button>
+                            <a routerLink="/forgotPass" class="forgot-link">forgot password?</a>
+                        </div>
+                    </form>
+                    <div class="text text-center">
+                        <button class="form-control rg-btn" (click)="routeToRegister()">
+                            Register Here
+                        </button>
+                    </div>
+                </div>
+            </div> -->

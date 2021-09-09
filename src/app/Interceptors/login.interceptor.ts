@@ -14,7 +14,7 @@ export class LoginInterceptor implements HttpInterceptor {
   constructor(private ls:LoginService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-   let token = this.ls.getToken()
+   let token = this.ls.getToken();
    
    if(token){
      request = request.clone({
@@ -23,6 +23,7 @@ export class LoginInterceptor implements HttpInterceptor {
        }
      });
    }
+
     return next.handle(request);
   }
 }

@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class CouponService {
 
-  url=" http://localhost:3000/coupons";
+  url=" ";
   
   httpOptions: any;
 
@@ -23,9 +23,8 @@ export class CouponService {
     return throwError('There is a Problem with the Service!')
   }
 
-  getCoupons():Observable<Object>{
-
-    return this.http.get<Object>(`${this.url}`).pipe(catchError(this.handelError))
+  getCoupons():Observable<any>{
+    return this.http.get<Object>(`http://oshopping.ddns.net/api/coupon/all`).pipe(catchError(this.handelError))
   }
 
  postCoupon(obj:any):Observable<Object>{
@@ -34,6 +33,6 @@ export class CouponService {
         'Content-Type':'application/json',
       })
     }
-    return this.http.post(`${this.url}`,obj,this.httpOptions).pipe(catchError(this.handelError));
+    return this.http.post(`http://oshopping.ddns.net/api/coupon/add`,obj,this.httpOptions).pipe(catchError(this.handelError));
   }
 }

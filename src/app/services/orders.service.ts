@@ -12,7 +12,11 @@ export class OrdersService {
    return this.http.get("http://oshopping.ddns.net/api/orders/user/all")
  }
 
- public posttocancel(data:any):Observable<any>{
-  return this.http.post("http://localhost:3000/cancel",data)
+ public reOrder(id:any):Observable<any>{
+  return this.http.post("http://oshopping.ddns.net/api/orders/user/reorder/"+id,{})
+ }
+
+public deleteOrder(id:any):Observable<any>{
+  return this.http.post("http://oshopping.ddns.net/api/orders/user/cancel/"+id,{})
 }
 }

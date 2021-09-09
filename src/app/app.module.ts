@@ -32,7 +32,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { SharedModuleModule } from './shared-module/shared-module.module';
 import { ChartsModule } from 'ng2-charts';
 import { WomensSubpageComponent } from './components/womens-subpage/womens-subpage.component';
-import { KidsSubpageComponent } from './kids-subpage/kids-subpage.component';
+import { KidsSubpageComponent } from './components/kids-subpage/kids-subpage.component';
 
 
 @NgModule({

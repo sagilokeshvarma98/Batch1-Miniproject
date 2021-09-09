@@ -1,49 +1,65 @@
-<h2 mat-dialog-title class="text-center" >Coupons</h2>
+<h2 mat-dialog-title class="text-center">Coupons</h2>
+<h3 class="err text-center">{{error}}</h3>
 <mat-dialog-content class="mat-typography">
-    <form action="" [formGroup]="couponPost" >
+    <form action="" [formGroup]="couponPost" (ngSubmit)="onSaveCoupon()">
         <div class="mb-3">
             <label class="form-label">Coupon</label> <span class="text-danger">*</span>
-            <input type="text" name="coupon" class="form-control" placeholder="ABCD50" formControlName="coupon">
-            <div>
-                <span class="text-danger"
-                    *ngIf="(couponFormControl.coupon.touched || submitted) && couponFormControl.coupon.errors?.required">Coupon
-                    Name</span>
-                <span class="text-danger" *ngIf=" couponFormControl.coupon.errors?.minlength">Minimum 8
-                    Letters Required*</span>
+            <input type="text" name="code" class="form-control" placeholder="ABCD50" formControlName="code">
+            <div class="err" *ngIf="submitted && f.code.errors ">
+                <span *ngIf="f.code.errors.required">Coupon Id required</span>
+                <span *ngIf="f.code.errors.minlength">Coupon Id at Least 8 letters</span>
             </div>
         </div>
         <div class="mb-3">
-            <label class="form-label">Eligibility</label><span class="text-danger">*</span>
-            <input type="text" class="form-control" placeholder="Rs 00000 /-" formControlName="eligibul">
-            <span class="text-danger"
-                *ngIf="(couponFormControl.eligibul.touched || submitted) && couponFormControl.coupon.errors?.required">Eligibility
-                is Required</span>
+            <label>Coupon Type</label>
+                    <div class="form-group">
+                        <mat-radio-group aria-label="Select an option" name="couponType" type="number" formControlName="couponType">
+                            <mat-radio-button value="rate" id="rate" checked>rate</mat-radio-button>
+                            <mat-radio-button value="flat">flat</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+            <div class="err" *ngIf="submitted && f.couponType.errors ">
+                <span *ngIf="f.couponType.errors.required">Coupon Type is required</span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Coupon Amount</label><span class="text-danger">*</span>
+            <input type="text" class="form-control" name="couponAmount" placeholder="Rs 00000 /-" formControlName="couponAmount">
+            <div class="err" *ngIf="submitted && f.couponAmount.errors">
+                <span *ngIf="f.couponAmount.errors.required">Enter Eligibul Amount</span>
+            </div>
         </div>
         <div class="mb-3">
             <table cellspacing="0">
                 <tr>
                     <td>
-                        <label for="start">Start</label><span class="text-danger">*</span>
-                        <input type="date" class="form-control" placeholder="start date" formControlName="start">
-                        <span class="text-danger"
-                            *ngIf="(couponFormControl.start.touched || submitted) && couponFormControl.start.errors?.required">Starting
-                            Date Required</span>
+                        <label for="start">Coupon Start</label><span class="text-danger">*</span>
+                        <input type="date" class="form-control" name="createdAt" placeholder="start date" formControlName="createdAt">
+                        <div class="err" *ngIf="submitted && f.createdAt.errors">
+                            <span *ngIf="f.createdAt.errors.required">Enter Start Date</span>
+                        </div>
                     </td>
                     <td><label class="to" for="to">To</label></td>
                     <td>
-                        <label for="end">End</label><span class="text-danger">*</span>
-                        <input type="date" class="form-control" placeholder="start date" formControlName="end">
-                        <span class="text-danger"
-                            *ngIf="(couponFormControl.end.touched || submitted) && couponFormControl.end.errors?.required">End
-                            Date is Required</span>
+                        <label for="end">Coupon End</label><span class="text-danger">*</span>
+                        <input type="date" class="form-control" name="expiryDate" placeholder="start date" formControlName="expiryDate">
+                        <div class="err" *ngIf="submitted && f.expiryDate.errors">
+                            <span *ngIf="f.expiryDate.errors.required">Enter End Date</span>
+                        </div>
                     </td>
                 </tr>
             </table>
         </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label><span class="text-danger">*</span>
+            <input type="text" class="form-control" name="description" placeholder="description" formControlName="description">
+            <div class="err" *ngIf="submitted && f.description.errors">
+                <span *ngIf="f.description.errors.required">Enter Production description</span>
+            </div>
+        </div>
+        <div class="text-center mb-3">
+            <button mat-button mat-dialog-close>Cancel</button>
+            <button mat-button type="submit" mat-raised-button color="primary" cdkFocusInitial type="submit" >AddCoupon</button>
+        </div>
     </form>
 </mat-dialog-content>
-<mat-dialog-actions align="center">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true"  type="submit" mat-raised-button color="primary" cdkFocusInitial type="submit"  (click)="onSaveCoupon()">AddCoupon</button>
-</mat-dialog-actions>
-

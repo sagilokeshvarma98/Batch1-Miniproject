@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -39,6 +39,12 @@ export class LoginService {
    
   forgotpost(data:any):Observable<any>{
     return this.hp.post("http://oshopping.ddns.net/api/user/forgotpassword?mobile="+data,{})
+  }
+
+  paymentGateway(token:any):Observable<any>{
+    const headers = new HttpHeaders().set("orderId",localStorage.getItem("id") || "").set("token",token);
+    console.log(headers);
+    return this.hp.post("http://oshopping.ddns.net/api/payment/charge",{},{'headers':headers})
   }
 
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { hasClassName } from '@ng-bootstrap/ng-bootstrap/util/util';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -19,32 +20,20 @@ export class ProductsService {
 
   productsData():Observable<any>{
      return this.hc.get("http://oshopping.ddns.net/api/products/all")
-    //  return this.hc.get("https://fakestoreapi.com/products")
   }
 
 
-  testOrderApi():Observable<any>{
-
-    return this.hc.delete("http://oshopping.ddns.net/api/useraddress/9")
-
-    
-    // return this.hc.get("http://oshopping.ddns.net/api/useraddress/user")
-
-    // return this.hc.get("http://oshopping.ddns.net/api/orders/user/all")
-
-    // return this.hc.post("http://oshopping.ddns.net/api/useraddress/user/add",data)
-
+  searchByTerm(term:any):Observable<any>{
+    return this.hc.get("http://oshopping.ddns.net/api/products/search/"+term)
   }
-
-
 
   addProduct(data: any) {
     return this.hc.post("http://oshopping.ddns.net/api/products/add", data)
   }
 
-  // getCartItem():Observable<any>{
-  //   return this.hc.get("http://oshopping.ddns.net/api/products/1")
-  // }
+  addImageByProductId(id:any,obj:any){
+    this.hc.post(`http://oshopping.ddns.net/api/productimages/${id}/add`,obj)
+  }
 
   getProductbyId(id: number) {
     return this.hc.get("http://oshopping.ddns.net/api/products/" + id)

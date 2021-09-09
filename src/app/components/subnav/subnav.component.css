@@ -1,23 +1,10 @@
-
 .container-fluid{
-  background:#29292b;
+  background-color: #01010a;
+}  .col-md-3 a{
+  font-size: 20px;
+  font-family: monospace;
+  font-weight: 400;
+}  a:hover{
+  background: darkred;
+  border-radius:100px;
 }
-/* .col-md-3:hover{
-  background-color: rgb(43, 46, 48);
-  border-radius: 20px;
-  
-} */
-.col-md-3 a{
-  font-weight: bold;
-  font-family: serif;
-  box-shadow: 1px;
-}
-.text-light{
-  font-weight: 600;
-  font-size: 14px;
-  font-family: "Amazon Ember", Arial, sans-serif;
-  margin-top: 5px;
-}
-/* .text-light:hover{
-  border: 1px solid #fff;
-} */

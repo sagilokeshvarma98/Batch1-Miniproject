@@ -3,11 +3,11 @@
         Please select quantity to add.
     </h4>
 </div>
-<div class="bread-crumb">
+<!-- <div class="bread-crumb">
     <a [routerLink]="['home']">Home</a> &gt;
     <a [routerLink]="['/electronics']">Electronics</a> &gt;
     <a>item</a>
-</div>
+</div> -->
 <div *ngIf="load">
     <div class="container">
         <div class="row my-2" *ngIf="itemData.imageUrls.length>0">
@@ -38,7 +38,9 @@
                         </select>
                     </div>
                     <div class="cartButton">
-                        <app-cart-button [quantity]="quantity" (displayNotification)="displayQuantityError($event)"
+
+                       
+                        <app-cart-button [quantity]="quantity" (displayNotification)="openSnackBar($event,'plaeas add quantity','OK')"
                             [itemData]='itemData'></app-cart-button>
                         <span class={{itemData.quantityClass}}>{{itemData.quantityText}}</span>
                     </div>

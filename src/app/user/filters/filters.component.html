@@ -5,9 +5,9 @@
                 <img src="../../../assets/eraser-solid.svg" alt=""> <span>Clear all filters</span>
 
             </h3>
-            <mat-expansion-panel>
+            <mat-expansion-panel [expanded]="true">
                 <mat-expansion-panel-header>
-                    <mat-panel-title class="rating_title">
+                    <mat-panel-title class="rating_title" >
                         <img src="../../../assets/star-half-regular.svg" alt=""> <span>Ratings</span>
                     </mat-panel-title>
                 </mat-expansion-panel-header>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </mat-expansion-panel>
-            <mat-expansion-panel>
+            <mat-expansion-panel [expanded]="true">
                 <mat-expansion-panel-header>
                     <mat-panel-title class="price_title">
                         <img src="../../../assets/dollar-sign-solid.svg" alt=""> <span>Price</span>
@@ -38,7 +38,7 @@
                     <span (click)='getPrice($event)'>Above 5000</span>
                 </div>
             </mat-expansion-panel>
-            <mat-expansion-panel>
+            <mat-expansion-panel [expanded]="true">
                 <mat-expansion-panel-header>
                     <mat-panel-title class="outOfStock_title">
                         <img src="../../../assets/store-slash-solid.svg" alt=""> <span>Out-of-stock</span>
@@ -49,38 +49,44 @@
                         (change)="outOfStock($event)"><span class="outofstock">Exclude Out of stock</span>
                 </div>
             </mat-expansion-panel>
-            <mat-expansion-panel>
+            <mat-expansion-panel >
                 <mat-expansion-panel-header>
                     <mat-panel-title class="outOfStock_title">
                         <img src="../../../assets/tape-solid.svg" alt=""> <span>SIze</span>
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <div class="form-check">
-                    <input class="form-check-input" (change)="getSizes($event)" type="checkbox" value="S" id="S">
+                    <input class="form-check-input" name="size" (change)="getSizes($event)" type="radio" value="all" id="all">
+                    <label class="form-check-label" for="all">
+                        All
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" name="size" (change)="getSizes($event)" type="radio" value="S" id="S">
                     <label class="form-check-label" for="S">
                         S
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" (change)="getSizes($event)" type="checkbox" value="M" id="M">
+                    <input class="form-check-input" name="size" (change)="getSizes($event)" type="radio" value="M" id="M">
                     <label class="form-check-label" for="M">
                         M
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" (change)="getSizes($event)" type="checkbox" value="L" id="L">
+                    <input class="form-check-input" name="size" (change)="getSizes($event)" type="radio" value="L" id="L">
                     <label class="form-check-label" for="L">
                         L
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" (change)="getSizes($event)" type="checkbox" value="XL" id="XL">
+                    <input class="form-check-input" name="size" (change)="getSizes($event)" type="radio" value="XL" id="XL">
                     <label class="form-check-label" for="XL">
                         XL
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" (change)="getSizes($event)" type="checkbox" value="2XL" id="2XL">
+                    <input class="form-check-input" name="size" (change)="getSizes($event)" type="radio" value="2XL" id="2XL">
                     <label class="form-check-label" for="2XL">
                         2XL
                     </label>

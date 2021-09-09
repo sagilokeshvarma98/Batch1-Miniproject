@@ -19,17 +19,22 @@ export class NavbarComponent implements OnInit {
   searchTerm:any
 
   getSearchValue(searchTerm:any){
+    if(searchTerm === '')
+        searchTerm = "All"
     this.PS.changeSearchTerm(searchTerm)
-    this.route.navigate(['products'])
+    this.route.navigate([`products/${searchTerm}`])
+    // this.PS.searchByTerm(searchTerm).subscribe(res=>console.log(res))
+    // this.route.navigate(['products'])
   }
  
   constructor(private token:LoginService ,private cartservice:CartService , private PS:ProductsService , private route:Router) { }
    
   ngOnInit(): void {
     this.cartservice.cast.subscribe((posRes: any)=>{
-      console.log(posRes);
-      
       this.result = posRes;
+      });
+    this.cartservice.getitem().subscribe((posRes: any)=>{
+      this.result = posRes.cartItems.length;
       });
     this.gettoken()
   }

@@ -61,11 +61,11 @@ const routes: Routes = [
         component: AdressdiplayComponent,
       },
       {
-        path: "checkout",
+        path: "checkout/:id",
         component: CheckoutComponent,
       },
       {
-        path: "payment",
+        path: "payment/:id",
         component: PaymentGateComponent,
       },
       {
@@ -73,11 +73,11 @@ const routes: Routes = [
         component: UserProfileComponent,
       },
       {
-        path: "products",
+        path: "products/:name",
         component: FiltersComponent,
       },
       {
-        path: "products/:id",
+        path: "products/:name/:id",
         component: ItemDisplayComponent,
       },
       {

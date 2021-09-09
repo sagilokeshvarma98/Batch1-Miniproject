@@ -1,3 +1,65 @@
+<div class="container paymentContainer">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-4 text text-right">
+                    <div class="priceDetails" *ngIf="orderDetails">
+                        <h4>T O T A L P A Y</h4>
+                    <h3>{{orderDetails.grandTotal | currency:"INR"}}</h3>
+                    <div *ngIf="successPayment || orderDetails.status.name === 'PAID'" class="successPay text text-left">
+                        <h3>P A Y M E N T</h3>
+                        <h3>S U C C E S S F U L <i class="fa fa-check" aria-hidden="true"></i></h3>
+                    </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-8 cardDetailsDiv">
+                    <div class="cardBox">
+                        <form class="form-container" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+                            <h3 class="detailsText">CARD DETAILS</h3>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label class="text" for="">CARD NUMBER</label>
+                                    <input type="text" placeholder="XXXX XXXX XXXX XXXX" class="form-control" name="Numbar" formControlName="Number">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label class="text">M O N T H</label>
+                                            <input type="text" placeholder="XX" class="form-control" name="expMonth" formControlName="expMonth"  >
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="text">Y E A R</label>
+                                            <input type="text" placeholder="XXXX" class="form-control" name="expYear" formControlName="expYear" >
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label class="text">C V V</label>
+                                            <input type="password" placeholder="XXX" class="form-control " name="cvc" formControlName="cvc" >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label class="text" for="name">CARD NAME</label>
+                                    <input type="text" class="form-control" placeholder="CARD HOLDER NAME" name="cvc">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="submit" class="btn btn-block text-light payButton">P A Y N O W</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
 <section class="container-fluid">
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-4">
@@ -23,7 +85,7 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label class="text">CVV Number</label>
-                                <input type="text" class="form-control " name="cvc" formControlName="cvc" >
+                                <input type="password" class="form-control " name="cvc" formControlName="cvc" >
                             </div>
                         </div>
                     </div>
@@ -31,7 +93,7 @@
                 <div class="form-row">
                     <div class="form-group col-12">
                         <label class="text" for="name">CardHolder Name</label>
-                        <input type="text" class="form-control " name="cvc" formControlName="cardHolder" >
+                        <input type="text" class="form-control " name="cvc">
                     </div>
                 </div>
                 <div class="form-row">
@@ -40,4 +102,4 @@
             </form>
         </section>
     </section>
-</section>
+</section> -->

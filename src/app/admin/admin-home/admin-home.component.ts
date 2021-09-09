@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CouponService } from 'src/app/services/coupon.service';
+import { ProductsService } from 'src/app/services/products.service';
 import { TransactionsService } from 'src/app/services/transactions.service';
 import { UsermanagementService } from 'src/app/services/usermanagement.service';
 
@@ -12,14 +14,23 @@ export class AdminHomeComponent implements OnInit {
   Transactions: any[] = []
 
  
-  constructor(private transaction:TransactionsService) { }
+  constructor(private transaction:TransactionsService , public coupon:CouponService , public users:UsermanagementService , public PS:ProductsService) { }
+
+  public productsLength:any
+  public couponLength:any
+  public transactionLength:any
+  public userLength:any
 
   ngOnInit(): void {
+    this.coupon.getCoupons().subscribe(res=>this.couponLength = res.length)
+    this.PS.productsData().subscribe(res=>this.productsLength = res.length)
+    this.users.userdemographics().subscribe(res=>this.userLength = res.length)
     this.getTransactions();
   }
 
   getTransactions() {
     this.transaction.getTransactionDetails().subscribe(res => {
+      this.transactionLength = res.length
       this.Transactions = res.map((x: any, index: any) => {
         x.date = new Date(parseInt(x.time)).toDateString()
         if (x.transaction === "failed") {
