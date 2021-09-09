@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-item-display',
   templateUrl: './item-display.component.html',
@@ -9,7 +9,7 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class ItemDisplayComponent implements OnInit {
 
-  constructor(private PS:ProductsService , public routes:ActivatedRoute) { }
+  constructor(private PS:ProductsService , public routes:ActivatedRoute,private _snackBar: MatSnackBar) { }
   itemData:any 
   itemQuantity:number[] = []
   description:string[] = []
@@ -18,6 +18,13 @@ export class ItemDisplayComponent implements OnInit {
   showErrorMesage:boolean = false
   imageUrl:string=""
   quantity:any = 0
+
+  openSnackBar(val:any,value:any,act:any) {
+    this._snackBar.open(value,act);
+  }
+
+
+
   ngOnInit(): void {
     this.routes.params.subscribe(params => {
       this.id = parseInt(params['id'])

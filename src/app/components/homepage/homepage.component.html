@@ -13,10 +13,10 @@
     <div class="col-lg-6">
        
             <p class="mb-4 text-white">Happiness is not in money but in "Shopping"</p>
-            <b href="#" class="mens-home"><span>Mens  </span></b>
-            <b href="#" class="mens-home"><span>Electronics</span></b>
-            <b href="#" class="mens-home"><span>Kitchen</span></b>
-          <span><a href="#"></a></span>
+            <b [routerLink]="['/mens']" class="mens-home"><span>Mens  </span></b>
+            <b [routerLink]="['/electronics']" class="mens-home"><span>Electronics</span></b>
+            <b [routerLink]="['/kitchen']"class="mens-home"><span>Kitchen</span></b>
+          <span><a routerLink="/products/All"></a></span>
         
          
        
@@ -38,7 +38,7 @@
   <br><br>
 
 <!-- <app-carousel></app-carousel> -->
-<div class="container-fluid mt-2">
+<!-- <div class="container-fluid mt-2"> -->
 <!-- 
     <div class="row">
         <div class="col-lg-6">
@@ -57,7 +57,7 @@
             </div>
         </div>
     </div> -->
-    <div class="row my-2" [routerLink]="['/products']">
+    <!-- <div class="row my-2" [routerLink]="['/products']">
         <div class="header">
             <p class="text1">Shop by</p>
             <p class="text2">Products</p>
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
     <!-- <div class="row">
         <div class="col-lg-6">
             <div class="card card-text">
@@ -94,7 +94,7 @@
             </div>
         </div>
     </div> -->
-    <div class="row my-2"></div>
+    <!-- <div class="row my-2"></div>
     <div class="row mt-5 my-3" [routerLink]="['/products']">
         <div class=" col-lg-2 my-3 col-md-6 my-2">                
             <img class="img1" src="https://pantaloons.imgix.net/img/app/product/2/277021-1134400.jpg?w=238&auto=format" alt="">
@@ -112,7 +112,7 @@
             <a href="#" class="mt-10" tabindex="-2">View more <mat-icon class="mat-icon">arrow_forward</mat-icon> </a> 
         </div>
         
-    </div>
+    </div> -->
     <!-- <div class="row">
         <div class="col-lg-6">
             <div class="card">
@@ -128,7 +128,7 @@
             </div>
         </div>
     </div> -->
-</div>
+<!-- </div> -->
 
 
 

@@ -38,7 +38,9 @@
                         </select>
                     </div>
                     <div class="cartButton">
-                        <app-cart-button [quantity]="quantity" (displayNotification)="displayQuantityError($event)"
+
+                       
+                        <app-cart-button [quantity]="quantity" (displayNotification)="openSnackBar($event,'plaeas add quantity','OK')"
                             [itemData]='itemData'></app-cart-button>
                         <span class={{itemData.quantityClass}}>{{itemData.quantityText}}</span>
                     </div>
