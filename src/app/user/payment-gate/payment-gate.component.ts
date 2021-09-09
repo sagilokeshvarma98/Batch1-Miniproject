@@ -31,7 +31,7 @@ export class PaymentGateComponent implements OnInit {
     )
   }
 
-  public orderDetails:any = {}
+  public orderDetails:any;
 
   createToken() {
     (<any>window).Stripe.card.createToken(this.card_data, (status: number, response: any) => {
@@ -51,11 +51,15 @@ export class PaymentGateComponent implements OnInit {
     this.successPayment = !this.successPayment
     localStorage.setItem("id",this.orderDetails.id)
     this.ls.paymentGateway(token).subscribe(res=>{
-      this.successPayment = true
-    setTimeout(()=>{
-      this.route.navigate(['products/All'])
-    },2000)
+      console.log(res);
+      this.afterSuccess()
     })
+  }
+
+  afterSuccess(){
+    console.log("hello");
+    this.successPayment = true
+      // this.route.navigate(['products/All'])
   }
 
   onSubmit() {

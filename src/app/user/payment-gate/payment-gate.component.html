@@ -3,10 +3,10 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-lg-4 text text-right">
-                    <div class="priceDetails">
+                    <div class="priceDetails" *ngIf="orderDetails">
                         <h4>T O T A L P A Y</h4>
                     <h3>{{orderDetails.grandTotal | currency:"INR"}}</h3>
-                    <div *ngIf="successPayment" class="successPay text text-left">
+                    <div *ngIf="successPayment || orderDetails.status.name === 'PAID'" class="successPay text text-left">
                         <h3>P A Y M E N T</h3>
                         <h3>S U C C E S S F U L <i class="fa fa-check" aria-hidden="true"></i></h3>
                     </div>
