@@ -14,17 +14,12 @@ export class LoginInterceptor implements HttpInterceptor {
   constructor(private ls:LoginService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-   let token = this.ls.getToken()
-   let id = localStorage.getItem("id") || ""
-   let stripeToken = localStorage.getItem("stripetoken") || ""
-   console.log("In interceptor",id,stripeToken);
+   let token = this.ls.getToken();
    
    if(token){
      request = request.clone({
        setHeaders : {
-         Authorization : `Bearer ${token}`,
-         orderId : id,
-        token : stripeToken
+         Authorization : `Bearer ${token}`
        }
      });
    }

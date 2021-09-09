@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SizeFilterPipe implements PipeTransform {
   transform(products: any, sizes: any): any {
-    if(sizes)
+    if(sizes && sizes!="all")
       return products.filter((x:any)=>{
         if(x.size === sizes)
           return x

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 import { CheckoutService } from 'src/app/services/checkout.service';
@@ -15,7 +16,10 @@ export class PaymentGateComponent implements OnInit {
   card_data: any
   token: any
   checkoutForm: FormGroup
-  constructor(private fb: FormBuilder, private cs: CheckoutService , public ls:LoginService) {
+
+  successPayment:any = false
+
+  constructor(private fb: FormBuilder, private cs: CheckoutService , public route:Router , public routes:ActivatedRoute , public ls:LoginService) {
 
     this.checkoutForm = this.fb.group(
       {
@@ -26,6 +30,8 @@ export class PaymentGateComponent implements OnInit {
       }
     )
   }
+
+  public orderDetails:any = {}
 
   createToken() {
     (<any>window).Stripe.card.createToken(this.card_data, (status: number, response: any) => {
@@ -41,9 +47,15 @@ export class PaymentGateComponent implements OnInit {
     });
   }
 
-  payment(id:any){
-    localStorage.setItem("stripetoken",id)
-    this.ls.paymentGateway().subscribe(res=>console.log(res))
+  payment(token:any){
+    this.successPayment = !this.successPayment
+    localStorage.setItem("id",this.orderDetails.id)
+    this.ls.paymentGateway(token).subscribe(res=>{
+      this.successPayment = true
+    setTimeout(()=>{
+      this.route.navigate(['products/All'])
+    },2000)
+    })
   }
 
   onSubmit() {
@@ -59,6 +71,12 @@ export class PaymentGateComponent implements OnInit {
     return this.checkoutForm.controls;
   }
   ngOnInit(): void {
+    this.routes.params.subscribe(res=>{
+      this.cs.getOrderById(res.id).subscribe(res => {
+        this.orderDetails = res
+        console.log(this.orderDetails);
+      })
+    })
   }
 
 }

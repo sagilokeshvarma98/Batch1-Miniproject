@@ -86,7 +86,7 @@ getOrderById(){
        console.log(res)
       localStorage.setItem("id",this.data.id)
       //  this.route.navigate([`/payment/${this.data.id}`])
-      this.route.navigate(['/payment'])
+      this.route.navigate([`/payment/${this.data.id}`])
      }
    )
  }

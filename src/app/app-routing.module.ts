@@ -65,7 +65,7 @@ const routes: Routes = [
         component: CheckoutComponent,
       },
       {
-        path: "payment",
+        path: "payment/:id",
         component: PaymentGateComponent,
       },
       {
