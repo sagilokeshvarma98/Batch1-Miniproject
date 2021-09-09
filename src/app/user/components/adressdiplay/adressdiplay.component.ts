@@ -26,11 +26,9 @@ export class AdressdiplayComponent implements OnInit {
     )
   }
 
-  selctdefault(val: any, id: any) {
-    let defult = {
-      "default": id
-    }
-    this.address.selctdefult(defult).subscribe((posres) => {
+  selctdefault(id: any) {
+    
+    this.address.selctdefult(id).subscribe((posres) => {
       console.log("this")
       console.log(posres)
     })
@@ -46,6 +44,10 @@ export class AdressdiplayComponent implements OnInit {
   ngOnInit(): void {
     this.getAddress();
     this.getdefult();
+    this.address.getdefaultadress().subscribe(res=>{
+      console.log("somthing here to see");
+      console.log(res);
+    })
   }
 
   deleteAddress(id: any) {

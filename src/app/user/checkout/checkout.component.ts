@@ -101,11 +101,14 @@ getOrderById(){
 
   getadress() {
     this.adress.getdefult().subscribe((posres) => {
+      console.log("abcedefghijklmnopqrst");
+      console.log(posres)
       this.defaultid = posres.default
       console.log("defaultid")
       console.log(this.defaultid)
-      this.adress.getdefaultadress(this.defaultid).subscribe((res) => {
+      this.adress.getdefaultadress().subscribe((res) => {
         this.default = res
+        console.log("abcedefghijklmnopqrst");
         console.log(this.default)
       })
     })
