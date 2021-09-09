@@ -27,15 +27,16 @@ export class ProductsService {
     return this.hc.get("http://oshopping.ddns.net/api/products/search/"+term)
   }
 
-  addProduct(data: any) {
+  addProduct(data: any):Observable<any> {
     return this.hc.post("http://oshopping.ddns.net/api/products/add", data)
   }
 
-  addImageByProductId(id:any,obj:any){
-    this.hc.post(`http://oshopping.ddns.net/api/productimages/${id}/add`,obj)
+  addImageByProductId(id:any,obj:any):Observable<any> {
+    console.log(id,obj);
+    return  this.hc.post(`http://oshopping.ddns.net/api/productimages/${id}/add`,obj)
   }
 
-  getProductbyId(id: number) {
+  getProductbyId(id: number):Observable<any>  {
     return this.hc.get("http://oshopping.ddns.net/api/products/" + id)
   }
 
