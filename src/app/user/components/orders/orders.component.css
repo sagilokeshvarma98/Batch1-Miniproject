@@ -1,10 +1,16 @@
-
 .headerTitle{
     font-size: 14px!important;
     line-height: 16px!important;
     color: #565959!important;
 }
 
+.textAllOrders h3{
+    padding: 50px 0px 0px 30px;
+    font-size: large;
+    color: #5e2d9e;
+    font-weight: 500;
+
+}
 
 .headerResultData{
     color:  #565959!important;

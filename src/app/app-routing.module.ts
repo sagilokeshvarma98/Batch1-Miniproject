@@ -6,6 +6,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { KitchenSubpageComponent } from './components/kitchen-subpage/kitchen-subpage.component';
 import { MensSubpageComponent } from './components/mens-subpage/mens-subpage.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProtectRoutesGuard } from './Guards/protect-routes.guard';
 import { CheckoutComponent } from './user/checkout/checkout.component';
 import { AddressComponent } from './user/components/address/address.component';
 import { AdressdiplayComponent } from './user/components/adressdiplay/adressdiplay.component';
@@ -45,8 +46,8 @@ const routes: Routes = [
       },
       {
         path: 'cart',
-        component: CartComponent,
-        // ,canActivate:[ProtectRoutesGuard]
+        component: CartComponent
+        ,canActivate:[ProtectRoutesGuard]
       },
       {
         path: 'adress',
@@ -65,7 +66,7 @@ const routes: Routes = [
         component: CheckoutComponent,
       },
       {
-        path: "payment",
+        path: "payment/:id",
         component: PaymentGateComponent,
       },
       {
@@ -77,6 +78,10 @@ const routes: Routes = [
         component: FiltersComponent,
       },
       {
+        path: "tracking",
+        component: TrackingComponent,
+      },
+      {
         path: "products/:name/:id",
         component: ItemDisplayComponent,
       },
@@ -84,10 +89,6 @@ const routes: Routes = [
         path: 'order',
         component: OrdersComponent,
         children: [
-          {
-            path: "tracking",
-            component: TrackingComponent,
-          },
           {
             path: "postcomment",
             component: CommentsPostComponent
