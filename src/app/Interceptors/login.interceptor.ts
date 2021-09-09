@@ -15,14 +15,20 @@ export class LoginInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
    let token = this.ls.getToken()
+   let id = localStorage.getItem("id") || ""
+   let stripeToken = localStorage.getItem("stripetoken") || ""
+   console.log("In interceptor",id,stripeToken);
    
    if(token){
      request = request.clone({
        setHeaders : {
-         Authorization : `Bearer ${token}`
+         Authorization : `Bearer ${token}`,
+         orderId : id,
+        token : stripeToken
        }
      });
    }
+
     return next.handle(request);
   }
 }

@@ -14,28 +14,28 @@ export class KitchenSubpageComponent implements OnInit {
   constructor(private homepageservice: ProductsService) { }
   jwelery: any;
   ab = [
-    { 'name': 'containers', 'img': 'assets/Kitchen/containers.jpg' },
-    { 'name': 'cookware sets', 'img': 'assets/Kitchen/cookware sets.jpg' },
-    { 'name': 'choppers', 'img': 'assets/Kitchen/choppers.jpg' },
-    { 'name': 'Dinner Sets', 'img': 'assets/Kitchen/dinner sets.jpg' },
-    { 'name': 'Lunch Box', 'img': 'assets/Kitchen/lunch box.jpg' },
-    { 'name': ' Pressure Cooker', 'img': 'assets/Kitchen/cooker.jpg' },
+    { 'name': 'containers', 'img': 'assets/Kitchen/home.jpg' },
+    { 'name': 'cookware sets', 'img': 'assets/Kitchen/tt.jpg' },
+    { 'name': 'choppers', 'img': 'assets/Kitchen/irich.jpg' },
+    { 'name': 'Dinner Sets', 'img': 'assets/Kitchen/dinner.webp' },
+    { 'name': 'Lunch Box', 'img': 'assets/Kitchen/bl.jpg' },
+    { 'name': ' Pressure Cooker', 'img': 'assets/Kitchen/main.jpg' },
 
   ]
 
   bt = [
-    { 'price': '199', 'img': 'assets/Kitchen/rice.jpg' },
-    { 'price': '299', 'img': 'assets/Kitchen/srk.jpg' },
-    { 'price': '399', 'img': 'assets/Kitchen/plastic.png' },
+    { 'price': '199', 'img': 'assets/Kitchen/kitchenitem2.jpg' },
+    { 'price': '299', 'img': 'assets/Kitchen/kitchen2.jpg' },
+    { 'price': '399', 'img': 'assets/Kitchen/kitchenitem1.webp' },
 
 
   ]
 
 
   kt = [
-    { 'price': '199', 'img': 'assets/Kitchen/dark.jpg' },
-    { 'price': '299', 'img': 'assets/Kitchen/apple.jpg' },
-    { 'price': '399', 'img': 'assets/Kitchen/famous.jpg' },
+    { 'price': '199', 'img': 'assets/Kitchen/pex.jpeg' },
+    { 'price': '299', 'img': 'assets/Kitchen/bowl.jpg' },
+    { 'price': '399', 'img': 'assets/Kitchen/roti.jpg' },
 
 
   ]
@@ -58,14 +58,14 @@ export class KitchenSubpageComponent implements OnInit {
 
   ]
   hs = [
-    { 'img': 'assets/Kitchen/set.png' },
-    { 'img': 'assets/Kitchen/water.png' },
-    { 'img': 'assets/Kitchen/tea.jpg' },
-    { 'img': 'assets/Kitchen/glasses.jpg' },
+    { 'img': 'assets/Kitchen/bo.jpg' },
+    { 'img': 'assets/Kitchen/tea cup.jpeg' },
+    { 'img': 'assets/Kitchen/sets.jpg' },
+    { 'img': 'assets/Kitchen/kitchen4.jpg' },
 
   ]
   ks = [
-    { 'img': 'assets/Kitchen/p.jpg' },
+    { 'img': 'assets/Kitchen/safe.jpg' },
     { 'img': 'assets/Kitchen/q.jpg' },
     { 'img': 'assets/Kitchen/r.jpg' },
     { 'img': 'assets/Kitchen/s.jpg' },

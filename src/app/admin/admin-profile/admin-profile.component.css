@@ -78,50 +78,18 @@
  color: #E9F7EF ;
     font-family: 'Courgette', cursive;
 }
-#manageText span  a{
-    font-size: 18px;
-    color: #E9F7EF ;
-    cursor: context-menu;
-    font-family: 'Courgette', cursive;
+#text:hover{
+    color: cyan;
 }
-#message a{
-    color: #E9F7EF ;
+#text2:hover{
+    color:#DFFF00;
 }
-#message2 a{
-    color: #E9F7EF ;
+#text3:hover{
+    color:#f8094d;
 }
-#message3 a{
-    color: #E9F7EF ;
+#text4:hover{
+    color:#40E0D0;
 }
-#message4 a{
-    color: #E9F7EF ;
-}
-#message a:hover{
-    /* color: #121213; */
-    color:yellow;
-    
-
-    font-size:17px ;
-    font-family: 'Courgette', cursive;
-}
-#message2 a:hover{
-    color: #FF0000;
-    font-size:17px ;
-    font-family: 'Courgette', cursive;
-}
-#message3 a:hover{
-    /* color:#141413; */
-    color:#36F613;
-    font-size:17px ;
-    font-family: 'Courgette', cursive;
-}
-#message4 a:hover{
-    color:#B107DF;
-    font-size:17px ;
-    font-family: 'Courgette', cursive;
-}
-
-
 
 
 .adminCards{
@@ -150,40 +118,45 @@
 .adminDetails .card-body h3{
     margin-bottom: 1%;
 }
-.card1{
-    /* box-shadow: 4px 4px 8px 4px #DE3163; */
+  /* .card1{
+    
+    
     border-radius:10px ;
     margin-left:10px ;
     width: 300px;
     justify-content: space-between;
     display: flex;
-}
-.card2{
-    /* box-shadow: 4px 4px 8px 4px blue; */
+}  */
+/* .card2{
+    
+    
     border-radius: 10px;
     width:300px ;
     margin-left:10px ;
     justify-content: space-between;
-}
-.card3{
-    /* box-shadow: 2px 2px 3px 2px #F217D8; */
+    display: flex;
+} */
+/* .card3{
+    
+    
     border-radius:10px ;
     margin-left:10px ;
     width: 300px;
     justify-content: space-between;
     display: flex;
     
-}
-.card4{
-    /* box-shadow: 4px 4px 8px 4px #8DE10B ; */
+} */
+/* .card4{
+    
+    
     border-radius: 10px solid black;
     width:300px ;
     margin-left:10px ;
     justify-content: space-between;
     display: flex;
-}
+}  */ 
 .card-body h3{
-    /* font-family: 'Poppins', sans-serif; */
+    
     color: rgb(13, 14, 10);
     font-family: 'Roboto Condensed', sans-serif;
 }

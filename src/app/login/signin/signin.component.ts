@@ -21,7 +21,9 @@ export class SigninComponent implements OnInit {
 
   wrongCreden:Boolean = false
 
-  inputClass:string = "btn btn-success"
+  inputClass:string = "form-control inputTag"
+
+  errorLoginString:string = ""
 
   ngOnInit(): void {
   }
@@ -41,6 +43,7 @@ export class SigninComponent implements OnInit {
   submit(){
     let username = this.loginForm.value.username
     let password = this.loginForm.value.password
+    console.log(username,password);
     if(username !="" || password!=""){
       this.ls.login(this.loginForm.value).subscribe(res=>{
         console.log(res);
@@ -57,15 +60,12 @@ export class SigninComponent implements OnInit {
        },
        error=>{
          console.log(error.error);
+         this.errorLoginString = "Incorrect username / password"
         this.wrongCreden = true
-        this.inputClass = "btn btn-success loginFormError"
+        this.inputClass = "form-control errorInput"
        }
        )
     }
-  }
-
-  routeToRegister(){
-    this.route.navigate(['/register'])
   }
 
 }

@@ -1,3 +1,121 @@
+<div class="imageFixed">
+  <img src="assets/checkout.jpg" alt="">
+</div>
+<div class="row">
+  <div class="col-lg-3">
+  </div>
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="yourItemsText">
+          <span class="text">YOUR ITEMS</span>
+        </h3>
+        <h4 class="staticText">
+          Check the items before you buy
+        </h4>
+        <div class="orderItemsDiv" *ngFor="let item of data.orderItems">
+          <div class="row">
+            <div class="col-lg-2 imagesDiv">
+              <img src={{item.product.imageUrls[0].imgUrl}} alt="">
+            </div>
+            <div class="col-lg-8 text text-center">
+              <h3 class="productMeatTitle">{{item.product.metaTitle}}</h3>
+              <span *ngIf="item.product.size" class="sizeSpec">{{item.product.size}}  {{item.product.sizeUnit}}</span>
+              <span *ngIf="item.product.color" class="colorSpec"> Color : {{item.product.color}}</span>
+            </div>
+            <div class="col-lg-2">
+              <h3 class="itemPrice">{{item.price | currency:"INR"}}</h3>
+              <h2 class="itemQuantity">
+                {{item.quantity}}<sub>x</sub>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+          <div class="col-lg-6 couponDiv">
+            <div>
+              <h3 class="yourItemsText">
+                <span><i class="fa fa-magic" aria-hidden="true"></i></span> <span class="text">COUPON</span>
+              </h3>
+              <h4 class={{couponResponseClass}}>
+                {{couponResponse}}
+              </h4>
+            </div>
+            <div class="applyCouponDiv">
+              <input type="text" #coupon class="input-sm form-control" [(ngModel)]="data.promo" name="" id="">
+            <span class="py-2 buttonDiv">
+              <button class="btn btn-sm" type="button" (click)="couponApply(coupon.value)" *ngIf="!click"> E N T E R </button>
+              <button class="btn btn-sm" type="button" (click)="couponCancel()" *ngIf="click">C A N C E L&nbsp;</button>
+            </span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="yourEstimationText">
+              E S T I M A T I O N
+            </h3>
+            <table class="estimationTable">
+              <tbody>
+                <tr>
+                  <td class="attribute">
+                    Order
+                  </td>
+                  <td class="value">
+                    {{data.subTotal | currency:"INR"}}
+                  </td>
+                </tr>
+                <tr>
+                  <td class="attribute">
+                    Shipping
+                  </td>
+                  <td class="value">
+                   + {{ 0 | currency:"INR"}}
+                  </td>
+                </tr>
+                <tr>
+                  <td class="attribute">
+                    Discount
+                  </td>
+                  <td class="value">
+                    - {{data.itemDiscount | currency:"INR"}}
+                  </td>
+                </tr>
+                <tr>
+                  <td class="attribute">
+                    Coupon Discount
+                  </td>
+                  <td class="value">
+                    - {{data.total - data.grandTotal | currency:"INR"}}
+                  </td>
+                </tr>
+                <tr class="totalArr text text-right">
+                  <td>
+
+                  </td>
+                  <td>
+                    <div>
+                      <span>T O T A L</span>
+                      <p>{{data.grandTotal | currency:"INR"}}</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="checkoutButton">
+          <button type="submit" class="form-control btn-block" (click)="checkOut()">C H E C K O U T</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+  </div>
+</div>
+
+
+<!-- 
 <div class="container mt-3">
   <div class="row justify-content-center mt-3">
     <div class="col-md-8 col-lg-5">
@@ -35,12 +153,12 @@
                   <td class="text-center w-50">Coupon</td>
                   <td class="text-center w-50">:</td>
                   <td class="text-center w-50">
-                    <input type="text" class="form-control sm" name="" id="">
+                    <input type="text" #coupon class="form-control sm" name="" id="">
                   </td>
                   <td class="text-center w-50">
                     <span class="py-2">
-                      <a class="btn btn-sm btn-danger " (click)="couponApply()" *ngIf="!click"> Apply </a>
-                      <a class="btn btn-sm btn-danger " (click)="couponCancel()" *ngIf="click">Cancel</a>
+                      <button class="btn btn-sm btn-danger " type="button" (click)="couponApply(coupon.value)" *ngIf="!click"> Apply </button>
+                      <button class="btn btn-sm btn-danger " type="button" (click)="couponCancel()" *ngIf="click">Cancel</button>
                     </span>
                   </td>
                 </tr>
@@ -51,102 +169,4 @@
             <button type="submit" class="btn btn-warning btn-block" (click)="checkOut()">CheckOut</button>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-<!-- 
-  <mat-stepper #stepper>
-    <mat-step>
-      <form>
-        <ng-template matStepLabel>map coupons</ng-template>
-        <h1>checkout</h1>
-        <div class="form-group">
-
-          <table class="table">
-            <tr>
-              <th>product name</th>
-              <th>price</th>
-              <th>quantity</th>
-            </tr>
-            <tr *ngFor="let x of check.cartItems">
-              <td>{{x.metaTitle}}</td> -->
-              <!-- <tr *ngFor="let x of checkitems"> 
-                  <td>{{x.content}}</td>-->
-              <!-- <td>{{x.price}}</td>
-              <td>{{x.quantity}}</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-              </td>
-            </tr>
-            <tr>
-              <td> total amount to be paid :</td>
-              <td> {{grandtotal}} </td>
-            </tr>
-            <tr>
-              <td>
-                <p>you have discount </p>
-              </td>
-              <td>- {{discount}} </td>
-            </tr>
-            <tr>
-              <td>total amount to be paid : </td>
-              <td>{{grandtotal-discount}}</td>
-            </tr>
-            <label for="coupon">add coupon:</label> <br>
-
-            <select name="coupon" id="coupon" (change)="change($event)" [(ngModel)]="coupon">
-              <option class="coupon" value="0">none</option>
-              <option class="coupon" value="{{c.eligibul}}" *ngFor="let c of coupon">{{c.coupon}}</option>
-            </select>
-          </table> <br> -->
-
-          <!-- <tfoot  >total amount to be paid : <del>{{grandtotal}}</del> {{paytotal}} </tfoot> -->
-
-        <!-- </div>
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step label="Fill out your address">
-      <form>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              delivery adress
-            </mat-panel-title>
-            <mat-panel-description>
-
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <address *ngIf="default">
-            {{default.line1}}
-
-            {{default.city}}
-          </address>
-          <button type="submit" class="btn btn-warning" [routerLink]="['/adress']">change</button>
-        </mat-expansion-panel>
-
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <mat-step>
-      <form>
-        <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
-        <div>
-
-          <div class="form-group">
-            <button type="submit" class="btn btn-warning" [routerLink]="['/payment']">procced to buy</button>
-          </div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button (click)="stepper.reset()">Reset</button>
-        </div>
-      </form>
-    </mat-step>
-  </mat-stepper> -->
+      </div> -->

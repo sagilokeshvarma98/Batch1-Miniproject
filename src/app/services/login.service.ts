@@ -41,4 +41,9 @@ export class LoginService {
     return this.hp.post("http://oshopping.ddns.net/api/user/forgotpassword?mobile="+data,{})
   }
 
+
+  paymentGateway():Observable<any>{
+    return this.hp.post("http://oshopping.ddns.net/api/payment/charge",{})
+  }
+
 }

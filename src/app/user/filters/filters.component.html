@@ -5,9 +5,9 @@
                 <img src="../../../assets/eraser-solid.svg" alt=""> <span>Clear all filters</span>
 
             </h3>
-            <mat-expansion-panel>
+            <mat-expansion-panel [expanded]="true">
                 <mat-expansion-panel-header>
-                    <mat-panel-title class="rating_title">
+                    <mat-panel-title class="rating_title" >
                         <img src="../../../assets/star-half-regular.svg" alt=""> <span>Ratings</span>
                     </mat-panel-title>
                 </mat-expansion-panel-header>
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </mat-expansion-panel>
-            <mat-expansion-panel>
+            <mat-expansion-panel [expanded]="true">
                 <mat-expansion-panel-header>
                     <mat-panel-title class="price_title">
                         <img src="../../../assets/dollar-sign-solid.svg" alt=""> <span>Price</span>
@@ -38,7 +38,7 @@
                     <span (click)='getPrice($event)'>Above 5000</span>
                 </div>
             </mat-expansion-panel>
-            <mat-expansion-panel>
+            <mat-expansion-panel [expanded]="true">
                 <mat-expansion-panel-header>
                     <mat-panel-title class="outOfStock_title">
                         <img src="../../../assets/store-slash-solid.svg" alt=""> <span>Out-of-stock</span>
@@ -49,7 +49,7 @@
                         (change)="outOfStock($event)"><span class="outofstock">Exclude Out of stock</span>
                 </div>
             </mat-expansion-panel>
-            <mat-expansion-panel>
+            <mat-expansion-panel >
                 <mat-expansion-panel-header>
                     <mat-panel-title class="outOfStock_title">
                         <img src="../../../assets/tape-solid.svg" alt=""> <span>Size</span>

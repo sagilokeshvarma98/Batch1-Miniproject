@@ -61,7 +61,7 @@ const routes: Routes = [
         component: AdressdiplayComponent,
       },
       {
-        path: "checkout",
+        path: "checkout/:id",
         component: CheckoutComponent,
       },
       {
