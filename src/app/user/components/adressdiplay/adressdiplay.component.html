@@ -1,5 +1,35 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 p-3">
+            <div class="card add-card " routerLink="/adress">
+                <mat-icon class="display-1">add</mat-icon>
+                <h1>Add address</h1>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let x of userAddress">
+            <div class="card address-card">
+                <address>
+                    <p class="name">{{x.fullName}}</p>
+                    <span>{{x.line1}}</span>,
+                    <span>{{x.city}}</span><br>
+                    <span>{{x.district}}</span>,
+                    <span>{{x.state}}</span>,
+                    <span>{{x.pincode}}</span>
+                    <p>{{x.country}}</p>
+                    <label>Phone Number:</label> {{x.mobile}}
+                </address>
+                <div>
+                    <button class="btn btn-danger" (click)="deleteAddress(x.id)">delete</button>
+                    <button class="btn btn-warning" routerLink="/adress/{{x.id}}">edit</button>
+                    <button class="btn btn-danger" *ngIf="x.addressDefault !=1"  (click)="selctdefault(x.id)">select defult</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
 <div class="container mt-2">
-    <p >Your Addresses</p>
+    <p >Your Address</p>
     <div class="row">
         <div class="col-lg-4 col-sm-6 p-3">
             <div class="card add-card " routerLink="/adress">

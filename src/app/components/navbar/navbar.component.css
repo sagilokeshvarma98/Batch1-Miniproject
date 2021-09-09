@@ -1,7 +1,13 @@
 .navbar{
-    background: #57def0;
+    /* background: #399c92; */
     /* background-color: none; */
+    background-color: #40E0D0;
+   
     
+}
+.logo-img{
+    width: 50px;
+    height: 50px;
 }
 
 .form-control{
@@ -32,19 +38,22 @@
     top: -10px;
     font-size: large;
 }
-.dropdown{
-    margin-right:200px ;
+ .dropdown{
+    margin-right:100px ;
     position: relative;
     display: inline-block;
+    margin-top: 30px;
+    background: inherit;
 }
 .dropdown-menu{
-    display: none;
+    /* display: none; */
     position: absolute;
     background-color: #f1f1f1;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
+/*
 .dropdown-menu a{
     color: black;
     padding: 12px 16px;
@@ -57,12 +66,66 @@
 }
 .dropdown:hover .dropdown-menu{
     display: block;
-}
+} */
+
+
+
+
+
+
+
+
+/* [[[[[  */
+
+.mens-home{
+    display: inline;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    /* border: 2px solid #333; */
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+    display: flex;
+    float: left;
+    overflow: hidden;
+  }
+  
+  .mens-home span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .mens-home:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #3edce7;
+    transition: all .35s;
+  }
+  
+  .mens-home:hover{
+    color: #fff;
+  }
+  
+  .mens-home:hover:after{
+    width: 100%;
+  }
+
+/* ]]]]] */
 .text-Hello{
     color: white;
     font-size: 15px;
     position: relative;
-    top: -25px;
+    top: -10px;
     left: 70px;
 
 }
@@ -74,35 +137,39 @@
     left: 60px;
     bottom: 5px;
 }
-#userAccount{
+ #dropdownMenuButton{
     position: relative;
-    left: 70px;
-    top: -10px;
+    
     font-size: 30px;
     line-height: 10px;
     cursor: default;
 }
-.dropdown{
-    margin-top: 30px;
-}
-.cart-icon .cart-text{
+
+ .cart-icon .cart-text{
     color: white;
     cursor: default;
     font-size: 18px;
+    top: 10px;
     position: relative;
-    left: 20px;
+    left: -5px;
 }
 .nav-item .cart-icon mat-icon{
     color: white;
     cursor: default;
     position: relative;
-    top: 5px;
-    left: 20px;
-}
+    top: 15px;
+   left: -15px;
+} 
 .vl{
     border-left: 2px solid whitesmoke;
     position: relative;
     top: 10px;
-    left: 43px;
-    height: 30px;
+   right: 40px;
+    height: 50px;
+}
+.text-login{
+    position: relative;
+    top: -10px;
+    font-size: 20px;
+    color: rgb(4, 7, 48);
 }

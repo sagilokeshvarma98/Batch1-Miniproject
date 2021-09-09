@@ -1,4 +1,82 @@
+.paymentContainer{
+    padding: 5% 20% 20% 15%;
+}
 
+.paymentContainer .card{
+    padding: 20px;
+}
+
+.paymentContainer .card .cardDetailsDiv .cardBox{
+    padding: 50px;
+    float: left;
+    width: 100%;
+    background: linear-gradient(-45deg , blue , blueviolet);
+}
+
+.priceDetails{
+    margin-top: 50px;
+}
+
+.priceDetails .successPay{
+    margin-top: 70%;
+}
+
+.priceDetails .successPay h3{
+    font-size: large;
+    color: green;
+}
+
+.payButton{
+    margin-top: 8px;
+    background: transparent;
+    border: 2px solid white;
+}
+
+.priceDetails h4{
+    font-size: x-large;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ .priceDetails h3{
+    font-size: x-large;
+    font-weight: 700;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input{
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid white;
+    border-radius: 0px ;
+    color: white;
+}
+
+input::placeholder{
+    color: white;
+    background: transparent;
+}
+
+input:focus{
+    box-shadow: none;
+}
+
+.detailsText{
+    font-size: larger;
+    color: snow;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+label{
+    font-size: medium;
+    color: snow;
+    font-weight: 400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+/* 
 h3{
     margin: 10px;
     padding: 0 0 20px;
@@ -27,11 +105,11 @@ color: rgb(19, 18, 18);
     width: 100%;
     margin-bottom: 10px;
 }
-.form-group input[type="text"]{
+.form-group input{
     border: none;
     border-bottom: 1px solid rgb(8, 8, 8);
     background: transparent;
     outline: none;
     height: 30px;
     color: rgb(110, 103, 103);
-}
+} */
