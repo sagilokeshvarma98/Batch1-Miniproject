@@ -64,7 +64,11 @@ export class ProductPostComponent implements OnInit {
   ngOnInit(): void {
     this.subCategoryArray = this.sub_category.Apparels
   }
-  submit(val:any) {
+  submit(val:any,imgUrl:any) {
+    let img = {
+      imgUrl : imgUrl
+    }
+    console.log(val,img);
     this.submitted=true;
     if(this.productForm.invalid){
       this.error="Must Fill the All";
@@ -74,13 +78,26 @@ export class ProductPostComponent implements OnInit {
     this.PS.addProduct(val).subscribe(
       (res) => {
         console.log(res);
+        this.addImageToProduct(res.id,img)
         this.productForm.reset();
         this.toastr.success("Products are saved successfully.", "Success")
       },
       (error) => {
+        console.log(error);
         this.productForm.reset();
         this.toastr.error("Products con't Post.", error)
       }
     )
   }
+
+  addImageToProduct(id:any,img:any){
+    console.log("hello......Did you came to add image");
+    this.PS.addImageByProductId(id,img).subscribe(res=>{
+      console.log(res);
+    },
+    (err)=>{
+      console.log(err);
+    })
+  }
+
 }

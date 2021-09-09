@@ -42,7 +42,6 @@ export class CartButtonComponent implements OnInit {
   }
 
 
-
   AddToCart() {
     if(localStorage.getItem('token'))
     {
@@ -58,7 +57,10 @@ export class CartButtonComponent implements OnInit {
     }
     else
      {
-      confirm("Please login to continue")
+      let istoken = confirm("Please login to continue")
+      if(istoken){
+        this.route.navigate(['login'])
+      }
      }
   }
 }
