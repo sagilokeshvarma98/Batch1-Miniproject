@@ -14,7 +14,7 @@ export class AdressdiplayComponent implements OnInit {
   d: any
   userAddress: any
   confirm: any
-
+DefaultAddress:any;
   constructor(public address: AddressService, private router: Router) { }
 
   getAddress() {
@@ -22,18 +22,19 @@ export class AdressdiplayComponent implements OnInit {
       (data) => {
         console.log("----------", data);
         this.userAddress = data
+      this.DefaultAddress=data.addressDefault;
       }
     )
   }
 
-  selctdefault(val: any, id: any) {
-    let defult = {
-      "default": id
-    }
-    this.address.selctdefult(defult).subscribe((posres) => {
+  selctdefault(id: any) {
+    
+    this.address.selctdefult(id).subscribe((posres) => {
       console.log("this")
       console.log(posres)
+      this.getAddress();
     })
+    
   }
 
   public getdefult() {
@@ -46,6 +47,12 @@ export class AdressdiplayComponent implements OnInit {
   ngOnInit(): void {
     this.getAddress();
     this.getdefult();
+    this.address.getdefaultadress().subscribe(res=>{
+      console.log("somthing here to see");
+      console.log(res);
+      console.log(res.addressDefault);
+      
+    })
   }
 
   deleteAddress(id: any) {

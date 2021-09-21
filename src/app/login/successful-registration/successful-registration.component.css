@@ -1,3 +1,27 @@
-section{
-    margin: 20% 0% 0% 40%;
+.successfulRegistration{
+    padding: 20% 0% 0% 40%;
+}
+
+
+.successfulRegistration h1 , .successfulRegistration h5{
+    font-size: x-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-style: oblique;
+    color: blueviolet;
+}
+
+.successfulRegistration h1 span{
+    color: rgb(18, 235, 18);
+    font-size: xx-large;
+}
+
+
+.successfulRegistration h5 a{
+    text-decoration: none;
+    color: rgba(26, 41, 26, 0.37);
+}
+
+.successfulRegistration h5 a:hover{
+    text-decoration: underline 2px solid black;
 }

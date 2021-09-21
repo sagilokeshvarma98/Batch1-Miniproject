@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tracking',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tracking.component.css']
 })
 export class TrackingComponent implements OnInit {
+
+  @Input() trackId:number = 0
 
   step_1: string = "step";
   step_2: string = "step";
@@ -16,21 +18,5 @@ export class TrackingComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.step_1 = 'step active'
-    }, 1000);
-    setTimeout(() => {
-      this.step_2 = 'step active'
-    }, 3000);
-    setTimeout(() => {
-      this.step_3 = 'step active'
-    }, 5000);
-    setTimeout(() => {
-      this.step_4 = 'step active'
-    }, 7000);
-    setTimeout(() => {
-      this.step_4 = 'step active'
-    }, 9000);
   }
-
 }

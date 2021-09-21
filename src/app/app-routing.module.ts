@@ -29,20 +29,20 @@ const routes: Routes = [
       },
       {
         path: "home",
-        component: HomepageComponent,
+        component: HomepageComponent
       },
 
       {
         path: 'mens',
-        component: MensSubpageComponent,
+        component: MensSubpageComponent
       },
       {
         path: 'electronics',
-        component: ElectronicsSubpageComponent,
+        component: ElectronicsSubpageComponent
       },
       {
         path: 'kitchen',
-        component: KitchenSubpageComponent,
+        component: KitchenSubpageComponent
       },
       {
         path: 'cart',
@@ -52,26 +52,32 @@ const routes: Routes = [
       {
         path: 'adress',
         component: AddressComponent,
+        canActivate:[ProtectRoutesGuard]
       },
       {
         path: 'adress/:id',
         component: AddressComponent,
+        canActivate:[ProtectRoutesGuard]
       },
       {
         path: "useradress",
         component: AdressdiplayComponent,
+        canActivate:[ProtectRoutesGuard]
       },
       {
         path: "checkout/:id",
         component: CheckoutComponent,
+        canActivate:[ProtectRoutesGuard]
       },
       {
         path: "payment/:id",
         component: PaymentGateComponent,
+        canActivate:[ProtectRoutesGuard]
       },
       {
         path: 'profile',
         component: UserProfileComponent,
+        canActivate:[ProtectRoutesGuard]
       },
       {
         path: "products/:name",
@@ -80,14 +86,16 @@ const routes: Routes = [
       {
         path: "tracking",
         component: TrackingComponent,
+        canActivate:[ProtectRoutesGuard]
       },
       {
         path: "products/:name/:id",
-        component: ItemDisplayComponent,
+        component: ItemDisplayComponent
       },
       {
         path: 'order',
         component: OrdersComponent,
+        canActivate:[ProtectRoutesGuard],
         children: [
           {
             path: "postcomment",

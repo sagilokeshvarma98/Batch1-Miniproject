@@ -5,6 +5,7 @@ import { AddressService } from 'src/app/services/address.service';
 import { CartService } from 'src/app/services/cart.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
 import { CouponService } from 'src/app/services/coupon.service';
+import {Location} from "@angular/common"
 
 @Component({
   selector: 'app-checkout',
@@ -15,7 +16,7 @@ export class CheckoutComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private cs: CheckoutService,
     private adress: AddressService, private couponservice: CouponService
-    , public cart: CartService,private route:Router , public routes:ActivatedRoute) { }
+    , public cart: CartService,private route:Router , public routes:ActivatedRoute , public location:Location) { }
 
   check: any
   grandtotal = 0;
@@ -36,6 +37,9 @@ export class CheckoutComponent implements OnInit {
 
 
 ngOnInit(): void {
+
+  
+  
   this.getOrderById()
   // this.getchecked()
   // this.getadress();
@@ -101,11 +105,14 @@ getOrderById(){
 
   getadress() {
     this.adress.getdefult().subscribe((posres) => {
+      console.log("abcedefghijklmnopqrst");
+      console.log(posres)
       this.defaultid = posres.default
       console.log("defaultid")
       console.log(this.defaultid)
-      this.adress.getdefaultadress(this.defaultid).subscribe((res) => {
+      this.adress.getdefaultadress().subscribe((res) => {
         this.default = res
+        console.log("abcedefghijklmnopqrst");
         console.log(this.default)
       })
     })
