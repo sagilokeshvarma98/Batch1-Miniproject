@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { timeInterval } from 'rxjs/operators';
 import { CartService } from 'src/app/services/cart.service';
 import { CustomvalidatorsService } from 'src/app/services/custom-validators.service';
 
@@ -37,6 +38,7 @@ export class RegisterComponent implements OnInit {
    public wrongCreden:any = false
    ErrorMessage : string = ""
    registerFormValidate : string = "card"
+
    onSubmit(){
     this.submitted = true;
     let userData = {
@@ -44,8 +46,7 @@ export class RegisterComponent implements OnInit {
     }
    this.customvalid.postdata(userData)
    .subscribe((res:any)=>{
-     console.log(res);
-     this.route.navigate(['successfulRegister'])
+    this.route.navigate(['successfulRegister'])
    },
    (error:HttpErrorResponse)=>{
      this.registerFormValidate = "card loginFormError"
@@ -92,6 +93,7 @@ export class RegisterComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    this.route.navigate(['successfulRegister'])
   // this.getData();
  }
 

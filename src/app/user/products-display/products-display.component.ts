@@ -11,9 +11,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductsDisplayComponent implements OnInit {
   smallview:boolean=true;
 
-
-
-
   constructor(public PS: ProductsService, private route: Router , private routes:ActivatedRoute) { }
 
   ctrl = new FormControl(null, Validators.required);
@@ -46,7 +43,9 @@ export class ProductsDisplayComponent implements OnInit {
   NotifyAddedToCart: Boolean = false
   Title: string = ""
 
-  ngOnInit(): void {        
+  ngOnInit(): void {  
+    console.log("Will it be called 1st????");
+          
     this.routes.params.subscribe(params => {
       // params.name
       this.PS.productsData().subscribe(res => {

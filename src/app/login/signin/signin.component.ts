@@ -26,6 +26,35 @@ export class SigninComponent implements OnInit {
   errorLoginString:string = ""
 
   ngOnInit(): void {
+    console.log("This is ngOnInit");
+  }
+
+  ngOnDestroy(){
+    console.log("This is destroy method");
+  }
+
+  ngOnChanges(){
+    console.log("ngOnChanges");
+  }
+
+  ngDoCheck(){
+    console.log("ngDoCheck");
+  }
+
+  ngAfterContentInit(){
+    console.log("ngAfterContentInit");
+  }
+
+  ngAfterContentChecked(){
+    console.log("ngAfterContentChecked");
+  }
+
+  ngAfterViewInit(){
+    console.log("ngAfterViewInit");
+  }
+
+  ngAfterViewChecked(){
+    console.log("ngAfterViewChecked");
   }
 
   get controls(){

@@ -33,6 +33,7 @@ import { SharedModuleModule } from './shared-module/shared-module.module';
 import { ChartsModule } from 'ng2-charts';
 import { WomensSubpageComponent } from './components/womens-subpage/womens-subpage.component';
 import { KidsSubpageComponent } from './components/kids-subpage/kids-subpage.component';
+import { CartService } from './services/cart.service';
 
 
 @NgModule({
@@ -73,8 +74,7 @@ import { KidsSubpageComponent } from './components/kids-subpage/kids-subpage.com
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
-  ],
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 
 })
