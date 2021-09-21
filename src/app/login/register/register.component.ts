@@ -93,7 +93,6 @@ export class RegisterComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.route.navigate(['successfulRegister'])
   // this.getData();
  }
 
