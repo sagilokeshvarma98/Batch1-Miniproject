@@ -43,6 +43,7 @@
     height: 70px;
     aspect-ratio: auto 70 / 70;
     width: 70px;
+    margin-bottom: 50px;
 }
 
 .orderButton{
@@ -57,7 +58,7 @@
     text-align: center;
     white-space: nowrap;
     border-radius: 20px;
-    margin-bottom: 30px;
+    margin: 10% 10% 3% 35%;
 }
 
 .btn-sm{

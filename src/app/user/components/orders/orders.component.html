@@ -40,12 +40,26 @@
             </div>
             <div class="col-5">
               <h4 class="orderTitle">{{ele.product.title}}</h4>
-              <button class="orderButton" (click)="reOrder(x.id)">Order again</button>
             </div>
           </div>
         </div>
         <div class="col-3" *ngIf="x.status.name!='CANCELLED'">
           <button class="btn-sm btn-warning"  (click)="deleteItem(x.id)">Delete order</button>
+          <button class="orderButton" (click)="reOrder(x.id)">Order again</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <mat-expansion-panel style="width: max-content;">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h3>Track Order</h3>
+              </mat-panel-title>
+              <mat-panel-description>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-tracking [trackId]="x.status.id" ></app-tracking>
+          </mat-expansion-panel>
         </div>
       </div>
     </div>

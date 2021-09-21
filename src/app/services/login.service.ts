@@ -27,8 +27,7 @@ export class LoginService {
     this.route.navigate(['/login'])
   }
   getToken(){
-    return localStorage.getItem("token") || ''
-   
+    return localStorage.getItem("token")
   }
   public deactivate(data:any):Observable<any>{
     return this.hp.post("http://localhost:3000/users",data)

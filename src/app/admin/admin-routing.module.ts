@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminProtectionGuard } from '../Guards/admin-protection.guard';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
       breadcrumb:
         { alias: 'Parent' }
     },
+    canActivate : [AdminProtectionGuard],
     children: [
       { path: '', redirectTo: 'adminHome', pathMatch: 'full' },
       {
