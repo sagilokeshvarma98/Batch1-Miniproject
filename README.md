@@ -1,1 +1,3 @@
-![alt](https://cdn1.iconfinder.com/data/icons/business-and-office-9-2/128/403-512.png)
+# E-Commerce Mini Project
+
+![alt](https://cdn.dribbble.com/users/12601/screenshots/3554804/gif.gif)
