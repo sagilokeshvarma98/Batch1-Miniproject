@@ -8,7 +8,7 @@ describe('CustomValidatorsService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[HttpClientModule]
+      imports: [HttpClientModule]
     });
     service = TestBed.inject(CustomvalidatorsService);
   });

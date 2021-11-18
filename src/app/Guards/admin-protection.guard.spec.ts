@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { AdminProtectionGuard } from './admin-protection.guard';
 
 describe('AdminProtectionGuard', () => {

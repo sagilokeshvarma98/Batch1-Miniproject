@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {FormControl,FormGroup, Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
@@ -8,14 +8,14 @@ import { LoginService } from '../../services/login.service';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
-export class SigninComponent implements OnInit {
+export class SigninComponent {
 
   
   constructor(public ls:LoginService, public route:Router) { }
 
   loginForm = new FormGroup({
-    username : new FormControl('',[Validators.required]),
-    password : new FormControl('',[Validators.required])
+    username: new FormControl('',[Validators.required]),
+    password: new FormControl('',[Validators.required])
   })
 
 
@@ -23,60 +23,24 @@ export class SigninComponent implements OnInit {
 
   inputClass:string = "form-control inputTag"
 
-  errorLoginString:string = ""
+  errorLoginString:string = ""  
 
-  ngOnInit(): void {
-    console.log("This is ngOnInit");
-  }
-
-  ngOnDestroy(){
-    console.log("This is destroy method");
-  }
-
-  ngOnChanges(){
-    console.log("ngOnChanges");
-  }
-
-  ngDoCheck(){
-    console.log("ngDoCheck");
-  }
-
-  ngAfterContentInit(){
-    console.log("ngAfterContentInit");
-  }
-
-  ngAfterContentChecked(){
-    console.log("ngAfterContentChecked");
-  }
-
-  ngAfterViewInit(){
-    console.log("ngAfterViewInit");
-  }
-
-  ngAfterViewChecked(){
-    console.log("ngAfterViewChecked");
-  }
-
-  get controls(){
+  get controls() {
     return this.loginForm.controls
   }
 
-  errorInForms(){
+  errorInForms() {
     console.log("error occured");
   }
 
-  controller(){
-
-  }
-
-  submit(){
+  submit() {
     let username = this.loginForm.value.username
     let password = this.loginForm.value.password
     console.log(username,password);
-    if(username !="" || password!=""){
+    if(username !="" || password!="") {
       this.ls.login(this.loginForm.value).subscribe(res=>{
         console.log(res);
-       if(res.token){
+       if(res.token) {
         let user = JSON.parse(atob(res.token?.split(".")[1]))
         localStorage.setItem("currentUser",user.sub)
         localStorage.setItem("token",res.token)

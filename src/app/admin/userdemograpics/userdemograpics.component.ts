@@ -33,19 +33,20 @@ constructor(private fb:FormBuilder,private customvalid:CustomvalidatorsService ,
     }
   )
  }
-_id(id:any){
+
+_id(id:any) {
   this.id=id
   console.log(id)
 }
 
 
- onSubmit(){
+ onSubmit() {
  
   
   let userData = {
   
 
-    "password":  this.passwordreset.value.password
+    "password": this.passwordreset.value.password
      
  
     
@@ -67,6 +68,7 @@ _id(id:any){
  
 
  }
+
  get registerFormControl() {
   return this.passwordreset.controls;
 }
@@ -79,16 +81,16 @@ _id(id:any){
     
     }
 
-getuser(){
+getuser() {
   this.ud.userdemographics().subscribe((posres)=>{
 console.log(posres)
     this.userdemographics=posres;
   })
 }
 
-recoversuccess(value:any){
+recoversuccess(value:any) {
   console.log(value);
-  if(value=="success"){
+  if(value=="success") {
     this.getuser();
   }
 }

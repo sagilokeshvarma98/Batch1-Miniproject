@@ -9,7 +9,7 @@ describe('SuccessfulComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports: [HttpClientModule],
       declarations: [ SuccessfulComponent ]
     })
     .compileComponents();

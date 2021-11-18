@@ -30,8 +30,8 @@
     </div>
     <div class="card-body">
       <h2 class="deleiveredDate">Delivered 10-10-2021</h2>
-      <p *ngIf="x.status.name=='CANCELLED'" class="description text text-danger">{{x.status.description}}</p>
-      <p *ngIf="x.status.name!='CANCELLED'" class="description text text-primary">{{x.status.description}}</p>
+      <p *ngIf="x.status.name==='CANCELLED'" class="description text text-danger">{{x.status.description}}</p>
+      <p *ngIf="x.status.name!=='CANCELLED'" class="description text text-primary">{{x.status.description}}</p>
       <div class="row">
         <div class="col-8" *ngFor="let ele of x.orderItems">
           <div class="row">
@@ -43,7 +43,7 @@
             </div>
           </div>
         </div>
-        <div class="col-3" *ngIf="x.status.name!='CANCELLED'">
+        <div class="col-3" *ngIf="x.status.name!=='CANCELLED'">
           <button class="btn-sm btn-warning"  (click)="deleteItem(x.id)">Delete order</button>
           <button class="orderButton" (click)="reOrder(x.id)">Order again</button>
         </div>

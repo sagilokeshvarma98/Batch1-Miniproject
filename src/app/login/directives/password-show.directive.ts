@@ -8,6 +8,7 @@ export class PasswordShowDirective {
   constructor(private el: ElementRef) { 
     this.setup()
    }
+
    toggle(span: HTMLElement) {
     this._shown = !this._shown;
     if (this._shown) {
@@ -18,6 +19,7 @@ export class PasswordShowDirective {
       span.innerHTML = 'Show password';
     }
   }
+
   setup() {
     const parent = this.el.nativeElement.parentNode;
     const span = document.createElement('span');

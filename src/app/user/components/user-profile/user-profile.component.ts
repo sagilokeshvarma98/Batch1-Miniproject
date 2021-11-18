@@ -27,7 +27,7 @@ export class UserProfileComponent implements OnInit {
     return this.currentUser;
   }
   
-deactivate(){
+deactivate() {
 
   // this.user.deleteaccount().subscribe((posres) => {
 
@@ -40,7 +40,7 @@ console.log(posres)
   })
 }
 
-userprofile(){
+userprofile() {
   this.user.userprofile().subscribe((posres)=>{
     this.currentUser=posres
     console.log(posres)

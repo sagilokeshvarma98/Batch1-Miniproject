@@ -11,16 +11,17 @@ export class PendingCancellationComponent implements OnInit {
  
   constructor(private TS:TransactionsService) { }
   Transactions:any[] = []
-  getTransactions(){
+  getTransactions() {
   this.TS.getPendingTransactions().subscribe(res=>this.Transactions = res)
   }
+
   ngOnInit(): void {
     this.getTransactions()
   }
 
-  approveRequest(element:any){
+  approveRequest(element:any) {
    let bool = confirm("Do you want to approve this request?")
-   if(bool === true){
+   if(bool === true) {
      element.transaction = "failed"
      this.TS.deleteRequest(element).subscribe(res=>{
        this.TS.cancelTransaction(element).subscribe(res=>{

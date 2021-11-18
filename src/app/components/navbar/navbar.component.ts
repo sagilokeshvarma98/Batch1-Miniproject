@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   result: any;
   searchTerm:any
 
-  getSearchValue(searchTerm:any){
+  getSearchValue(searchTerm:any) {
     if(searchTerm === '')
         searchTerm = "All"
     this.PS.changeSearchTerm(searchTerm)
@@ -38,10 +38,12 @@ export class NavbarComponent implements OnInit {
       });
     this.gettoken()
   }
-  islogout(){
+
+  islogout() {
     this.token.logout()
   }
-  gettoken(){
+
+  gettoken() {
     if (this.token.getToken()) {
       this.istoken = true
     }

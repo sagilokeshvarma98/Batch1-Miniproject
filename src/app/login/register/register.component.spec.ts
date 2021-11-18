@@ -11,7 +11,7 @@ describe('RegisterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[ReactiveFormsModule,
+      imports: [ReactiveFormsModule,
         FormsModule,HttpClientModule,RouterTestingModule],
       declarations: [ RegisterComponent ]
     

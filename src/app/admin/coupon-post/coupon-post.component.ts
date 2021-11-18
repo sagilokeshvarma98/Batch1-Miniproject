@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder , FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { CouponService } from 'src/app/services/coupon.service';
 
@@ -8,7 +8,7 @@ import { CouponService } from 'src/app/services/coupon.service';
   templateUrl: './coupon-post.component.html',
   styleUrls: ['./coupon-post.component.css']
 })
-export class CouponPostComponent implements OnInit {
+export class CouponPostComponent {
 
   couponPost: FormGroup;
   submitted = false;
@@ -17,19 +17,16 @@ export class CouponPostComponent implements OnInit {
   constructor(private cup: CouponService, private fb: FormBuilder, private toastr: ToastrService) {
     this.couponPost = this.fb.group({
       code: ['', [Validators.required, Validators.minLength(8)]],
-      couponType:['',[Validators.required]],
+      couponType: ['',[Validators.required]],
       couponAmount: ['', [Validators.required]],
       createdAt: ['', [Validators.required]],
       expiryDate: ['', [Validators.required]],
-      description:['',[Validators.required]]
+      description: ['',[Validators.required]]
     });
   }
 
   get f() {
     return this.couponPost.controls;
-  }
-
-  ngOnInit(): void {
   }
 
   onSaveCoupon() {

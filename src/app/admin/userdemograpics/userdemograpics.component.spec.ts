@@ -11,7 +11,7 @@ describe('UserdemograpicsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule,FormsModule,ReactiveFormsModule,RouterTestingModule],
+      imports: [HttpClientModule,FormsModule,ReactiveFormsModule,RouterTestingModule],
       declarations: [ UserdemograpicsComponent ]
     })
     .compileComponents();

@@ -34,12 +34,13 @@ export class OrdersComponent implements OnInit {
       alert("ok")
     }
   }
+
   reorder() {
     this.state = false;
     this.status = "reorderd"
   }
 
-  reOrder(id:any){
+  reOrder(id:any) {
     this.OS.reOrder(id).subscribe(res=>{
       console.log(res);
       this.getorder()
@@ -63,7 +64,7 @@ export class OrdersComponent implements OnInit {
       })
   }
 
-  deleteItem(id:any){
+  deleteItem(id:any) {
     this.OS.deleteOrder(id).subscribe(res=>this.getorder())
   }
 

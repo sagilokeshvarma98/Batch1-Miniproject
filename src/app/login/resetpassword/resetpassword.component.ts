@@ -25,6 +25,7 @@ export class ResetpasswordComponent implements OnInit {
     }
     )
   }
+
   onSubmit() {
     this.submitted = true
     console.log(this.resetForm.value);
@@ -35,9 +36,11 @@ export class ResetpasswordComponent implements OnInit {
 
     }, () => { localStorage.clear(); })
   }
+
   get resetFormControl() {
     return this.resetForm.controls;
   }
+
   public token: string = ""
 
   ngOnInit(): void {

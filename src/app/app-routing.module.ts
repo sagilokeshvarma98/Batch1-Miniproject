@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
 import { ElectronicsSubpageComponent } from './components/electronics-subpage/electronics-subpage.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -47,37 +47,37 @@ const routes: Routes = [
       {
         path: 'cart',
         component: CartComponent
-        ,canActivate:[ProtectRoutesGuard]
+        ,canActivate: [ProtectRoutesGuard]
       },
       {
         path: 'adress',
         component: AddressComponent,
-        canActivate:[ProtectRoutesGuard]
+        canActivate: [ProtectRoutesGuard]
       },
       {
         path: 'adress/:id',
         component: AddressComponent,
-        canActivate:[ProtectRoutesGuard]
+        canActivate: [ProtectRoutesGuard]
       },
       {
         path: "useradress",
         component: AdressdiplayComponent,
-        canActivate:[ProtectRoutesGuard]
+        canActivate: [ProtectRoutesGuard]
       },
       {
         path: "checkout/:id",
         component: CheckoutComponent,
-        canActivate:[ProtectRoutesGuard]
+        canActivate: [ProtectRoutesGuard]
       },
       {
         path: "payment/:id",
         component: PaymentGateComponent,
-        canActivate:[ProtectRoutesGuard]
+        canActivate: [ProtectRoutesGuard]
       },
       {
         path: 'profile',
         component: UserProfileComponent,
-        canActivate:[ProtectRoutesGuard]
+        canActivate: [ProtectRoutesGuard]
       },
       {
         path: "products/:name",
@@ -86,7 +86,7 @@ const routes: Routes = [
       {
         path: "tracking",
         component: TrackingComponent,
-        canActivate:[ProtectRoutesGuard]
+        canActivate: [ProtectRoutesGuard]
       },
       {
         path: "products/:name/:id",
@@ -95,7 +95,7 @@ const routes: Routes = [
       {
         path: 'order',
         component: OrdersComponent,
-        canActivate:[ProtectRoutesGuard],
+        canActivate: [ProtectRoutesGuard],
         children: [
           {
             path: "postcomment",

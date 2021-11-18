@@ -8,7 +8,7 @@ describe('CouponService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[HttpClientModule]
+      imports: [HttpClientModule]
     });
     service = TestBed.inject(CouponService);
   });

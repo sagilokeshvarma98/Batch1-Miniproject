@@ -31,7 +31,7 @@ export class ProductsDisplayComponent implements OnInit {
   }
 
 
-  handleDefault(){
+  handleDefault() {
     this.smallview = !this.smallview;
   }
 
@@ -74,12 +74,12 @@ export class ProductsDisplayComponent implements OnInit {
 
   public productsDisplay:boolean = true
 
-  setProducts(res:any[],term:string){
+  setProducts(res:any[],term:string) {
       if (res.length == 0 && this.searchCount<=1) {
         this.searchCount++
         this.PS.changeSearchTerm(term)
       }
-      else if(this.searchCount>1){
+      else if(this.searchCount>1) {
         this.productsDisplay = false
       }
       else{

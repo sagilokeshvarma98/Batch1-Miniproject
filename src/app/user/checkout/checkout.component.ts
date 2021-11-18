@@ -47,11 +47,11 @@ ngOnInit(): void {
   // this.cs.cast.subscribe(res=>this.data=res)
 }
 
-getOrderById(){
+getOrderById() {
   this.routes.params.subscribe(res=>{
     this.cs.getOrderById(res.id).subscribe(res => {
       console.log(res);
-      if(res.promo){
+      if(res.promo) {
         this.couponResponseClass = "staticText"
         this.couponResponse = `${res.promo} promo applied`
         this.click = true
@@ -63,8 +63,8 @@ getOrderById(){
   })
 }
 
- couponApply(couponValue:any){
-   if(couponValue == ""){
+ couponApply(couponValue:any) {
+   if(couponValue == "") {
     this.couponResponse = "Enter a coupon to proceed"
     this.couponResponseClass = "errorStaticText"
    }
@@ -77,14 +77,15 @@ getOrderById(){
      this.couponResponseClass = "errorStaticText"
    })  
  }
- couponCancel(){
+
+ couponCancel() {
   this.cs.cancelCoupon(this.data.id).subscribe(res=>{
     this.couponResponse = res.apiresponse.description
     this.getOrderById()
   })
  }
 
- checkOut(){
+ checkOut() {
    this.cs.checkout(this.data.id).subscribe(
      (res)=>{
        console.log(res)

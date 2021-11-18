@@ -47,7 +47,7 @@ export class PaymentGateComponent implements OnInit {
     });
   }
 
-  payment(token:any){
+  payment(token:any) {
     this.successPayment = !this.successPayment
     localStorage.setItem("id",this.orderDetails.id)
     this.ls.paymentGateway(token).subscribe(res=>{
@@ -56,7 +56,7 @@ export class PaymentGateComponent implements OnInit {
     })
   }
 
-  afterSuccess(){
+  afterSuccess() {
     console.log("hello");
     this.successPayment = true
       // this.route.navigate(['products/All'])
@@ -71,9 +71,11 @@ export class PaymentGateComponent implements OnInit {
     }
     this.createToken()
   }
+
   get checkoutFormcontrol() {
     return this.checkoutForm.controls;
   }
+
   ngOnInit(): void {
     this.routes.params.subscribe(res=>{
       this.cs.getOrderById(res.id).subscribe(res => {

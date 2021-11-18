@@ -8,15 +8,15 @@ import { Observable } from 'rxjs';
 export class OrdersService {
 
   constructor(public http:HttpClient) { }
- public getmyorders():Observable<any>{
+ public getmyorders():Observable<any> {
    return this.http.get("http://oshopping.ddns.net/api/orders/user/all")
  }
 
- public reOrder(id:any):Observable<any>{
+ public reOrder(id:any):Observable<any> {
   return this.http.post("http://oshopping.ddns.net/api/orders/user/reorder/"+id,{})
  }
 
-public deleteOrder(id:any):Observable<any>{
+public deleteOrder(id:any):Observable<any> {
   return this.http.post("http://oshopping.ddns.net/api/orders/user/cancel/"+id,{})
 }
 }

@@ -16,10 +16,10 @@ export class LoginInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
    let token = this.ls.getToken();
    
-   if(token){
+   if(token) {
      request = request.clone({
-       setHeaders : {
-         Authorization : `Bearer ${token}`
+       setHeaders: {
+         Authorization: `Bearer ${token}`
        }
      });
    }

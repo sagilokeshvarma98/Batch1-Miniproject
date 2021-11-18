@@ -10,7 +10,7 @@ describe('CommentsPostComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[ReactiveFormsModule,FormsModule,HttpClientModule],
+      imports: [ReactiveFormsModule,FormsModule,HttpClientModule],
       declarations: [ CommentsPostComponent ]
     })
     .compileComponents();

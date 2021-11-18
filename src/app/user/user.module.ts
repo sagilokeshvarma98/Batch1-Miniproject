@@ -55,7 +55,7 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
     NgbModule,
     NgxPaginationModule,
     SharedModuleModule
-  ],providers:[],
-  exports:[OrdersComponent, UserProfileComponent,TrackingComponent]
+  ],providers: [],
+  exports: [OrdersComponent, UserProfileComponent,TrackingComponent]
 })
 export class UserModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -7,7 +7,7 @@ import { ProductsService } from 'src/app/services/products.service';
   templateUrl: './kitchen-subpage.component.html',
   styleUrls: ['./kitchen-subpage.component.css']
 })
-export class KitchenSubpageComponent implements OnInit {
+export class KitchenSubpageComponent  {
 
   public kitchenItems:any[] = []
 
@@ -39,6 +39,7 @@ export class KitchenSubpageComponent implements OnInit {
 
 
   ]
+
   ht = [
     { 'img': 'assets/Kitchen/399.jpg' },
     { 'img': 'assets/Kitchen/2.jpg' },
@@ -48,6 +49,7 @@ export class KitchenSubpageComponent implements OnInit {
 
 
   ]
+
   ts = [
     { 'img': 'assets/Kitchen/1.jpg' },
     { 'img': 'assets/Kitchen/2.jpg' },
@@ -57,6 +59,7 @@ export class KitchenSubpageComponent implements OnInit {
 
 
   ]
+
   hs = [
     { 'img': 'assets/Kitchen/set.png' },
     { 'img': 'assets/Kitchen/water.png' },
@@ -64,6 +67,7 @@ export class KitchenSubpageComponent implements OnInit {
     { 'img': 'assets/Kitchen/glasses.jpg' },
 
   ]
+
   ks = [
     { 'img': 'assets/Kitchen/p.jpg' },
     { 'img': 'assets/Kitchen/q.jpg' },
@@ -71,6 +75,7 @@ export class KitchenSubpageComponent implements OnInit {
     { 'img': 'assets/Kitchen/s.jpg' },
 
   ]
+
   bs = [
     { 'img': 'assets/Kitchen/10.jpg' },
     { 'img': 'assets/Kitchen/20.jpg' },
@@ -78,12 +83,14 @@ export class KitchenSubpageComponent implements OnInit {
     { 'img': 'assets/Kitchen/40.jpg' },
 
   ]
+
   cv = [
     { 'img': 'assets/Kitchen/a.jpg' },
     { 'img': 'assets/Kitchen/b.jpg' },
     { 'img': 'assets/Kitchen/a.jpg' },
     { 'img': 'assets/Kitchen/d.jpg' },
   ]
+
   rs = [
     { 'img': 'assets/Furniture/homefurniture4.jpg' },
     { 'img': 'assets/Furniture/homefurniture5.jpg' },
@@ -93,17 +100,11 @@ export class KitchenSubpageComponent implements OnInit {
 
 
   ]
+
   fg = [
     { 'img': 'assets/Furniture/homefurniture.jpg' },
     { 'img': 'assets/Furniture/homefurniture1.jpg' },
     { 'img': 'assets/Furniture/homefurniture2.jpg' },
     { 'img': 'assets/Furniture/homefurniture3.jpg' },
-
-
-
   ]
-  ngOnInit(): void {
-    
-
-}
 }

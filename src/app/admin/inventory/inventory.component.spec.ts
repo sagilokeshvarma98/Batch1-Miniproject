@@ -10,7 +10,7 @@ describe('InventoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule,FormsModule,ReactiveFormsModule],
+      imports: [HttpClientModule,FormsModule,ReactiveFormsModule],
       declarations: [ InventoryComponent ]
     })
     .compileComponents();

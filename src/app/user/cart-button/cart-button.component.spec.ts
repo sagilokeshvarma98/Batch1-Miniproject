@@ -9,7 +9,7 @@ describe('CartButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports: [HttpClientModule],
       declarations: [ CartButtonComponent ]
     })
     .compileComponents();

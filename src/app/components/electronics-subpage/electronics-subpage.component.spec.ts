@@ -9,7 +9,7 @@ describe('ElectronicsSubpageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports: [HttpClientModule],
       declarations: [ ElectronicsSubpageComponent ]
     })
     .compileComponents();

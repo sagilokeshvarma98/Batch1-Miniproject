@@ -8,7 +8,7 @@ describe('TransactionsService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports:[HttpClientModule]
+      imports: [HttpClientModule]
     });
     service = TestBed.inject(TransactionsService);
   });

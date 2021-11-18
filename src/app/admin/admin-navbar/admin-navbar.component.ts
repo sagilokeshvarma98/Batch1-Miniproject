@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -6,16 +6,13 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './admin-navbar.component.html',
   styleUrls: ['./admin-navbar.component.css']
 })
-export class AdminNavbarComponent implements OnInit {
+export class AdminNavbarComponent {
 
   opened=false;
   
   constructor( private lg:LoginService) { }
 
-  ngOnInit(): void {
-  }
-
-  Logot(){
+  Logot() {
     this.lg.logout()
   }
 

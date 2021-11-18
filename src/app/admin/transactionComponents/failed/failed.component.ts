@@ -10,16 +10,17 @@ export class FailedComponent implements OnInit {
 
   constructor(private TS:TransactionsService) { }
   Transactions:any[] = []
-  getTransactions(){
+  getTransactions() {
   this.TS.getTransactionDetails().subscribe(res=>{
     this.Transactions =  []
      res.map((x:any,index:any)=>{
-        if(x.transaction==="failed"){
+        if(x.transaction==="failed") {
           this.Transactions.push(x)
         }
       })      
     })
   }
+
   ngOnInit(): void {
     this.getTransactions()
   }

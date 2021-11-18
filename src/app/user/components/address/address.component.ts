@@ -59,7 +59,7 @@ export class AddressComponent implements OnInit {
     
 
 
-    if(userData.id!=undefined && userData.id!=0 && userData.id!=null){
+    if(userData.id!=undefined && userData.id!=0 && userData.id!=null) {
       this.adressservice.putAddress(userData)
       .subscribe((res:any)=>{
        this.useraddress.reset();
@@ -76,9 +76,11 @@ export class AddressComponent implements OnInit {
     }
 
   }
+
   get adressFormControl() {
     return this.useraddress.controls;
   }
+
   ngOnInit(): void {
 this.user.userprofile().subscribe((posres)=>{
   this.userId=posres;
@@ -90,6 +92,7 @@ this.user.userprofile().subscribe((posres)=>{
     this.getAdress();
     
   }
+
   getAdress(): void {
     
     const id = Number(this._activatedroute.snapshot.paramMap.get('id'));

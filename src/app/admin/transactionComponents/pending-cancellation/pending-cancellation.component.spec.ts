@@ -9,7 +9,7 @@ describe('PendingCancellationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports: [HttpClientModule],
       declarations: [ PendingCancellationComponent ]
     })
     .compileComponents();

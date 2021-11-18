@@ -14,8 +14,8 @@ export class CouponService {
 
   constructor(private http:HttpClient) { }
 
-  private handelError(er:HttpErrorResponse){
-    if(er.error instanceof ErrorEvent){
+  private handelError(er:HttpErrorResponse) {
+    if(er.error instanceof ErrorEvent) {
       console.error('Client side error : 404',er.error)
     }else{
       console.error('Server side error :',er)
@@ -23,14 +23,14 @@ export class CouponService {
     return throwError('There is a Problem with the Service!')
   }
 
-  getCoupons():Observable<any>{
+  getCoupons():Observable<any> {
     return this.http.get<Object>(`http://oshopping.ddns.net/api/coupon/all`).pipe(catchError(this.handelError))
   }
 
- postCoupon(obj:any):Observable<Object>{
+ postCoupon(obj:any):Observable<Object> {
     this.httpOptions = {
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
       })
     }
     return this.http.post(`http://oshopping.ddns.net/api/coupon/add`,obj,this.httpOptions).pipe(catchError(this.handelError));

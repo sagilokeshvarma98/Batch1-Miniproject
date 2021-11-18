@@ -21,7 +21,7 @@ const routes: Routes = [
       breadcrumb:
         { alias: 'Parent' }
     },
-    canActivate : [AdminProtectionGuard],
+    canActivate: [AdminProtectionGuard],
     children: [
       { path: '', redirectTo: 'adminHome', pathMatch: 'full' },
       {

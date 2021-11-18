@@ -7,7 +7,7 @@ import { LoginService } from '../services/login.service';
   providedIn: 'root'
 })
 export class AdminProtectionGuard implements CanActivate {
-  constructor(public route:Router , public login:LoginService){}
+  constructor(public route:Router , public login:LoginService) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -17,7 +17,7 @@ export class AdminProtectionGuard implements CanActivate {
         return true
       else{
         let toRoute = confirm("Please login as ADMIN to continue")
-        if(toRoute === true){
+        if(toRoute === true) {
           this.route.navigate(['/login'])
         }
         return false

@@ -1,8 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { timeInterval } from 'rxjs/operators';
 import { CartService } from 'src/app/services/cart.service';
 import { CustomvalidatorsService } from 'src/app/services/custom-validators.service';
 
@@ -11,7 +10,7 @@ import { CustomvalidatorsService } from 'src/app/services/custom-validators.serv
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
   registerForm:FormGroup;
   submitted:boolean= false;
@@ -21,13 +20,13 @@ export class RegisterComponent implements OnInit {
   constructor(private fb:FormBuilder, private customvalid:CustomvalidatorsService , public route:Router ,private cs:CartService) {
     this.registerForm=this.fb.group(
       {
-        fullName:['',[Validators.required,Validators.minLength(3)]],
-        username:['',[Validators.required,Validators.minLength(3)]],
-        email:['',[Validators.required,Validators.pattern(this.Email_pattern)]],
-        mobile:['',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+        fullName: ['',[Validators.required,Validators.minLength(3)]],
+        username: ['',[Validators.required,Validators.minLength(3)]],
+        email: ['',[Validators.required,Validators.pattern(this.Email_pattern)]],
+        mobile: ['',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
         password: ['',[Validators.required,Validators.pattern(this.strongRegex)]],
         confirmPassword: ['', [Validators.required]],
-        term:['',[Validators.required]]
+        term: ['',[Validators.required]]
 
       },{
         validator: this.customvalid.MatchPassword('password', 'confirmPassword'),
@@ -39,7 +38,7 @@ export class RegisterComponent implements OnInit {
    ErrorMessage : string = ""
    registerFormValidate : string = "card"
 
-   onSubmit(){
+   onSubmit() {
     this.submitted = true;
     let userData = {
       ...this.registerForm.value
@@ -54,13 +53,14 @@ export class RegisterComponent implements OnInit {
     this.wrongCreden = true
    })
    }
+
    get registerFormControl() {
     return this.registerForm.controls;
   }
 
   hideEmailValidate = false
 
-  checkUsername(check:any){
+  checkUsername(check:any) {
     let userName = this.registerForm.value.username
     if(!check.errors)
     this.customvalid.checkUsername(userName).subscribe(res=>console.log(res)
@@ -70,7 +70,7 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-   validteEmail(check:any){
+   validteEmail(check:any) {
      let Email = this.registerForm.value.email
     if(!check.errors)
     this.customvalid.checkEmail(Email).subscribe(res=>{
@@ -82,7 +82,7 @@ export class RegisterComponent implements OnInit {
     })
    }
 
-   validteMobile(check:any){
+   validteMobile(check:any) {
     let Mobile = this.registerForm.value.mobile
    if(!check.errors)
      this.customvalid.checkMobile(Mobile).subscribe(res=>console.log(res)
@@ -91,9 +91,6 @@ export class RegisterComponent implements OnInit {
       this.ErrorMessage = error.error.apiresponse.description
     })
   }
-  
-  ngOnInit(): void {
-  // this.getData();
- }
-
+ 
 }
+                                                                                                                                                                        

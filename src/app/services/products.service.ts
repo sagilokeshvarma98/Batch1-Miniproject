@@ -18,12 +18,12 @@ export class ProductsService {
     this.term.next(arg)
   }
 
-  productsData():Observable<any>{
+  productsData():Observable<any> {
      return this.hc.get("http://oshopping.ddns.net/api/products/all")
   }
 
 
-  searchByTerm(term:any):Observable<any>{
+  searchByTerm(term:any):Observable<any> {
     return this.hc.get("http://oshopping.ddns.net/api/products/search/"+term)
   }
 

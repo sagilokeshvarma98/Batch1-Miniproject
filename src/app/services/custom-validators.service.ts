@@ -32,19 +32,19 @@ export class CustomvalidatorsService {
 
   constructor(public http:HttpClient) { }
 
-  checkUsername(name:any):Observable<any>{
+  checkUsername(name:any):Observable<any> {
     return this.http.get("http://oshopping.ddns.net/api/user/checkusername/"+name)
   }
 
-  checkEmail(email:any):Observable<any>{
+  checkEmail(email:any):Observable<any> {
     return this.http.get("http://oshopping.ddns.net/api/user/checkemail/"+email)
   }
 
-  checkMobile(mobile:any):Observable<any>{
+  checkMobile(mobile:any):Observable<any> {
     return this.http.get("http://oshopping.ddns.net/api/user/checkmobile/"+mobile)
   }
 
-   postdata(data:any){
+   postdata(data:any) {
     return this.http.post("http://oshopping.ddns.net/api/user/register",data) 
   }
 

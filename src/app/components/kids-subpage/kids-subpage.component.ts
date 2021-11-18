@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-kids-subpage',
   templateUrl: './kids-subpage.component.html',
   styleUrls: ['./kids-subpage.component.css']
 })
-export class KidsSubpageComponent implements OnInit {
+export class KidsSubpageComponent {
 
   Kids1 = [
     { 'name': 'MIN .40% OFF', 'img': 'assets/Kids/k3.jpg' },
@@ -27,6 +27,7 @@ export class KidsSubpageComponent implements OnInit {
     { 'img': 'assets/Kids/k11.jpg' },
     { 'img': 'assets/Kids/k12.jpg' },
   ]
+
   Kids3 = [
     { 'title': 'PARTY WEAR', 'img': 'assets/Kids/k13.jpg' },
     { 'title': 'CASUAL WEAR',  'img': 'assets/Kids/k14.jpg' },
@@ -34,11 +35,7 @@ export class KidsSubpageComponent implements OnInit {
     { 'title': 'EVERYDAY WEAR', 'img': 'assets/Kids/k16.jpg' },
 
   ]
+
   constructor() { }
-
-  ngOnInit(): void {
-
-  }
-
 
 }

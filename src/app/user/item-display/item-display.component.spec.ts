@@ -10,7 +10,7 @@ describe('ItemDisplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule,
+      imports: [HttpClientModule,
         RouterModule.forRoot([])],
       declarations: [ ItemDisplayComponent ]
     })

@@ -11,7 +11,7 @@ describe('CouponComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule,FormsModule,ReactiveFormsModule,ToastrModule.forRoot()],
+      imports: [HttpClientModule,FormsModule,ReactiveFormsModule,ToastrModule.forRoot()],
       declarations: [ CouponComponent ]
     })
     .compileComponents();

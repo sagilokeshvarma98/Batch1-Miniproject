@@ -9,7 +9,7 @@ describe('KitchenSubpageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports: [HttpClientModule],
       declarations: [ KitchenSubpageComponent ]
     })
     .compileComponents();

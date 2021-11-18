@@ -10,7 +10,7 @@ describe('SubnavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[RouterTestingModule,RouterModule],
+      imports: [RouterTestingModule,RouterModule],
       declarations: [ SubnavComponent ]
     })
     .compileComponents();

@@ -16,21 +16,21 @@ export class CommentService {
 
   
 
-  getComment():Observable<Object>{
+  getComment():Observable<Object> {
     return this.http.get(`${this.url}`).pipe(catchError(this.handelError));
   }
 
-  postComment(obj:any):Observable<Object>{
+  postComment(obj:any):Observable<Object> {
     this.httpOptions = {
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
       })
     }
     return this.http.post(`${this.url}`,obj,this.httpOptions).pipe(catchError(this.handelError));
   }
 
-  private handelError(er:HttpErrorResponse){
-    if(er.error instanceof ErrorEvent){
+  private handelError(er:HttpErrorResponse) {
+    if(er.error instanceof ErrorEvent) {
       console.error('Client side error : 404',er.error)
     }else{
       console.error('Server side error :',er)

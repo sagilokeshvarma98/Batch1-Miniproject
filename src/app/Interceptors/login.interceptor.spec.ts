@@ -6,7 +6,7 @@ import { LoginInterceptor } from './login.interceptor';
 
 describe('LoginInterceptor', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports:[HttpClientModule,RouterTestingModule],
+    imports: [HttpClientModule,RouterTestingModule],
     providers: [
       LoginInterceptor
       ]

@@ -18,10 +18,10 @@ length:boolean=false;
 
   constructor(private ur:UsermanagementService) { }
 
-recovery(){
+recovery() {
   this.ur.recoveraccount().subscribe((posres)=>{
     this.lostedaccount=posres;
-   if( this.lostedaccount.length==0){
+   if( this.lostedaccount.length==0) {
     this.length=true;
    }
     console.log(posres)
@@ -30,12 +30,12 @@ recovery(){
 
 
 
-accept(data:any,id:any){
+accept(data:any,id:any) {
 
 let userdata={
   
-      "username" : data.username,
-      "useremail" :data.useremail
+      "username": data.username,
+      "useremail": data.useremail
 }
 
   

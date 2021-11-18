@@ -33,6 +33,7 @@ export class AlltransactionsComponent implements OnInit {
     }
     )
   }
+
   ngOnInit(): void {
     this.getTransactions()
   }

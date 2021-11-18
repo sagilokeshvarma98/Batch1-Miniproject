@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.css']
 })
-export class ForgotPasswordComponent implements OnInit {
+export class ForgotPasswordComponent {
   forgotForm: FormGroup;
   submitted:boolean=false;
   success:string=""
@@ -18,12 +18,11 @@ export class ForgotPasswordComponent implements OnInit {
       mobileNumber: ['',[ Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
     });
   }
+
   get forgetFormControl() {
     return this.forgotForm.controls;
   }
 
-  ngOnInit(): void {
-  }
   
   onSubmit(value: any) {
     console.log("forgotForm", value.mobileNumber);

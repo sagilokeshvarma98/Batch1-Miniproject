@@ -18,9 +18,9 @@ export class ProductPostComponent implements OnInit {
   categories : any = ["Apparels","Electronics","Home and Kitchen"]
   
   sub_category: any = 
-    {"Apparels" : ["Men's wear", "Women's wear", "Kids wear"],
-    "Electronics" : ["Mobiles", "Laptops", "Home appliances"],
-    "Home and Kitchen" : ["Kitchen items", "Home furnishings"]
+    {"Apparels": ["Men's wear", "Women's wear", "Kids wear"],
+    "Electronics": ["Mobiles", "Laptops", "Home appliances"],
+    "Home and Kitchen": ["Kitchen items", "Home furnishings"]
   }
 
   toSentCategory : string = "Apparels"
@@ -49,28 +49,30 @@ export class ProductPostComponent implements OnInit {
     )
   }
 
-  changeCategory(event:any){
+  changeCategory(event:any) {
     this.toSentCategory = event.target.value
     this.subCategoryArray = this.sub_category[this.toSentCategory]
   }
 
-  changeSubCategory(event:any){
+  changeSubCategory(event:any) {
     this.toSentSub = event.target.value
   }
 
   get productFormControl() {
     return this.productForm.controls;
   }
+
   ngOnInit(): void {
     this.subCategoryArray = this.sub_category.Apparels
   }
+
   submit(val:any,imgUrl:any) {
     let img = {
-      imgUrl : imgUrl
+      imgUrl: imgUrl
     }
     console.log(val,img);
     this.submitted=true;
-    if(this.productForm.invalid){
+    if(this.productForm.invalid) {
       this.error="Must Fill the All";
       this.toastr.error("Products con't Post.", "Error")
     }
@@ -90,7 +92,7 @@ export class ProductPostComponent implements OnInit {
     )
   }
 
-  addImageToProduct(id:any,img:any){
+  addImageToProduct(id:any,img:any) {
     console.log("hello......Did you came to add image");
     this.PS.addImageByProductId(id,img).subscribe(res=>{
       console.log(res);

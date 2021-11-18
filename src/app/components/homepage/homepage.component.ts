@@ -1,14 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Overlay, OverlayRef } from "@angular/cdk/overlay";
-import { ComponentPortal } from "@angular/cdk/portal";
+import { Component} from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent {
 
   constructor(private homepageservice:ProductsService) { }
 mens:any;
@@ -30,34 +27,11 @@ public toggleShow() {
     this.sidenavWidth = 15;
     console.log('increase sidenav width');
   }
+
   decrease() {
     this.sidenavWidth = 4;
     console.log('decrease sidenav width');
   }
 
-
-
-
-  ngOnInit(): void {
-
-// this.homepageservice.productsData().subscribe((posres)=>{
-
-// this.mens=posres;
-
-// })
-// this.homepageservice.productsData().subscribe((posres)=>{
-
-//   this.elctronics=posres;
-  
-//   })
-//   this.homepageservice.productsData().subscribe((posres)=>{
-
-//     this.jwelery=posres;
-    
-//     })
-
-
-   
-  }
 
 }

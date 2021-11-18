@@ -1,14 +1,13 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
-import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-cart-button',
   templateUrl: './cart-button.component.html',
   styleUrls: ['./cart-button.component.css']
 })
-export class CartButtonComponent implements OnInit {
+export class CartButtonComponent  {
 
   constructor(private os: CartService, private route: Router) { }
 
@@ -16,9 +15,6 @@ export class CartButtonComponent implements OnInit {
   @Input() quantity: any = 0
   @Output() displayNotification = new EventEmitter()
   isincart: boolean = false;
-  ngOnInit(): void {
-    // console.log(this.quantity)
-  }
   getitem() {
     this.os.getitem().subscribe((posres) => {
       console.log(posres.cartItems.map((user: any) => {
@@ -45,7 +41,7 @@ export class CartButtonComponent implements OnInit {
   AddToCart() {
     if(localStorage.getItem('token'))
     {
-      if(this.quantity>0){
+      if(this.quantity>0) {
         this.getitem()
         // this.os.additem(this.quantity,this.itemData.id).subscribe(res=>this.os.changeData())
         // console.log(this.quantity,this.itemData);
@@ -58,7 +54,7 @@ export class CartButtonComponent implements OnInit {
     else
      {
       let istoken = confirm("Please login to continue")
-      if(istoken){
+      if(istoken) {
         this.route.navigate(['login'])
       }
      }

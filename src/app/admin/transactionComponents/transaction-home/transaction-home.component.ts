@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {trigger , transition , state , style , animate} from '@angular/animations'
+import { Component} from '@angular/core';
+
+// import {trigger , transition , state , style , animate} from '@angular/animations'
 
 @Component({
   selector: 'app-transaction-home',
   templateUrl: './transaction-home.component.html',
   styleUrls: ['./transaction-home.component.css'],
-  animations : [
+  animations: [
     // trigger('simpleFadeAnimation', [
 
     //   // the "in" style determines the "resting" state of the element when it is visible.
@@ -34,7 +35,7 @@ import {trigger , transition , state , style , animate} from '@angular/animation
     // ])
   ]
 })
-export class TransactionHomeComponent implements OnInit {
+export class TransactionHomeComponent {
 
   // state: String = 'some'
   constructor() {}
@@ -43,9 +44,6 @@ export class TransactionHomeComponent implements OnInit {
     this.hideShowLinks = !this.hideShowLinks
   //   this.state = "simpleFadeAnimation"
   //   this.state = this.state === 'active' ? 'inactive' : 'active'
-  }
-
-  ngOnInit(): void {
   }
 
 }

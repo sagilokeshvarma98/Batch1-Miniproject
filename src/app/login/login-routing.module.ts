@@ -6,11 +6,11 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { SigninComponent } from './signin/signin.component';
 import { SuccessfulRegistrationComponent } from './successful-registration/successful-registration.component';
 
-const routes: Routes = [{path:"login",component:SigninComponent},
-{path:"register",component:RegisterComponent},
-{path:"forgotPass",component:ForgotPasswordComponent},
-{path:"resetpassword.html",component:ResetpasswordComponent},
-{path:"successfulRegister",component:SuccessfulRegistrationComponent}];
+const routes: Routes = [{path: "login",component: SigninComponent},
+{path: "register",component: RegisterComponent},
+{path: "forgotPass",component: ForgotPasswordComponent},
+{path: "resetpassword.html",component: ResetpasswordComponent},
+{path: "successfulRegister",component: SuccessfulRegistrationComponent}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

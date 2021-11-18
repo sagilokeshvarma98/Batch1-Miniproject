@@ -1,11 +1,11 @@
-import { Component, OnInit, Output , EventEmitter} from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
   styleUrls: ['./filters.component.css']
 })
-export class FiltersComponent implements OnInit {
+export class FiltersComponent  {
   constructor() { }
 
   rate:any
@@ -18,29 +18,30 @@ export class FiltersComponent implements OnInit {
 
   checked:Boolean = false
 
-  ngOnInit(): void {
-  }
-  getRating(rate:any){
+  getRating(rate:any) {
     this.allRates = true
     this.rate = rate
   }
 
-  getPrice(data:any){
+  getPrice(data:any) {
     this.allPrices = true
    this.price = data.target.innerHTML
   }
-  clearFilters(){
+
+  clearFilters() {
     this.rate = 0
     this.price = ''
     this.allPrices = false
     this.allRates= false
     this.sizes = ""
   }
-  outOfStock(data:any){
+
+  outOfStock(data:any) {
     this.checked = !this.checked
     this.rate = this.checked
   }
-  getSizes(data:any){
+
+  getSizes(data:any) {
     // console.log(data.target.value);
     this.sizes = data.target.value
     // let count = 0
@@ -59,11 +60,13 @@ export class FiltersComponent implements OnInit {
     //   count = 0
     // }
   }
-  clearPrices(){
+
+  clearPrices() {
     this.price = ''
     this.allPrices = false
   }
-  clearRates(){
+
+  clearRates() {
     this.rate = 0
     this.allRates= false
   }

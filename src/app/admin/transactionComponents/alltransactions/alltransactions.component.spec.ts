@@ -9,7 +9,7 @@ describe('AlltransactionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports: [HttpClientModule],
       declarations: [ AlltransactionsComponent ]
     })
     .compileComponents();

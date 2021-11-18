@@ -9,7 +9,7 @@ describe('RecoveryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports: [HttpClientModule],
       declarations: [ RecoveryComponent ]
     })
     .compileComponents();

@@ -9,7 +9,7 @@ import { CommentService } from 'src/app/services/comment.service';
   styleUrls: ['./comments-post.component.css']
 })
 
-export class CommentsPostComponent implements OnInit {
+export class CommentsPostComponent {
   
 
   // @Input() comment:any;
@@ -19,19 +19,16 @@ export class CommentsPostComponent implements OnInit {
   
   constructor(private fb:FormBuilder,private comment:CommentService) { 
     this.commentPost = this.fb.group({
-      msg:['',[Validators.required,Validators.minLength(10)]],
+      msg: ['',[Validators.required,Validators.minLength(10)]],
     });
    }
 
-  ngOnInit(): void {
-   
-  }
 
-  saveReview(){
+  saveReview() {
     let temp ={
-      name:this.commentPost.value.name,
-      rating:this.commentPost.value.rating,
-      msg:this.commentPost.value.msg,
+      name: this.commentPost.value.name,
+      rating: this.commentPost.value.rating,
+      msg: this.commentPost.value.msg,
     }
     this.comment.postComment(temp).subscribe(
       ()=>

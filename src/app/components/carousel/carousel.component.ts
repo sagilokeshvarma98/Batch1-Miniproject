@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -8,11 +8,9 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./carousel.component.css'],
    providers: [NgbCarouselConfig]
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent {
 
   
   constructor() { }
-
-  ngOnInit() { }
 
 }

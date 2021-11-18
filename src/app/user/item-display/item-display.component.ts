@@ -30,8 +30,8 @@ export class ItemDisplayComponent implements OnInit {
       this.id = parseInt(params['id'])
       this.PS.getProductbyId(this.id).subscribe((res:any)=>{
         console.log(res)
-        if(res){
-          if(res.imageUrls.length>0){
+        if(res) {
+          if(res.imageUrls.length>0) {
             this.imageUrl = res.imageUrls[0].imgUrl
           }
           this.itemData = res
@@ -48,10 +48,10 @@ export class ItemDisplayComponent implements OnInit {
           this.itemData.afterDiscount = res.price - res.discount
           if(this.itemData.content)
           this.description = this.itemData.content.split('. ')
-          for(let i=1;i<=this.itemData.quantity;i++){
+          for(let i=1;i<=this.itemData.quantity;i++) {
             this.itemQuantity.push(i)
           }          
-          if(this.itemData.quantity>0){
+          if(this.itemData.quantity>0) {
             this.itemData.btnDisabled = false
             this.itemData.quantityText = "In Stock"
             this.itemData.quantityClass = "text text-success"
@@ -66,15 +66,15 @@ export class ItemDisplayComponent implements OnInit {
     });
   }
 
-  getImageId(src:any){
+  getImageId(src:any) {
     this.imageUrl = src.imgUrl
   }
 
-  selectQuantity(event:any){
+  selectQuantity(event:any) {
    this.quantity = event.target.value
   }
 
-  displayQuantityError(val:any){
+  displayQuantityError(val:any) {
     this.showErrorMesage = val
     setInterval(()=>{
       this.showErrorMesage = !val

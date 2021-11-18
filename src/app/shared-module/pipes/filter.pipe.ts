@@ -6,13 +6,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterPipe implements PipeTransform {
 
   transform(products: any[], filterTerm:any): any {
-    if(filterTerm === true){
+    if(filterTerm === true) {
       return products.filter(x=>{
         if(x.quantity>0)
           return x
       })
     }
-    else if(filterTerm>0){
+    else if(filterTerm>0) {
       let filteredData = products.filter(x=>{
         if(x.mainRating >= filterTerm)
         return x

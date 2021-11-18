@@ -10,7 +10,7 @@ export class LoginService {
 
   constructor(private hp:HttpClient , private route:Router) { }
 
-  login(data:any):Observable<any>{
+  login(data:any):Observable<any> {
     return this.hp.post("http://oshopping.ddns.net/api/user/login",data)
     // .pipe(
     //   map(user => {
@@ -22,28 +22,31 @@ export class LoginService {
     // )
   }
 
-  logout(){
+  logout() {
     localStorage.clear()
     this.route.navigate(['/login'])
   }
-  getToken(){
+
+  getToken() {
     return localStorage.getItem("token")
   }
-  public deactivate(data:any):Observable<any>{
+
+  public deactivate(data:any):Observable<any> {
     return this.hp.post("http://localhost:3000/users",data)
   }
-  deleteaccount(data:any):Observable<any>{
+
+  deleteaccount(data:any):Observable<any> {
     return this.hp.delete("http://localhost:3000/users/"+data)
   }
    
-  forgotpost(data:any):Observable<any>{
+  forgotpost(data:any):Observable<any> {
     return this.hp.post("http://oshopping.ddns.net/api/user/forgotpassword?mobile="+data,{})
   }
 
-  paymentGateway(token:any):Observable<any>{
+  paymentGateway(token:any):Observable<any> {
     const headers = new HttpHeaders().set("orderId",localStorage.getItem("id") || "").set("token",token);
     console.log(headers);
-    return this.hp.post("http://oshopping.ddns.net/api/payment/charge",{},{'headers':headers})
+    return this.hp.post("http://oshopping.ddns.net/api/payment/charge",{},{'headers': headers})
   }
 
 }

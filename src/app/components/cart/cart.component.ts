@@ -23,10 +23,10 @@ export class CartComponent implements OnInit {
   constructor(private os: CartService, public check: CheckoutService , public route:Router) { }
 
 
-  changeQuantityHere(val:any,id:any){
+  changeQuantityHere(val:any,id:any) {
     let ele = {
-      target : {
-        value : val
+      target: {
+        value: val
       }
     }
     this.change(ele,id)
@@ -47,7 +47,7 @@ export class CartComponent implements OnInit {
             alert(`The seller has only ${x.product.quantity} available`)
           else{
               x.quantityBool = false
-              if(value!="10+"){
+              if(value!="10+") {
                 x.quantity = value
                 this.updateItem(id)
               }

@@ -11,9 +11,7 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ValuePipe } from './pipes/value.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AngmaterialModule } from '../angmaterial/angmaterial.module';
 import { SizeFilterPipe } from './pipes/size-filter.pipe';
-import { ErrorComponent } from './error/error.component';
 
 
 
@@ -27,8 +25,7 @@ import { ErrorComponent } from './error/error.component';
     DatePipe,
     SearchPipe,
     ValuePipe,
-    SizeFilterPipe,
-    ErrorComponent
+    SizeFilterPipe
   ],
   imports: [
     CommonModule,
@@ -38,10 +35,10 @@ import { ErrorComponent } from './error/error.component';
     HttpClientModule,
     BreadcrumbModule
   ],
-  providers:[
+  providers: [
     BreadcrumbService
   ],
-  exports:[
+  exports: [
     TestPipe,
     FilterPipe,
     PriceFilterPipe,

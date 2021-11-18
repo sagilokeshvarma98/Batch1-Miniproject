@@ -9,7 +9,7 @@ describe('AdressdiplayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports: [HttpClientModule],
       declarations: [ AdressdiplayComponent ]
     })
     .compileComponents();

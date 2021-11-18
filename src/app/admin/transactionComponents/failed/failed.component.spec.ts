@@ -9,7 +9,7 @@ describe('FailedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[HttpClientModule],
+      imports: [HttpClientModule],
       declarations: [ FailedComponent ]
     })
     .compileComponents();

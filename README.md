@@ -152,7 +152,7 @@ Node.js uses asynchronous programming! A common task for a web server can be to 
 ### Project Setup
 ***
 
-``` nodeJS
+``` node js
 
 npm install
 
@@ -164,11 +164,3 @@ _Future Developments_
 ***
 
 **Adding EsLint Rules**
-
-
-
-
-
-
-  
-

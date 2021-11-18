@@ -17,11 +17,11 @@ httpOptions:any;
   public cast = this.data.asObservable();
 
  
-  public changeData(){
+  public changeData() {
   this.data.next(this.len);
   };
 
-getitem():Observable<any>{
+getitem():Observable<any> {
     return this.http.get("http://oshopping.ddns.net/api/carts/user").pipe(
       map((x:any)=> {
         this.len=x.cartItems.length
@@ -31,16 +31,16 @@ getitem():Observable<any>{
     )
 }
 
-updateItem(id:any,data:any):Observable<any>{
+updateItem(id:any,data:any):Observable<any> {
   let quantity = {
-    quantity : data
+    quantity: data
   }
   return this.http.put("http://oshopping.ddns.net/api/cartitems/update/usercart/"+id,quantity)
 }
 
 //to delete user cart item
 
-deleteitem(data:any):Observable<any>{
+deleteitem(data:any):Observable<any> {
   return this.http.delete(`http://oshopping.ddns.net/api/cartitems/${data}`)
 }
 
@@ -49,9 +49,9 @@ deleteitem(data:any):Observable<any>{
 //   return  this.http.patch("http://localhost:3000/cart/"+id,data)
 // }
 
-public additem(data:any,id:any):Observable<any>{
+public additem(data:any,id:any):Observable<any> {
   return this.http.post("http://oshopping.ddns.net/api/cartitems/add/usercart/product/"+id,{
-   "quantity" : data 
+   "quantity": data 
   })
 }
 }
